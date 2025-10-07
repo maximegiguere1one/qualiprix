@@ -9,46 +9,46 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Backgrounds */
-    --background: 42 40% 96%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 98%;
+    --foreground: 211 98% 17%;
 
     /* Card backgrounds */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 211 98% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 211 98% 17%;
 
-    /* Primary - Deep Navy Blue */
-    --primary: 215 45% 25%;
-    --primary-foreground: 42 40% 96%;
+    /* Primary - Bleu profond (#012A59) */
+    --primary: 211 98% 17%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Warm Wood Tone */
-    --secondary: 28 45% 55%;
-    --secondary-foreground: 215 45% 25%;
+    /* Secondary - Orange cuivre (#F37A29) */
+    --secondary: 20 89% 56%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted - Soft Cream */
-    --muted: 42 25% 90%;
-    --muted-foreground: 215 15% 45%;
+    /* Muted - Gris clair */
+    --muted: 0 0% 92%;
+    --muted-foreground: 211 15% 45%;
 
-    /* Accent - Gold/Amber for CTAs */
-    --accent: 35 85% 55%;
+    /* Accent - Orange pour hover */
+    --accent: 20 89% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 85%;
-    --input: 215 15% 85%;
-    --ring: 215 45% 25%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 211 98% 17%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
     
-    /* Custom tokens for premium feel */
-    --gradient-hero: linear-gradient(135deg, hsl(215 45% 25%) 0%, hsl(215 35% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(35 85% 55%) 0%, hsl(28 75% 50%) 100%);
-    --shadow-elegant: 0 20px 60px -10px hsl(215 45% 25% / 0.2);
-    --shadow-soft: 0 4px 20px hsl(215 45% 25% / 0.08);
+    /* Custom tokens for premium Apple-inspired feel */
+    --gradient-hero: linear-gradient(135deg, hsl(211 98% 17%) 0%, hsl(211 80% 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(20 89% 56%) 0%, hsl(20 80% 50%) 100%);
+    --shadow-elegant: 0 20px 60px -10px hsl(0 0% 0% / 0.2);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.08);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -69,36 +69,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 30% 12%;
-    --foreground: 42 40% 96%;
+    --background: 211 50% 12%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 25% 18%;
-    --card-foreground: 42 40% 96%;
+    --card: 211 40% 18%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 18%;
-    --popover-foreground: 42 40% 96%;
+    --popover: 211 40% 18%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 42 40% 96%;
-    --primary-foreground: 215 45% 25%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 211 98% 17%;
 
-    --secondary: 28 35% 45%;
-    --secondary-foreground: 42 40% 96%;
+    --secondary: 20 89% 56%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 25%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 211 20% 25%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 35 75% 50%;
+    --accent: 20 89% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 25%;
-    --input: 215 20% 25%;
-    --ring: 42 40% 96%;
+    --border: 211 20% 25%;
+    --input: 211 20% 25%;
+    --ring: 0 0% 98%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(215 35% 18%) 0%, hsl(215 30% 25%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(35 75% 50%) 0%, hsl(28 65% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(211 80% 15%) 0%, hsl(211 70% 22%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(20 89% 56%) 0%, hsl(20 80% 50%) 100%);
     --shadow-elegant: 0 20px 60px -10px hsl(0 0% 0% / 0.4);
     --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.2);
     --sidebar-background: 240 5.9% 10%;

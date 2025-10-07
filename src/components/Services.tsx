@@ -1,71 +1,63 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChefHat, Ruler, Palette, Package, Wrench, Sparkles } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Ruler, Package, Truck } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: <Ruler className="w-8 h-8" />,
-      title: "Conception et design",
-      description: "Plans 3D détaillés et adaptés à votre espace, optimisant chaque centimètre pour créer la cuisine de vos rêves."
+      icon: Ruler,
+      title: "Consultation & Design 3D",
+      description: "Visualisez votre cuisine avant l'achat. Notre équipe crée un plan 3D détaillé de votre projet."
     },
     {
-      icon: <ChefHat className="w-8 h-8" />,
-      title: "Armoires de cuisine",
-      description: "Armoires en contreplaqué solide avec garantie jusqu'à 30 ans. Qualité supérieure au prix d'entrepôt."
+      icon: Package,
+      title: "Mesurage & préparation",
+      description: "On s'occupe de tout sur place. Prise de mesures professionnelle et préparation complète."
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Comptoirs",
-      description: "Large sélection de comptoirs: quartz, granit, stratifié. Matériaux durables et designs modernes."
-    },
-    {
-      icon: <Package className="w-8 h-8" />,
-      title: "Livraison rapide",
-      description: "Délais de 10 à 15 jours seulement. Nos partenaires fiables assurent une livraison ponctuelle et sécurisée."
-    },
-    {
-      icon: <Wrench className="w-8 h-8" />,
-      title: "Installation professionnelle",
-      description: "Équipe d'installateurs expérimentés pour une finition impeccable et un service clé en main."
-    },
-    {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: "Service personnalisé",
-      description: "Accompagnement de A à Z: conception, sélection, commande et suivi jusqu'à la livraison complète."
+      icon: Truck,
+      title: "Livraison & installation",
+      description: "Rapidité, propreté et efficacité. Installation professionnelle en 10-15 jours."
     }
   ];
 
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="services" className="py-24 bg-background">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Nos Services
+            Nos services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Solutions complètes pour votre cuisine, de la conception à l'installation
+          <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+            Un accompagnement complet de A à Z pour votre projet de cuisine
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <Card 
-              key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <CardHeader>
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 text-primary-foreground group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+            <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem]">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <service.icon className="w-10 h-10 text-secondary" />
                 </div>
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed">
-                  {service.description}
-                </CardDescription>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed">{service.description}</p>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Button 
+            size="lg"
+            onClick={scrollToContact}
+          >
+            Réservez une consultation gratuite
+          </Button>
         </div>
       </div>
     </section>

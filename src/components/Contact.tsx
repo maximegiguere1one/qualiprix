@@ -115,8 +115,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Envoyer ma demande
+                  <Button type="submit" size="lg" className="w-full">
+                    Soumettre ma demande gratuite
                   </Button>
                 </form>
               </CardContent>

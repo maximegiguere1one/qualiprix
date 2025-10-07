@@ -1,83 +1,82 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const menuItems = [
+    { label: "Produits", href: "#collections" },
+    { label: "Inspirations", href: "#portfolio" },
+    { label: "Services", href: "#services" },
+    { label: "À propos", href: "#about" },
+    { label: "Contact", href: "#contact" }
+  ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-soft)]">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            >
-              ARMOIRE QUALIPRIX
-            </button>
-          </div>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-2xl font-bold"
+          >
+            <span className="text-primary">ARMOIRE</span>{" "}
+            <span className="text-secondary">QUALIPRIX</span>
+          </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Contact
-            </button>
-            <a href="tel:581-397-3587" className="flex items-center gap-2">
-              <Button variant="premium" size="lg">
-                <Phone className="w-4 h-4" />
-                581-397-3587
-              </Button>
-            </a>
+          <nav className="hidden lg:flex items-center gap-8">
+            {menuItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-foreground hover:text-secondary font-semibold transition-colors duration-300"
+              >
+                {item.label}
+              </button>
+            ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          <div className="hidden lg:block">
+            <Button onClick={scrollToContact}>
+              Soumission gratuite
+            </Button>
+          </div>
+
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-foreground"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
+          <nav className="lg:hidden py-6 border-t border-border">
             <div className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors font-medium"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors font-medium"
-              >
-                Contact
-              </button>
-              <a href="tel:581-397-3587" className="px-4">
-                <Button variant="premium" size="lg" className="w-full">
-                  <Phone className="w-4 h-4" />
-                  581-397-3587
-                </Button>
-              </a>
+              {menuItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-foreground hover:text-secondary font-semibold transition-colors text-left py-2"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <Button onClick={scrollToContact} className="mt-4">
+                Soumission gratuite
+              </Button>
             </div>
           </nav>
         )}

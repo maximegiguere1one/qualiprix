@@ -1,34 +1,48 @@
+import { Facebook, Instagram } from "lucide-react";
+
 const Footer = () => {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-primary text-primary-foreground py-16">
       <div className="container px-4 mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-              ARMOIRE QUALIPRIX
+            <h3 className="text-2xl font-bold mb-4">
+              ARMOIRE <span className="text-secondary">QUALIPRIX</span>
             </h3>
-            <p className="text-primary-foreground/80 leading-relaxed">
-              Qualité au prix du gros. Plus de 25 ans d'expérience en rénovation et conception de cuisines au Québec.
+            <p className="text-primary-foreground/80 font-body leading-relaxed">
+              Fier partenaire de vos cuisines québécoises
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Liens rapides</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-lg mb-4">Navigation</h4>
+            <ul className="space-y-2 font-body">
               <li>
                 <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  onClick={() => scrollToSection("collections")}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
                 >
-                  Nos services
+                  Produits
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  onClick={() => scrollToSection("services")}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                >
+                  Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
                 >
                   Contact
                 </button>
@@ -36,18 +50,44 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Social Media */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Suivez-nous</h4>
+            <div className="flex gap-4">
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="font-bold text-lg mb-4">Contactez-nous</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
-              <li>Téléphone: 581-397-3587</li>
-              <li>Courriel: info@armoiresqualiprix.ca</li>
-              <li>Région: Québec et environs</li>
+            <ul className="space-y-2 text-primary-foreground/80 font-body">
+              <li>581-397-3587</li>
+              <li>info@armoiresqualiprix.ca</li>
+              <li>Québec et environs</li>
             </ul>
+            <div className="mt-4 text-sm">
+              <p className="font-semibold text-primary-foreground mb-1">Heures d'ouverture</p>
+              <p className="text-primary-foreground/70">Lun-Ven: 8h-17h</p>
+              <p className="text-primary-foreground/70">Sam: Sur rendez-vous</p>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/70">
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/70 font-body">
           <p>&copy; {new Date().getFullYear()} Armoire Qualiprix. Tous droits réservés.</p>
         </div>
       </div>
