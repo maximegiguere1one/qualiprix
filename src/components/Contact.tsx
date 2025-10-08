@@ -12,6 +12,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    city: "",
     message: ""
   });
 
@@ -23,7 +24,7 @@ const Contact = () => {
       description: "Nous vous contacterons sous 24h. Merci!",
     });
 
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", city: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -102,6 +103,21 @@ const Contact = () => {
                   </div>
 
                   <div>
+                    <label htmlFor="city" className="block text-sm font-medium mb-2">
+                      Ville des travaux *
+                    </label>
+                    <Input
+                      id="city"
+                      name="city"
+                      type="text"
+                      value={formData.city}
+                      onChange={handleChange}
+                      placeholder="Québec"
+                      required
+                    />
+                  </div>
+
+                  <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Message
                     </label>
@@ -171,7 +187,7 @@ const Contact = () => {
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl mb-2">Heures d'ouverture</h3>
                 <div className="space-y-1 text-sm">
-                  <p>Lundi - Vendredi: 8h - 17h</p>
+                  <p>Lundi - Vendredi: 9h - 17h</p>
                   <p>Samedi: Sur rendez-vous</p>
                   <p>Dimanche: Fermé</p>
                 </div>

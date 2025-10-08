@@ -5,21 +5,21 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Josée L.",
-      location: "Lévis",
-      text: "Service impeccable, livraison rapide, résultat magnifique !",
-      rating: 5
-    },
-    {
-      name: "Patrick M.",
-      location: "Saguenay",
-      text: "Qualité supérieure, prix imbattable, équipe ultra pro.",
-      rating: 5
-    },
-    {
-      name: "Élise T.",
+      name: "Chrystelle Laurin",
       location: "Québec",
-      text: "On dirait une cuisine à 20 000 $, payée 10 000 $ !",
+      text: "J'ai fais affaire avec cette compagnie, Service rapide et courtois, a le souci du détail. Proposition de plusieurs designs. Produit de qualité. Je recommande fortement et sans aucun doute !!! Enfin la cuisine de mes rêves à un prix plus que raisonnable.",
+      rating: 5
+    },
+    {
+      name: "Nicolas St-Aubin",
+      location: "Québec",
+      text: "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine merci Armoire Qualiprix !!!",
+      rating: 5
+    },
+    {
+      name: "Diane Boisvert",
+      location: "Québec",
+      text: "Très belle alternative pour une réfection de cuisine à un prix très intéressant. Approche professionnelle. Soumission rapide.",
       rating: 5
     }
   ];

@@ -7,7 +7,7 @@ const WhyUs = () => {
     {
       icon: Wrench,
       title: "Fabrication supérieure",
-      description: "Conçues avec des matériaux de qualité professionnelle et une finition haut de gamme."
+      description: "Caissons en contreplaqué supérieur, finition haut de gamme et quincaillerie de qualité professionnelle."
     },
     {
       icon: Truck,

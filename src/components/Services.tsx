@@ -7,12 +7,12 @@ const Services = () => {
     {
       icon: Ruler,
       title: "Consultation & Design 3D",
-      description: "Visualisez votre cuisine avant l'achat. Notre équipe crée un plan 3D détaillé de votre projet."
+      description: "Plans 3D détaillés et adaptés à chaque espace. Visualisez votre cuisine avant l'achat."
     },
     {
       icon: Package,
       title: "Mesurage & préparation",
-      description: "On s'occupe de tout sur place. Prise de mesures professionnelle et préparation complète."
+      description: "Service de mesurage professionnel sur place. Prise de mesures précise et préparation complète."
     },
     {
       icon: Truck,
@@ -33,7 +33,7 @@ const Services = () => {
             Nos services
           </h2>
           <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
-            Un accompagnement complet de A à Z pour votre projet de cuisine
+            Un accompagnement de A à Z, de la conception initiale au choix des modèles et à la livraison
           </p>
         </div>
 

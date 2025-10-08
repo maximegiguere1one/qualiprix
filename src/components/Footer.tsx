@@ -81,8 +81,21 @@ const Footer = () => {
             </ul>
             <div className="mt-4 text-sm">
               <p className="font-semibold text-primary-foreground mb-1">Heures d'ouverture</p>
-              <p className="text-primary-foreground/70">Lun-Ven: 8h-17h</p>
+              <p className="text-primary-foreground/70">Lun-Ven: 9h-17h</p>
               <p className="text-primary-foreground/70">Sam: Sur rendez-vous</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal & Quality Badge */}
+        <div className="border-t border-primary-foreground/20 pt-8 pb-6">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center gap-2 bg-primary-foreground/10 px-6 py-3 rounded-full">
+              <span className="text-sm font-semibold">🏗️ Matériaux solides – Contreplaqué supérieur</span>
+            </div>
+            <div className="text-sm text-primary-foreground/70 space-y-1">
+              <p>500$ d'acompte pour démarrer. Solde dû 48h avant la livraison.</p>
+              <p>Offres non cumulables. Sujettes à changement sans préavis.</p>
             </div>
           </div>
         </div>

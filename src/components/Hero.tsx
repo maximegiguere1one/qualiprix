@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
             <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/10 backdrop-blur-sm rounded-[1.25rem] p-4">
               <Star className="w-8 h-8" />
-              <span className="text-sm font-semibold text-center">+100 cuisines installées</span>
+              <span className="text-sm font-semibold text-center">+1000 projets accompagnés</span>
             </div>
             <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/10 backdrop-blur-sm rounded-[1.25rem] p-4">
               <Shield className="w-8 h-8" />
@@ -41,11 +41,11 @@ const Hero = () => {
             </div>
             <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/10 backdrop-blur-sm rounded-[1.25rem] p-4">
               <Truck className="w-8 h-8" />
-              <span className="text-sm font-semibold text-center">Livraison 10 jours</span>
+              <span className="text-sm font-semibold text-center">Livraison 10-15 jours</span>
             </div>
             <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/10 backdrop-blur-sm rounded-[1.25rem] p-4">
               <Wrench className="w-8 h-8" />
-              <span className="text-sm font-semibold text-center">Fabriquée ici</span>
+              <span className="text-sm font-semibold text-center">25+ ans d'expérience</span>
             </div>
           </div>
 

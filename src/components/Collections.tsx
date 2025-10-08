@@ -9,7 +9,8 @@ const Collections = () => {
       benefits: [
         "Finition haut de gamme",
         "Quincaillerie silencieuse",
-        "Durabilité supérieure"
+        "Durabilité supérieure",
+        "Couleurs exclusives à tarif préférentiel"
       ]
     },
     {
@@ -21,11 +22,11 @@ const Collections = () => {
       ]
     },
     {
-      name: "Série Plus Savoir",
+      name: "Série Plus Shaker",
       benefits: [
-        "Look naturel",
-        "Grain bois texturé",
-        "Robustesse unique"
+        "Style classique revisité",
+        "Lignes droites et épurées",
+        "Chaleur et modernité"
       ]
     },
     {
