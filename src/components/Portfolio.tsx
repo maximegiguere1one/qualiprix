@@ -1,16 +1,19 @@
 import { Button } from "@/components/ui/button";
+import kitchenWhite from "@/assets/kitchen-white.jpg";
+import kitchenStoneWall from "@/assets/kitchen-stone-wall.jpg";
+import kitchenBar from "@/assets/kitchen-bar.jpg";
+import kitchenStorage from "@/assets/kitchen-storage.jpg";
 import kitchen1 from "@/assets/kitchen-1.jpg";
 import kitchen2 from "@/assets/kitchen-2.jpg";
-import qualityDetail from "@/assets/quality-detail.jpg";
 
 const Portfolio = () => {
   const projects = [
-    { image: kitchen1, title: "Cuisine moderne - Lévis" },
-    { image: kitchen2, title: "Rénovation complète - Québec" },
-    { image: qualityDetail, title: "Finition Premium - Saguenay" },
-    { image: kitchen1, title: "Design contemporain - Beauport" },
-    { image: kitchen2, title: "Cuisine familiale - Charlesbourg" },
-    { image: qualityDetail, title: "Style scandinave - Sainte-Foy" }
+    { image: kitchenWhite, title: "Cuisine moderne - Lévis" },
+    { image: kitchenStoneWall, title: "Rénovation complète - Québec" },
+    { image: kitchenBar, title: "Finition Premium - Saguenay" },
+    { image: kitchenStorage, title: "Design contemporain - Beauport" },
+    { image: kitchen1, title: "Cuisine familiale - Charlesbourg" },
+    { image: kitchen2, title: "Style scandinave - Sainte-Foy" }
   ];
 
   return (

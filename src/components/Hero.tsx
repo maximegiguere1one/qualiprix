@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star, Shield, Truck, Wrench } from "lucide-react";
-import heroImage from "@/assets/hero-kitchen.jpg";
+import heroImage from "@/assets/kitchen-island.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
