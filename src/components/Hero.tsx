@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
 
           {/* CTA */}
-          <Button size="lg" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-[fade-in_0.5s_ease-out,pulse_2s_ease-in-out_infinite] inline-flex items-center gap-3">
+          <Button size="lg" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in inline-flex items-center gap-3">
             Obtenez votre soumission gratuite
             <ArrowRight className="w-5 h-5" />
           </Button>
