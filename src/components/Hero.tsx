@@ -37,7 +37,7 @@ const Hero = () => {
               <Star className="w-8 h-8" />
               <span className="text-xs md:text-sm font-semibold text-center">+1000 projets accompagnés au Québec</span>
             </div>
-            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+            <div className="flex flex-col items-center justify-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
               <img src={garantie30Logo} alt="Garantie 30 ans" className="h-20 w-auto object-contain mx-auto" />
             </div>
             <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
