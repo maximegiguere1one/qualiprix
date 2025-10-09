@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: "Est-ce que vous offrez le service d'installation ?",
-      answer: "Oui ! Nous offrons un service d'installation professionnel complet. Notre équipe s'occupe de tout : mesurage, préparation, livraison et installation. Vous n'avez qu'à profiter de votre nouvelle cuisine."
+      answer: "Non mais on peut vous référer à nos installateurs partenaires, qui sont certifiés qualiprix, ils ont été choisis à cause de leur rigueur et souci du service client."
     },
     {
       question: "Puis-je voir un rendu 3D avant l'achat ?",
