@@ -31,16 +31,16 @@ const WhyUs = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden animate-gradient-shift">
+    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden animate-gradient-shift">
       {/* Corner decorative elements */}
       <div className="blob-decoration w-72 h-72 bg-primary/5 top-10 left-0" style={{ animationDelay: '1.5s' }} />
       <div className="blob-decoration w-80 h-80 bg-secondary/5 bottom-10 right-0" style={{ animationDelay: '4.5s' }} />
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-12">
             {reasons.map((reason, index) => (
               <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem]">
-                <CardContent className="p-8 text-center">
+                <CardContent className="p-6 md:p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
                     <reason.icon className="w-8 h-8 text-secondary" />
                   </div>

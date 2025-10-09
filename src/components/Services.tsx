@@ -26,7 +26,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-gradient-animated relative overflow-hidden">
+    <section id="services" className="py-12 md:py-20 lg:py-24 bg-gradient-animated relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="blob-decoration w-96 h-96 bg-primary/5 top-20 left-10" style={{ animationDelay: '0s' }} />
       <div className="blob-decoration w-80 h-80 bg-secondary/5 bottom-20 right-10" style={{ animationDelay: '3s' }} />
@@ -40,10 +40,10 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
           {services.map((service, index) => (
             <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem]">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-6 md:p-8 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary/10 flex items-center justify-center">
                   <service.icon className="w-10 h-10 text-secondary" />
                 </div>

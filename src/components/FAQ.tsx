@@ -32,7 +32,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-radial relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-gradient-radial relative overflow-hidden">
       {/* Breathing decorative blobs */}
       <div className="blob-decoration w-[500px] h-[500px] bg-primary/5 top-10 right-20" style={{ animationDelay: '1s' }} />
       <div className="blob-decoration w-96 h-96 bg-secondary/5 bottom-32 left-20" style={{ animationDelay: '4s' }} />
@@ -51,12 +51,12 @@ const FAQ = () => {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className={`border border-border rounded-[1.25rem] px-6 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-280 ease-out ${
+                className={`border border-border rounded-[1.25rem] px-4 md:px-6 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-280 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
                 style={{ transitionDelay: `${150 + index * 60}ms` }}

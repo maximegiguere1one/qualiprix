@@ -19,7 +19,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-background">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-background">
       <div className="container px-4 mx-auto">
         <div 
           className={`text-center mb-16 transition-all duration-320 ease-out ${
@@ -38,7 +38,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
           {projects.map((project, index) => (
             <div 
               key={index} 

@@ -104,7 +104,7 @@ const Collections = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="collections" className="py-24 bg-muted/30">
+    <section ref={sectionRef} id="collections" className="py-12 md:py-20 lg:py-24 bg-muted/30">
       <div className="container px-4 mx-auto">
         <div 
           className={`text-center mb-16 transition-all duration-320 ease-out ${
@@ -123,7 +123,7 @@ const Collections = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {collections.map((collection, index) => (
             <Card 
               key={index} 
@@ -132,7 +132,7 @@ const Collections = () => {
               }`}
               style={{ transitionDelay: `${150 + index * 70}ms` }}
             >
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">{collection.name}</h3>
                 <ul className="space-y-3 mb-6">
                   {collection.benefits.map((benefit, idx) => (
@@ -156,7 +156,7 @@ const Collections = () => {
       </div>
 
       <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="max-w-4xl">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl">
               {selectedCollection !== null && collections[selectedCollection].name}
@@ -170,14 +170,14 @@ const Collections = () => {
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - Photo ${idx + 1}`}
-                      className="w-full h-[500px] object-cover rounded-lg"
+                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-lg"
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="h-10 w-10 md:h-12 md:w-12" />
+            <CarouselNext className="h-10 w-10 md:h-12 md:w-12" />
           </Carousel>
         </DialogContent>
       </Dialog>

@@ -37,7 +37,7 @@ const Contact = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 bg-gradient-animated relative overflow-hidden">
+    <section ref={sectionRef} id="contact" className="py-12 md:py-20 lg:py-24 bg-gradient-animated relative overflow-hidden">
       {/* Mesh gradient decoration */}
       <div className="absolute inset-0 opacity-40">
         <div className="blob-decoration w-[600px] h-[600px] bg-primary/10 top-0 left-0" style={{ animationDelay: '2s' }} />
@@ -61,7 +61,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="shadow-xl">
@@ -71,8 +71,8 @@ const Contact = () => {
                   Remplissez le formulaire ci-dessous et nous vous contacterons rapidement
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <CardContent className="p-4 md:p-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   <div className="relative">
                     <label 
                       htmlFor="name" 

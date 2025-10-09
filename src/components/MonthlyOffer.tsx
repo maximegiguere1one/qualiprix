@@ -10,7 +10,7 @@ const MonthlyOffer = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
       {/* Decorative elements with animation */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
@@ -30,7 +30,7 @@ const MonthlyOffer = () => {
           </div>
 
           <h2 
-            className={`text-4xl md:text-5xl font-bold text-primary-foreground mb-6 transition-all duration-320 ease-out ${
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground mb-4 md:mb-6 transition-all duration-320 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
             style={{ transitionDelay: '80ms' }}
@@ -39,7 +39,7 @@ const MonthlyOffer = () => {
           </h2>
           
           <p 
-            className={`text-xl text-primary-foreground/90 mb-8 font-body transition-all duration-320 ease-out ${
+            className={`text-lg md:text-xl text-primary-foreground/90 mb-6 md:mb-8 font-body transition-all duration-320 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
             style={{ transitionDelay: '160ms' }}

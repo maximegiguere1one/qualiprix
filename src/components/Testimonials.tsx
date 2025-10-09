@@ -46,7 +46,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
       {/* Decorative elements with animation */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
@@ -72,7 +72,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
@@ -81,7 +81,7 @@ const Testimonials = () => {
               }`}
               style={{ transitionDelay: `${150 + index * 80}ms` }}
             >
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-secondary text-secondary transition-all duration-200 ease-out group-hover:scale-110" />
