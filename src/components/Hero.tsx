@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, Truck, ArrowRight, Phone } from "lucide-react";
+import { Star, Truck, ArrowRight, Phone, ChefHat } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import garantie30Logo from "@/assets/garantie-30-ans.png";
 import expertIcon from "@/assets/expert-icon.png";
@@ -35,7 +35,7 @@ const Hero = () => {
           {/* Trust Badges */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto">
             <div className="flex flex-col items-center justify-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Star className="w-12 h-12" />
+              <ChefHat className="w-12 h-12" />
               <span className="text-xs md:text-sm font-semibold text-center">+1000 projets accompagnés au Québec</span>
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
