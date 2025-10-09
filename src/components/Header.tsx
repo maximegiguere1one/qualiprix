@@ -56,19 +56,19 @@ const Header = () => {
             />
           </button>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {menuItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground font-bold text-lg hover:text-primary transition-colors link-underline focus-ring"
+                className="text-foreground font-bold text-base lg:text-lg hover:text-primary transition-colors link-underline focus-ring"
               >
                 {item.label}
               </button>
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <Button onClick={scrollToContact}>
               Soumission gratuite
             </Button>
@@ -76,14 +76,14 @@ const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground focus-ring rounded-lg"
+            className="md:hidden p-2 text-foreground focus-ring rounded-lg"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <nav className="lg:hidden py-6 border-t border-border animate-scale-in">
+          <nav className="md:hidden py-6 border-t border-border animate-scale-in">
             <div className="flex flex-col gap-4">
               {menuItems.map((item, index) => (
                 <button
