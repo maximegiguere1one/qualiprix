@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Star, Truck, Briefcase, ArrowRight, Phone } from "lucide-react";
+import { Star, Truck, ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import garantie30Logo from "@/assets/garantie-30-ans.png";
+import expertIcon from "@/assets/expert-icon.png";
 const Hero = () => {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
@@ -46,7 +47,7 @@ const Hero = () => {
               <span className="text-xs md:text-sm font-semibold text-center">Livraison 10-15 jours</span>
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Briefcase className="w-12 h-12" />
+              <img src={expertIcon} alt="Expert professionnel" className="h-20 w-auto object-contain mx-auto" />
               <span className="text-xs md:text-sm font-semibold text-center">25+ ans d'expérience</span>
             </div>
           </div>
