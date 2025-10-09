@@ -60,7 +60,7 @@ const Hero = () => {
             Du haut de gamme, à prix d'entrepôt, livré en 15 jours
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/95 mb-12 md:mb-20 lg:mb-32 animate-fade-in font-body leading-relaxed">
-            Fabriquée au Québec, garantie 30 ans, design moderne et qualité incomparable.
+            Assemblé au Québec, garantie 30 ans, design moderne et qualité incomparable.
           </p>
 
           {/* CTA */}
