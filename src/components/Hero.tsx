@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import { useEffect, useRef, useState } from "react";
-import { useScrollProgress } from "@/hooks/useScrollProgress";
+import { useParallaxLayers } from "@/hooks/useParallaxLayers";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const parallaxOffset = useScrollProgress(0.06);
+  const [imageOffset, overlayOffset] = useParallaxLayers([0.06, 0.04]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,14 +32,19 @@ const Hero = () => {
     });
   };
   return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay and Parallax */}
+      {/* Background Image with Multi-layer Parallax */}
       <div 
         className="absolute inset-0 z-0"
-        style={{ transform: `translateY(${parallaxOffset * 100}%)` }}
+        style={{ transform: `translateY(${imageOffset * 100}%)` }}
       >
         <img src={heroImage} alt="Cuisine moderne haut de gamme avec finition lumineuse" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/20" />
       </div>
+      
+      {/* Separate overlay with different parallax speed */}
+      <div 
+        className="absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-black/30 to-black/20"
+        style={{ transform: `translateY(${overlayOffset * 100}%)` }}
+      />
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-20 mx-auto">

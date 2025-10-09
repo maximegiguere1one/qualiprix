@@ -32,7 +32,10 @@ const FAQ = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-background">
+    <section ref={sectionRef} className="py-24 bg-gradient-radial relative overflow-hidden">
+      {/* Breathing decorative blobs */}
+      <div className="blob-decoration w-[500px] h-[500px] bg-primary/5 top-10 right-20" style={{ animationDelay: '1s' }} />
+      <div className="blob-decoration w-96 h-96 bg-secondary/5 bottom-32 left-20" style={{ animationDelay: '4s' }} />
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto">
           <div 

@@ -11,10 +11,11 @@ const MonthlyOffer = () => {
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
-      {/* Decorative elements */}
+      {/* Decorative elements with animation */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white/50 rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
       </div>
 
       <div className="container px-4 mx-auto relative z-10">

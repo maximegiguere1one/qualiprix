@@ -26,7 +26,10 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-24 bg-gradient-animated relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="blob-decoration w-96 h-96 bg-primary/5 top-20 left-10" style={{ animationDelay: '0s' }} />
+      <div className="blob-decoration w-80 h-80 bg-secondary/5 bottom-20 right-10" style={{ animationDelay: '3s' }} />
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">

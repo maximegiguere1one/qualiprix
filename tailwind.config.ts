@@ -149,6 +149,35 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "gradient-shift": {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+        "blob-float": {
+          "0%, 100%": {
+            transform: "scale(1) translateY(0)",
+            opacity: "0.1",
+          },
+          "50%": {
+            transform: "scale(1.05) translateY(-10px)",
+            opacity: "0.15",
+          },
+        },
+        "mesh-move": {
+          "0%, 100%": {
+            transform: "translate(0, 0)",
+          },
+          "33%": {
+            transform: "translate(10px, -10px)",
+          },
+          "66%": {
+            transform: "translate(-10px, 10px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 220ms cubic-bezier(0.2, 0.8, 0.2, 1)",
@@ -159,6 +188,9 @@ export default {
         "slide-down": "slide-down 240ms cubic-bezier(0.2, 0.8, 0.2, 1)",
         "scale-in": "scale-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1)",
         "menu-stagger": "menu-stagger 160ms ease-out",
+        "gradient-shift": "gradient-shift 20s ease-in-out infinite",
+        "blob-float": "blob-float 8s ease-in-out infinite",
+        "mesh-move": "mesh-move 15s ease-in-out infinite",
       },
     },
   },

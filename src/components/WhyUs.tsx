@@ -31,7 +31,10 @@ const WhyUs = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden animate-gradient-shift">
+      {/* Corner decorative elements */}
+      <div className="blob-decoration w-72 h-72 bg-primary/5 top-10 left-0" style={{ animationDelay: '1.5s' }} />
+      <div className="blob-decoration w-80 h-80 bg-secondary/5 bottom-10 right-0" style={{ animationDelay: '4.5s' }} />
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
