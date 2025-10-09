@@ -19,7 +19,18 @@ const Collections = () => {
         "Durabilité supérieure",
         "Couleurs exclusives à tarif préférentiel"
       ],
-      images: ["/src/assets/kitchen-1.jpg", "/src/assets/kitchen-white.jpg", "/src/assets/kitchen-island.jpg"]
+      images: [
+        "/src/assets/collection-prestige-1.jpg",
+        "/src/assets/collection-prestige-2.jpg", 
+        "/src/assets/collection-prestige-3.jpg",
+        "/src/assets/collection-prestige-4.jpg",
+        "/src/assets/collection-prestige-5.jpg",
+        "/src/assets/collection-prestige-6.jpg",
+        "/src/assets/collection-prestige-7.jpg",
+        "/src/assets/collection-prestige-8.jpg",
+        "/src/assets/collection-prestige-9.jpg",
+        "/src/assets/collection-prestige-10.jpg"
+      ]
     },
     {
       name: "Série Plus Essentiel",
