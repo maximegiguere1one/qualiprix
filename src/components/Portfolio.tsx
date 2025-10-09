@@ -43,7 +43,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className={`relative overflow-hidden rounded-[1.25rem] shadow-[var(--shadow-soft)] transition-all duration-280 ease-out aspect-[4/3] ${
+              className={`group relative overflow-hidden rounded-[1.25rem] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-280 ease-out aspect-[4/3] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
               style={{ transitionDelay: `${150 + index * 70}ms` }}
@@ -51,7 +51,7 @@ const Portfolio = () => {
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </div>
           ))}
