@@ -39,7 +39,13 @@ const Collections = () => {
         "Performance accessible",
         "Parfait premier achat"
       ],
-      images: ["/src/assets/kitchen-2.jpg", "/src/assets/kitchen-storage.jpg"]
+      images: [
+        "/src/assets/serie-essentiel-1.jpg",
+        "/src/assets/serie-essentiel-2.jpg",
+        "/src/assets/serie-essentiel-3.jpg",
+        "/src/assets/serie-essentiel-4.jpg",
+        "/src/assets/serie-essentiel-5.jpg"
+      ]
     },
     {
       name: "Série Plus Shaker",
