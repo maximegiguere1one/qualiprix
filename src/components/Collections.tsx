@@ -54,7 +54,13 @@ const Collections = () => {
         "Lignes droites et épurées",
         "Chaleur et modernité"
       ],
-      images: ["/src/assets/kitchen-bar.jpg", "/src/assets/kitchen-white.jpg"]
+      images: [
+        "/src/assets/serie-shaker-1.jpg",
+        "/src/assets/serie-shaker-2.jpg",
+        "/src/assets/serie-shaker-3.jpg",
+        "/src/assets/serie-shaker-4.jpg",
+        "/src/assets/serie-shaker-5.jpg"
+      ]
     },
     {
       name: "Série Plus Porte Premium",
