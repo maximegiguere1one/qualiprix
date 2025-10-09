@@ -28,7 +28,7 @@ const Mission = () => {
             }`}
             style={{ transitionDelay: '80ms' }}
           >
-            Chez <span className="font-bold text-primary">Armoire Qualiprix</span>, on croit que tout Québécois mérite une cuisine dont il peut être fier — sans payer le prix du luxe.
+            Chez <span className="font-bold text-white">Armoire Qualiprix</span>, on croit que tout Québécois mérite une cuisine dont il peut être fier — sans payer le prix du luxe.
           </p>
           <p 
             className={`text-lg text-white/90 font-body leading-relaxed mb-8 transition-all duration-320 ease-out ${
