@@ -52,7 +52,7 @@ const Hero = () => {
           {/* Phone Badge */}
           
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 animate-fade-in leading-[1.1] uppercase [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%),_0_4px_12px_rgb(0_0_0_/_30%)]">
-            Du haut de gamme, à prix d'entrepôt, livré en 15 jours.
+            La qualité que vous méritez, au prix que vous pouvez.
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/95 mb-12 animate-fade-in font-body leading-relaxed">
             Fabriquée au Québec, garantie 30 ans, design moderne et qualité incomparable.
