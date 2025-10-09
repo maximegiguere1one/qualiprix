@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,10 +45,15 @@ const Header = () => {
         }`}>
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold focus-ring"
+            className="focus-ring"
           >
-            <span className="text-primary">ARMOIRE</span>{" "}
-            <span className="text-secondary">QUALIPRIX</span>
+            <img 
+              src={logo} 
+              alt="Logo BOUM" 
+              className={`transition-all duration-300 ease-out ${
+                isScrolled ? 'h-12' : 'h-16'
+              }`}
+            />
           </button>
 
           <nav className="hidden lg:flex items-center gap-8">
