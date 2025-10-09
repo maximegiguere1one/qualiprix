@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import kitchenWhite from "@/assets/kitchen-white.jpg";
 import kitchenStoneWall from "@/assets/kitchen-stone-wall.jpg";
 import kitchenBar from "@/assets/kitchen-bar.jpg";
@@ -55,12 +54,6 @@ const Portfolio = () => {
               />
             </div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button variant="outline" size="lg">
-            Voir la galerie complète
-          </Button>
         </div>
       </div>
     </section>
