@@ -1,4 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -11,9 +12,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-6 mb-6">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              ARMOIRE <span className="text-secondary">QUALIPRIX</span>
-            </h3>
+            <img 
+              src={logo} 
+              alt="Logo Armoire Qualiprix" 
+              className="h-16 mb-4"
+            />
             <p className="text-primary-foreground/80 font-body leading-relaxed">
               Fier partenaire de vos cuisines québécoises
             </p>
