@@ -24,6 +24,24 @@ const Testimonials = () => {
       location: "Québec",
       text: "produits de qualité quoi demander de mieux!",
       rating: 5
+    },
+    {
+      name: "Martin Beaudreault",
+      location: "Québec",
+      text: "Un gars avec une super expérience dans les armoires, appelez le, super service",
+      rating: 5
+    },
+    {
+      name: "Burnart pro",
+      location: "Québec",
+      text: "Pour des armoires de qualité et un service super, merci 👍",
+      rating: 5
+    },
+    {
+      name: "Chantale Pion",
+      location: "Québec",
+      text: "Bon service belle qualité et prix raisonnable",
+      rating: 5
     }
   ];
 
