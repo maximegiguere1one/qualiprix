@@ -93,7 +93,13 @@ const Collections = () => {
         "Faciles d'entretien",
         "Look sophistiqué"
       ],
-      images: ["/src/assets/quality-detail.jpg", "/src/assets/kitchen-bar.jpg"]
+      images: [
+        "/src/assets/quartz-beige-clair.jpg",
+        "/src/assets/quartz-athabaska.jpg",
+        "/src/assets/quartz-bottocinio.jpg",
+        "/src/assets/quartz-blanc-texture.jpg",
+        "/src/assets/quartz-vintage-black.jpg"
+      ]
     }
   ];
 
