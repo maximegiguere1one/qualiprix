@@ -1,8 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Collections = () => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
+  
   const collections = [
     {
       name: "Collection Prestige",
@@ -56,26 +59,40 @@ const Collections = () => {
   ];
 
   return (
-    <section id="collections" className="py-24 bg-muted/30">
+    <section ref={sectionRef} id="collections" className="py-24 bg-muted/30">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
+        <div 
+          className={`text-center mb-16 transition-all duration-320 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Nos collections
           </h2>
-          <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+          <p 
+            className={`text-xl text-muted-foreground font-body max-w-3xl mx-auto transition-all duration-320 ease-out delay-75 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
+          >
             Chaque collection est pensée pour répondre à vos besoins et votre style de vie
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
           {collections.map((collection, index) => (
-            <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem] overflow-hidden">
+            <Card 
+              key={index} 
+              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group hover-lift cursor-pointer transition-all duration-280 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              }`}
+              style={{ transitionDelay: `${150 + index * 70}ms` }}
+            >
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">{collection.name}</h3>
                 <ul className="space-y-3 mb-6">
                   {collection.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 transition-all duration-200 ease-out group-hover:scale-110" />
                       <span className="text-muted-foreground font-body">{benefit}</span>
                     </li>
                   ))}

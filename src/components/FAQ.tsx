@@ -4,8 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FAQ = () => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
   const faqs = [
     {
       question: "Combien coûte une cuisine sur mesure ?",
@@ -30,10 +32,14 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section ref={sectionRef} className="py-24 bg-background">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
+          <div 
+            className={`text-center mb-16 transition-all duration-320 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Questions fréquentes
             </h2>
@@ -47,9 +53,12 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border border-border rounded-[1.25rem] px-6 shadow-[var(--shadow-soft)]"
+                className={`border border-border rounded-[1.25rem] px-6 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-280 ease-out ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                }`}
+                style={{ transitionDelay: `${150 + index * 60}ms` }}
               >
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-secondary">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-secondary focus-ring">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground font-body leading-relaxed pt-2">

@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold ring-offset-background transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98]",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-secondary rounded-[1.25rem] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] duration-300",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-[1.25rem]",
-        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-[1.25rem]",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-[1.25rem] shadow-[var(--shadow-soft)]",
+        default: "bg-primary text-primary-foreground hover:bg-secondary hover:scale-[1.02] rounded-[1.25rem] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)]",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:scale-[1.02] rounded-[1.25rem]",
+        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] rounded-[1.25rem]",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:scale-[1.02] rounded-[1.25rem] shadow-[var(--shadow-soft)]",
         ghost: "hover:bg-muted hover:text-foreground rounded-[1.25rem]",
         link: "text-primary underline-offset-4 hover:underline",
       },

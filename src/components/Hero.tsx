@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import { useEffect, useRef, useState } from "react";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const parallaxOffset = useScrollProgress(0.06);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,8 +32,11 @@ const Hero = () => {
     });
   };
   return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Overlay and Parallax */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{ transform: `translateY(${parallaxOffset * 100}%)` }}
+      >
         <img src={heroImage} alt="Cuisine moderne haut de gamme avec finition lumineuse" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/20" />
       </div>
@@ -54,7 +59,13 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <Button size="lg" variant="outline" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            onClick={scrollToContact} 
+            className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle"
+            style={{ animationDelay: '200ms', opacity: 0, animationFillMode: 'forwards' }}
+          >
             Obtenez votre soumission gratuite
             <ArrowRight className="w-5 h-5" />
           </Button>

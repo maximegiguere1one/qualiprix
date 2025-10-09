@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
     { label: "Produits", href: "#collections" },
@@ -12,6 +13,15 @@ const Header = () => {
     { label: "À propos", href: "#about" },
     { label: "Contact", href: "#contact" }
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -25,12 +35,16 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-soft)]">
+    <header className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-soft)] transition-all duration-300 ease-out ${
+      isScrolled ? 'h-16' : 'h-20'
+    }`}>
       <div className="container px-4 mx-auto">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between transition-all duration-300 ease-out ${
+          isScrolled ? 'h-16' : 'h-20'
+        }`}>
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold"
+            className="text-2xl font-bold focus-ring"
           >
             <span className="text-primary">ARMOIRE</span>{" "}
             <span className="text-secondary">QUALIPRIX</span>
@@ -41,7 +55,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-secondary font-semibold transition-colors duration-300"
+                className="text-foreground font-semibold link-underline focus-ring"
               >
                 {item.label}
               </button>
@@ -56,25 +70,38 @@ const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground focus-ring rounded-lg"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <nav className="lg:hidden py-6 border-t border-border">
+          <nav className="lg:hidden py-6 border-t border-border animate-scale-in">
             <div className="flex flex-col gap-4">
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-secondary font-semibold transition-colors text-left py-2"
+                  className="text-foreground font-semibold text-left py-2 link-underline focus-ring animate-menu-stagger"
+                  style={{ 
+                    animationDelay: `${index * 60}ms`,
+                    opacity: 0,
+                    animationFillMode: 'forwards'
+                  }}
                 >
                   {item.label}
                 </button>
               ))}
-              <Button onClick={scrollToContact} className="mt-4">
+              <Button 
+                onClick={scrollToContact} 
+                className="mt-4 animate-menu-stagger"
+                style={{ 
+                  animationDelay: `${menuItems.length * 60}ms`,
+                  opacity: 0,
+                  animationFillMode: 'forwards'
+                }}
+              >
                 Soumission gratuite
               </Button>
             </div>

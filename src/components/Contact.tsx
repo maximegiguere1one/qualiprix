@@ -5,9 +5,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { ref: sectionRef, isVisible } = useScrollReveal();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,13 +37,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section ref={sectionRef} id="contact" className="py-24 bg-background">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
+        <div 
+          className={`text-center mb-16 transition-all duration-320 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Demandez votre soumission gratuite
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p 
+            className={`text-xl text-muted-foreground transition-all duration-320 ease-out delay-75 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
+          >
             Un conseiller vous rappelle sous 24h, sans obligation
           </p>
         </div>
@@ -58,8 +68,15 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <div className="relative">
+                    <label 
+                      htmlFor="name" 
+                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
+                        formData.name 
+                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                          : 'top-3 text-sm text-muted-foreground'
+                      }`}
+                    >
                       Nom complet *
                     </label>
                     <Input
@@ -67,13 +84,21 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Jean Tremblay"
+                      placeholder={formData.name ? "" : "Jean Tremblay"}
                       required
+                      className="pt-2 focus-ring"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <div className="relative">
+                    <label 
+                      htmlFor="email" 
+                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
+                        formData.email 
+                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                          : 'top-3 text-sm text-muted-foreground'
+                      }`}
+                    >
                       Courriel *
                     </label>
                     <Input
@@ -82,13 +107,21 @@ const Contact = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="jean.tremblay@exemple.com"
+                      placeholder={formData.email ? "" : "jean.tremblay@exemple.com"}
                       required
+                      className="pt-2 focus-ring"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  <div className="relative">
+                    <label 
+                      htmlFor="phone" 
+                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
+                        formData.phone 
+                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                          : 'top-3 text-sm text-muted-foreground'
+                      }`}
+                    >
                       Téléphone *
                     </label>
                     <Input
@@ -97,13 +130,21 @@ const Contact = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(514) 555-1234"
+                      placeholder={formData.phone ? "" : "(514) 555-1234"}
                       required
+                      className="pt-2 focus-ring"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="city" className="block text-sm font-medium mb-2">
+                  <div className="relative">
+                    <label 
+                      htmlFor="city" 
+                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
+                        formData.city 
+                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                          : 'top-3 text-sm text-muted-foreground'
+                      }`}
+                    >
                       Ville des travaux *
                     </label>
                     <Input
@@ -112,8 +153,9 @@ const Contact = () => {
                       type="text"
                       value={formData.city}
                       onChange={handleChange}
-                      placeholder="Québec"
+                      placeholder={formData.city ? "" : "Québec"}
                       required
+                      className="pt-2 focus-ring"
                     />
                   </div>
 
@@ -128,6 +170,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Décrivez votre projet de cuisine..."
                       rows={5}
+                      className="focus-ring"
                     />
                   </div>
 

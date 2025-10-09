@@ -72,17 +72,21 @@ export default {
         "accordion-down": {
           from: {
             height: "0",
+            opacity: "0",
           },
           to: {
             height: "var(--radix-accordion-content-height)",
+            opacity: "1",
           },
         },
         "accordion-up": {
           from: {
             height: "var(--radix-accordion-content-height)",
+            opacity: "1",
           },
           to: {
             height: "0",
+            opacity: "0",
           },
         },
         "fade-in": {
@@ -95,11 +99,66 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "fade-in-subtle": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "slide-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(8px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "slide-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-6px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "scale-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.98)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "menu-stagger": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-4px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
+        "accordion-down": "accordion-down 220ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "accordion-up": "accordion-up 220ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "fade-in": "fade-in 320ms ease-out",
+        "fade-in-subtle": "fade-in-subtle 280ms ease-out",
+        "slide-up": "slide-up 280ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "slide-down": "slide-down 240ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "scale-in": "scale-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "menu-stagger": "menu-stagger 160ms ease-out",
       },
     },
   },

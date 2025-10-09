@@ -26,7 +26,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("collections")}
-                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                  className="text-primary-foreground/80 font-body link-underline focus-ring"
                 >
                   Produits
                 </button>
@@ -34,7 +34,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                  className="text-primary-foreground/80 font-body link-underline focus-ring"
                 >
                   Services
                 </button>
@@ -42,7 +42,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                  className="text-primary-foreground/80 font-body link-underline focus-ring"
                 >
                   Contact
                 </button>
@@ -56,14 +56,14 @@ const Footer = () => {
             <div className="flex gap-4">
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110 focus-ring"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110 focus-ring"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
