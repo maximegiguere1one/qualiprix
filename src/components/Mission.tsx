@@ -20,7 +20,7 @@ const Mission = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
-            À propos • Notre mission
+            Notre mission
           </h2>
           <p 
             className={`text-xl text-white font-body leading-relaxed mb-8 transition-all duration-320 ease-out ${
