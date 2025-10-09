@@ -2,9 +2,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState } from "react";
 
 const Collections = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
+  const [selectedCollection, setSelectedCollection] = useState<number | null>(null);
   
   const collections = [
     {
@@ -14,7 +18,8 @@ const Collections = () => {
         "Quincaillerie silencieuse",
         "Durabilité supérieure",
         "Couleurs exclusives à tarif préférentiel"
-      ]
+      ],
+      images: ["/src/assets/kitchen-1.jpg", "/src/assets/kitchen-white.jpg", "/src/assets/kitchen-island.jpg"]
     },
     {
       name: "Série Plus Essentiel",
@@ -22,7 +27,8 @@ const Collections = () => {
         "Design sobre",
         "Performance accessible",
         "Parfait premier achat"
-      ]
+      ],
+      images: ["/src/assets/kitchen-2.jpg", "/src/assets/kitchen-storage.jpg"]
     },
     {
       name: "Série Plus Shaker",
@@ -30,7 +36,8 @@ const Collections = () => {
         "Style classique revisité",
         "Lignes droites et épurées",
         "Chaleur et modernité"
-      ]
+      ],
+      images: ["/src/assets/kitchen-bar.jpg", "/src/assets/kitchen-white.jpg"]
     },
     {
       name: "Série Plus Porte Premium",
@@ -38,7 +45,8 @@ const Collections = () => {
         "Élégance intemporelle",
         "Lignes épurées",
         "Finitions mates"
-      ]
+      ],
+      images: ["/src/assets/kitchen-stone-wall.jpg", "/src/assets/kitchen-island.jpg"]
     },
     {
       name: "Série Élite",
@@ -46,7 +54,8 @@ const Collections = () => {
         "Luxe contemporain",
         "Sur mesure",
         "Fabrication locale"
-      ]
+      ],
+      images: ["/src/assets/kitchen-1.jpg", "/src/assets/kitchen-storage.jpg", "/src/assets/hero-kitchen.jpg"]
     },
     {
       name: "Quartz Standard / Premium",
@@ -54,7 +63,8 @@ const Collections = () => {
         "Plans de travail résistants",
         "Faciles d'entretien",
         "Look sophistiqué"
-      ]
+      ],
+      images: ["/src/assets/quality-detail.jpg", "/src/assets/kitchen-bar.jpg"]
     }
   ];
 
@@ -97,7 +107,11 @@ const Collections = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="ghost" className="w-full">
+                <Button 
+                  variant="ghost" 
+                  className="w-full"
+                  onClick={() => setSelectedCollection(index)}
+                >
                   Voir la collection
                 </Button>
               </CardContent>
@@ -105,6 +119,33 @@ const Collections = () => {
           ))}
         </div>
       </div>
+
+      <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">
+              {selectedCollection !== null && collections[selectedCollection].name}
+            </DialogTitle>
+          </DialogHeader>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
+                <CarouselItem key={idx}>
+                  <div className="p-1">
+                    <img 
+                      src={image} 
+                      alt={`${collections[selectedCollection].name} - Photo ${idx + 1}`}
+                      className="w-full h-[500px] object-cover rounded-lg"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
