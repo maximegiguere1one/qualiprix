@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, Shield, Truck, Wrench, ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import { useEffect, useRef, useState } from "react";
 
@@ -56,26 +56,6 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-primary-foreground/95 mb-12 animate-fade-in font-body leading-relaxed">
             Fabriquée au Québec, garantie 30 ans, design moderne et qualité incomparable.
           </p>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Star className="w-8 h-8" />
-              
-            </div>
-            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Shield className="w-8 h-8" />
-              <span className="text-xs md:text-sm font-semibold text-center">Garantie 30 ans</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Truck className="w-8 h-8" />
-              <span className="text-xs md:text-sm font-semibold text-center">Livraison 10-15 jours</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <Wrench className="w-8 h-8" />
-              <span className="text-xs md:text-sm font-semibold text-center">25+ ans d'expérience</span>
-            </div>
-          </div>
 
           {/* CTA */}
           <Button size="lg" variant="outline" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white">
