@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Cuisine moderne haut de gamme avec finition lumineuse" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/20" />
       </div>
 
       {/* Content */}
