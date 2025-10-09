@@ -28,18 +28,25 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-muted/30">
-      <div className="container px-4 mx-auto">
+    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
+      {/* Decorative elements with animation */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white/50 rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
+      </div>
+
+      <div className="container px-4 mx-auto relative z-10">
         <div 
           className={`text-center mb-16 transition-all duration-320 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Témoignages clients
           </h2>
           <p 
-            className={`text-xl text-muted-foreground font-body transition-all duration-320 ease-out delay-75 ${
+            className={`text-xl text-primary-foreground/90 font-body transition-all duration-320 ease-out delay-75 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
