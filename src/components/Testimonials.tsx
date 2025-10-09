@@ -2,9 +2,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useState, useEffect } from "react";
 
 const Testimonials = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const testimonials = [
     {
@@ -73,7 +85,7 @@ const Testimonials = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
+          {(isMobile ? testimonials.slice(0, 3) : testimonials).map((testimonial, index) => (
             <Card 
               key={index} 
               className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] group hover-lift cursor-pointer transition-all duration-280 ease-out ${
