@@ -1,7 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Star, Shield, Truck, Wrench, ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
+import { useEffect, useRef, useState } from "react";
+
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
       behavior: "smooth"
@@ -16,7 +38,12 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-20 mx-auto">
-        <div className="max-w-5xl mx-auto text-center">
+        <div 
+          ref={contentRef}
+          className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Phone Badge */}
           <a href="tel:5813973587" className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-white/90 backdrop-blur-sm text-primary rounded-full font-semibold hover:bg-white hover:scale-105 transition-all duration-300 animate-fade-in shadow-lg">
             <Phone className="w-5 h-5" />
