@@ -63,7 +63,7 @@ const Hero = () => {
             size="lg" 
             variant="outline" 
             onClick={scrollToContact} 
-            className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle"
+            className="text-base md:text-lg px-8 py-4 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle"
             style={{ animationDelay: '200ms', opacity: 0, animationFillMode: 'forwards' }}
           >
             Obtenez votre soumission gratuite
