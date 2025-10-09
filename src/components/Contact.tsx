@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <section ref={sectionRef} id="contact" className="py-24 bg-gradient-animated relative overflow-hidden">
       {/* Mesh gradient decoration */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <div className="blob-decoration w-[600px] h-[600px] bg-primary/10 top-0 left-0" style={{ animationDelay: '2s' }} />
         <div className="blob-decoration w-[500px] h-[500px] bg-accent/10 bottom-0 right-0" style={{ animationDelay: '5s' }} />
       </div>
