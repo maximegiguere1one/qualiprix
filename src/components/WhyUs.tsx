@@ -41,8 +41,8 @@ const WhyUs = () => {
             {reasons.map((reason, index) => (
               <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem]">
                 <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <reason.icon className="w-8 h-8 text-secondary" />
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[var(--shadow-soft)] backdrop-blur-sm border border-secondary/10">
+                    <reason.icon className="w-10 h-10 text-secondary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{reason.title}</h3>
                   <p className="text-muted-foreground font-body leading-relaxed">{reason.description}</p>
