@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/kitchen-island.jpg";
 import { useEffect, useRef, useState } from "react";
 
@@ -45,10 +45,6 @@ const Hero = () => {
           }`}
         >
           {/* Phone Badge */}
-          <a href="tel:5813973587" className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-white/90 backdrop-blur-sm text-primary rounded-full font-semibold hover:bg-white hover:scale-105 transition-all duration-300 animate-fade-in shadow-lg">
-            <Phone className="w-5 h-5" />
-            <span>581-397-3587</span>
-          </a>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 animate-fade-in leading-[1.1] [text-shadow:_0_2px_10px_rgb(0_0_0_/_20%)]">
             Une cuisine haut de gamme, livrée en 10 jours, au prix d'entrepôt
