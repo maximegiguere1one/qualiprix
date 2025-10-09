@@ -8,21 +8,21 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Chrystelle Laurin",
-      location: "Québec",
-      text: "J'ai fais affaire avec cette compagnie, Service rapide et courtois, a le souci du détail. Proposition de plusieurs designs. Produit de qualité. Je recommande fortement et sans aucun doute !!! Enfin la cuisine de mes rêves à un prix plus que raisonnable.",
-      rating: 5
-    },
-    {
       name: "Nicolas St-Aubin",
       location: "Québec",
       text: "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine merci Armoire Qualiprix !!!",
       rating: 5
     },
     {
-      name: "Diane Boisvert",
+      name: "Jean-Sylvain Bélair",
       location: "Québec",
-      text: "Très belle alternative pour une réfection de cuisine à un prix très intéressant. Approche professionnelle. Soumission rapide.",
+      text: "Super service!! À l'écoute des clients!! Je le recommande fortement",
+      rating: 5
+    },
+    {
+      name: "Fania Daoust",
+      location: "Québec",
+      text: "produits de qualité quoi demander de mieux!",
       rating: 5
     }
   ];
