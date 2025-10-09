@@ -61,7 +61,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground font-semibold link-underline focus-ring"
+                className="text-foreground font-bold text-lg hover:text-primary transition-colors link-underline focus-ring"
               >
                 {item.label}
               </button>
@@ -89,7 +89,7 @@ const Header = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground font-semibold text-left py-2 link-underline focus-ring animate-menu-stagger"
+                  className="text-foreground font-bold text-lg text-left py-2 hover:text-primary transition-colors link-underline focus-ring animate-menu-stagger"
                   style={{ 
                     animationDelay: `${index * 60}ms`,
                     opacity: 0,
