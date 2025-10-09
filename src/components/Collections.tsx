@@ -78,7 +78,13 @@ const Collections = () => {
         "Sur mesure",
         "Fabrication locale"
       ],
-      images: ["/src/assets/kitchen-1.jpg", "/src/assets/kitchen-storage.jpg", "/src/assets/hero-kitchen.jpg"]
+      images: [
+        "/src/assets/serie-elite-1.jpg",
+        "/src/assets/serie-elite-2.jpg",
+        "/src/assets/serie-elite-3.jpg",
+        "/src/assets/serie-elite-4.jpg",
+        "/src/assets/serie-elite-5.jpg"
+      ]
     },
     {
       name: "Quartz Standard / Premium",
