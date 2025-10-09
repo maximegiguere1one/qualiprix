@@ -11,14 +11,17 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Cuisine moderne haut de gamme avec finition lumineuse" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/20" />
       </div>
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-20 mx-auto">
         <div className="max-w-5xl mx-auto text-center">
           {/* Phone Badge */}
-          
+          <a href="tel:5813973587" className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-white/90 backdrop-blur-sm text-primary rounded-full font-semibold hover:bg-white hover:scale-105 transition-all duration-300 animate-fade-in shadow-lg">
+            <Phone className="w-5 h-5" />
+            <span>581-397-3587</span>
+          </a>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 animate-fade-in leading-[1.1] [text-shadow:_0_2px_10px_rgb(0_0_0_/_20%)]">
             Une cuisine haut de gamme, livrée en 10 jours, au prix d'entrepôt
@@ -28,10 +31,27 @@ const Hero = () => {
           </p>
 
           {/* Trust Badges */}
-          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <Star className="w-8 h-8" />
+              
+            </div>
+            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <Shield className="w-8 h-8" />
+              <span className="text-xs md:text-sm font-semibold text-center">Garantie 30 ans</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <Truck className="w-8 h-8" />
+              <span className="text-xs md:text-sm font-semibold text-center">Livraison 10-15 jours</span>
+            </div>
+            <div className="flex flex-col items-center gap-2 text-primary-foreground bg-white/15 backdrop-blur-sm rounded-[1.25rem] p-3 md:p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <Wrench className="w-8 h-8" />
+              <span className="text-xs md:text-sm font-semibold text-center">25+ ans d'expérience</span>
+            </div>
+          </div>
 
           {/* CTA */}
-          <Button size="lg" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in inline-flex items-center gap-3">
+          <Button size="lg" variant="outline" onClick={scrollToContact} className="text-base md:text-lg px-12 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white">
             Obtenez votre soumission gratuite
             <ArrowRight className="w-5 h-5" />
           </Button>
