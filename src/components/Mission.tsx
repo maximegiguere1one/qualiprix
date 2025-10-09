@@ -36,7 +36,7 @@ const Mission = () => {
             }`}
             style={{ transitionDelay: '160ms' }}
           >
-            On allie <span className="font-semibold">qualité de fabrication locale</span>, <span className="font-semibold">prix direct d'usine</span>, et <span className="font-semibold">service haut de gamme</span>.
+            On allie la qualité du locale, avec le prix d'usine, et combiné avec un service haut de gamme.
           </p>
           <p 
             className={`text-base text-white/90 font-body leading-relaxed mb-12 transition-all duration-320 ease-out ${
