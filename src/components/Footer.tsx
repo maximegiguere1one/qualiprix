@@ -6,9 +6,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="bg-primary text-primary-foreground py-8">
       <div className="container px-4 mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-6 mb-6">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
 
         {/* Legal & Quality Badge */}
-        <div className="border-t border-primary-foreground/20 pt-8 pb-6">
+        <div className="border-t border-primary-foreground/20 pt-6 pb-4">
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 px-6 py-3 rounded-full">
               <span className="text-sm font-semibold">🏗️ Matériaux solides – Contreplaqué supérieur</span>
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/70 font-body">
+        <div className="border-t border-primary-foreground/20 pt-4 text-center text-primary-foreground/70 font-body">
           <p>&copy; {new Date().getFullYear()} Armoire Qualiprix. Tous droits réservés.</p>
         </div>
       </div>
