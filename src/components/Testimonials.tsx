@@ -82,7 +82,7 @@ const Testimonials = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="ghost" size="lg">
+          <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-white/90">
             Voir plus d'avis Google
           </Button>
         </div>
