@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: "Est-ce que vous offrez le service d'installation ?",
-      answer: "Non mais on peut vous référer à nos installateurs partenaires, qui sont certifiés qualiprix, ils ont été choisis à cause de leur rigueur et souci du service client."
+      answer: "Malheureusement non, nous n'offrons pas ce service directement. Cependant, nous pouvons vous référer à nos installateurs partenaires, certifiés Qualiprix, qui se démarquent par leur rigueur, leur professionnalisme et leur excellent service à la clientèle. Vous serez entre de très bonnes mains."
     },
     {
       question: "Puis-je voir un rendu 3D avant l'achat ?",
