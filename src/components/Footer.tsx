@@ -65,7 +65,9 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/armoirequaliprix/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110 focus-ring"
                 aria-label="Instagram"
               >
