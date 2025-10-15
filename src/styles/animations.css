@@ -81,6 +81,26 @@
   }
 }
 
+/* Gradient shift (CTA animation) */
+@keyframes gradient-shift {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+/* Pulse glow (Hero badge animation) */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+  }
+}
+
 /* Menu stagger (mobile navigation) */
 @keyframes menu-stagger {
   from {
