@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-8">
       <div className="container px-4 mx-auto">
-        <div className="grid md:grid-cols-4 gap-6 mb-6">
+        <div className="grid md:grid-cols-5 gap-6 mb-6">
           {/* Company Info */}
           <div>
             <img 
@@ -27,28 +27,51 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Navigation</h4>
             <ul className="space-y-2 font-body">
               <li>
-                <button
-                  onClick={() => scrollToSection("collections")}
-                  className="text-primary-foreground/80 font-body link-underline focus-ring"
-                >
-                  Produits
+                <button onClick={() => scrollToSection("collections")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Nos cuisines
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="text-primary-foreground/80 font-body link-underline focus-ring"
-                >
-                  Services
-                </button>
+                <a href="/prix-delais" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Prix & Délais
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="text-primary-foreground/80 font-body link-underline focus-ring"
-                >
+                <a href="/zones-desservies" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Zones desservies
+                </a>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("contact")} className="text-primary-foreground/80 font-body link-underline focus-ring">
                   Contact
                 </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Pages locales */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Nos régions</h4>
+            <ul className="space-y-2 font-body">
+              <li>
+                <a href="/armoires-montreal" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Montréal
+                </a>
+              </li>
+              <li>
+                <a href="/armoires-laval" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Laval
+                </a>
+              </li>
+              <li>
+                <a href="/armoires-rive-nord" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Rive-Nord
+                </a>
+              </li>
+              <li>
+                <a href="/armoires-rive-sud" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Rive-Sud
+                </a>
               </li>
             </ul>
           </div>

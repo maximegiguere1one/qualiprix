@@ -8,10 +8,12 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
-    { label: "Produits", href: "#collections" },
-    { label: "Inspirations", href: "#portfolio" },
-    { label: "Services", href: "#services" },
-    { label: "Mission", href: "#about" },
+    { label: "Nos cuisines", href: "#collections" },
+    { label: "Notre processus", href: "#process" },
+    { label: "Prix & Délais", href: "/prix-delais" },
+    { label: "Zones desservies", href: "/zones-desservies" },
+    { label: "Inspirations", href: "/blog" },
+    { label: "À propos", href: "#about" },
     { label: "Contact", href: "#contact" }
   ];
 
@@ -25,9 +27,13 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    } else {
+      window.location.href = href;
+    }
   };
 
   const scrollToContact = () => {
@@ -70,7 +76,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Button onClick={scrollToContact}>
-              Soumission gratuite
+              Plan gratuit 📞
             </Button>
           </div>
 

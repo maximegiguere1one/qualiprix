@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Collections from "@/components/Collections";
+import Process from "@/components/Process";
 import MonthlyOffer from "@/components/MonthlyOffer";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
@@ -10,6 +11,8 @@ import Mission from "@/components/Mission";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const Index = () => {
   return (
@@ -19,6 +22,7 @@ const Index = () => {
         <Hero />
         <WhyUs />
         <Collections />
+        <Process />
         <MonthlyOffer />
         <div id="portfolio">
           <Portfolio />
@@ -32,6 +36,8 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <StickyCTA />
+      <ExitIntentPopup />
     </div>
   );
 };

@@ -6,23 +6,23 @@ const WhyUs = () => {
   const reasons = [
     {
       icon: Wrench,
-      title: "Fabrication supérieure",
-      description: "Caissons en contreplaqué supérieur, finition haut de gamme et quincaillerie de qualité professionnelle."
+      title: "Des armoires faites pour durer, pas juste pour paraître",
+      description: "Contreplaqué supérieur, pas du MDF cheap. Garantie 30 ans, pas de blague."
     },
     {
       icon: Truck,
-      title: "Livraison rapide",
-      description: "En 10 à 15 jours ouvrables, partout au Québec."
-    },
-    {
-      icon: Shield,
-      title: "Garantie 30 ans",
-      description: "La durabilité Qualiprix, c'est une promesse écrite."
+      title: "4 semaines, pas 6 mois",
+      description: "Parce que ta vie continue pendant les rénos. On respecte nos délais, toujours."
     },
     {
       icon: DollarSign,
-      title: "Prix d'entrepôt",
-      description: "Des prix imbattables grâce à un modèle de distribution direct."
+      title: "Le luxe sans les délais ni le prix du luxe",
+      description: "Prix d'entrepôt, qualité boutique. C'est notre promesse depuis +25 ans."
+    },
+    {
+      icon: Shield,
+      title: "Entreprise d'ici, fièrement québécoise",
+      description: "Des vrais humains, à 10 minutes de chez vous. Pas un centre d'appels à Toronto."
     }
   ];
 

@@ -55,23 +55,43 @@ const Hero = () => {
           }`}
         >
           {/* Phone Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6 animate-fade-in">
+            <span className="text-white font-semibold">📞 581-397-3587 – Parle à un humain, pas un chatbot</span>
+          </div>
           
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground mb-6 md:mb-8 animate-fade-in leading-[1.1] uppercase [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%),_0_4px_12px_rgb(0_0_0_/_30%)]">
-            Du haut de gamme, à prix d'entrepôt, livré en 15 jours
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 animate-fade-in leading-[1.15] [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%),_0_4px_12px_rgb(0_0_0_/_30%)]">
+            Armoires de cuisine sur mesure à Montréal – Qualité boutique, service sans stress
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/95 mb-12 md:mb-20 lg:mb-32 animate-fade-in font-body leading-relaxed">
-            Assemblé au Québec, garantie 30 ans, design moderne et qualité incomparable.
+          <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/95 mb-8 md:mb-12 animate-fade-in font-body leading-relaxed">
+            Ta cuisine de rêve, livrée en 4 semaines, sans stress ni surprises.<br />
+            <span className="font-bold">Le luxe sans les délais ni le prix du luxe.</span>
           </p>
+
+          {/* Three Pillars */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8 md:mb-12">
+            <div className="flex items-center gap-2 text-white">
+              <span className="text-2xl">⭐</span>
+              <span className="font-semibold">Qualité boutique</span>
+            </div>
+            <div className="flex items-center gap-2 text-white">
+              <span className="text-2xl">📍</span>
+              <span className="font-semibold">Service local</span>
+            </div>
+            <div className="flex items-center gap-2 text-white">
+              <span className="text-2xl">⚡</span>
+              <span className="font-semibold">Délai rapide</span>
+            </div>
+          </div>
 
           {/* CTA */}
           <Button 
             size="lg" 
             variant="outline" 
             onClick={scrollToContact} 
-            className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-2 sm:gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle mt-6 sm:mt-8"
+            className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-2 sm:gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle mt-2 sm:mt-4"
             style={{ animationDelay: '200ms', opacity: 0, animationFillMode: 'forwards' }}
           >
-            Obtenez votre soumission gratuite
+            Demande ton plan gratuit
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
         </div>

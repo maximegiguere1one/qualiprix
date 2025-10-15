@@ -21,28 +21,43 @@ const Mission = () => {
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
-            Notre mission
+          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+            Une entreprise d'ici, fièrement québécoise 🍁
           </h2>
-          <p className={`text-lg md:text-xl text-white font-body leading-relaxed mb-6 md:mb-8 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{
-          transitionDelay: '80ms'
-        }}>
-            Chez <span className="font-bold text-white">Armoire Qualiprix</span>, on croit que tout Québécois mérite une cuisine dont il peut être fier — sans payer le prix du luxe.
-          </p>
-          <p className={`text-lg text-white/90 font-body leading-relaxed mb-8 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{
-          transitionDelay: '160ms'
-        }}>On allie la qualité du locale, avec le prix d'usine, combiné avec un service haut de gamme.</p>
-          <p className={`text-base text-white/90 font-body leading-relaxed mb-12 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{
-          transitionDelay: '240ms'
-        }}>
-            Plus de <span className="font-semibold">25 ans d'expérience</span> en rénovation et conception de cuisines.
-          </p>
+          
+          <div className="space-y-6 mb-12">
+            <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '80ms' }}>
+              Ça fait +25 ans qu'on aide des familles québécoises à avoir la cuisine de leurs rêves.
+            </p>
+            <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '160ms' }}>
+              Pas de bullshit, pas de vente sous pression, pas de délais ridicules.
+            </p>
+            <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '240ms' }}>
+              Juste du bon travail, fait ici, avec le sourire.
+            </p>
+          </div>
 
-          <div className={`inline-flex items-center gap-3 bg-white/10 border border-white/20 px-8 py-4 rounded-[1.25rem] transition-all duration-280 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'}`} style={{
-          transitionDelay: '320ms'
-        }}>
-            <CheckCircle2 className="w-6 h-6 text-white" />
-            <span className="text-lg font-bold text-white">+1000 projets accompagnés à travers le Québec</span>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
+            {[
+              { number: "25+", label: "Ans d'expérience" },
+              { number: "1000+", label: "Projets livrés" },
+              { number: "4.9/5", label: "Note Google" },
+              { number: "30 ans", label: "Garantie" }
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className={`transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
+                style={{ transitionDelay: `${320 + index * 80}ms` }}
+              >
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-white/80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className={`text-2xl md:text-3xl font-bold text-white mb-8 transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '640ms' }}>
+            On livre du wow, pas du stress. 💪
           </div>
         </div>
       </div>
