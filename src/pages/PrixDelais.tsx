@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, Clock, DollarSign } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PriceCalculator from "@/components/PriceCalculator";
+import QuickEstimate from "@/components/QuickEstimate";
 
 const PrixDelais = () => {
   const pricingTiers = [
@@ -117,9 +117,9 @@ const PrixDelais = () => {
               </Button>
             </div>
 
-            {/* Price Calculator */}
+            {/* Quick Estimate */}
             <div className="mb-16">
-              <PriceCalculator />
+              <QuickEstimate />
             </div>
 
             {/* FAQ Pricing */}

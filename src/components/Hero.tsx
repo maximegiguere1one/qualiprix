@@ -37,7 +37,12 @@ const Hero = () => {
         className="absolute inset-0 z-0"
         style={{ transform: `translateY(${imageOffset * 100}%)` }}
       >
-        <img src={heroImage} alt="Cuisine moderne haut de gamme avec finition lumineuse" className="w-full h-full object-cover" />
+        <img 
+          src={heroImage} 
+          alt="Cuisine moderne haut de gamme avec armoires sur mesure - Montréal QualiPrix" 
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
       </div>
       
       {/* Separate overlay with different parallax speed */}
