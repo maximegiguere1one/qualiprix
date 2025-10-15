@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    minify: 'terser',
+    minify: 'esbuild',
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
   },
