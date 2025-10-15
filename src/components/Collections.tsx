@@ -103,7 +103,7 @@ const Collections = () => {
       ]
     },
     {
-      name: "Réalisations Clients 2024",
+      name: "Réalisations Clients 2025",
       benefits: [
         "Projets livrés et installés",
         "Photos de vrais clients",
