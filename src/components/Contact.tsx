@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Phone, Mail, MapPin, User, Building2, MessageSquare, Check, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères").max(100, "Le nom est trop long"),
@@ -37,16 +38,35 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "✨ Message envoyé avec succès!",
-      description: "Nous vous contacterons sous 24h. Merci!",
-    });
+    try {
+      const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          city: data.city,
+          message: data.message || ''
+        }
+      });
 
-    reset();
-    setIsSubmitting(false);
+      if (error) throw error;
+
+      toast({
+        title: "✨ Message envoyé avec succès!",
+        description: "Nous vous contacterons sous 24h. Merci!",
+      });
+
+      reset();
+    } catch (error) {
+      console.error('Email error:', error);
+      toast({
+        title: "❌ Erreur d'envoi",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatPhoneNumber = (value: string) => {
