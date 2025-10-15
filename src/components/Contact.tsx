@@ -1,39 +1,61 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, User, Building2, MessageSquare, Check, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+
+const formSchema = z.object({
+  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères").max(100, "Le nom est trop long"),
+  email: z.string().email("Adresse courriel invalide"),
+  phone: z.string().min(10, "Numéro de téléphone invalide"),
+  city: z.string().min(2, "Veuillez entrer une ville valide"),
+  message: z.string().max(1000, "Le message ne peut dépasser 1000 caractères").optional()
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
   const { ref: sectionRef, isVisible } = useScrollReveal();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    city: "",
-    message: ""
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const { register, handleSubmit, formState: { errors, isValid, touchedFields }, reset, watch } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    mode: "onChange"
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const watchedFields = watch();
+  const messageLength = watchedFields.message?.length || 0;
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
-      title: "Message envoyé!",
+      title: "✨ Message envoyé avec succès!",
       description: "Nous vous contacterons sous 24h. Merci!",
     });
 
-    setFormData({ name: "", email: "", phone: "", city: "", message: "" });
+    reset();
+    setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const formatPhoneNumber = (value: string) => {
+    const cleaned = value.replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return `(${match[1]}) ${match[2]}-${match[3]}`;
+    }
+    return value;
   };
 
   return (
@@ -64,123 +86,218 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-6 sm:gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl">Formulaire de contact</CardTitle>
-                <CardDescription>
+            <Card className="shadow-2xl border-primary/10 backdrop-blur-sm bg-card/95 hover:shadow-primary/5 transition-all duration-500">
+              <CardHeader className="space-y-2 pb-6">
+                <CardTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Formulaire de contact
+                </CardTitle>
+                <CardDescription className="text-base">
                   Remplissez le formulaire ci-dessous et nous vous contacterons rapidement
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-4 md:p-6">
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                  <div className="relative">
-                    <label 
+              <CardContent className="p-4 md:p-8">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
+                  {/* Name Field */}
+                  <div className="group relative">
+                    <Label 
                       htmlFor="name" 
-                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
-                        formData.name 
-                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                      className={`absolute left-4 transition-all duration-300 ease-out pointer-events-none z-10 px-2 rounded ${
+                        watchedFields.name 
+                          ? '-top-3 text-xs bg-card text-primary font-semibold' 
                           : 'top-3 text-sm text-muted-foreground'
                       }`}
                     >
+                      <User className="w-3 h-3 inline mr-1" />
                       Nom complet *
-                    </label>
+                    </Label>
                     <Input
                       id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder={formData.name ? "" : "Jean Tremblay"}
-                      required
-                      className="pt-2 focus-ring"
+                      {...register("name")}
+                      className={`pt-2 transition-all duration-300 ${
+                        errors.name 
+                          ? 'border-destructive focus-visible:ring-destructive' 
+                          : touchedFields.name && !errors.name 
+                          ? 'border-green-500 focus-visible:ring-green-500' 
+                          : ''
+                      } ${watchedFields.name ? 'bg-primary/5' : ''}`}
                     />
+                    {touchedFields.name && !errors.name && watchedFields.name && (
+                      <Check className="absolute right-4 top-3 w-5 h-5 text-green-500 animate-scale-in" />
+                    )}
+                    {errors.name && (
+                      <p className="text-xs text-destructive mt-1.5 ml-1 animate-fade-in flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div className="relative">
-                    <label 
+                  {/* Email Field */}
+                  <div className="group relative">
+                    <Label 
                       htmlFor="email" 
-                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
-                        formData.email 
-                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                      className={`absolute left-4 transition-all duration-300 ease-out pointer-events-none z-10 px-2 rounded ${
+                        watchedFields.email 
+                          ? '-top-3 text-xs bg-card text-primary font-semibold' 
                           : 'top-3 text-sm text-muted-foreground'
                       }`}
                     >
+                      <Mail className="w-3 h-3 inline mr-1" />
                       Courriel *
-                    </label>
+                    </Label>
                     <Input
                       id="email"
-                      name="email"
                       type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder={formData.email ? "" : "jean.tremblay@exemple.com"}
-                      required
-                      className="pt-2 focus-ring"
+                      {...register("email")}
+                      className={`pt-2 transition-all duration-300 ${
+                        errors.email 
+                          ? 'border-destructive focus-visible:ring-destructive' 
+                          : touchedFields.email && !errors.email 
+                          ? 'border-green-500 focus-visible:ring-green-500' 
+                          : ''
+                      } ${watchedFields.email ? 'bg-primary/5' : ''}`}
                     />
+                    {touchedFields.email && !errors.email && watchedFields.email && (
+                      <Check className="absolute right-4 top-3 w-5 h-5 text-green-500 animate-scale-in" />
+                    )}
+                    {errors.email && (
+                      <p className="text-xs text-destructive mt-1.5 ml-1 animate-fade-in flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div className="relative">
-                    <label 
+                  {/* Phone Field */}
+                  <div className="group relative">
+                    <Label 
                       htmlFor="phone" 
-                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
-                        formData.phone 
-                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                      className={`absolute left-4 transition-all duration-300 ease-out pointer-events-none z-10 px-2 rounded ${
+                        watchedFields.phone 
+                          ? '-top-3 text-xs bg-card text-primary font-semibold' 
                           : 'top-3 text-sm text-muted-foreground'
                       }`}
                     >
+                      <Phone className="w-3 h-3 inline mr-1" />
                       Téléphone *
-                    </label>
+                    </Label>
                     <Input
                       id="phone"
-                      name="phone"
                       type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder={formData.phone ? "" : "(514) 555-1234"}
-                      required
-                      className="pt-2 focus-ring"
+                      {...register("phone")}
+                      onChange={(e) => {
+                        const formatted = formatPhoneNumber(e.target.value);
+                        e.target.value = formatted;
+                      }}
+                      placeholder={watchedFields.phone ? "" : "(514) 555-1234"}
+                      className={`pt-2 transition-all duration-300 ${
+                        errors.phone 
+                          ? 'border-destructive focus-visible:ring-destructive' 
+                          : touchedFields.phone && !errors.phone 
+                          ? 'border-green-500 focus-visible:ring-green-500' 
+                          : ''
+                      } ${watchedFields.phone ? 'bg-primary/5' : ''}`}
                     />
+                    {touchedFields.phone && !errors.phone && watchedFields.phone && (
+                      <Check className="absolute right-4 top-3 w-5 h-5 text-green-500 animate-scale-in" />
+                    )}
+                    {errors.phone && (
+                      <p className="text-xs text-destructive mt-1.5 ml-1 animate-fade-in flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
+                        {errors.phone.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div className="relative">
-                    <label 
+                  {/* City Field */}
+                  <div className="group relative">
+                    <Label 
                       htmlFor="city" 
-                      className={`absolute left-3 transition-all duration-200 ease-out pointer-events-none ${
-                        formData.city 
-                          ? 'top-[-6px] text-xs bg-card px-1 text-primary' 
+                      className={`absolute left-4 transition-all duration-300 ease-out pointer-events-none z-10 px-2 rounded ${
+                        watchedFields.city 
+                          ? '-top-3 text-xs bg-card text-primary font-semibold' 
                           : 'top-3 text-sm text-muted-foreground'
                       }`}
                     >
+                      <Building2 className="w-3 h-3 inline mr-1" />
                       Ville des travaux *
-                    </label>
+                    </Label>
                     <Input
                       id="city"
-                      name="city"
-                      type="text"
-                      value={formData.city}
-                      onChange={handleChange}
-                      placeholder={formData.city ? "" : "Québec"}
-                      required
-                      className="pt-2 focus-ring"
+                      {...register("city")}
+                      className={`pt-2 transition-all duration-300 ${
+                        errors.city 
+                          ? 'border-destructive focus-visible:ring-destructive' 
+                          : touchedFields.city && !errors.city 
+                          ? 'border-green-500 focus-visible:ring-green-500' 
+                          : ''
+                      } ${watchedFields.city ? 'bg-primary/5' : ''}`}
                     />
+                    {touchedFields.city && !errors.city && watchedFields.city && (
+                      <Check className="absolute right-4 top-3 w-5 h-5 text-green-500 animate-scale-in" />
+                    )}
+                    {errors.city && (
+                      <p className="text-xs text-destructive mt-1.5 ml-1 animate-fade-in flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
+                        {errors.city.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
+                  {/* Message Field */}
+                  <div className="group relative">
+                    <div className="flex items-center justify-between mb-2">
+                      <Label 
+                        htmlFor="message" 
+                        className="text-sm font-semibold flex items-center gap-2"
+                      >
+                        <MessageSquare className="w-4 h-4 text-primary" />
+                        Message (optionnel)
+                      </Label>
+                      <span className={`text-xs transition-colors ${
+                        messageLength > 900 ? 'text-destructive font-semibold' : 'text-muted-foreground'
+                      }`}>
+                        {messageLength}/1000
+                      </span>
+                    </div>
                     <Textarea
                       id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
+                      {...register("message")}
                       placeholder="Décrivez votre projet de cuisine..."
                       rows={5}
-                      className="focus-ring"
+                      className={`transition-all duration-300 resize-none ${
+                        errors.message 
+                          ? 'border-destructive focus-visible:ring-destructive' 
+                          : watchedFields.message 
+                          ? 'bg-primary/5' 
+                          : ''
+                      }`}
                     />
+                    {errors.message && (
+                      <p className="text-xs text-destructive mt-1.5 ml-1 animate-fade-in flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
+                        {errors.message.message}
+                      </p>
+                    )}
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full text-sm sm:text-base py-3 sm:py-4">
-                    Soumettre ma demande gratuite
+                  {/* Submit Button */}
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    disabled={isSubmitting || !isValid}
+                    className="w-full text-sm sm:text-base py-6 sm:py-7 font-bold relative overflow-hidden group shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 disabled:opacity-50"
+                  >
+                    <span className={`flex items-center justify-center gap-2 transition-all duration-300 ${
+                      isSubmitting ? 'opacity-0' : 'opacity-100'
+                    }`}>
+                      Soumettre ma demande gratuite
+                    </span>
+                    {isSubmitting && (
+                      <span className="absolute inset-0 flex items-center justify-center">
+                        <Loader2 className="w-6 h-6 animate-spin" />
+                      </span>
+                    )}
                   </Button>
                 </form>
               </CardContent>
@@ -189,55 +306,72 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-4 sm:space-y-6">
-            <Card className="shadow-lg">
+            <Card className="shadow-xl border-primary/10 backdrop-blur-sm bg-card/95 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500 group">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-7 h-7 text-primary group-hover:animate-pulse" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-base sm:text-lg mb-1">Téléphone</h3>
-                    <p className="text-muted-foreground">581-397-3587</p>
+                    <h3 className="font-bold text-base sm:text-lg mb-1 text-foreground">Téléphone</h3>
+                    <a href="tel:5813973587" className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium">
+                      581-397-3587
+                    </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg">
+            <Card className="shadow-xl border-primary/10 backdrop-blur-sm bg-card/95 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500 group">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-7 h-7 text-primary group-hover:animate-pulse" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-base sm:text-lg mb-1">Courriel</h3>
-                    <p className="text-muted-foreground break-words">info@armoiresqualiprix.ca</p>
+                    <h3 className="font-bold text-base sm:text-lg mb-1 text-foreground">Courriel</h3>
+                    <a href="mailto:info@armoiresqualiprix.ca" className="text-muted-foreground hover:text-primary transition-colors duration-200 break-words font-medium">
+                      info@armoiresqualiprix.ca
+                    </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg">
+            <Card className="shadow-xl border-primary/10 backdrop-blur-sm bg-card/95 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500 group">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-7 h-7 text-primary group-hover:animate-pulse" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-base sm:text-lg mb-1">Région</h3>
-                    <p className="text-muted-foreground">Québec et environs</p>
+                    <h3 className="font-bold text-base sm:text-lg mb-1 text-foreground">Région</h3>
+                    <p className="text-muted-foreground font-medium">Québec et environs</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg bg-gradient-to-br from-primary to-secondary text-primary-foreground">
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="font-bold text-lg sm:text-xl mb-2">Heures d'ouverture</h3>
-                <div className="space-y-1 text-sm">
-                  <p>Lundi - Vendredi: 9h - 17h</p>
-                  <p>Samedi: Sur rendez-vous</p>
-                  <p>Dimanche: Fermé</p>
+            <Card className="shadow-2xl bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground border-0 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CardContent className="p-6 sm:p-8 relative z-10">
+                <h3 className="font-bold text-xl sm:text-2xl mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  Heures d'ouverture
+                </h3>
+                <div className="space-y-2.5 text-sm sm:text-base">
+                  <p className="flex items-center gap-2 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
+                    Lundi - Vendredi: 9h - 17h
+                  </p>
+                  <p className="flex items-center gap-2 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
+                    Samedi: Sur rendez-vous
+                  </p>
+                  <p className="flex items-center gap-2 font-medium opacity-70">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/50" />
+                    Dimanche: Fermé
+                  </p>
                 </div>
               </CardContent>
             </Card>
