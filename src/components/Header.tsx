@@ -9,10 +9,9 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
 
-  // Navigation réduite à 4 liens max
+  // Navigation ultra-minimaliste - 3 liens max
   const menuItems = [
     { label: "Collections", href: "#collections" },
-    { label: "Processus", href: "#process" },
     { label: "Réalisations", href: "#portfolio" },
     { label: "Contact", href: "#contact" }
   ];
@@ -44,62 +43,56 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b border-foreground/5 transition-all duration-300">
-      <div className="container mx-auto px-6">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
-          isCompact ? 'py-2' : 'py-4'
+    <header className={`fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b transition-all duration-500 ${
+      isScrolled ? 'border-foreground/10 shadow-sm' : 'border-foreground/5'
+    }`}>
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className={`flex items-center justify-between transition-all duration-500 ${
+          isCompact ? 'py-3' : 'py-5'
         }`}>
           
-          {/* Logo AGRANDI + Badge */}
-          <div className="flex items-center gap-4">
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="focus-ring"
-            >
-              <img 
-                src={logo} 
-                alt="Armoire Qualiprix" 
-                className={`w-auto transition-all duration-300 ${
-                  isCompact ? 'h-10 md:h-12' : 'h-12 md:h-14'
-                }`}
-              />
-            </button>
-            {!isCompact && (
-              <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full animate-fade-in">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-xs font-bold text-secondary">+500 cuisines livrées</span>
-              </div>
-            )}
-          </div>
+          {/* Logo ultra-clean */}
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="focus-ring"
+          >
+            <img 
+              src={logo} 
+              alt="Armoire Qualiprix" 
+              className={`w-auto transition-all duration-500 ${
+                isCompact ? 'h-11 md:h-13' : 'h-13 md:h-16'
+              }`}
+            />
+          </button>
 
-          {/* Navigation RÉDUITE */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Navigation ultra-minimaliste */}
+          <nav className="hidden lg:flex items-center gap-10">
             {menuItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-semibold text-foreground/80 hover:text-secondary transition-colors relative group"
+                className="text-xs font-medium text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-secondary group-hover:w-full transition-all duration-300" />
               </button>
             ))}
             
-            {/* CTA téléphone PROÉMINENT */}
+            {/* CTA téléphone discret (ghost) */}
             <a 
               href="tel:5813973587"
-              className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full font-bold hover:scale-105 transition-transform shadow-lg hover:shadow-2xl"
+              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-secondary transition-colors duration-300"
             >
               <Phone className="w-4 h-4" />
               581-397-3587
             </a>
           </nav>
 
-          {/* CTA principal MASSIF */}
+          {/* CTA principal ultra-premium */}
           <Button 
             size="lg"
             onClick={scrollToContact}
-            className="hidden md:flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full shadow-[0_10px_30px_rgb(249_115_22_/_40%)] hover:shadow-[0_15px_40px_rgb(249_115_22_/_60%)] transition-all"
+            className="hidden lg:flex items-center gap-2 px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full shadow-[0_10px_30px_rgb(249_115_22_/_40%)] hover:shadow-[0_15px_40px_rgb(249_115_22_/_60%)] transition-all duration-300 hover:scale-105"
           >
             Consultation gratuite
             <ArrowRight className="w-5 h-5" />
