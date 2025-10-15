@@ -11,7 +11,7 @@ const VisualProcess = () => {
     {
       number: 1,
       title: "Consultation gratuite",
-      description: "On visite chez toi, on prend les mesures, on discute de tes besoins",
+      description: "Appel conférence vidéo avec nos experts, on évalue ton projet, on discute de tes besoins",
       icon: "📏",
       duration: "1 heure"
     },

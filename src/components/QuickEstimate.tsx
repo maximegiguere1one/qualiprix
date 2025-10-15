@@ -25,7 +25,7 @@ const QuickEstimate = () => {
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h4 className="font-semibold">Plan 3D gratuit après visite</h4>
+              <h4 className="font-semibold">Plan 3D gratuit après consultation</h4>
               <p className="text-sm text-muted-foreground">Visualise ta cuisine avant de t'engager</p>
             </div>
           </div>

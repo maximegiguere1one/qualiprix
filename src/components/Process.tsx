@@ -10,7 +10,7 @@ const Process = () => {
       number: "1",
       icon: Ruler,
       title: "Consultation gratuite",
-      description: "On se rencontre chez toi. Tu nous montres ton espace, on prend des mesures, on t'écoute.",
+      description: "Appel conférence avec nos experts. Tu nous montres ton espace par vidéo, on discute de tes besoins, on t'écoute.",
       duration: "1h, gratuit, sans pression"
     },
     {
