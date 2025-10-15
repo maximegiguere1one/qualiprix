@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
@@ -5,6 +6,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const ZonesDesservies = () => {
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Zones desservies armoires cuisine. Montréal, Laval, Rive-Nord, Rive-Sud, Québec. Livraison rapide partout au Québec. Carte interactive → 581-397-3587');
+    }
+    document.title = "Zones desservies | Armoires sur mesure partout au Québec";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/zones-desservies';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
   const regions = [
     {
       name: "Montréal",

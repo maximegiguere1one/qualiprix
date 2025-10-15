@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Clock, DollarSign } from "lucide-react";
@@ -6,44 +7,54 @@ import Footer from "@/components/Footer";
 import QuickEstimate from "@/components/QuickEstimate";
 
 const PrixDelais = () => {
-  const pricingTiers = [
-    {
-      name: "Essentiel",
-      price: "12 000$ - 18 000$",
-      features: [
-        "Mélamine haute densité",
-        "Quincaillerie standard",
-        "Design sobre et efficace",
-        "Charnières de qualité"
-      ],
-      delay: "15 jours",
-      popular: false
-    },
-    {
-      name: "Standard",
-      price: "18 000$ - 30 000$",
-      features: [
-        "Polymère 2 tons au choix",
-        "Soft-close premium",
-        "Comptoir quartz inclus",
-        "Design personnalisé"
-      ],
-      delay: "15 jours",
-      popular: true
-    },
-    {
-      name: "Premium",
-      price: "30 000$ - 45 000$+",
-      features: [
-        "Laque européenne haute qualité",
-        "Quincaillerie Blum",
-        "Quartz premium (4 choix)",
-        "Design sur mesure complet",
-        "Finitions ultra-luxe"
-      ],
-      delay: "4 semaines",
-      popular: false
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Prix clairs sans surprise. Délai 4 semaines garanti. Découvre ce qui influence ton investissement cuisine au Québec. Soumission gratuite en 24h.');
     }
+    document.title = "Prix & Délais | Transparence totale | Livraison 4 semaines";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/prix-delais';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
+
+  const priceFactors = [
+    {
+      icon: "📏",
+      title: "Dimensions de ta cuisine",
+      description: "Petite, moyenne, grande? Nombre de pieds linéaires d'armoires?",
+    },
+    {
+      icon: "🎨",
+      title: "Finition choisie",
+      description: "Mélamine haute densité, polymère deux-tons, ou laque européenne?",
+    },
+    {
+      icon: "💎",
+      title: "Comptoir",
+      description: "Quartz inclus? Quel type et quelle surface totale?",
+    },
+    {
+      icon: "🔧",
+      title: "Complexité du projet",
+      description: "Îlot? Garde-manger intégré? Électroménagers encastrés?",
+    },
+    {
+      icon: "🚚",
+      title: "Livraison et installation",
+      description: "Distance de livraison et complexité de l'installation",
+    },
+    {
+      icon: "⚡",
+      title: "Options premium",
+      description: "Éclairage LED, quincaillerie Blum, organisateurs intérieurs",
+    },
   ];
 
   const scrollToContact = () => {
@@ -58,63 +69,86 @@ const PrixDelais = () => {
       <section className="py-20 bg-gradient-to-br from-primary via-primary to-secondary text-white">
         <div className="container px-4 mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Prix et délais – Armoires sur mesure au Québec
+            Prix et délais – Transparence totale, sans surprise
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Transparent, clair, sans surprise. C'est ça, la différence QualiPrix.
+            Chaque projet est unique. On te donne un prix clair APRÈS avoir vu ton espace.
           </p>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Price Factors */}
       <section className="py-16 bg-background">
         <div className="container px-4 mx-auto">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Nos gammes de prix
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Ce qui influence ton investissement
             </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Pas de fourchette vague. On évalue TON projet spécifiquement et on te donne un prix exact en 24h.
+            </p>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {pricingTiers.map((tier, index) => (
-                <Card 
-                  key={index}
-                  className={`relative ${tier.popular ? 'border-4 border-secondary shadow-[var(--shadow-elegant)]' : 'border-2'}`}
-                >
-                  {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-6 py-1 rounded-full text-sm font-bold">
-                      ⭐ Plus populaire
-                    </div>
-                  )}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {priceFactors.map((factor, index) => (
+                <Card key={index} className="border-2">
                   <CardHeader>
-                    <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                    <CardDescription className="text-3xl font-bold text-primary mt-2">
-                      {tier.price}
-                    </CardDescription>
+                    <div className="text-5xl mb-3">{factor.icon}</div>
+                    <CardTitle className="text-xl">{factor.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                      {tier.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="pt-4 border-t flex items-center gap-2 text-muted-foreground">
-                      <Clock className="w-5 h-5" />
-                      <span>Délai: <span className="font-bold text-foreground">{tier.delay}</span></span>
-                    </div>
+                  <CardContent>
+                    <p className="text-muted-foreground">{factor.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
+            {/* Testimonials about pricing */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-center mb-8">Nos clients parlent de nos prix</h3>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <Card className="border-2">
+                  <CardContent className="p-6">
+                    <div className="flex gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-500">⭐</span>
+                      ))}
+                    </div>
+                    <p className="mb-4 italic">
+                      "J'avais peur que ça coûte une fortune. Leur prix était 40% moins cher que la compétition pour la même qualité!"
+                    </p>
+                    <p className="font-semibold">— Marie, Laval</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-2">
+                  <CardContent className="p-6">
+                    <div className="flex gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-500">⭐</span>
+                      ))}
+                    </div>
+                    <p className="mb-4 italic">
+                      "Prix honnête, pas de coûts cachés. Exactement ce qu'ils avaient annoncé au début!"
+                    </p>
+                    <p className="font-semibold">— Jean, Terrebonne</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
             {/* CTA */}
             <div className="text-center mb-16">
-              <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
-                <DollarSign className="w-5 h-5 mr-2" />
-                Obtiens ton prix clair aujourd'hui
-              </Button>
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl max-w-3xl mx-auto">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  Obtiens TON prix en 24h – pas une fourchette vague
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Évaluation gratuite, sans engagement. On regarde ton espace et on te donne un prix exact.
+                </p>
+                <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
+                  <DollarSign className="w-5 h-5 mr-2" />
+                  Demande ton évaluation gratuite
+                </Button>
+              </div>
             </div>
 
             {/* Quick Estimate */}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,23 @@ import { MapPin, Phone, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ArmoiresRiveNord = () => {
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. +80 projets à Terrebonne, Repentigny, Mascouche. Livraison 4 semaines garantie. Soumission gratuite → 581-397-3587');
+    }
+    document.title = "Armoires sur mesure Rive-Nord | +80 projets | Livraison rapide";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/armoires-rive-nord';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
+
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };

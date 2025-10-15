@@ -48,17 +48,26 @@ const QuickEstimate = () => {
         <div className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/20 p-6 rounded-[1.25rem] space-y-4">
           <div>
             <h4 className="text-xl font-bold text-primary mb-2">
-              Exemples de projets réels 2025
+              Nos clients parlent de nos prix
             </h4>
             <ul className="space-y-2 text-sm">
-              <li>• Cuisine 10 pi - Plateau-Mont-Royal - 15 900$ tout inclus</li>
-              <li>• Cuisine 15 pi + îlot - Laval Chomedey - 24 500$ tout inclus</li>
-              <li>• Cuisine 20 pi + comptoir quartz - Terrebonne - 32 800$ tout inclus</li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span>Cuisine 10 pi - Plateau-Mont-Royal - "Moins cher que Home Depot!"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span>Cuisine 15 pi + îlot - Laval - "40% d'économies vs compétition"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span>Cuisine 20 pi + quartz - Terrebonne - "Qualité boutique, prix entrepôt"</span>
+              </li>
             </ul>
           </div>
           <Button onClick={scrollToContact} size="lg" className="w-full h-12">
             <Phone className="w-5 h-5 mr-2" />
-            Obtiens ton prix en 24h - 581-397-3587
+            Combien pour MON projet? Réponds en 24h - 581-397-3587
           </Button>
         </div>
       </CardContent>

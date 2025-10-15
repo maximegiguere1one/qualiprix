@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,23 @@ import { MapPin, Phone, Star, Shield } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ArmoiresQuebec = () => {
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Armoires cuisine Québec. Service Québec, Lévis, Beauport. +40 projets livrés. Fabrication locale, délai respecté. Consultation gratuite → 581-397-3587');
+    }
+    document.title = "Armoires sur mesure Québec | +40 projets | Fabrication locale";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/armoires-quebec';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
+
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };

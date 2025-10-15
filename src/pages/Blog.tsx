@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
@@ -5,6 +6,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Blog = () => {
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Blog cuisine Québec. Tendances 2025, conseils réno, astuces déco. Expertise armoires sur mesure. Inspiration garantie → Découvre nos articles');
+    }
+    document.title = "Blog | Tendances cuisine 2025 & conseils rénovation Québec";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/blog';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
   const articles = [
     {
       title: "Tendances cuisines 2025 au Québec – Ce qui cartonne",

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,23 @@ import { MapPin, Phone, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ArmoiresRiveSud = () => {
+  useEffect(() => {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Cuisines sur mesure Rive-Sud. Longueuil, Brossard, St-Jean. +60 clients satisfaits 5⭐. Qualité garantie 30 ans. Plan gratuit → 581-397-3587');
+    }
+    document.title = "Armoires sur mesure Rive-Sud | +60 clients 5⭐ | Garantie 30 ans";
+    
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = 'https://armoirequaliprixmontreal.com/armoires-rive-sud';
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
+
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };

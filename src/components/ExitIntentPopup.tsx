@@ -34,14 +34,39 @@ const ExitIntentPopup = () => {
     };
   }, [hasShown]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
-        title: "Merci! 🎉",
-        description: "Ton guide sera envoyé à " + email,
-      });
-      setIsOpen(false);
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-guide-email`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            },
+            body: JSON.stringify({ email }),
+          }
+        );
+
+        if (response.ok) {
+          toast({
+            title: "Guide envoyé! 🎉",
+            description: "Vérifie ton email (et tes spams si besoin)",
+          });
+          setIsOpen(false);
+        } else {
+          throw new Error("Failed to send guide");
+        }
+      } catch (error) {
+        console.error("Error sending guide:", error);
+        toast({
+          title: "Oups! 😅",
+          description: "Réessaie ou appelle-nous: 581-397-3587",
+          variant: "destructive",
+        });
+      }
     }
   };
 
