@@ -359,7 +359,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // 1. Email de notification interne
     const internalEmailResponse = await resend.emails.send({
-      from: "Armoires Qualiprix <onboarding@resend.dev>",
+      from: "Armoires Qualiprix <noreply@armoirequaliprixmontreal.com>",
       to: ["maxime@giguere-influence.com", "armoirequaliprix@gmail.com"],
       subject: `🔔 Nouvelle demande de soumission - ${contactData.name}`,
       html: generateInternalEmailHTML(contactData, refId),
@@ -369,7 +369,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // 2. Email de confirmation client
     const clientEmailResponse = await resend.emails.send({
-      from: "Armoires Qualiprix <onboarding@resend.dev>",
+      from: "Armoires Qualiprix <noreply@armoirequaliprixmontreal.com>",
       to: [contactData.email],
       subject: "✨ Merci pour votre demande de soumission!",
       html: generateClientConfirmationHTML(contactData),
