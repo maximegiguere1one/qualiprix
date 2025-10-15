@@ -11,6 +11,8 @@ const Collections = lazy(() => import("@/components/Collections"));
 const Process = lazy(() => import("@/components/Process"));
 const MonthlyOffer = lazy(() => import("@/components/MonthlyOffer"));
 const Portfolio = lazy(() => import("@/components/Portfolio"));
+const BeforeAfter = lazy(() => import("@/components/BeforeAfter"));
+const VisualProcess = lazy(() => import("@/components/VisualProcess"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Services = lazy(() => import("@/components/Services"));
 const Mission = lazy(() => import("@/components/Mission"));
@@ -32,6 +34,8 @@ const Index = () => {
           <div id="portfolio">
             <Portfolio />
           </div>
+          <BeforeAfter />
+          <VisualProcess />
           <Testimonials />
           <Services />
           <div id="about">

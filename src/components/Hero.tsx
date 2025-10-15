@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/kitchen-island.jpg";
+import heroImage from "@/assets/realisation-cuisine-complete-luminaires-terrebonne.jpg";
 import { useEffect, useRef, useState } from "react";
 import { useParallaxLayers } from "@/hooks/useParallaxLayers";
 
@@ -39,9 +39,11 @@ const Hero = () => {
       >
         <img 
           src={heroImage} 
-          alt="Cuisine moderne haut de gamme avec armoires sur mesure - Montréal QualiPrix" 
+          alt="Cuisine moderne avec luminaires intégrés - Armoires de cuisine sur mesure Terrebonne Montréal - Armoire Qualiprix 2024" 
           className="w-full h-full object-cover"
           loading="eager"
+          width="1920"
+          height="1080"
         />
       </div>
       

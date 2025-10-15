@@ -23,37 +23,49 @@ const Testimonials = () => {
       name: "Nicolas St-Aubin",
       location: "Québec",
       text: "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine merci Armoire Qualiprix !!!",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg",
+      projectType: "Cuisine complète + îlot"
     },
     {
       name: "Jean-Sylvain Bélair",
       location: "Québec",
       text: "Super service!! À l'écoute des clients!! Je le recommande fortement",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-armoires-grises-encastrees-quebec.jpg",
+      projectType: "Armoires encastrées"
     },
     {
       name: "Fania Daoust",
       location: "Québec",
       text: "produits de qualité quoi demander de mieux!",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-cuisine-ilot-waterfall-rive-nord.jpg",
+      projectType: "Îlot waterfall"
     },
     {
       name: "Martin Beaudreault",
       location: "Québec",
       text: "Un gars avec une super expérience dans les armoires, appelez le, super service",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-cuisine-ouverte-escalier-montreal.jpg",
+      projectType: "Cuisine ouverte"
     },
     {
       name: "Burnart pro",
       location: "Québec",
       text: "Pour des armoires de qualité et un service super, merci 👍",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-cuisine-compacte-blanche-brillante.jpg",
+      projectType: "Cuisine moderne"
     },
     {
       name: "Chantale Pion",
       location: "Québec",
       text: "Bon service belle qualité et prix raisonnable",
-      rating: 5
+      rating: 5,
+      projectImage: "/src/assets/realisation-garde-manger-bois-rangement.jpg",
+      projectType: "Garde-manger sur mesure"
     }
   ];
 
@@ -91,11 +103,23 @@ const Testimonials = () => {
           {(isMobile ? testimonials.slice(0, 3) : testimonials).map((testimonial, index) => (
             <Card 
               key={index} 
-              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] group hover-lift cursor-pointer transition-all duration-280 ease-out ${
+              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] group hover-lift cursor-pointer transition-all duration-280 ease-out overflow-hidden ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
               style={{ transitionDelay: `${150 + index * 80}ms` }}
             >
+              {/* Photo du projet */}
+              {testimonial.projectImage && (
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={testimonial.projectImage} 
+                    alt={`Projet ${testimonial.projectType} - ${testimonial.location}`}
+                    className="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              
               <CardContent className="p-6 md:p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -108,6 +132,9 @@ const Testimonials = () => {
                 <div className="border-t border-muted pt-4">
                   <p className="font-bold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                  {testimonial.projectType && (
+                    <p className="text-xs text-primary mt-2 font-semibold">📦 {testimonial.projectType}</p>
+                  )}
                 </div>
               </CardContent>
             </Card>

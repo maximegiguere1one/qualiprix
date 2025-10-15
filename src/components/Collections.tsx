@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState } from "react";
+import { projects } from "@/data/projects";
 
 const Collections = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -100,6 +101,17 @@ const Collections = () => {
         "/src/assets/quartz-blanc-texture.jpg",
         "/src/assets/quartz-vintage-black.jpg"
       ]
+    },
+    {
+      name: "Réalisations Clients 2024",
+      benefits: [
+        "Projets livrés et installés",
+        "Photos de vrais clients",
+        "Différents styles et budgets",
+        "Inspirations concrètes"
+      ],
+      images: projects.map(p => p.image),
+      isRealProjects: true
     }
   ];
 
@@ -127,11 +139,16 @@ const Collections = () => {
           {collections.map((collection, index) => (
             <Card 
               key={index} 
-              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group hover-lift cursor-pointer transition-all duration-280 ease-out ${
+              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group hover-lift cursor-pointer transition-all duration-280 ease-out relative ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
               style={{ transitionDelay: `${150 + index * 70}ms` }}
             >
+              {collection.isRealProjects && (
+                <div className="absolute top-4 right-4 bg-secondary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold z-10">
+                  ✨ Projets réels
+                </div>
+              )}
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">{collection.name}</h3>
                 <ul className="space-y-3 mb-6">
@@ -169,9 +186,13 @@ const Collections = () => {
                   <div className="p-1">
                     <img 
                       src={image} 
-                      alt={`${collections[selectedCollection].name} - Photo ${idx + 1}`}
+                      alt={`${collections[selectedCollection].name} - Photo ${idx + 1} sur ${collections[selectedCollection].images.length}`}
                       className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-lg"
+                      loading="lazy"
                     />
+                    <div className="text-center mt-3 text-sm text-muted-foreground">
+                      Photo {idx + 1} / {collections[selectedCollection].images.length}
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
