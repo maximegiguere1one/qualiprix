@@ -5,19 +5,17 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Check, Lock, Shield, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
-import { cn } from "@/lib/utils";
+import { Star } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères").max(100),
   email: z.string().email("Adresse courriel invalide"),
   phone: z.string().min(10, "Numéro de téléphone invalide"),
-  city: z.string().min(2, "Veuillez entrer une ville valide"),
-  message: z.string().max(1000).optional()
+  city: z.string().min(2, "Veuillez entrer une ville valide")
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -42,7 +40,7 @@ const Contact = () => {
           email: data.email,
           phone: data.phone,
           city: data.city,
-          message: data.message || ''
+          message: ''
         }
       });
 
@@ -93,14 +91,16 @@ const Contact = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="inline-block mb-6 px-6 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20">
-            <span className="text-sm font-bold text-primary">Contactez-nous</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-primary via-primary to-secondary bg-clip-text text-transparent leading-tight">
-            Demandez votre soumission gratuite
+          <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
+            ⏱️ Réponse en moins de 2 heures
+          </span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
+            Obtiens ton plan 3D<br />
+            <span className="text-secondary">100% gratuit</span>
           </h2>
-          <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Remplissez le formulaire ci-dessous et notre équipe vous contactera sous 24h pour discuter de votre projet.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Remplis ce formulaire en 30 secondes.<br className="hidden sm:block" />
+            On t'appelle aujourd'hui.
           </p>
         </div>
 
@@ -116,83 +116,77 @@ const Contact = () => {
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               
               <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] border border-primary/10 hover:border-primary/20 transition-all duration-500">
+                
+                {/* Badge "Places limitées" */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
+                  ⚡ Seulement 3 places ce mois-ci
+                </div>
+                
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 mt-4">
                     
-                    {/* Nom */}
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-foreground flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            <span className="text-primary">👤</span>
-                            Nom complet *
-                          </FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Jean Tremblay" 
-                              {...field}
-                              className={cn(
-                                form.formState.errors.name && "border-destructive focus-visible:ring-destructive/20"
-                              )}
-                            />
-                          </FormControl>
-                          <FormMessage className="text-xs" />
-                        </FormItem>
-                      )}
-                    />
+                    {/* Nom + Téléphone sur même ligne */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                              👤 Ton nom
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Jean Tremblay" {...field} className="h-12" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                              📞 Téléphone
+                            </FormLabel>
+                            <FormControl>
+                              <Input 
+                                type="tel"
+                                placeholder="(418) 555-1234" 
+                                {...field}
+                                onChange={(e) => {
+                                  const formatted = formatPhoneNumber(e.target.value);
+                                  field.onChange(formatted);
+                                }}
+                                className="h-12"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
 
                     {/* Email */}
                     <FormField
                       control={form.control}
                       name="email"
                       render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-foreground flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            <span className="text-primary">📧</span>
-                            Courriel *
+                        <FormItem>
+                          <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                            📧 Courriel
                           </FormLabel>
                           <FormControl>
                             <Input 
                               type="email"
-                              placeholder="jean.tremblay@example.com" 
+                              placeholder="jean@example.com" 
                               {...field}
-                              className={cn(
-                                form.formState.errors.email && "border-destructive focus-visible:ring-destructive/20"
-                              )}
+                              className="h-12"
                             />
                           </FormControl>
-                          <FormMessage className="text-xs" />
-                        </FormItem>
-                      )}
-                    />
-
-                    {/* Téléphone */}
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-foreground flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            <span className="text-primary">📞</span>
-                            Téléphone *
-                          </FormLabel>
-                          <FormControl>
-                            <Input 
-                              type="tel"
-                              placeholder="(418) 555-1234" 
-                              {...field}
-                              onChange={(e) => {
-                                const formatted = formatPhoneNumber(e.target.value);
-                                field.onChange(formatted);
-                              }}
-                              className={cn(
-                                form.formState.errors.phone && "border-destructive focus-visible:ring-destructive/20"
-                              )}
-                            />
-                          </FormControl>
-                          <FormMessage className="text-xs" />
+                          <FormMessage />
                         </FormItem>
                       )}
                     />
@@ -202,74 +196,56 @@ const Contact = () => {
                       control={form.control}
                       name="city"
                       render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-foreground flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            <span className="text-primary">📍</span>
-                            Ville des travaux *
+                        <FormItem>
+                          <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                            📍 Ville
                           </FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="Québec, Montréal, Lévis..." 
+                              placeholder="Québec, Montréal..." 
                               {...field}
-                              className={cn(
-                                form.formState.errors.city && "border-destructive focus-visible:ring-destructive/20"
-                              )}
+                              className="h-12"
                             />
                           </FormControl>
-                          <FormMessage className="text-xs" />
+                          <FormMessage />
                         </FormItem>
                       )}
                     />
 
-                    {/* Message */}
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-foreground flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            <span className="text-primary">💬</span>
-                            Message (optionnel)
-                          </FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Parlez-nous de votre projet de cuisine... Dimensions, style recherché, budget approximatif, etc." 
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage className="text-xs" />
-                        </FormItem>
-                      )}
-                    />
-
-                    {/* Bouton de soumission premium avec états */}
+                    {/* CTA MASSIF */}
                     <Button 
-                      type="submit" 
+                      type="submit"
                       disabled={isSubmitting}
                       size="lg"
-                      className="w-full relative group overflow-hidden"
+                      className="w-full h-14 text-lg font-black bg-secondary hover:bg-secondary/90 shadow-[0_10px_40px_rgb(249_115_22_/_40%)] hover:shadow-[0_15px_50px_rgb(249_115_22_/_60%)] transition-all"
                     >
-                      {/* Ripple effect on submit */}
-                      <span className="absolute inset-0 bg-white/10 scale-0 group-active:scale-100 transition-transform duration-500"></span>
-                      
                       {isSubmitting ? (
-                        <div className="flex items-center gap-3 relative z-10">
+                        <div className="flex items-center gap-3">
                           <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white"></div>
-                          <span>Envoi en cours...</span>
+                          Envoi en cours...
                         </div>
                       ) : (
-                        <div className="flex items-center gap-2 relative z-10">
-                          <span>Envoyer ma demande</span>
-                          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
+                        <div className="flex items-center gap-2">
+                          ✨ Obtenir mon plan 3D gratuit
                         </div>
                       )}
                     </Button>
                     
-                    <p className="text-xs text-center text-muted-foreground/60 mt-4">
-                      🔒 Vos informations sont protégées et confidentielles
-                    </p>
+                    {/* Réassurance ENRICHIE */}
+                    <div className="space-y-2 pt-4 border-t border-muted">
+                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
+                        <Check className="w-4 h-4 text-green-500" />
+                        Réponse en moins de 2 heures
+                      </p>
+                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
+                        <Check className="w-4 h-4 text-green-500" />
+                        Aucun engagement • Devis 100% gratuit
+                      </p>
+                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
+                        <Lock className="w-4 h-4 text-green-500" />
+                        Informations sécurisées et confidentielles
+                      </p>
+                    </div>
                   </form>
                 </Form>
               </div>
@@ -354,31 +330,60 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Carte horaires */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--primary)/0.1)] border border-primary/10 hover:border-primary/20 hover:-translate-y-1 transition-all duration-500">
-                  <div className="flex items-start gap-5">
-                    <div className="shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
-                      <Clock className="w-7 h-7 text-white" />
+              {/* Sidebar SOCIAL PROOF enrichie */}
+              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-primary/10">
+                <h3 className="font-bold text-2xl mb-6 text-foreground">Pourquoi nous choisir?</h3>
+                
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-secondary" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-xl mb-4 text-foreground">Heures d'ouverture</h3>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between items-center p-2 rounded-lg bg-muted/30">
-                          <span className="text-foreground/80 font-medium">Lun - Ven</span>
-                          <span className="text-foreground font-semibold">8h - 17h</span>
-                        </div>
-                        <div className="flex justify-between items-center p-2 rounded-lg bg-muted/20">
-                          <span className="text-foreground/80 font-medium">Samedi</span>
-                          <span className="text-foreground/70">Sur rendez-vous</span>
-                        </div>
-                        <div className="flex justify-between items-center p-2 rounded-lg bg-muted/20">
-                          <span className="text-foreground/80 font-medium">Dimanche</span>
-                          <span className="text-muted-foreground">Fermé</span>
-                        </div>
-                      </div>
+                    <div>
+                      <div className="font-bold text-xl text-foreground mb-1">Livraison en 4 semaines</div>
+                      <div className="text-sm text-muted-foreground">Pas 6 mois comme ailleurs</div>
                     </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-xl text-foreground mb-1">Garantie 30 ans</div>
+                      <div className="text-sm text-muted-foreground">Tranquillité d'esprit totale</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                      <Users className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-xl text-foreground mb-1">+500 clients ravis</div>
+                      <div className="text-sm text-muted-foreground">5/5 étoiles sur Google</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Témoignage featured */}
+              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-primary/10">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-4 leading-relaxed italic">
+                  "Service impeccable du début à la fin. Notre cuisine est magnifique et livrée exactement dans les délais promis!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <span className="font-bold text-secondary">ML</span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-sm">Marie-Louise P.</div>
+                    <div className="text-xs text-muted-foreground">Québec • Février 2025</div>
                   </div>
                 </div>
               </div>

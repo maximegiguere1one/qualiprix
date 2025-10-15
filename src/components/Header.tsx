@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Navigation réduite à 4 liens max
   const menuItems = [
-    { label: "Nos cuisines", href: "#collections" },
-    { label: "Notre processus", href: "#process" },
-    { label: "Prix & Délais", href: "/prix-delais" },
-    { label: "Zones desservies", href: "/zones-desservies" },
-    { label: "Inspirations", href: "/blog" },
-    { label: "À propos", href: "#about" },
+    { label: "Collections", href: "#collections" },
+    { label: "Processus", href: "#process" },
+    { label: "Réalisations", href: "#portfolio" },
     { label: "Contact", href: "#contact" }
   ];
 
@@ -42,83 +41,95 @@ const Header = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-soft)] transition-all duration-300 ease-out ${
-      isScrolled ? 'h-16' : 'h-20'
-    }`}>
-      <div className="container px-4 mx-auto">
-        <div className={`flex items-center justify-between transition-all duration-300 ease-out ${
-          isScrolled ? 'h-16' : 'h-20'
-        }`}>
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="focus-ring"
-          >
-            <img 
-              src={logo} 
-              alt="Logo BOUM" 
-              className={`transition-all duration-300 ease-out ${
-                isScrolled ? 'h-12' : 'h-16'
-              }`}
-            />
-          </button>
+    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b border-foreground/5">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          
+          {/* Logo AGRANDI + Badge */}
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="focus-ring"
+            >
+              <img 
+                src={logo} 
+                alt="Armoire Qualiprix" 
+                className="h-12 md:h-14"
+              />
+            </button>
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-xs font-bold text-secondary">+500 cuisines livrées</span>
+            </div>
+          </div>
 
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          {/* Navigation RÉDUITE */}
+          <nav className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground font-bold text-base lg:text-lg hover:text-primary transition-colors link-underline focus-ring"
+                className="text-sm font-semibold text-foreground/80 hover:text-secondary transition-colors relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            
+            {/* CTA téléphone PROÉMINENT */}
+            <a 
+              href="tel:5813973587"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full font-bold hover:scale-105 transition-transform shadow-lg hover:shadow-2xl"
+            >
+              <Phone className="w-4 h-4" />
+              581-397-3587
+            </a>
           </nav>
 
-          <div className="hidden md:block">
-            <Button onClick={scrollToContact} size="sm">
-              Consultation 📞
-            </Button>
-          </div>
-
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground focus-ring rounded-lg"
+          {/* CTA principal MASSIF */}
+          <Button 
+            size="lg"
+            onClick={scrollToContact}
+            className="hidden md:flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full shadow-[0_10px_30px_rgb(249_115_22_/_40%)] hover:shadow-[0_15px_40px_rgb(249_115_22_/_60%)] transition-all"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+            Consultation gratuite
+            <ArrowRight className="w-5 h-5" />
+          </Button>
 
-        {isMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-border animate-scale-in">
-            <div className="flex flex-col gap-4">
-              {menuItems.map((item, index) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-foreground font-bold text-lg text-left py-2 hover:text-primary transition-colors link-underline focus-ring animate-menu-stagger"
-                  style={{ 
-                    animationDelay: `${index * 60}ms`,
-                    opacity: 0,
-                    animationFillMode: 'forwards'
-                  }}
+          {/* Menu mobile */}
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger className="lg:hidden">
+              <Menu className="w-6 h-6" />
+            </SheetTrigger>
+            <SheetContent>
+              <nav className="flex flex-col gap-6 mt-8">
+                {menuItems.map((item, index) => (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-foreground font-bold text-lg text-left py-2 hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <a 
+                  href="tel:5813973587"
+                  className="flex items-center gap-2 px-5 py-3 bg-primary text-white rounded-full font-bold mt-4"
                 >
-                  {item.label}
-                </button>
-              ))}
-              <Button 
-                onClick={scrollToContact} 
-                className="mt-4 animate-menu-stagger"
-                style={{ 
-                  animationDelay: `${menuItems.length * 60}ms`,
-                  opacity: 0,
-                  animationFillMode: 'forwards'
-                }}
-              >
-                Soumission gratuite
-              </Button>
-            </div>
-          </nav>
-        )}
+                  <Phone className="w-4 h-4" />
+                  581-397-3587
+                </a>
+                <Button 
+                  onClick={scrollToContact} 
+                  size="lg"
+                  className="w-full"
+                >
+                  Consultation gratuite
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

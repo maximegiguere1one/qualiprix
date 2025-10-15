@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/realisation-cuisine-complete-luminaires-terrebonne.jpg";
 import { useEffect, useRef, useState } from "react";
 import { useParallaxLayers } from "@/hooks/useParallaxLayers";
@@ -75,68 +75,110 @@ const Hero = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Trust badge - NOUVEAU design */}
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full mb-8 shadow-2xl animate-fade-in">
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-white/90 font-medium text-sm tracking-wide">
-              <span className="font-bold">📞 581-397-3587</span> • Parlez à un humain, pas un bot
-            </span>
-          </div>
+      {/* Badge téléphone MASSIF et cliquable */}
+      <a 
+        href="tel:5813973587"
+        className="inline-flex items-center gap-4 bg-white/15 backdrop-blur-2xl border-2 border-white/30 px-8 py-4 rounded-full mb-10 shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:bg-white/20 hover:scale-105 transition-all duration-300 group animate-fade-in"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_rgb(74,222,128)]" />
+          <Phone className="w-6 h-6 text-white group-hover:rotate-12 transition-transform" />
+        </div>
+        <div className="text-left">
+          <div className="text-white/70 text-xs font-semibold uppercase tracking-wider">Appelle maintenant</div>
+          <div className="text-white text-2xl font-black">581-397-3587</div>
+        </div>
+        <ArrowRight className="w-5 h-5 text-white/70 group-hover:translate-x-2 transition-transform" />
+      </a>
 
-          {/* H1 - OPTIMISÉ version premium */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6 animate-fade-in text-white [text-shadow:_0_0_60px_rgb(249_115_22_/_40%),_0_0_30px_rgb(249_115_22_/_60%),_0_2px_4px_rgb(0_0_0_/_80%),_0_8px_16px_rgb(0_0_0_/_40%),_0_-2px_8px_rgb(255_255_255_/_30%)]">
-            Armoires de cuisine sur mesure <br className="hidden md:block" />
-            <span className="text-secondary">à Montréal</span> – <br className="hidden sm:block" />
-            Qualité boutique, service sans stress
+          {/* H1 REPENSÉ : Plus court, plus impactant */}
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 animate-fade-in text-white [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]" style={{ animationDelay: '50ms' }}>
+            Ta cuisine de rêve<br />
+            <span className="text-secondary">livrée en 4 semaines</span>
           </h1>
 
-          {/* Subheading - NOUVEAU style */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 animate-fade-in font-body leading-relaxed max-w-3xl mx-auto" style={{ animationDelay: '100ms' }}>
-            Ta cuisine de rêve, livrée en <span className="font-bold text-secondary">4 semaines</span>, sans stress ni surprises.<br />
-            Le luxe <span className="italic">sans</span> les délais ni le prix du luxe.
-          </p>
+      {/* Subheading RÉÉCRIT pour impact émotionnel */}
+      <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-12 animate-fade-in font-body leading-tight max-w-4xl mx-auto font-medium" style={{ animationDelay: '100ms' }}>
+        Qualité boutique. Prix d'entrepôt. <br className="hidden sm:block" />
+        <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
+      </p>
 
-          {/* USP Pills - NOUVEAU layout */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in" style={{ animationDelay: '200ms' }}>
-            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
-              <span className="text-2xl">⭐</span>
-              <span className="text-white font-semibold text-sm">Qualité boutique</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
-              <span className="text-2xl">⚡</span>
-              <span className="text-white font-semibold text-sm">4 semaines</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
-              <span className="text-2xl">📍</span>
-              <span className="text-white font-semibold text-sm">Service local</span>
-            </div>
+      {/* USP Pills HIÉRARCHISÉES avec tailles différentes */}
+      <div className="flex flex-wrap justify-center items-center gap-4 mb-14 animate-fade-in" style={{ animationDelay: '200ms' }}>
+        
+        {/* Pill #1 : FEATURED (plus grosse) */}
+        <div className="flex items-center gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-8 py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
+          <span className="text-3xl">⚡</span>
+          <div className="text-left">
+            <div className="text-white/70 text-xs font-semibold uppercase">Livraison</div>
+            <div className="text-white text-xl font-black">4 semaines</div>
           </div>
+        </div>
+        
+        {/* Pills #2 et #3 : Normales */}
+        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+          <span className="text-2xl">⭐</span>
+          <span className="text-white font-semibold">5/5 étoiles</span>
+        </div>
+        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+          <span className="text-2xl">🏆</span>
+          <span className="text-white font-semibold">Garantie 30 ans</span>
+        </div>
+      </div>
 
-          {/* CTA - REFONTE COMPLÈTE */}
-          <div className="relative inline-block animate-fade-in" style={{ animationDelay: '300ms' }}>
+          {/* CTA DOUBLE : Primaire + Secondaire */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
+            
+            {/* CTA Primaire MASSIF */}
             <Button 
               size="lg" 
-              variant="secondary"
               onClick={scrollToContact}
-              className="group relative text-base md:text-lg px-8 md:px-10 py-4 md:py-5 h-auto rounded-full shadow-[0_10px_40px_-10px_rgb(249_115_22_/_50%)] hover:shadow-[0_20px_60px_-10px_rgb(249_115_22_/_70%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden"
+              className="group relative text-lg md:text-xl px-10 md:px-14 py-5 md:py-7 h-auto bg-secondary hover:bg-secondary/90 text-white font-black rounded-full shadow-[0_20px_60px_-10px_rgb(249_115_22_/_60%)] hover:shadow-[0_30px_80px_-10px_rgb(249_115_22_/_80%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden hover:scale-105"
             >
-              {/* Shimmer effect */}
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-              
               <span className="relative z-10 flex items-center gap-3">
-                Demande ta consultation gratuite
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Obtiens ton plan 3D gratuit
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </span>
             </Button>
             
-            {/* Pulsing ring */}
-            <div className="absolute inset-0 -z-10 bg-secondary/30 blur-2xl rounded-full animate-[pulse_3s_ease-in-out_infinite]" />
+            {/* CTA Secondaire (téléphone) */}
+            <Button 
+              size="lg"
+              variant="outline"
+              asChild
+              className="group text-base md:text-lg px-8 md:px-10 py-5 md:py-7 h-auto bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 font-bold rounded-full transition-all duration-300"
+            >
+              <a href="tel:5813973587" className="flex items-center gap-3">
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                Appelle maintenant
+              </a>
+            </Button>
           </div>
 
-          {/* Social proof micro - NOUVEAU */}
-          <p className="text-white/60 text-sm mt-6 animate-fade-in" style={{ animationDelay: '400ms' }}>
-            ⭐ 5/5 étoiles • +500 cuisines livrées • Garantie 30 ans
-          </p>
+      {/* Social proof micro ENRICHI */}
+      <div className="mt-10 animate-fade-in" style={{ animationDelay: '400ms' }}>
+        <div className="flex items-center justify-center gap-6 text-white/70 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">JT</div>
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">ML</div>
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">SP</div>
+            </div>
+            <span className="font-semibold">+500 clients ravis</span>
+          </div>
+          <div className="w-px h-4 bg-white/30" />
+          <span>📍 Québec • Montréal • Rive-Nord</span>
+        </div>
+      </div>
+
+      {/* Scroll indicator ANIMÉ */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="flex flex-col items-center gap-2 text-white/60">
+          <span className="text-xs font-semibold uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6" />
+        </div>
+      </div>
         </div>
       </div>
 

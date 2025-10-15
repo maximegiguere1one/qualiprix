@@ -1,0 +1,75 @@
+/* Premium animations for Million Dollar site */
+
+/* Float particles (Hero background) */
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(10px, -20px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Gradient rotation (animated backgrounds) */
+@keyframes gradient-rotate {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+/* Float up (decorative blobs) */
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+/* Shimmer effect (buttons) */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Glow pulse (trust badges) */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+  }
+}
+
+/* Magnetic hover (interactive elements) */
+@keyframes magnetic-hover {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--mouse-x, 0), var(--mouse-y, 0));
+  }
+}
+
+/* Menu stagger (mobile navigation) */
+@keyframes menu-stagger {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

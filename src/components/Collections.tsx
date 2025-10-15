@@ -116,22 +116,29 @@ const Collections = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="collections" className="py-12 md:py-20 lg:py-24 bg-muted/30">
+    <section ref={sectionRef} id="collections" className="py-24 md:py-32 bg-gradient-to-b from-background via-muted/5 to-background">
       <div className="container px-4 mx-auto">
+        
+        {/* Header OPTIMISÉ */}
         <div 
-          className={`text-center mb-16 transition-all duration-320 ease-out ${
+          className={`text-center mb-20 transition-all duration-320 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Nos collections
+          <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
+            7 Collections • 100+ Modèles
+          </span>
+          <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-foreground mb-8">
+            Chaque cuisine raconte<br />
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">une histoire unique</span>
           </h2>
           <p 
-            className={`text-xl text-muted-foreground font-body max-w-3xl mx-auto transition-all duration-320 ease-out delay-75 ${
+            className={`text-xl md:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed transition-all duration-320 ease-out delay-75 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
-            Chaque collection est pensée pour répondre à vos besoins et votre style de vie
+            Du classique revisité au moderne épuré.<br className="hidden sm:block" />
+            Trouve le style qui te ressemble.
           </p>
         </div>
 
