@@ -142,8 +142,44 @@ const Collections = () => {
           </p>
         </div>
 
+        {/* Collection PRESTIGE en HERO CARD (pleine largeur) */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div 
+            className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_30px_80px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-pointer"
+            onClick={() => setSelectedCollection(0)}
+          >
+            <div className="aspect-[21/9] relative">
+              <img 
+                src={collections[0].images[0]}
+                alt={collections[0].name}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              
+              {/* Badge "NOTRE PRÉFÉRÉE" */}
+              <div className="absolute top-6 right-6 px-5 py-2.5 bg-secondary text-white rounded-full font-bold text-sm shadow-2xl">
+                ⭐ Notre préférée
+              </div>
+              
+              {/* Content superposé */}
+              <div className="absolute bottom-0 left-0 right-0 p-10">
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4">{collections[0].name}</h3>
+                <p className="text-white/90 text-lg mb-6 max-w-2xl">
+                  {collections[0].benefits.join(' • ')}
+                </p>
+                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-full text-white font-bold hover:bg-white/30 transition-all">
+                  Voir les {collections[0].images.length} photos →
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Grid 2 colonnes pour le reste */}
         <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-          {collections.map((collection, index) => (
+          {collections.slice(1).map((collection, index) => (
             <Card 
               key={index} 
               className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group cursor-pointer relative will-change-transform transition-[transform,box-shadow] duration-300 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 ${

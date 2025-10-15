@@ -1,8 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Wrench, Truck, Shield, DollarSign, ArrowRight } from "lucide-react";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const WhyUs = () => {
+  const { count: yearsCount, ref: yearsRef } = useCountUp(30, 2000);
+  const { count: clientsCount, ref: clientsRef } = useCountUp(500, 2500);
+  const { count: plywoodCount, ref: plywoodRef } = useCountUp(100, 1500);
   const reasons = [
     {
       icon: Wrench,
@@ -70,6 +74,20 @@ const WhyUs = () => {
                     <reason.icon className={`w-8 h-8 ${isFeature ? 'text-white' : 'text-secondary'}`} strokeWidth={1.5} />
                   </div>
                   
+                  {/* Stats visuelles pour card #1 */}
+                  {isFeature && (
+                    <div className="mb-6 flex gap-6">
+                      <div ref={yearsRef as any}>
+                        <div className="text-5xl font-black text-white">{yearsCount}</div>
+                        <div className="text-white/80 text-sm font-semibold">ans garantie</div>
+                      </div>
+                      <div ref={plywoodRef as any}>
+                        <div className="text-5xl font-black text-white">{plywoodCount}%</div>
+                        <div className="text-white/80 text-sm font-semibold">contreplaqué</div>
+                      </div>
+                    </div>
+                  )}
+                  
                   <h3 className={`text-xl md:text-2xl font-bold mb-3 leading-tight ${isFeature ? 'text-white' : 'text-foreground'}`}>
                     {reason.title}
                   </h3>
@@ -77,6 +95,13 @@ const WhyUs = () => {
                   <p className={`font-body leading-relaxed ${isFeature ? 'text-white/90 text-lg' : 'text-muted-foreground'}`}>
                     {reason.description}
                   </p>
+                  
+                  {/* Badge "POPULAIRE" pour card #2 */}
+                  {index === 1 && (
+                    <div className="mt-4 inline-block px-3 py-1.5 bg-secondary/20 border border-secondary rounded-full">
+                      <span className="text-xs font-bold text-secondary">⚡ Le plus populaire</span>
+                    </div>
+                  )}
                   
                   {/* Micro-interaction: Arrow on hover */}
                   {isFeature && (

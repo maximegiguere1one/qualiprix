@@ -7,6 +7,7 @@ import logo from "@/assets/logo.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
 
   // Navigation réduite à 4 liens max
   const menuItems = [
@@ -18,7 +19,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 40);
+      setIsCompact(scrollY > 100); // Sticky smart: réduction après 100px
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -41,9 +44,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b border-foreground/5">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b border-foreground/5 transition-all duration-300">
+      <div className="container mx-auto px-6">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isCompact ? 'py-2' : 'py-4'
+        }`}>
           
           {/* Logo AGRANDI + Badge */}
           <div className="flex items-center gap-4">
@@ -54,13 +59,17 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="Armoire Qualiprix" 
-                className="h-12 md:h-14"
+                className={`w-auto transition-all duration-300 ${
+                  isCompact ? 'h-10 md:h-12' : 'h-12 md:h-14'
+                }`}
               />
             </button>
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-xs font-bold text-secondary">+500 cuisines livrées</span>
-            </div>
+            {!isCompact && (
+              <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full animate-fade-in">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-xs font-bold text-secondary">+500 cuisines livrées</span>
+              </div>
+            )}
           </div>
 
           {/* Navigation RÉDUITE */}

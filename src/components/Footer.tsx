@@ -7,7 +7,78 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-8">
+    <footer className="bg-primary text-primary-foreground">
+      {/* Final CTA Section AVANT footer */}
+      <div className="bg-gradient-to-br from-secondary via-secondary/90 to-secondary/80 text-white py-20">
+        <div className="container px-4 mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+            Prêt à transformer<br />
+            <span className="text-white/90">ta cuisine?</span>
+          </h2>
+          <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
+            +500 clients ravis. Livraison en 4 semaines. Garantie 30 ans.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="tel:5813973587"
+              className="inline-flex items-center gap-3 bg-white text-secondary px-10 py-5 rounded-full font-black text-lg hover:scale-105 transition-transform shadow-2xl"
+            >
+              📞 581-397-3587
+            </a>
+            <button 
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all"
+            >
+              Plan 3D gratuit →
+            </button>
+          </div>
+          
+          {/* Trust badges */}
+          <div className="mt-16 flex flex-wrap justify-center gap-8">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🏆</span>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-white">Garantie 30 ans</div>
+                <div className="text-white/70 text-sm">Tranquillité totale</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-white">Livraison 4 semaines</div>
+                <div className="text-white/70 text-sm">Pas 6 mois</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">⭐</span>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-white">5/5 étoiles</div>
+                <div className="text-white/70 text-sm">Google Reviews</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🍁</span>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-white">100% Québécois</div>
+                <div className="text-white/70 text-sm">Entreprise locale</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Footer classique */}
+      <div className="py-8">
       <div className="container px-4 mx-auto">
         <div className="grid md:grid-cols-5 gap-6 mb-6">
           {/* Company Info */}
@@ -133,6 +204,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-4 text-center text-primary-foreground/70 font-body">
           <p>&copy; {new Date().getFullYear()} Armoire Qualiprix. Tous droits réservés.</p>
         </div>
+      </div>
       </div>
     </footer>
   );
