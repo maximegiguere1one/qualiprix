@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wrench, Truck, Shield, DollarSign } from "lucide-react";
+import { Wrench, Truck, Shield, DollarSign, ArrowRight } from "lucide-react";
 
 const WhyUs = () => {
   const reasons = [
@@ -31,35 +31,77 @@ const WhyUs = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden animate-gradient-shift">
-      {/* Corner decorative elements */}
-      <div className="blob-decoration w-72 h-72 bg-primary/5 top-10 left-0" style={{ animationDelay: '1.5s' }} />
-      <div className="blob-decoration w-80 h-80 bg-secondary/5 bottom-10 right-0" style={{ animationDelay: '4.5s' }} />
-      <div className="container px-4 mx-auto">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-12">
-            {reasons.map((reason, index) => (
-              <Card key={index} className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem]">
-                <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[var(--shadow-soft)] backdrop-blur-sm border border-secondary/10">
-                    <reason.icon className="w-10 h-10 text-secondary" strokeWidth={1.5} />
+    <section className="py-20 md:py-28 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden">
+      {/* Decorative mesh gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(249,115,22,0.08),transparent_70%),radial-gradient(circle_at_80%_70%,rgba(1,42,89,0.08),transparent_70%)]" />
+
+      <div className="container px-4 mx-auto relative z-10">
+        {/* Section header - NOUVEAU style */}
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-4 tracking-wide uppercase">
+            Pourquoi Qualiprix
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-6">
+            Parce que ta cuisine mérite <br className="hidden sm:block" />
+            <span className="text-secondary">mieux qu'une promesse</span>
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed">
+            Aucun blabla. Juste des faits et une garantie de 30 ans.
+          </p>
+        </div>
+
+        {/* Cards grid - NOUVEAU layout avec featured card */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {reasons.map((reason, index) => {
+            const isFeature = index === 0; // Premier élément = featured
+            
+            return (
+              <Card 
+                key={index} 
+                className={`group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden ${
+                  isFeature ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-primary/80 text-white' : 'bg-card'
+                }`}
+              >
+                <CardContent className={`p-8 ${isFeature ? 'md:p-12' : ''}`}>
+                  {/* Icon wrapper */}
+                  <div className={`w-16 h-16 mb-6 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 ${
+                    isFeature ? 'bg-white/10 backdrop-blur-sm' : 'bg-secondary/10'
+                  }`}>
+                    <reason.icon className={`w-8 h-8 ${isFeature ? 'text-white' : 'text-secondary'}`} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">{reason.title}</h3>
-                  <p className="text-muted-foreground font-body leading-relaxed">{reason.description}</p>
+                  
+                  <h3 className={`text-xl md:text-2xl font-bold mb-3 leading-tight ${isFeature ? 'text-white' : 'text-foreground'}`}>
+                    {reason.title}
+                  </h3>
+                  
+                  <p className={`font-body leading-relaxed ${isFeature ? 'text-white/90 text-lg' : 'text-muted-foreground'}`}>
+                    {reason.description}
+                  </p>
+                  
+                  {/* Micro-interaction: Arrow on hover */}
+                  {isFeature && (
+                    <div className="mt-6 flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                      <span className="text-sm font-semibold">En savoir plus</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  )}
                 </CardContent>
               </Card>
-            ))}
-          </div>
+            );
+          })}
+        </div>
 
-          <div className="text-center">
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={scrollToCollections}
-            >
-              Découvrir nos collections
-            </Button>
-          </div>
+        {/* CTA */}
+        <div className="text-center">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={scrollToCollections}
+            className="group border-2 border-foreground/20 hover:border-secondary hover:bg-secondary hover:text-white transition-all duration-300"
+          >
+            Découvrir nos collections
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
     </section>

@@ -75,57 +75,68 @@ const Hero = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Phone Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6 animate-fade-in">
-            <span className="text-white font-semibold">📞 581-397-3587 – Parle à un humain, pas un chatbot</span>
+          {/* Trust badge - NOUVEAU design */}
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full mb-8 shadow-2xl animate-fade-in">
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-white/90 font-medium text-sm tracking-wide">
+              <span className="font-bold">📞 581-397-3587</span> • Parlez à un humain, pas un bot
+            </span>
           </div>
-          
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4 md:mb-6 animate-fade-in leading-[1.15] text-white [text-shadow:_0_0_60px_rgb(249_115_22_/_40%),_0_0_30px_rgb(249_115_22_/_60%),_0_2px_4px_rgb(0_0_0_/_80%),_0_8px_16px_rgb(0_0_0_/_40%),_0_-2px_8px_rgb(255_255_255_/_30%)]">
-            Armoires de cuisine sur mesure à Montréal – Qualité boutique, service sans stress
+
+          {/* H1 - OPTIMISÉ version premium */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6 animate-fade-in text-white [text-shadow:_0_0_60px_rgb(249_115_22_/_40%),_0_0_30px_rgb(249_115_22_/_60%),_0_2px_4px_rgb(0_0_0_/_80%),_0_8px_16px_rgb(0_0_0_/_40%),_0_-2px_8px_rgb(255_255_255_/_30%)]">
+            Armoires de cuisine sur mesure <br className="hidden md:block" />
+            <span className="text-secondary">à Montréal</span> – <br className="hidden sm:block" />
+            Qualité boutique, service sans stress
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/95 mb-8 md:mb-12 animate-fade-in font-body leading-relaxed">
-            Ta cuisine de rêve, livrée en 4 semaines, sans stress ni surprises.<br />
-            <span className="font-bold">Le luxe sans les délais ni le prix du luxe.</span>
+
+          {/* Subheading - NOUVEAU style */}
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 animate-fade-in font-body leading-relaxed max-w-3xl mx-auto" style={{ animationDelay: '100ms' }}>
+            Ta cuisine de rêve, livrée en <span className="font-bold text-secondary">4 semaines</span>, sans stress ni surprises.<br />
+            Le luxe <span className="italic">sans</span> les délais ni le prix du luxe.
           </p>
 
-          {/* Three Pillars */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8 md:mb-12">
-            <div className="flex items-center gap-2 text-white">
+          {/* USP Pills - NOUVEAU layout */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
               <span className="text-2xl">⭐</span>
-              <span className="font-semibold">Qualité boutique</span>
+              <span className="text-white font-semibold text-sm">Qualité boutique</span>
             </div>
-            <div className="flex items-center gap-2 text-white">
-              <span className="text-2xl">📍</span>
-              <span className="font-semibold">Service local</span>
-            </div>
-            <div className="flex items-center gap-2 text-white">
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
               <span className="text-2xl">⚡</span>
-              <span className="font-semibold">Délai rapide</span>
+              <span className="text-white font-semibold text-sm">4 semaines</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 px-5 py-2.5 rounded-full hover:bg-white/10 transition-all duration-300 cursor-default">
+              <span className="text-2xl">📍</span>
+              <span className="text-white font-semibold text-sm">Service local</span>
             </div>
           </div>
 
-          {/* CTA with magnetic effect + ripple */}
-          <div className="relative inline-block">
+          {/* CTA - REFONTE COMPLÈTE */}
+          <div className="relative inline-block animate-fade-in" style={{ animationDelay: '300ms' }}>
             <Button 
               size="lg" 
-              variant="outline" 
-              onClick={scrollToContact} 
-              className="relative text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto shadow-xl hover:shadow-2xl inline-flex items-center gap-2 sm:gap-3 bg-white text-primary hover:bg-white/90 border-2 border-white animate-fade-in-subtle mt-2 sm:mt-4 overflow-hidden group will-change-transform"
-              style={{ animationDelay: '200ms', opacity: 0, animationFillMode: 'forwards' }}
+              variant="secondary"
+              onClick={scrollToContact}
+              className="group relative text-base md:text-lg px-8 md:px-10 py-4 md:py-5 h-auto rounded-full shadow-[0_10px_40px_-10px_rgb(249_115_22_/_50%)] hover:shadow-[0_20px_60px_-10px_rgb(249_115_22_/_70%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden"
             >
-              {/* Ripple effect on click */}
-              <span className="absolute inset-0 bg-white/20 scale-0 group-active:scale-100 transition-transform duration-500 rounded-xl"></span>
-              
               {/* Shimmer effect */}
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
               
-              <span className="relative z-10">Demande ta consultation gratuite</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10 flex items-center gap-3">
+                Demande ta consultation gratuite
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
             </Button>
             
-            {/* Pulsing glow */}
-            <div className="absolute inset-0 -z-10 bg-white/30 blur-2xl rounded-full animate-[glow-pulse_3s_ease-in-out_infinite]"></div>
+            {/* Pulsing ring */}
+            <div className="absolute inset-0 -z-10 bg-secondary/30 blur-2xl rounded-full animate-[pulse_3s_ease-in-out_infinite]" />
           </div>
+
+          {/* Social proof micro - NOUVEAU */}
+          <p className="text-white/60 text-sm mt-6 animate-fade-in" style={{ animationDelay: '400ms' }}>
+            ⭐ 5/5 étoiles • +500 cuisines livrées • Garantie 30 ans
+          </p>
         </div>
       </div>
 

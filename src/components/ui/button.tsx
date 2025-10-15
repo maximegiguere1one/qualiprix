@@ -9,12 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] hover:scale-[1.03] rounded-xl shadow-[0_8px_30px_hsl(var(--primary)/0.25)]",
+        default: "bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] hover:scale-[1.02] rounded-xl shadow-[0_8px_30px_hsl(var(--primary)/0.25)]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:scale-[1.02] rounded-xl",
-        outline: "border-2 border-primary/50 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] hover:border-primary rounded-xl backdrop-blur-sm",
-        secondary: "bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-secondary-foreground hover:shadow-[0_0_30px_hsl(var(--secondary)/0.4)] hover:scale-[1.03] rounded-xl shadow-[0_8px_30px_hsl(var(--secondary)/0.25)]",
+        outline: "border-2 border-foreground/20 bg-transparent text-foreground hover:bg-foreground hover:text-background hover:scale-[1.02] hover:border-foreground rounded-xl backdrop-blur-sm",
+        secondary: "bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-secondary-foreground hover:shadow-[0_0_30px_hsl(var(--secondary)/0.4)] hover:scale-[1.02] rounded-xl shadow-[0_8px_30px_hsl(var(--secondary)/0.25)]",
         ghost: "hover:bg-muted hover:text-foreground rounded-xl",
         link: "text-primary underline-offset-4 hover:underline",
+        premium: "relative bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:shadow-[0_0_40px_hsl(var(--secondary)/0.6)] rounded-full overflow-hidden",
       },
       size: {
         default: "h-14 px-8 py-4 text-base",

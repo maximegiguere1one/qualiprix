@@ -3,6 +3,12 @@ import { Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
 import GoogleReviewsBadge from "@/components/GoogleReviewsBadge";
+import realisationCuisine1 from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
+import realisationCuisine2 from "@/assets/realisation-armoires-grises-encastrees-quebec.jpg";
+import realisationCuisine3 from "@/assets/realisation-cuisine-ilot-waterfall-rive-nord.jpg";
+import realisationCuisine4 from "@/assets/realisation-cuisine-ouverte-escalier-montreal.jpg";
+import realisationCuisine5 from "@/assets/realisation-cuisine-compacte-blanche-brillante.jpg";
+import realisationCuisine6 from "@/assets/realisation-garde-manger-bois-rangement.jpg";
 
 const Testimonials = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -24,7 +30,7 @@ const Testimonials = () => {
       location: "Québec",
       text: "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine merci Armoire Qualiprix !!!",
       rating: 5,
-      projectImage: "/src/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg",
+      projectImage: realisationCuisine1,
       projectType: "Cuisine complète + îlot"
     },
     {
@@ -32,7 +38,7 @@ const Testimonials = () => {
       location: "Québec",
       text: "Super service!! À l'écoute des clients!! Je le recommande fortement",
       rating: 5,
-      projectImage: "/src/assets/realisation-armoires-grises-encastrees-quebec.jpg",
+      projectImage: realisationCuisine2,
       projectType: "Armoires encastrées"
     },
     {
@@ -40,7 +46,7 @@ const Testimonials = () => {
       location: "Québec",
       text: "produits de qualité quoi demander de mieux!",
       rating: 5,
-      projectImage: "/src/assets/realisation-cuisine-ilot-waterfall-rive-nord.jpg",
+      projectImage: realisationCuisine3,
       projectType: "Îlot waterfall"
     },
     {
@@ -48,7 +54,7 @@ const Testimonials = () => {
       location: "Québec",
       text: "Un gars avec une super expérience dans les armoires, appelez le, super service",
       rating: 5,
-      projectImage: "/src/assets/realisation-cuisine-ouverte-escalier-montreal.jpg",
+      projectImage: realisationCuisine4,
       projectType: "Cuisine ouverte"
     },
     {
@@ -56,7 +62,7 @@ const Testimonials = () => {
       location: "Québec",
       text: "Pour des armoires de qualité et un service super, merci 👍",
       rating: 5,
-      projectImage: "/src/assets/realisation-cuisine-compacte-blanche-brillante.jpg",
+      projectImage: realisationCuisine5,
       projectType: "Cuisine moderne"
     },
     {
@@ -64,77 +70,92 @@ const Testimonials = () => {
       location: "Québec",
       text: "Bon service belle qualité et prix raisonnable",
       rating: 5,
-      projectImage: "/src/assets/realisation-garde-manger-bois-rangement.jpg",
+      projectImage: realisationCuisine6,
       projectType: "Garde-manger sur mesure"
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
-      {/* Decorative elements with animation */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white/50 rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
-      </div>
+    <section ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Subtle decorative elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container px-4 mx-auto relative z-10">
+        {/* Header */}
         <div 
-          className={`text-center mb-12 transition-all duration-320 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+          className={`text-center mb-16 transition-all duration-500 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
           <div className="flex justify-center mb-6">
             <GoogleReviewsBadge />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            Témoignages clients
+          
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-6">
+            +500 cuisines livrées,<br />
+            <span className="text-secondary">+500 clients ravis</span>
           </h2>
-          <p 
-            className={`text-xl text-primary-foreground/90 font-body transition-all duration-320 ease-out delay-75 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-            }`}
-          >
-            Ce que nos clients disent de nous
+          
+          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto">
+            Vraies photos. Vrais clients. Zéro filtre.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
+        {/* Testimonials grid */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {(isMobile ? testimonials.slice(0, 3) : testimonials).map((testimonial, index) => (
             <Card 
               key={index} 
-              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] group hover-lift cursor-pointer transition-all duration-280 ease-out overflow-hidden ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              className={`group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-card ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${150 + index * 80}ms` }}
             >
-              {/* Photo du projet */}
+              {/* Photo */}
               {testimonial.projectImage && (
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-56">
                   <img 
                     src={testimonial.projectImage} 
-                    alt={`Projet ${testimonial.projectType} - ${testimonial.location}`}
-                    className="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    alt={`Projet ${testimonial.projectType}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
+                  
+                  {/* Overlay gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Project type badge */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
+                    <span className="text-xs font-bold text-foreground">{testimonial.projectType}</span>
+                  </div>
                 </div>
               )}
               
-              <CardContent className="p-6 md:p-8">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary transition-all duration-200 ease-out group-hover:scale-110" />
+              <CardContent className="p-6">
+                {/* Stars */}
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
                   ))}
                 </div>
-                <p className="text-lg text-foreground font-body mb-6 leading-relaxed">
+                
+                {/* Quote */}
+                <p className="text-foreground font-body mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
-                <div className="border-t border-muted pt-4">
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                  {testimonial.projectType && (
-                    <p className="text-xs text-primary mt-2 font-semibold">📦 {testimonial.projectType}</p>
-                  )}
+                
+                {/* Author */}
+                <div className="flex items-center gap-3 border-t border-muted pt-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center">
+                    <span className="text-lg font-bold text-secondary">
+                      {testimonial.name.charAt(0)}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
