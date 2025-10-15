@@ -51,7 +51,7 @@ const ArmoiresRiveNord = () => {
           </p>
           <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
-            Demande ton plan gratuit – Rive-Nord
+            Demande ta consultation gratuite – Rive-Nord
           </Button>
         </div>
       </section>

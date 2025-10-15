@@ -76,7 +76,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Button onClick={scrollToContact}>
-              Plan gratuit 📞
+              Consultation gratuite 📞
             </Button>
           </div>
 

@@ -35,7 +35,7 @@ const StickyCTA = () => {
           size="lg"
         >
           <Phone className="w-5 h-5 mr-2" />
-          Demande ton plan gratuit
+          Demande ta consultation gratuite
         </Button>
       </div>
     </div>

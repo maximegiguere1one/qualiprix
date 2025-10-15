@@ -9,7 +9,7 @@ const ArmoiresRiveSud = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Cuisines sur mesure Rive-Sud. Longueuil, Brossard, St-Jean. +60 clients satisfaits 5⭐. Qualité garantie 30 ans. Plan gratuit → 581-397-3587');
+      metaDescription.setAttribute('content', 'Cuisines sur mesure Rive-Sud. Longueuil, Brossard, St-Jean. +60 clients satisfaits 5⭐. Qualité garantie 30 ans. Consultation gratuite → 581-397-3587');
     }
     document.title = "Armoires sur mesure Rive-Sud | +60 clients 5⭐ | Garantie 30 ans";
     
@@ -51,7 +51,7 @@ const ArmoiresRiveSud = () => {
           </p>
           <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
-            Plan gratuit – Rive-Sud
+            Consultation gratuite – Rive-Sud
           </Button>
         </div>
       </section>

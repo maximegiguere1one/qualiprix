@@ -51,7 +51,7 @@ const ArmoiresQuebec = () => {
           </p>
           <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
-            Obtiens ton plan gratuit – Québec
+            Obtiens ta consultation gratuite – Québec
           </Button>
         </div>
       </section>
