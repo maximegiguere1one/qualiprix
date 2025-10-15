@@ -63,7 +63,7 @@ const Hero = () => {
       
       {/* Separate overlay with different parallax speed + gradient animation */}
       <div 
-        className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-black/35 to-black/25"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/50 to-black/40"
         style={{ transform: `translateY(${overlayOffset * 100}%)`, willChange: 'transform' }}
       />
 
@@ -80,7 +80,7 @@ const Hero = () => {
             <span className="text-white font-semibold">📞 581-397-3587 – Parle à un humain, pas un chatbot</span>
           </div>
           
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 animate-fade-in leading-[1.15] bg-gradient-to-r from-white via-white to-primary-foreground/90 bg-clip-text text-transparent [text-shadow:_0_2px_8px_rgb(0_0_0_/_50%),_0_4px_16px_rgb(0_0_0_/_40%),_0_8px_32px_rgb(1_42_89_/_30%)]">
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 animate-fade-in leading-[1.15] bg-gradient-to-r from-blue-400 via-blue-200 to-orange-400 bg-clip-text text-transparent [text-shadow:_0_0_40px_rgb(255_255_255_/_80%),_0_0_20px_rgb(59_130_246_/_60%),_0_4px_20px_rgb(0_0_0_/_40%)]">
             Armoires de cuisine sur mesure à Montréal – Qualité boutique, service sans stress
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/95 mb-8 md:mb-12 animate-fade-in font-body leading-relaxed">
