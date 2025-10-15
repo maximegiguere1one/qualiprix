@@ -139,30 +139,39 @@ const Collections = () => {
           {collections.map((collection, index) => (
             <Card 
               key={index} 
-              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group hover-lift cursor-pointer transition-all duration-280 ease-out relative ${
+              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group cursor-pointer relative will-change-transform transition-[transform,box-shadow] duration-300 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
               style={{ transitionDelay: `${150 + index * 70}ms` }}
+              onClick={() => setSelectedCollection(index)}
             >
+              {/* Animated border glow on hover */}
+              <div className="absolute inset-0 rounded-[1.25rem] p-[2px] bg-gradient-to-br from-primary/0 via-secondary/0 to-primary/0 group-hover:from-primary/30 group-hover:via-secondary/30 group-hover:to-primary/30 transition-all duration-500 -z-10"></div>
+              
               {collection.isRealProjects && (
-                <div className="absolute top-4 right-4 bg-secondary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold z-10">
-                  ✨ Projets réels
+                <div className="absolute top-4 right-4 bg-secondary text-primary-foreground px-3 py-1.5 rounded-full text-sm font-bold z-10 shadow-lg animate-[glow-pulse_2s_ease-in-out_infinite] will-change-[box-shadow]">
+                  <span className="relative z-10">✨ Projets réels</span>
+                  {/* Shine effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                 </div>
               )}
-              <CardContent className="p-6 md:p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6">{collection.name}</h3>
-                <ul className="space-y-3 mb-6">
+              
+              <CardContent className="p-6 md:p-8 relative">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10 group-hover:text-primary transition-colors duration-300">{collection.name}</h3>
+                <ul className="space-y-3 mb-6 relative z-10">
                   {collection.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 transition-all duration-200 ease-out group-hover:scale-110" />
-                      <span className="text-muted-foreground font-body">{benefit}</span>
+                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 transition-[transform,color] duration-300 ease-out group-hover:scale-125 group-hover:text-primary will-change-transform" />
+                      <span className="text-muted-foreground font-body group-hover:text-foreground transition-colors duration-300">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <Button 
                   variant="ghost" 
-                  className="w-full"
-                  onClick={() => setSelectedCollection(index)}
+                  className="w-full relative z-10 group-hover:bg-primary group-hover:text-primary-foreground"
                 >
                   Voir la collection
                 </Button>

@@ -242,20 +242,23 @@ const Contact = () => {
                       )}
                     />
 
-                    {/* Bouton de soumission premium */}
+                    {/* Bouton de soumission premium avec états */}
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
                       size="lg"
                       className="w-full relative group overflow-hidden"
                     >
+                      {/* Ripple effect on submit */}
+                      <span className="absolute inset-0 bg-white/10 scale-0 group-active:scale-100 transition-transform duration-500"></span>
+                      
                       {isSubmitting ? (
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 relative z-10">
                           <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white"></div>
                           <span>Envoi en cours...</span>
                         </div>
                       ) : (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 relative z-10">
                           <span>Envoyer ma demande</span>
                           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
