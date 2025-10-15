@@ -75,8 +75,8 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button onClick={scrollToContact}>
-              Consultation gratuite 📞
+            <Button onClick={scrollToContact} size="sm">
+              Consultation 📞
             </Button>
           </div>
 
