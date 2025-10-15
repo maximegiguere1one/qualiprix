@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState, useEffect } from "react";
+import GoogleReviewsBadge from "@/components/GoogleReviewsBadge";
 
 const Testimonials = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -68,10 +68,13 @@ const Testimonials = () => {
 
       <div className="container px-4 mx-auto relative z-10">
         <div 
-          className={`text-center mb-16 transition-all duration-320 ease-out ${
+          className={`text-center mb-12 transition-all duration-320 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
+          <div className="flex justify-center mb-6">
+            <GoogleReviewsBadge />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Témoignages clients
           </h2>

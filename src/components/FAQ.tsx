@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +9,63 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FAQ = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
+
+  // Add FAQ Schema.org structured data
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte une cuisine sur mesure ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos cuisines débutent à partir de 8 995 $ installation incluse. Le prix varie selon les dimensions, les matériaux choisis et les options de quincaillerie. Demandez une soumission gratuite pour un prix exact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre mélamine et polymère ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mélamine offre un excellent rapport qualité-prix avec une bonne résistance. Le polymère est plus durable, résiste mieux à l'humidité et aux rayures, et offre un fini plus luxueux. Nos conseillers vous aident à choisir selon votre budget et vos besoins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que vous offrez le service d'installation ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Malheureusement non, nous n'offrons pas ce service directement. Cependant, nous pouvons vous référer à nos installateurs partenaires, certifiés Qualiprix, qui se démarquent par leur rigueur, leur professionnalisme et leur excellent service à la clientèle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je voir un rendu 3D avant l'achat ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolument ! Nous créons un plan 3D détaillé de votre future cuisine lors de la consultation gratuite. Cela vous permet de visualiser exactement le résultat final avant de confirmer votre commande."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont vos délais de livraison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos délais standards sont de 10 à 15 jours ouvrables après confirmation de la commande. Pour les offres spéciales, la livraison peut être garantie sous 30 jours. Nous respectons nos engagements de délais."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const faqs = [
     {
       question: "Combien coûte une cuisine sur mesure ?",

@@ -1,0 +1,203 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { MapPin, Phone, Star, Shield } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const ArmoiresQuebec = () => {
+  const scrollToContact = () => {
+    window.location.href = "/#contact";
+  };
+
+  const regions = [
+    "Québec", "Lévis", "Beauport", "Charlesbourg",
+    "Sainte-Foy", "Limoilou", "Cap-Rouge", "L'Ancienne-Lorette"
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary via-secondary to-primary text-white">
+        <div className="container px-4 mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
+            <MapPin className="w-5 h-5" />
+            <span className="font-semibold">Région de Québec</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Armoires sur mesure à Québec – Entreprise québécoise fière
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            De Québec à Lévis, service complet. +25 ans d'expérience au service des familles d'ici.
+          </p>
+          <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
+            <Phone className="w-5 h-5 mr-2" />
+            Obtiens ton plan gratuit – Québec
+          </Button>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16">
+        <div className="container px-4 mx-auto max-w-6xl">
+          {/* Intro */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Service clé en main dans toute la région de Québec
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Depuis +25 ans, on aide les familles québécoises à créer leur cuisine idéale. 
+              Qualité boutique, prix d'entrepôt, livraison en 4 semaines.
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="border-2">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-secondary" />
+                </div>
+                <CardTitle>Garantie 30 ans</CardTitle>
+                <CardDescription>
+                  Protection totale sur tous nos produits. Contreplaqué supérieur, pas de compromis.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                  <Phone className="w-6 h-6 text-secondary" />
+                </div>
+                <CardTitle>Consultation gratuite</CardTitle>
+                <CardDescription>
+                  On se déplace chez toi. Plan 3D en 48h. Aucune pression, juste des conseils pro.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-secondary" />
+                </div>
+                <CardTitle>Livraison rapide</CardTitle>
+                <CardDescription>
+                  4 semaines max. Livraison incluse dans toute la région de Québec et Lévis.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+          {/* Regions Served */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Secteurs desservis</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {regions.map((region, index) => (
+                  <div key={index} className="flex items-center gap-2 text-muted-foreground">
+                    <div className="w-2 h-2 rounded-full bg-secondary" />
+                    <span>{region}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-muted-foreground">
+                Ton secteur n'est pas listé? <strong className="text-foreground">Appelle-nous!</strong> On livre dans toute la région.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Pourquoi choisir QualiPrix?</h3>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  <strong className="text-foreground">Entreprise 100% québécoise.</strong> On comprend les besoins des familles d'ici.
+                </p>
+                <p>
+                  <strong className="text-foreground">Prix d'entrepôt garantis.</strong> On élimine les intermédiaires pour te donner le meilleur prix.
+                </p>
+                <p>
+                  <strong className="text-foreground">Qualité sans compromis.</strong> Contreplaqué solide, quincaillerie pro, finitions impeccables.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-8 text-center">Ce que nos clients de Québec disent</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Nicolas St-Aubin</CardTitle>
+                  <CardDescription>Beauport</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic text-sm">
+                    "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine!"
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Jean-Sylvain Bélair</CardTitle>
+                  <CardDescription>Québec</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic text-sm">
+                    "Super service!! À l'écoute des clients!! Je le recommande fortement."
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Chantale Pion</CardTitle>
+                  <CardDescription>Lévis</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic text-sm">
+                    "Bon service, belle qualité et prix raisonnable."
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* CTA Final */}
+          <div className="text-center bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20 p-12 rounded-[1.25rem]">
+            <h3 className="text-3xl font-bold mb-4">Prêt à transformer ta cuisine?</h3>
+            <p className="text-xl text-muted-foreground mb-8">
+              Consultation gratuite, design 3D en 48h, livraison en 4 semaines. Simple et sans stress.
+            </p>
+            <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
+              <Phone className="w-5 h-5 mr-2" />
+              581-397-3587 – Parle-nous de ton projet
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default ArmoiresQuebec;
