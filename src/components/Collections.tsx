@@ -130,7 +130,7 @@ const Collections = () => {
           </span>
           <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-primary mb-8">
             Chaque cuisine raconte<br />
-            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">une histoire unique</span>
+            <span className="text-primary">une histoire unique</span>
           </h2>
           <p 
             className={`text-xl md:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed transition-all duration-320 ease-out delay-75 ${
