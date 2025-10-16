@@ -89,7 +89,7 @@ const WhyUs = () => {
                 </div>
 
                 {/* Contenu textuel centré - empilé verticalement avec meilleure hiérarchie */}
-                <div className="flex flex-col items-center text-center gap-2 lg:gap-3 max-w-3xl lg:max-w-4xl px-6 lg:px-8">
+                <div className="flex flex-col items-center text-center gap-2 lg:gap-3 max-w-3xl lg:max-w-4xl px-6 lg:px-8 pt-4 md:pt-8 lg:pt-12">
                   {/* Titre - niveau 1 de hiérarchie après GARANTI */}
                   <h3 className="text-[1.5rem] lg:text-[1.85rem] xl:text-[2rem] font-bold text-white leading-tight tracking-tight whitespace-nowrap">
                     {reasons[0].title}
