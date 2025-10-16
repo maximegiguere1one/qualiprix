@@ -14,7 +14,7 @@ const WhyUs = () => {
   }, {
     icon: DollarSign,
     title: "Le luxe sans les délais ni le prix du luxe",
-    description: "Prix d'entrepôt, qualité boutique. C'est notre promesse depuis +25 ans."
+    description: "25 ans d'expérience au service de votre cuisine. Qualité haut de gamme à prix d'entrepôt."
   }, {
     icon: Shield,
     title: "Entreprise d'ici, fièrement québécoise",
