@@ -27,13 +27,7 @@ const Mission = () => {
           
           <div className="space-y-6 mb-12">
             <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '80ms' }}>
-              Ça fait +25 ans qu'on aide des familles québécoises à avoir la cuisine de leurs rêves.
-            </p>
-            <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '160ms' }}>
-              Pas de bullshit, pas de vente sous pression, pas de délais ridicules.
-            </p>
-            <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '240ms' }}>
-              Juste du bon travail, fait ici, avec le sourire.
+              Depuis plus de 25 ans, on conçoit et installe des cuisines assemblée ici, pour des familles d'ici. Pas de promesses vides, pas de compromis sur la qualité. Juste des gens fiers de leur métier — et des clients fiers de leur cuisine.
             </p>
           </div>
 
