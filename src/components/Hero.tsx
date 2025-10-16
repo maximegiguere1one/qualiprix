@@ -3,28 +3,15 @@ import { ArrowRight, Phone, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/realisation-cuisine-complete-luminaires-terrebonne.jpg";
 import { useEffect, useRef, useState } from "react";
 import { useParallaxLayers } from "@/hooks/useParallaxLayers";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref: contentRef, isVisible } = useScrollReveal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0
   });
-  const contentRef = useRef<HTMLDivElement>(null);
   const [imageOffset, overlayOffset] = useParallaxLayers([0.06, 0.04]);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      }
-    }, {
-      threshold: 0.1
-    });
-    if (contentRef.current) {
-      observer.observe(contentRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
 
   // Track mouse for magnetic CTA
   useEffect(() => {
@@ -73,30 +60,24 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-12 md:py-20 mx-auto">
-        <div ref={contentRef} className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div ref={contentRef as React.RefObject<HTMLDivElement>} className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       {/* Badge téléphone discret */}
       
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className="font-display text-6xl md:text-7xl font-black tracking-tight leading-[1.15] mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]" style={{
-          animationDelay: '50ms'
-        }}>
+          <h1 className={`font-display text-6xl md:text-7xl font-black tracking-tight leading-[1.15] mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             Ta cuisine de rêve<br />
             <span className="text-secondary">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
-      <p className="text-xl md:text-2xl text-accessible-light-muted mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium" style={{
-          animationDelay: '100ms'
-        }}>
+      <p className={`text-xl md:text-2xl text-accessible-light-muted mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         Qualité haut de gamme. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>
 
       {/* USP Pills HIÉRARCHISÉES avec tailles différentes */}
-      <div className="flex flex-wrap justify-center items-center gap-4 mb-14 animate-fade-in" style={{
-          animationDelay: '200ms'
-        }}>
+      <div className={`flex flex-wrap justify-center items-center gap-4 mb-14 animate-fade-in transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         
         {/* Pill #1 : FEATURED (plus grosse) */}
         <div className="flex items-center gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-8 py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
@@ -119,9 +100,7 @@ const Hero = () => {
       </div>
 
           {/* CTA DOUBLE : Primaire + Secondaire */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{
-          animationDelay: '300ms'
-        }}>
+          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             
             {/* CTA Primaire MASSIF */}
             <Button size="lg" onClick={scrollToContact} className="group relative text-lg md:text-xl px-10 md:px-14 py-5 md:py-7 h-auto bg-secondary hover:bg-secondary/90 text-white font-black rounded-full shadow-[0_20px_60px_-10px_rgb(249_115_22_/_60%)] hover:shadow-[0_30px_80px_-10px_rgb(249_115_22_/_80%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden hover:scale-105">
@@ -142,9 +121,7 @@ const Hero = () => {
           </div>
 
       {/* Social proof micro ENRICHI */}
-      <div className="mt-10 animate-fade-in" style={{
-          animationDelay: '400ms'
-        }}>
+      <div className={`mt-10 animate-fade-in transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="flex items-center justify-center gap-6 text-white/70 text-sm">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">

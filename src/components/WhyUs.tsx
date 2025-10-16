@@ -2,7 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Wrench, Truck, Shield, DollarSign, ArrowRight, Zap, Sparkles, MapPin } from "lucide-react";
 import garantie30Logo from "@/assets/garantie-30-logo.png";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 const WhyUs = () => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
+  
   const reasons = [{
     icon: Wrench,
     title: "Des armoires faites pour durer, pas juste pour paraître",
@@ -25,13 +28,13 @@ const WhyUs = () => {
       behavior: "smooth"
     });
   };
-  return <section className="py-20 md:py-28 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden">
+  return <section ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden">
       {/* Decorative mesh gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(249,115,22,0.08),transparent_70%),radial-gradient(circle_at_80%_70%,rgba(1,42,89,0.08),transparent_70%)]" />
 
       <div className="container px-4 mx-auto relative z-10">
         {/* Section header - NOUVEAU style */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-4 tracking-wide uppercase">
             Pourquoi Qualiprix
           </span>
@@ -47,7 +50,7 @@ const WhyUs = () => {
         {/* Cards grid - Layout avec carte featured en haut pleine largeur */}
         <div className="max-w-7xl mx-auto mb-12 space-y-6">
           {/* Carte featured en pleine largeur */}
-          <Card className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-gradient-to-b from-[#012A59] via-primary to-[#2E567D] text-white">
+          <Card className={`group border-none shadow-lg hover:shadow-2xl transition-all duration-800 delay-200 rounded-2xl overflow-hidden bg-gradient-to-b from-[#012A59] via-primary to-[#2E567D] text-white ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <CardContent className="relative p-4 md:p-6 lg:p-8 overflow-hidden">
               {/* Version Mobile - Simple et centrée */}
               <div className="flex md:hidden flex-col items-center text-center gap-3">
@@ -115,7 +118,8 @@ const WhyUs = () => {
             {reasons.slice(1).map((reason, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-card border-border h-full"
+                className={`group hover:shadow-xl transition-all duration-800 hover:scale-[1.02] bg-card border-border h-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <CardContent className="p-8 text-center">
                   {/* Icône visuelle avec cercle coloré */}
@@ -146,7 +150,7 @@ const WhyUs = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className={`text-center transition-all duration-800 delay-[600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Button variant="outline" size="lg" onClick={scrollToCollections} className="group border-2 border-foreground/20 hover:border-secondary hover:bg-secondary hover:text-white transition-all duration-300">
             Découvrir nos collections
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

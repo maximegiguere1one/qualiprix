@@ -144,8 +144,8 @@ const FAQ = () => {
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
           <div 
-            className={`text-center mb-16 transition-all duration-320 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            className={`text-center mb-16 transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
