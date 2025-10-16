@@ -76,7 +76,7 @@ const ZonesDesservies = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-primary text-white relative overflow-visible">
+      <section className="py-20 bg-secondary text-white relative overflow-visible">
         {/* Decorative blobs with animation */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
