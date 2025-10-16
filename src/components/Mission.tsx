@@ -27,7 +27,7 @@ const Mission = () => {
           
           <div className="space-y-6 mb-12">
             <p className={`text-lg md:text-xl text-white font-body leading-relaxed transition-all duration-320 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`} style={{ transitionDelay: '80ms' }}>
-              Depuis plus de 25 ans, on conçoit et installe des cuisines assemblée ici, pour des familles d'ici. Pas de promesses vides, pas de compromis sur la qualité. Juste des gens fiers de leur métier — et des clients fiers de leur cuisine.
+              Depuis plus de <strong>25 ans</strong>, on conçoit et installe des <strong>cuisines assemblée ici</strong>, pour des <strong>familles d'ici</strong>. <strong>Pas de promesses vides</strong>, <strong>pas de compromis sur la qualité</strong>. Juste des gens <strong>fiers de leur métier</strong> — et des <strong>clients fiers</strong> de leur cuisine.
             </p>
           </div>
 
