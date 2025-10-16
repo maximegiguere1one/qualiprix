@@ -22,10 +22,10 @@ const Header = () => {
   // Navigation structure
   const navigationItems = {
     cuisines: [
-      { label: "Collections", href: "#collections", description: "Shaker, Elite, Prestige" },
-      { label: "Réalisations", href: "#portfolio", description: "+500 projets livrés" },
-      { label: "Notre processus", href: "#process", description: "4 étapes simples" },
-      { label: "Prix & Délais", href: "/prix-delais", description: "Transparence totale" },
+      { label: "Collections", href: "#collections" },
+      { label: "Réalisations", href: "#portfolio" },
+      { label: "Notre processus", href: "#process" },
+      { label: "Prix & Délais", href: "/prix-delais" },
     ],
     regions: [
       { label: "Montréal", href: "/armoires-montreal", icon: "🏙️" },
@@ -77,7 +77,7 @@ const Header = () => {
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className={cn(
           "flex items-center justify-between transition-all duration-300",
-          isCompact ? 'py-3' : 'py-5'
+          isCompact ? 'py-2' : 'py-3'
         )}>
           
           {/* Logo */}
@@ -85,7 +85,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Armoire Qualiprix" 
-              className={cn("w-auto transition-all duration-300", isCompact ? 'h-14' : 'h-16')}
+              className={cn("w-auto transition-all duration-300", isCompact ? 'h-10' : 'h-12')}
             />
           </Link>
 
@@ -95,22 +95,19 @@ const Header = () => {
               
               {/* Nos Cuisines */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">
+                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
                   Nos Cuisines
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4">
+                  <ul className="grid w-[280px] gap-1 p-3 bg-background/98 backdrop-blur-md">
                     {navigationItems.cuisines.map((item) => (
                       <li key={item.label}>
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left w-full"
+                            className="block w-full text-left select-none rounded-md px-3 py-2 text-sm font-medium leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">{item.label}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {item.description}
-                            </p>
+                            {item.label}
                           </button>
                         </NavigationMenuLink>
                       </li>
@@ -121,44 +118,55 @@ const Header = () => {
 
               {/* Nos Régions */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">
+                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
                   Nos Régions
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-2 p-4">
-                    {navigationItems.regions.map((item) => (
-                      <li key={item.label}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to={item.href}
-                            className={cn(
-                              "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                              item.featured && "bg-secondary/10 border border-secondary/20 font-semibold"
-                            )}
-                          >
-                            <span className="mr-2">{item.icon}</span>
-                            {item.label}
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="w-[220px] p-3 bg-background/98 backdrop-blur-md">
+                    <ul className="grid grid-cols-2 gap-1.5 mb-2">
+                      {navigationItems.regions.slice(0, 5).map((item) => (
+                        <li key={item.label}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="block select-none rounded-md px-2.5 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <span className="mr-1.5 text-xs">{item.icon}</span>
+                              <span className="text-xs font-medium">{item.label}</span>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* Separator + Featured link */}
+                    <div className="border-t border-foreground/10 pt-2">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/zones-desservies"
+                          className="block select-none rounded-md px-2.5 py-2 text-sm font-semibold bg-secondary/5 border border-secondary/10 leading-none no-underline outline-none transition-colors hover:bg-secondary/10 hover:border-secondary/20"
+                        >
+                          → Toutes les zones
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               {/* Ressources */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">
+                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
                   Ressources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-2 p-4">
+                  <ul className="grid w-[200px] gap-1 p-3 bg-background/98 backdrop-blur-md">
                     {navigationItems.ressources.map((item) => (
                       <li key={item.label}>
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left w-full"
+                            className="block w-full text-left select-none rounded-md px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             {item.label}
                           </button>
