@@ -221,7 +221,7 @@ const Collections = () => {
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - Photo ${idx + 1} sur ${collections[selectedCollection].images.length}`}
-                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-lg"
+                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     <div className="text-center mt-3 text-sm text-muted-foreground">
