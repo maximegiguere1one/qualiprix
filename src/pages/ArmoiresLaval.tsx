@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, CheckCircle, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ArmoiresLaval = () => {
   const scrollToContact = () => {
@@ -52,6 +54,18 @@ const ArmoiresLaval = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Breadcrumbs */}
+      <section className="pt-24 pb-6 bg-background border-b">
+        <div className="container px-4 mx-auto max-w-6xl">
+          <Breadcrumb 
+            items={[
+              { label: "Nos régions", href: "/zones-desservies" },
+              { label: "Laval" }
+            ]} 
+          />
+        </div>
+      </section>
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-primary text-white">

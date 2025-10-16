@@ -103,14 +103,19 @@ const Footer = () => {
                 </button>
               </li>
               <li>
+                <button onClick={() => scrollToSection("portfolio")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  Réalisations
+                </button>
+              </li>
+              <li>
                 <a href="/prix-delais" className="text-primary-foreground/80 font-body link-underline focus-ring">
                   Prix & Délais
                 </a>
               </li>
               <li>
-                <a href="/zones-desservies" className="text-primary-foreground/80 font-body link-underline focus-ring">
-                  Zones desservies
-                </a>
+                <button onClick={() => scrollToSection("faq")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  FAQ
+                </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection("contact")} className="text-primary-foreground/80 font-body link-underline focus-ring">
@@ -120,28 +125,38 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Pages locales */}
+          {/* Régions - Mieux organisé */}
           <div>
             <h4 className="font-bold text-lg mb-4">Nos régions</h4>
             <ul className="space-y-2 font-body">
               <li>
                 <a href="/armoires-montreal" className="text-primary-foreground/80 font-body link-underline focus-ring">
-                  Montréal
+                  🏙️ Montréal
                 </a>
               </li>
               <li>
                 <a href="/armoires-laval" className="text-primary-foreground/80 font-body link-underline focus-ring">
-                  Laval
+                  🏘️ Laval
                 </a>
               </li>
               <li>
                 <a href="/armoires-rive-nord" className="text-primary-foreground/80 font-body link-underline focus-ring">
-                  Rive-Nord
+                  🌲 Rive-Nord
                 </a>
               </li>
               <li>
                 <a href="/armoires-rive-sud" className="text-primary-foreground/80 font-body link-underline focus-ring">
-                  Rive-Sud
+                  🌊 Rive-Sud
+                </a>
+              </li>
+              <li>
+                <a href="/armoires-quebec" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                  ⚜️ Québec
+                </a>
+              </li>
+              <li className="pt-2 border-t border-primary-foreground/20">
+                <a href="/zones-desservies" className="text-primary-foreground font-body font-semibold link-underline focus-ring">
+                  → Toutes les zones
                 </a>
               </li>
             </ul>
