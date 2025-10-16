@@ -92,7 +92,7 @@ const ZonesDesservies = () => {
           </p>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-full shadow-[var(--shadow-soft)] hover:bg-white/20 transition-all duration-300">
             <MapPin className="w-6 h-6" />
-            <span className="font-semibold text-lg">+1000 projets à travers le Québec</span>
+            <span className="font-semibold text-lg">25 ans dans le domaine</span>
           </div>
         </div>
       </section>
