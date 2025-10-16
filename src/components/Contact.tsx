@@ -448,43 +448,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Sidebar SOCIAL PROOF enrichie */}
-              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
-                <h3 className="font-bold text-2xl mb-6 text-foreground">Pourquoi nous choisir?</h3>
-                
-                <div className="space-y-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-xl text-foreground mb-1">Livraison en 2 semaines</div>
-                      <div className="text-sm text-muted-foreground">Pas 6 mois comme ailleurs</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <Shield className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-xl text-foreground mb-1">Garantie 30 ans</div>
-                      <div className="text-sm text-muted-foreground">Tranquillité d'esprit totale</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <Users className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-xl text-foreground mb-1">100% de satisfaction</div>
-                      <div className="text-sm text-muted-foreground">Taux de satisfaction client</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Témoignage featured */}
               <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
                 <div className="flex gap-1 mb-4">
