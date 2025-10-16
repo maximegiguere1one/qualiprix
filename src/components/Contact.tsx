@@ -133,12 +133,12 @@ const Contact = () => {
               <div className="relative bg-card/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
                 
                 {/* Badge "Places limitées" */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
+                <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-4 md:px-5 py-1.5 md:py-2 bg-secondary text-white rounded-full font-bold text-xs md:text-sm shadow-lg">
                   ⚡ Places limitées
                 </div>
                 
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 mt-4">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-7 mt-3 md:mt-4">
                     
                     {/* Nom + Téléphone sur même ligne */}
                     <div className="grid sm:grid-cols-2 gap-4">
