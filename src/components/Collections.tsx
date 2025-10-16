@@ -229,12 +229,12 @@ const Collections = () => {
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
+                      className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     
                     {collections[selectedCollection].imageNames && (
-                      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-4 py-2 rounded-full font-bold text-base shadow-2xl border border-white/20">
+                      <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-sm sm:text-base shadow-2xl border border-white/20">
                         {collections[selectedCollection].imageNames[idx]}
                       </div>
                     )}
