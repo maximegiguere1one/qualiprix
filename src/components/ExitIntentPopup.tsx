@@ -83,10 +83,10 @@ const ExitIntentPopup = () => {
         
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl font-black">
-            Deviens client DÉMO 📸 <span className="text-secondary">-40% de rabais</span>
+            Offre PHOTO -40% : <span className="text-secondary">Ta cuisine contre des photos 📸</span>
           </DialogTitle>
           <DialogDescription className="text-base md:text-lg">
-            Accepte qu'on prenne des <span className="font-bold">photos de ta cuisine</span> pour nos réseaux sociaux
+            On photographie ta cuisine finie pour <span className="font-bold">Instagram/Facebook</span> = 40% de rabais instantané
           </DialogDescription>
         </DialogHeader>
         
@@ -121,12 +121,12 @@ const ExitIntentPopup = () => {
             className="h-12"
           />
           <Button type="submit" className="w-full h-12 text-base bg-secondary hover:bg-secondary/90" size="lg">
-            📸 Postuler maintenant
+            📸 Je veux économiser 40% (2 places restantes)
           </Button>
         </form>
         
         <p className="text-xs text-center text-muted-foreground">
-          ⏱️ Places limitées • Seulement 2 clients démo acceptés ce mois-ci
+          ⏱️ Dernières heures! 2/2 places restantes en octobre 2025
         </p>
       </DialogContent>
     </Dialog>

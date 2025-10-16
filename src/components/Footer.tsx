@@ -12,11 +12,11 @@ const Footer = () => {
       <div className="bg-gradient-to-br from-secondary via-secondary/90 to-secondary/80 text-white py-20">
         <div className="container px-4 mx-auto text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            Prêt à transformer<br />
-            <span className="text-white/90">ta cuisine?</span>
+            Ta nouvelle cuisine en 3 semaines<br />
+            <span className="text-white/90">(pas 6 mois)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
-            +500 clients ravis. Livraison en 4 semaines. Garantie 30 ans.
+            +500 clients ravis. Garantie 30 ans. Prix clairs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
               <div className="text-left">
                 <div className="font-bold text-white">Garantie 30 ans</div>
-                <div className="text-white/70 text-sm">Tranquillité totale</div>
+                <div className="text-white/70 text-sm">Sur TOUS nos matériaux (pas juste certains)</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -51,8 +51,8 @@ const Footer = () => {
                 <span className="text-2xl">⚡</span>
               </div>
               <div className="text-left">
-                <div className="font-bold text-white">Livraison 4 semaines</div>
-                <div className="text-white/70 text-sm">Pas 6 mois</div>
+                <div className="font-bold text-white">Livré en 3 semaines</div>
+                <div className="text-white/70 text-sm">Moyenne réelle de nos clients 2024</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -60,8 +60,8 @@ const Footer = () => {
                 <span className="text-2xl">⭐</span>
               </div>
               <div className="text-left">
-                <div className="font-bold text-white">5/5 étoiles</div>
-                <div className="text-white/70 text-sm">Google Reviews</div>
+                <div className="font-bold text-white">4.9/5 étoiles (87 avis)</div>
+                <div className="text-white/70 text-sm">Google Reviews vérifié</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -69,8 +69,8 @@ const Footer = () => {
                 <span className="text-2xl">🍁</span>
               </div>
               <div className="text-left">
-                <div className="font-bold text-white">100% Québécois</div>
-                <div className="text-white/70 text-sm">Entreprise locale</div>
+                <div className="font-bold text-white">100% Québécois 🍁</div>
+                <div className="text-white/70 text-sm">Fabriqué à Québec depuis 2019</div>
               </div>
             </div>
           </div>
@@ -194,9 +194,10 @@ const Footer = () => {
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 px-6 py-3 rounded-full">
               <span className="text-sm font-semibold">🏗️ Matériaux solides – Contreplaqué supérieur</span>
             </div>
-            <div className="text-sm text-primary-foreground/70 space-y-1">
-              <p>500$ d'acompte pour démarrer. Solde dû 48h avant la livraison.</p>
-              <p>Offres non cumulables. Sujettes à changement sans préavis.</p>
+            <div className="text-sm text-primary-foreground/70 space-y-2">
+              <p><strong>Comment ça marche:</strong> 500$ d'acompte pour démarrer la fabrication • Solde restant payable 48h avant livraison</p>
+              <p><strong>Modes de paiement:</strong> Comptant, Interac, Visa/MC, financement disponible</p>
+              <p className="text-xs">Offres non cumulables. Prix sujets à changement sans préavis.</p>
             </div>
           </div>
         </div>

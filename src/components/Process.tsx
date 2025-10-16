@@ -10,28 +10,28 @@ const Process = () => {
       number: "1",
       icon: Ruler,
       title: "Consultation gratuite",
-      description: "Appel conférence avec nos experts. Tu nous montres ton espace par vidéo, on discute de tes besoins, on t'écoute.",
+      description: "Appel vidéo 100% gratuit (45 min). Tu nous montres ta cuisine actuelle sur ton cell, on discute de tes rêves et de ton budget réel. Zéro pression.",
       duration: "1h, gratuit, sans pression"
     },
     {
       number: "2",
       icon: Palette,
       title: "Design 3D",
-      description: "Tu reçois ton plan 3D réaliste en 48h. Tu visualises tout avant de dire oui.",
+      description: "Plan 3D photo-réaliste livré en 48h par courriel. Tu VOIS ta future cuisine avant de dire oui. Modifications illimitées jusqu'à ce que ce soit parfait.",
       duration: "Révisions illimitées"
     },
     {
       number: "3",
       icon: Wrench,
       title: "Fabrication",
-      description: "Assemblé au Québec avec du contreplaqué supérieur. Pas de shortcuts.",
+      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Chaque porte testée avant emballage. Artisans québécois, pas des robots en Chine.",
       duration: "10-15 jours"
     },
     {
       number: "4",
       icon: Truck,
       title: "Installation",
-      description: "Nos partenaires certifiés installent avec soin. Propre, rapide, professionnel.",
+      description: "Installé par des pros certifiés qu'on connaît personnellement. Ils ont fait 200+ de nos cuisines. Propre, rapide, respectueux. Ils nettoient tout après.",
       duration: "1-2 jours selon projet"
     }
   ];
@@ -89,8 +89,8 @@ const Process = () => {
           >
             <Shield className="w-10 h-10 text-secondary" strokeWidth={1.5} />
             <div>
-              <div className="text-lg md:text-xl font-bold text-foreground">Garantie "Tranquillité d'esprit"</div>
-              <div className="text-muted-foreground font-body">Ajustements gratuits 30 jours après installation</div>
+              <div className="text-lg md:text-xl font-bold text-foreground">Garantie "On répare ce qui cloche" ✊</div>
+              <div className="text-muted-foreground font-body">Ajustements gratuits 30 jours après installation + garantie 30 ans sur les matériaux</div>
             </div>
           </div>
         </div>

@@ -15,8 +15,8 @@ const QuickEstimate = () => {
             <Clock className="w-6 h-6 text-secondary" />
           </div>
           <div>
-            <CardTitle className="text-2xl">Évaluation gratuite en 24h</CardTitle>
-            <p className="text-sm text-muted-foreground">Sans engagement, prix clair garanti</p>
+            <CardTitle className="text-2xl">Prix exact de TA cuisine en 24h</CardTitle>
+            <p className="text-sm text-muted-foreground">Gratuit, sans engagement, zéro pression</p>
           </div>
         </div>
       </CardHeader>
@@ -25,22 +25,22 @@ const QuickEstimate = () => {
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h4 className="font-semibold">Plan 3D gratuit après consultation</h4>
-              <p className="text-sm text-muted-foreground">Visualise ta cuisine avant de t'engager</p>
+              <h4 className="font-semibold">Tu reçois ton prix exact en 24h</h4>
+              <p className="text-sm text-muted-foreground">Pas "à partir de..." - Tous les détails inclus: matériaux, installation, livraison</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h4 className="font-semibold">Prix fixe, zéro surprise</h4>
-              <p className="text-sm text-muted-foreground">Tout inclus: matériaux, main-d'œuvre, installation</p>
+              <h4 className="font-semibold">Plan 3D réaliste de TA cuisine (gratuit)</h4>
+              <p className="text-sm text-muted-foreground">Tu vois exactement ce que tu vas avoir - zéro surprise</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h4 className="font-semibold">Livraison en 4 semaines</h4>
-              <p className="text-sm text-muted-foreground">Pas 6 mois comme ailleurs au Québec</p>
+              <h4 className="font-semibold">Fabriqué et livré en 3 semaines (pas 6 mois)</h4>
+              <p className="text-sm text-muted-foreground">Du jour où tu dis "oui" à ta nouvelle cuisine installée</p>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ const QuickEstimate = () => {
           </div>
           <Button onClick={scrollToContact} size="lg" className="w-full h-12">
             <Phone className="w-5 h-5 mr-2" />
-            Combien pour MON projet? Réponds en 24h - 581-397-3587
+            💬 Quel est le prix de ma cuisine? (réponse sous 2h)
           </Button>
         </div>
       </CardContent>

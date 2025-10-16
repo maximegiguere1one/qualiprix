@@ -79,10 +79,13 @@ const Header = () => {
             {/* Téléphone discret */}
             <a 
               href="tel:5813973587"
-              className="flex items-center gap-1.5 text-xs font-medium text-foreground/60 hover:text-foreground transition-colors duration-200"
+              className="flex flex-col items-start gap-0.5 text-xs font-medium text-foreground/60 hover:text-foreground transition-colors duration-200"
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span>581-397-3587</span>
+              <div className="flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5" />
+                <span>581-397-3587</span>
+              </div>
+              <span className="text-[10px] text-muted-foreground">(on répond maintenant)</span>
             </a>
           </nav>
 
@@ -91,7 +94,7 @@ const Header = () => {
             onClick={scrollToContact}
             className="hidden lg:flex items-center gap-2 px-8 py-3 text-sm font-semibold bg-secondary text-white rounded-full hover:bg-secondary/90 hover:shadow-lg transition-all duration-200 ml-auto"
           >
-            Consultation gratuite
+            Prix gratuit sous 24h
             <ArrowRight className="w-4 h-4" />
           </Button>
 
@@ -133,7 +136,7 @@ const Header = () => {
                     onClick={scrollToContact}
                     className="w-full bg-secondary text-white hover:bg-secondary/90"
                   >
-                    Consultation gratuite
+                    Prix gratuit sous 24h
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </div>

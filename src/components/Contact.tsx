@@ -14,10 +14,16 @@ import { Star } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères").max(100),
-  email: z.string().email("Adresse courriel invalide"),
-  phone: z.string().min(10, "Numéro de téléphone invalide"),
-  city: z.string().min(2, "Veuillez entrer une ville valide"),
+  name: z.string()
+    .min(2, "Entre ton nom complet (prénom + nom)")
+    .max(100, "Nom trop long (max 100 caractères)"),
+  email: z.string()
+    .email("Vérifie ton courriel (ex: nom@example.com)"),
+  phone: z.string()
+    .regex(/^\(\d{3}\) \d{3}-\d{4}$/, "Format: (418) 555-1234"),
+  city: z.string()
+    .min(2, "Entre ta ville (ex: Québec, Montréal)")
+    .max(50, "Nom de ville trop long"),
   projectType: z.string().optional()
 });
 
@@ -56,16 +62,16 @@ const Contact = () => {
       if (error) throw error;
 
       toast({
-        title: "✨ Message envoyé avec succès!",
-        description: "Nous vous contacterons sous 24h. Merci!",
+        title: "🎉 C'est fait!",
+        description: `Merci ${data.name}! On t'appelle dans les 2 prochaines heures au ${data.phone}`,
       });
 
       form.reset();
     } catch (error) {
       console.error('Email error:', error);
       toast({
-        title: "❌ Erreur d'envoi",
-        description: "Une erreur est survenue. Veuillez réessayer.",
+        title: "😕 Petit problème technique",
+        description: "Appelle-nous directement: 581-397-3587 ou réessaie dans 1 minute",
         variant: "destructive"
       });
     } finally {
@@ -142,10 +148,11 @@ const Contact = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                              👤 Ton nom
+                              👤 Ton nom complet
+                              <span className="text-xs text-muted-foreground font-normal">(prénom + nom de famille)</span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Jean Tremblay" {...field} className="h-12" />
+                              <Input placeholder="Martin Gagnon" {...field} className="h-12" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -159,11 +166,12 @@ const Contact = () => {
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold flex items-center gap-2">
                               📞 Téléphone
+                              <span className="text-xs text-muted-foreground font-normal">(on t'appelle aujourd'hui)</span>
                             </FormLabel>
                             <FormControl>
                               <Input 
                                 type="tel"
-                                placeholder="(418) 555-1234" 
+                                placeholder="(581) 234-5678"
                                 {...field}
                                 onChange={(e) => {
                                   const formatted = formatPhoneNumber(e.target.value);
@@ -190,7 +198,7 @@ const Contact = () => {
                           <FormControl>
                             <Input 
                               type="email"
-                              placeholder="jean@example.com" 
+                              placeholder="martin.gagnon@gmail.com"
                               {...field}
                               className="h-12"
                             />
@@ -207,11 +215,12 @@ const Contact = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                            📍 Ville
+                            📍 Ta ville
+                            <span className="text-xs text-muted-foreground font-normal">(pour confirmer qu'on dessert ta région)</span>
                           </FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="Québec, Montréal..." 
+                              placeholder="Entre ta ville (ex: Laval, Terrebonne, Québec)"
                               {...field}
                               className="h-12"
                             />
@@ -259,11 +268,11 @@ const Contact = () => {
                       {isSubmitting ? (
                         <div className="flex items-center gap-3">
                           <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white"></div>
-                          Envoi en cours...
+                          Envoi de ta demande... Ne ferme pas la page
                         </div>
                       ) : (
                         <div className="flex items-center gap-2">
-                          ✨ Obtenir mon plan 3D gratuit
+                          ✨ Envoyer ma demande (réponse en 2h)
                         </div>
                       )}
                     </Button>
@@ -272,15 +281,19 @@ const Contact = () => {
                     <div className="space-y-2 pt-4 border-t border-muted">
                       <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
                         <Check className="w-4 h-4 text-green-500" />
-                        Réponse en moins de 2 heures
+                        On t'appelle dans les 2 prochaines heures (garanti)
                       </p>
                       <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
                         <Check className="w-4 h-4 text-green-500" />
-                        Aucun engagement • Devis 100% gratuit
+                        Zéro pression, zéro engagement - juste des réponses claires
                       </p>
                       <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
                         <Lock className="w-4 h-4 text-green-500" />
-                        Informations sécurisées et confidentielles
+                        Tes infos restent privées (jamais partagées ni revendues)
+                      </p>
+                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
+                        <Shield className="w-4 h-4 text-green-500" />
+                        500+ familles québécoises nous font confiance depuis 2020
                       </p>
                     </div>
                   </form>

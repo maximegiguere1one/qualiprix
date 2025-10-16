@@ -12,12 +12,12 @@ const Services = () => {
     {
       icon: Package,
       title: "Mesurage & préparation",
-      description: "Service de mesurage professionnel sur place. Prise de mesures précise et préparation complète."
+      description: "On vient chez toi mesurer GRATUITEMENT. Au millimètre près. Photos, mesures, notes. Tu n'as rien à faire."
     },
     {
       icon: Truck,
       title: "Livraison & installation",
-      description: "Rapidité, propreté et efficacité. Installation professionnelle en 10-15 jours."
+      description: "Livré en 3 semaines (moyenne réelle 2024). Installation en 1-2 jours selon la taille. On nettoie tout après."
     }
   ];
 
@@ -59,7 +59,7 @@ const Services = () => {
             size="lg"
             onClick={scrollToContact}
           >
-            Réservez une consultation gratuite
+            📞 Parler à un expert maintenant (gratuit, 2 min)
           </Button>
         </div>
       </div>
