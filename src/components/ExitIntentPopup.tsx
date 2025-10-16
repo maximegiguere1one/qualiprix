@@ -83,27 +83,30 @@ const ExitIntentPopup = () => {
         
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl font-black">
-            Attends! 🎁 <span className="text-secondary">$300 de rabais</span>
+            Deviens client DÉMO 📸 <span className="text-secondary">-40% de rabais</span>
           </DialogTitle>
           <DialogDescription className="text-base md:text-lg">
-            Offre <span className="font-bold">EXCLUSIVE</span> pour les visiteurs qui partent maintenant
+            Accepte qu'on prenne des <span className="font-bold">photos de ta cuisine</span> pour nos réseaux sociaux
           </DialogDescription>
         </DialogHeader>
         
         <div className="bg-secondary/10 border-2 border-secondary/30 rounded-xl p-6 mb-4">
           <div className="text-center mb-4">
-            <div className="text-5xl font-black text-secondary mb-2">$300</div>
-            <div className="text-sm font-semibold text-foreground">de rabais sur toute cuisine complète</div>
+            <div className="text-5xl font-black text-secondary mb-2">-40%</div>
+            <div className="text-sm font-semibold text-foreground">de rabais sur ta cuisine complète</div>
           </div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Valide ce mois-ci seulement
+              <span className="text-secondary">✓</span> Séance photo professionnelle gratuite
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Plan 3D gratuit inclus
+              <span className="text-secondary">✓</span> Tes photos sur nos réseaux sociaux
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Livraison garantie en 4 semaines
+              <span className="text-secondary">✓</span> -40% sur le prix total (valeur 8000$+)
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-secondary">✓</span> Plan 3D + livraison inclus
             </li>
           </ul>
         </div>
@@ -111,19 +114,19 @@ const ExitIntentPopup = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input 
             type="email" 
-            placeholder="ton@email.com pour recevoir le code promo"
+            placeholder="ton@email.com pour postuler"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             className="h-12"
           />
           <Button type="submit" className="w-full h-12 text-base bg-secondary hover:bg-secondary/90" size="lg">
-            Réclamer mon rabais de $300 →
+            📸 Postuler maintenant
           </Button>
         </form>
         
         <p className="text-xs text-center text-muted-foreground">
-          ⏱️ Offre limitée • Seulement 3 places restantes ce mois-ci
+          ⏱️ Places limitées • Seulement 2 clients démo acceptés ce mois-ci
         </p>
       </DialogContent>
     </Dialog>
