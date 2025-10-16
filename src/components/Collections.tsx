@@ -215,31 +215,31 @@ const Collections = () => {
       </div>
 
       <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="w-[95vw] max-w-4xl h-[95vh] max-h-[95vh] overflow-y-auto p-3 sm:p-6">
-          <DialogHeader>
-            <DialogTitle className="text-lg sm:text-2xl">
+        <DialogContent className="w-full h-full max-w-full max-h-full sm:w-[95vw] sm:max-w-4xl sm:h-[95vh] sm:max-h-[95vh] sm:rounded-lg overflow-y-auto p-2 sm:p-6 m-0 sm:m-4">
+          <DialogHeader className="mb-2 sm:mb-4">
+            <DialogTitle className="text-base sm:text-2xl pr-8">
               {selectedCollection !== null && collections[selectedCollection].name}
             </DialogTitle>
           </DialogHeader>
-          <Carousel className="w-full">
+          <Carousel className="w-full flex-1 flex flex-col justify-center">
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="p-0.5 sm:p-1 relative">
+                  <div className="relative flex flex-col items-center justify-center h-full">
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full h-[220px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
+                      className="w-full max-h-[50vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     
                     {collections[selectedCollection].imageNames && (
-                      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
                         {collections[selectedCollection].imageNames[idx]}
                       </div>
                     )}
                     
-                    <div className="text-center mt-2 text-xs sm:text-sm text-muted-foreground">
+                    <div className="text-center mt-3 text-xs sm:text-sm text-muted-foreground">
                       Photo {idx + 1} / {collections[selectedCollection].images.length}
                     </div>
                   </div>
