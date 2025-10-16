@@ -65,6 +65,7 @@ const Services = () => {
           <Button 
             size="lg"
             onClick={scrollToContact}
+            className="w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
           >
             📞 Parler à un expert maintenant (gratuit, 2 min)
           </Button>
