@@ -80,6 +80,12 @@ const WhyUs = () => {
                     </div>
                   ) : (
                     <>
+                      {/* Titre */}
+                      <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 leading-tight">
+                        {reason.title}
+                      </h3>
+                      
+                      {/* Description */}
                       <p className="font-body leading-relaxed text-muted-foreground">
                         {reason.description}
                       </p>
