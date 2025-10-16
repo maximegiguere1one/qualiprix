@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Ruler, Palette, Wrench, Truck, Shield } from "lucide-react";
+import { Ruler, Palette, Truck, HardHat, Shield } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Process = () => {
@@ -29,7 +29,7 @@ const Process = () => {
     },
     {
       number: "4",
-      icon: Truck,
+      icon: HardHat,
       title: "Installation",
       description: "Livré directement chez toi et installé par des pros certifiés qu'on connaît personnellement. Ils ont fait 200+ de nos cuisines. Propre, rapide, respectueux.",
       duration: "1-2 jours selon projet"
