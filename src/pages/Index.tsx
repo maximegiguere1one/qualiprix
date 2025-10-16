@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
+import Mission from "@/components/Mission";
 import StickyCTA from "@/components/StickyCTA";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import StickyPromoBar from "@/components/StickyPromoBar";
@@ -16,7 +17,6 @@ const BeforeAfter = lazy(() => import("@/components/BeforeAfter"));
 const VisualProcess = lazy(() => import("@/components/VisualProcess"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Services = lazy(() => import("@/components/Services"));
-const Mission = lazy(() => import("@/components/Mission"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
@@ -56,11 +56,9 @@ const Index = () => {
         <Suspense fallback={<div className="h-screen"><Skeleton className="w-full h-full" /></div>}>
           <Services />
         </Suspense>
-        <Suspense fallback={<div className="h-64"><Skeleton className="w-full h-full" /></div>}>
-          <div id="about">
-            <Mission />
-          </div>
-        </Suspense>
+        <div id="about">
+          <Mission />
+        </div>
         <Suspense fallback={<div className="h-96"><Skeleton className="w-full h-full" /></div>}>
           <FAQ />
         </Suspense>
