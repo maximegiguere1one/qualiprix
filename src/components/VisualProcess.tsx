@@ -6,6 +6,7 @@ import qualityDetail from "@/assets/quality-detail.jpg";
 import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
 import consultationVideo from "@/assets/consultation-video.png";
 import cuisineDesign3D from "@/assets/cuisine-design-3d.png";
+import assemblageDelivery from "@/assets/assemblage-livraison-quebec.png";
 
 const VisualProcess = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -27,7 +28,7 @@ const VisualProcess = () => {
       number: 3,
       title: "Assemblage et livraison locale",
       description: "Armoires assemblées au Québec avec le souci du détail. Préparées et livrées en 10 à 15 jours, prêtes à installer.",
-      image: qualityDetail
+      image: assemblageDelivery
     },
     {
       number: 4,
