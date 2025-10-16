@@ -56,17 +56,21 @@ const Process = () => {
                 key={index}
                 className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-shadow duration-200 rounded-[1.25rem]"
               >
-                <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[var(--shadow-soft)] border-4 border-secondary">
-                    <span className="text-2xl font-bold text-secondary">{step.number}</span>
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex items-center justify-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[var(--shadow-soft)] border-4 border-secondary">
+                      <span className="text-2xl font-bold text-secondary">{step.number}</span>
+                    </div>
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center shadow-[var(--shadow-soft)] backdrop-blur-sm border border-primary/10">
+                      <step.icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                    </div>
                   </div>
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center shadow-[var(--shadow-soft)] backdrop-blur-sm border border-primary/10">
-                    <step.icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground font-body leading-relaxed mb-4">{step.description}</p>
-                  <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full">
-                    <span className="text-sm font-semibold text-secondary">{step.duration}</span>
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
+                    <p className="text-muted-foreground font-body leading-relaxed mb-4">{step.description}</p>
+                    <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full">
+                      <span className="text-sm font-semibold text-secondary">{step.duration}</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
