@@ -101,17 +101,17 @@ const Header = () => {
               
               {/* Nos Cuisines */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
+                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Nos Cuisines
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[280px] gap-1 p-3 bg-background/98 backdrop-blur-md">
-                    {navigationItems.cuisines.map((item) => (
-                      <li key={item.label}>
+                  <ul className="grid w-[300px] gap-2 p-4 bg-white/100 dark:bg-card border border-border shadow-elegant rounded-xl animate-slide-down">
+                    {navigationItems.cuisines.map((item, index) => (
+                      <li key={item.label} style={{ animationDelay: `${index * 50}ms` }} className="animate-menu-stagger">
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block w-full text-left select-none rounded-md px-3 py-2 text-sm font-medium leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
                           >
                             {item.label}
                           </button>
@@ -124,21 +124,21 @@ const Header = () => {
 
               {/* Nos Régions */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
+                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Nos Régions
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[220px] p-3 bg-background/98 backdrop-blur-md">
-                    <ul className="grid grid-cols-2 gap-1.5 mb-2">
-                      {navigationItems.regions.slice(0, 5).map((item) => (
-                        <li key={item.label}>
+                  <div className="w-[320px] p-4 bg-white/100 dark:bg-card border border-border shadow-elegant rounded-xl animate-slide-down">
+                    <ul className="grid grid-cols-2 gap-2.5 mb-3">
+                      {navigationItems.regions.slice(0, 5).map((item, index) => (
+                        <li key={item.label} style={{ animationDelay: `${index * 50}ms` }} className="animate-menu-stagger">
                           <NavigationMenuLink asChild>
                             <Link
                               to={item.href}
-                              className="block select-none rounded-md px-2.5 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              className="flex items-center gap-2 select-none rounded-lg px-3 py-2.5 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary border border-transparent hover:border-primary/20 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
                             >
-                              <span className="mr-1.5 text-xs">{item.icon}</span>
-                              <span className="text-xs font-medium">{item.label}</span>
+                              <span className="text-base">{item.icon}</span>
+                              <span className="text-sm font-medium">{item.label}</span>
                             </Link>
                           </NavigationMenuLink>
                         </li>
@@ -146,13 +146,14 @@ const Header = () => {
                     </ul>
                     
                     {/* Separator + Featured link */}
-                    <div className="border-t border-foreground/10 pt-2">
+                    <div className="border-t border-foreground/10 pt-3">
                       <NavigationMenuLink asChild>
                         <Link
                           to="/zones-desservies"
-                          className="block select-none rounded-md px-2.5 py-2 text-sm font-semibold bg-secondary/5 border border-secondary/10 leading-none no-underline outline-none transition-colors hover:bg-secondary/10 hover:border-secondary/20"
+                          className="flex items-center justify-between select-none rounded-lg px-4 py-3 text-sm font-bold bg-gradient-to-r from-secondary/10 to-secondary/5 border border-secondary/20 leading-none no-underline outline-none transition-all duration-200 hover:bg-secondary/15 hover:border-secondary/30 hover:shadow-md text-secondary focus-visible:ring-2 focus-visible:ring-secondary"
                         >
-                          → Toutes les zones
+                          <span>Toutes les zones</span>
+                          <ArrowRight className="w-4 h-4" />
                         </Link>
                       </NavigationMenuLink>
                     </div>
@@ -162,17 +163,17 @@ const Header = () => {
 
               {/* Ressources */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9 px-3 text-[13px] font-medium">
+                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Ressources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-1 p-3 bg-background/98 backdrop-blur-md">
-                    {navigationItems.ressources.map((item) => (
-                      <li key={item.label}>
+                  <ul className="grid w-[280px] gap-2 p-4 bg-white/100 dark:bg-card border border-border shadow-elegant rounded-xl animate-slide-down">
+                    {navigationItems.ressources.map((item, index) => (
+                      <li key={item.label} style={{ animationDelay: `${index * 50}ms` }} className="animate-menu-stagger">
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block w-full text-left select-none rounded-md px-3 py-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
                           >
                             {item.label}
                           </button>
@@ -218,15 +219,15 @@ const Header = () => {
                 
                 {/* Cuisines Section */}
                 <div className="mb-6">
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                  <h3 className="text-xs font-bold text-primary/70 uppercase tracking-wider mb-3 px-3">
                     Nos Cuisines
                   </h3>
-                  <nav className="flex flex-col gap-1">
+                  <nav className="flex flex-col gap-1.5">
                     {navigationItems.cuisines.map((item) => (
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item.href)}
-                        className="text-left py-2.5 px-3 rounded-md hover:bg-accent transition-colors text-sm font-medium"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
                       >
                         {item.label}
                       </button>
@@ -236,15 +237,15 @@ const Header = () => {
 
                 {/* Régions Section */}
                 <div className="mb-6">
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                  <h3 className="text-xs font-bold text-primary/70 uppercase tracking-wider mb-3 px-3">
                     Nos Régions
                   </h3>
-                  <nav className="flex flex-col gap-1">
+                  <nav className="flex flex-col gap-1.5">
                     {navigationItems.regions.slice(0, 5).map((item) => (
                       <Link
                         key={item.label}
                         to={item.href}
-                        className="text-left py-2.5 px-3 rounded-md hover:bg-accent transition-colors text-sm font-medium"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <span className="mr-2">{item.icon}</span>
@@ -256,15 +257,15 @@ const Header = () => {
 
                 {/* Ressources Section */}
                 <div className="mb-auto">
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                  <h3 className="text-xs font-bold text-primary/70 uppercase tracking-wider mb-3 px-3">
                     Ressources
                   </h3>
-                  <nav className="flex flex-col gap-1">
+                  <nav className="flex flex-col gap-1.5">
                     {navigationItems.ressources.map((item) => (
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item.href)}
-                        className="text-left py-2.5 px-3 rounded-md hover:bg-accent transition-colors text-sm font-medium"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
                       >
                         {item.label}
                       </button>
