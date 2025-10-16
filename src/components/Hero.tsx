@@ -85,20 +85,16 @@ const Hero = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-      {/* Badge téléphone MASSIF et cliquable */}
+      {/* Badge téléphone discret */}
       <a 
         href="tel:5813973587"
-        className="inline-flex items-center gap-4 bg-white/15 backdrop-blur-2xl border-2 border-white/30 px-8 py-4 rounded-full mb-10 shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:bg-white/20 hover:scale-105 transition-all duration-300 group animate-fade-in"
+        className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/20 px-3 py-1.5 rounded-full mb-6 shadow-lg hover:bg-white/15 hover:scale-[1.02] transition-all duration-300 group animate-fade-in"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_rgb(74,222,128)]" />
-          <Phone className="w-6 h-6 text-white group-hover:rotate-12 transition-transform" />
-        </div>
+        <Phone className="w-3.5 h-3.5 text-white/80" />
         <div className="text-left">
-          <div className="text-white/70 text-xs font-semibold uppercase tracking-wider">Appelle maintenant</div>
-          <div className="text-white text-2xl font-black">581-397-3587</div>
+          <p className="text-[10px] text-white/60 font-medium leading-tight">Estimation gratuite</p>
+          <p className="text-sm font-semibold text-white leading-tight">581-397-3587</p>
         </div>
-        <ArrowRight className="w-5 h-5 text-white/70 group-hover:translate-x-2 transition-transform" />
       </a>
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
