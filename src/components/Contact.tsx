@@ -448,26 +448,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Témoignage featured */}
-              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-4 leading-relaxed italic">
-                  "Service impeccable du début à la fin. Notre cuisine est magnifique et livrée exactement dans les délais promis!"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="font-bold text-secondary">ML</span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm">Marie-Louise P.</div>
-                    <div className="text-xs text-muted-foreground">Québec • Février 2025</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
