@@ -40,11 +40,7 @@ const Process = () => {
     <section ref={sectionRef} id="process" className="py-12 md:py-20 lg:py-24 bg-background relative overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div 
-            className={`text-center mb-16 transition-all duration-320 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-            }`}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
               Processus clé en main – sans stress, sans surprises
             </h2>
@@ -58,10 +54,7 @@ const Process = () => {
             {steps.map((step, index) => (
               <Card 
                 key={index}
-                className={`border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem] ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                }`}
-                style={{ transitionDelay: `${150 + index * 80}ms` }}
+                className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-shadow duration-200 rounded-[1.25rem]"
               >
                 <CardContent className="p-6 md:p-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[var(--shadow-soft)] border-4 border-secondary">
@@ -81,12 +74,7 @@ const Process = () => {
           </div>
 
           {/* Guarantee Badge */}
-          <div 
-            className={`flex flex-col items-center justify-center gap-4 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-2 border-secondary/20 px-8 py-6 rounded-[1.25rem] shadow-[var(--shadow-soft)] transition-all duration-320 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'
-            }`}
-            style={{ transitionDelay: '470ms' }}
-          >
+          <div className="flex flex-col items-center justify-center gap-4 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-2 border-secondary/20 px-8 py-6 rounded-[1.25rem] shadow-[var(--shadow-soft)]">
             <Shield className="w-10 h-10 text-secondary" strokeWidth={1.5} />
             <div className="text-center">
               <div className="text-lg md:text-xl font-bold text-foreground">Garantie "On répare ce qui cloche" ✊</div>

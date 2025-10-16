@@ -46,7 +46,7 @@ const Hero = () => {
       transform: `translateY(${imageOffset * 100}%)`,
       willChange: 'transform'
     }}>
-        <img src={heroImage} alt="Cuisine moderne avec luminaires intégrés - Armoires de cuisine sur mesure Terrebonne Montréal - Armoire Qualiprix 2024" className="w-full h-full object-cover scale-105" loading="eager" fetchPriority="high" width="1920" height="1080" />
+        <img src={heroImage} alt="Cuisine moderne avec luminaires intégrés - Armoires de cuisine sur mesure Terrebonne Montréal - Armoire Qualiprix 2024" className="w-full h-full object-cover" loading="eager" fetchPriority="high" width="1920" height="1080" />
         
         {/* Animated mesh gradient overlay for depth */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(1,42,89,0.3),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(243,122,41,0.2),transparent_50%)] animate-[mesh-move_15s_ease-in-out_infinite]"></div>
@@ -60,24 +60,24 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-12 md:py-20 mx-auto">
-        <div ref={contentRef as React.RefObject<HTMLDivElement>} className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div ref={contentRef as React.RefObject<HTMLDivElement>} className="max-w-5xl mx-auto text-center">
       {/* Badge téléphone discret */}
       
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]">
             Ta cuisine de rêve<br />
             <span className="text-secondary">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
-      <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-accessible-light-muted mb-6 md:mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-accessible-light-muted mb-6 md:mb-8 leading-relaxed max-w-readable mx-auto font-body font-medium">
         Qualité haut de gamme. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>
 
       {/* USP Pills HIÉRARCHISÉES avec tailles différentes */}
-      <div className={`flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-14 animate-fade-in transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-14">
         
         {/* Pill #1 : FEATURED (plus grosse) */}
         <div className="flex items-center gap-2 sm:gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
@@ -100,7 +100,7 @@ const Hero = () => {
       </div>
 
           {/* CTA DOUBLE : Primaire + Secondaire */}
-          <div className={`flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in transition-all duration-1000 delay-300 px-4 sm:px-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0">
             
             {/* CTA Primaire MASSIF */}
             <Button size="lg" onClick={scrollToContact} className="group relative text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-14 py-4 sm:py-5 md:py-7 h-auto bg-secondary hover:bg-secondary/90 text-white font-black rounded-full shadow-[0_20px_60px_-10px_rgb(249_115_22_/_60%)] hover:shadow-[0_30px_80px_-10px_rgb(249_115_22_/_80%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden hover:scale-105 w-full sm:w-auto">
@@ -122,7 +122,7 @@ const Hero = () => {
           </div>
 
       {/* Social proof micro ENRICHI */}
-      <div className={`mt-6 sm:mt-8 md:mt-10 animate-fade-in transition-all duration-1000 delay-[400ms] px-4 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="mt-6 sm:mt-8 md:mt-10 px-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/70 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">

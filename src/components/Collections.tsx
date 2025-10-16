@@ -120,11 +120,7 @@ const Collections = () => {
       <div className="container px-4 mx-auto">
         
         {/* Header OPTIMISÉ */}
-        <div 
-          className={`text-center mb-20 transition-all duration-320 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-          }`}
-        >
+        <div className="text-center mb-20">
           <span className="inline-block px-4 sm:px-5 py-1.5 sm:py-2 bg-secondary/10 text-secondary text-xs sm:text-sm font-bold rounded-full mb-4 sm:mb-6 tracking-wide uppercase">
             7 Collections • 100+ Combinaisons
           </span>
@@ -132,11 +128,7 @@ const Collections = () => {
             Chaque cuisine raconte<br />
             <span className="text-primary">une histoire unique</span>
           </h2>
-          <p 
-            className={`text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed transition-all duration-320 ease-out delay-75 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-            }`}
-          >
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
             Du classique revisité au moderne épuré.<br className="hidden sm:block" />
             Trouve le style qui te ressemble.
           </p>
@@ -180,13 +172,10 @@ const Collections = () => {
         {/* Grid 2 colonnes pour le reste */}
         <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {collections.slice(1).map((collection, index) => (
-            <Card 
+              <Card 
               key={index} 
-              className={`border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group cursor-pointer relative will-change-transform transition-[transform,box-shadow] duration-300 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-              }`}
-              style={{ transitionDelay: `${150 + index * 70}ms` }}
-              onClick={() => setSelectedCollection(index)}
+              className="border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group cursor-pointer relative transition-[transform,box-shadow] duration-200 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1"
+              onClick={() => setSelectedCollection(index + 1)}
             >
               {/* Animated border glow on hover */}
               <div className="absolute inset-0 rounded-[1.25rem] p-[2px] bg-gradient-to-br from-primary/0 via-secondary/0 to-primary/0 group-hover:from-primary/30 group-hover:via-secondary/30 group-hover:to-primary/30 transition-all duration-500 -z-10"></div>
