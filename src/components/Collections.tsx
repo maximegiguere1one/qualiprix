@@ -215,9 +215,9 @@ const Collections = () => {
       </div>
 
       <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="w-[95vw] max-w-4xl h-[95vh] max-h-[95vh] overflow-y-auto p-3 sm:p-6">
           <DialogHeader>
-            <DialogTitle className="text-2xl">
+            <DialogTitle className="text-lg sm:text-2xl">
               {selectedCollection !== null && collections[selectedCollection].name}
             </DialogTitle>
           </DialogHeader>
