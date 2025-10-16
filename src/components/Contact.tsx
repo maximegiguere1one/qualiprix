@@ -110,8 +110,8 @@ const Contact = () => {
             ⏱️ Réponse en moins de 2 heures
           </span>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
-            Obtiens ton plan 3D<br />
-            <span className="text-secondary">100% gratuit</span>
+            Consultation gratuite<br />
+            <span className="text-secondary">100% sans engagement</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Remplis ce formulaire en 30 secondes.<br className="hidden sm:block" />

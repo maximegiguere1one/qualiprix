@@ -44,10 +44,10 @@ const FAQ = () => {
         },
         {
           "@type": "Question",
-          "name": "Puis-je voir un rendu 3D avant l'achat ?",
+          "name": "Comment puis-je visualiser mon projet avant l'achat ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolument ! Nous créons un plan 3D détaillé de votre future cuisine lors de la consultation gratuite. Cela vous permet de visualiser exactement le résultat final avant de confirmer votre commande."
+            "text": "Lors de la consultation gratuite, nous préparons une estimation détaillée avec croquis et spécifications complètes. Vous recevrez un devis précis incluant dimensions, matériaux et plan d'agencement pour visualiser votre projet."
           }
         },
         {
@@ -80,12 +80,12 @@ const FAQ = () => {
       answer: "On ne fait pas l'installation nous-mêmes, MAIS on te réfère à nos installateurs partenaires certifiés Qualiprix.\n\nCes pros ont installé 200+ de nos cuisines. Ils connaissent nos produits par cœur et font du travail impeccable.\n\n✓ Professionnels certifiés\n✓ Assurés et garantis\n✓ Prix compétitifs négociés pour toi\n✓ Respect des délais promis\n\nTu n'as qu'un seul contact: nous. On coordonne tout."
     },
     {
-      question: "Puis-je voir un rendu 3D avant l'achat ?",
-      answer: "Absolument ! Nous créons un plan 3D détaillé de votre future cuisine lors de la consultation gratuite. Cela vous permet de visualiser exactement le résultat final avant de confirmer votre commande."
+      question: "Comment puis-je visualiser mon projet avant l'achat ?",
+      answer: "Lors de la consultation gratuite, nous préparons une estimation détaillée avec croquis et spécifications complètes. Vous recevrez un devis précis incluant dimensions, matériaux et plan d'agencement pour visualiser votre projet."
     },
     {
       question: "Combien de temps avant de recevoir ma cuisine?",
-      answer: "FABRICATION: 10-15 jours ouvrables après ton acompte de 500$\nINSTALLATION: +2-3 jours selon la taille\n\nTimeline complète du clic à ta cuisine finie:\n• Jour 1: Consultation gratuite + plan 3D\n• Jour 3: Tu approuves le design final\n• Jour 4: Tu paies 500$ d'acompte\n• Jour 18: Livraison chez toi\n• Jour 20: Installation terminée\n\nDélai TOTAL moyen: 3 semaines (vs 4-6 mois ailleurs au Québec)"
+      answer: "FABRICATION: 10-15 jours ouvrables après ton acompte de 500$\nINSTALLATION: +2-3 jours selon la taille\n\nTimeline complète du clic à ta cuisine finie:\n• Jour 1: Consultation gratuite + estimation détaillée\n• Jour 3: Tu approuves le design final\n• Jour 4: Tu paies 500$ d'acompte\n• Jour 18: Livraison chez toi\n• Jour 20: Installation terminée\n\nDélai TOTAL moyen: 3 semaines (vs 4-6 mois ailleurs au Québec)"
     }
   ];
 

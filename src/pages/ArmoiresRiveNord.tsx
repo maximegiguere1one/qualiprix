@@ -146,7 +146,7 @@ const ArmoiresRiveNord = () => {
           <div className="text-center bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20 p-12 rounded-[1.25rem]">
             <h3 className="text-3xl font-bold mb-4">Prêt pour ta nouvelle cuisine?</h3>
             <p className="text-xl text-muted-foreground mb-8">
-              Consultation gratuite à domicile, plan 3D en 48h, livraison en 4 semaines.
+              Consultation gratuite à domicile, estimation en 48h, livraison en 4 semaines.
             </p>
             <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />

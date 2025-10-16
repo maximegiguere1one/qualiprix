@@ -321,7 +321,7 @@ const ArmoiresMontreal = () => {
               Prêt pour ta nouvelle cuisine à Montréal?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Consultation gratuite, plan 3D offert, prix clair dès la première rencontre.
+              Consultation gratuite, estimation complète offerte, prix clair dès la première rencontre.
             </p>
             <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />

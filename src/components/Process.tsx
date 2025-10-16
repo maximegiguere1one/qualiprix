@@ -16,8 +16,8 @@ const Process = () => {
     {
       number: "2",
       icon: Palette,
-      title: "Design 3D",
-      description: "Plan 3D photo-réaliste livré en 48h par courriel. Tu VOIS ta future cuisine avant de dire oui. Modifications illimitées jusqu'à ce que ce soit parfait.",
+      title: "Rencontre design",
+      description: "Estimation détaillée livrée en 48h par courriel. Tu VOIS ta future cuisine avant de dire oui. Modifications illimitées jusqu'à ce que ce soit parfait.",
       duration: "Révisions illimitées"
     },
     {

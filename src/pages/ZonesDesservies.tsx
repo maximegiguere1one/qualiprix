@@ -38,13 +38,13 @@ const ZonesDesservies = () => {
     {
       name: "Rive-Nord",
       description: "Terrebonne, Repentigny, Saint-Jérôme, Mirabel, Mascouche, Blainville",
-      highlights: ["Livraison incluse", "Support après-vente", "Garantie 30 ans"],
+      highlights: ["Livraison incluse", "Support après-vente", "Consultation gratuite"],
       icon: "🏞️"
     },
     {
       name: "Rive-Sud",
       description: "Longueuil, Brossard, Saint-Jean-sur-Richelieu, Chambly, Saint-Hubert",
-      highlights: ["Installation pro", "Prix d'entrepôt", "Design 3D gratuit"],
+      highlights: ["Installation pro", "Prix d'entrepôt", "Consultation gratuite"],
       icon: "🌳"
     },
     {

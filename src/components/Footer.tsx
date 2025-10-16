@@ -31,7 +31,7 @@ const Footer = () => {
               }}
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all"
             >
-              Plan 3D gratuit →
+              Consultation gratuite →
             </button>
           </div>
           

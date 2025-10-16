@@ -195,7 +195,7 @@ const ArmoiresLaval = () => {
               Prêt pour ta nouvelle cuisine à Laval?
             </h2>
             <p className="text-xl text-muted-foreground mb-6">
-              Consultation gratuite, plan 3D offert. Zéro engagement.
+              Consultation gratuite, estimation détaillée offerte. Zéro engagement.
             </p>
             <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />

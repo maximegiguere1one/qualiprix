@@ -105,7 +105,7 @@ const ArmoiresQuebec = () => {
                 </div>
                 <CardTitle>Consultation gratuite</CardTitle>
                 <CardDescription>
-                  Consultation en ligne par vidéo. Plan 3D en 48h. Aucune pression, juste des conseils pro.
+                  Consultation en ligne par vidéo. Estimation détaillée en 48h. Aucune pression, juste des conseils pro.
                 </CardDescription>
               </CardHeader>
             </Card>
