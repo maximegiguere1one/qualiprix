@@ -61,7 +61,7 @@ const QuickEstimate = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>Cuisine 20 pi + quartz - Terrebonne - "Qualité boutique, prix entrepôt"</span>
+                <span>Cuisine 20 pi + quartz - Terrebonne - "Qualité haut de gamme, prix entrepôt"</span>
               </li>
             </ul>
           </div>

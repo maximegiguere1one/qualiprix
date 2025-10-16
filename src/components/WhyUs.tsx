@@ -21,7 +21,7 @@ const WhyUs = () => {
     {
       icon: DollarSign,
       title: "Le luxe sans les délais ni le prix du luxe",
-      description: "Prix d'entrepôt, qualité boutique. C'est notre promesse depuis +25 ans."
+      description: "Prix d'entrepôt, qualité haut de gamme. C'est notre promesse depuis +25 ans."
     },
     {
       icon: Shield,

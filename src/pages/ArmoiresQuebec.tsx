@@ -80,7 +80,7 @@ const ArmoiresQuebec = () => {
             </h2>
             <p className="text-xl text-muted-foreground">
               Depuis +25 ans, on aide les familles québécoises à créer leur cuisine idéale. 
-              Qualité boutique, prix d'entrepôt, livraison en 2 semaines.
+              Qualité haut de gamme, prix d'entrepôt, livraison en 2 semaines.
             </p>
           </div>
 

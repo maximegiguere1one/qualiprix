@@ -89,7 +89,7 @@ const Hero = () => {
       <p className="text-xl md:text-2xl text-accessible-light-muted mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium" style={{
           animationDelay: '100ms'
         }}>
-        Qualité boutique. Prix d'entrepôt. <br className="hidden sm:block" />
+        Qualité haut de gamme. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>
 
