@@ -106,12 +106,13 @@ const Contact = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
-            ⏱️ Réponse en moins de 2 heures
+          <span className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white text-sm font-bold rounded-full mb-6 tracking-wide uppercase shadow-lg">
+            <Clock className="w-4 h-4" />
+            Réponse en moins de 2 heures
           </span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground leading-tight">
             Consultation gratuite<br />
-            <span className="text-secondary">100% sans engagement</span>
+            <span className="text-secondary drop-shadow-[0_2px_8px_rgba(249,115,22,0.3)]">100% sans engagement</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Remplis ce formulaire en 30 secondes.<br className="hidden sm:block" />
@@ -287,7 +288,7 @@ const Contact = () => {
                       type="submit"
                       disabled={isSubmitting}
                       size="lg"
-                      className="w-full h-14 text-lg font-black bg-secondary hover:bg-secondary/90 shadow-[0_10px_40px_rgb(249_115_22_/_40%)] hover:shadow-[0_15px_50px_rgb(249_115_22_/_60%)] transition-all"
+                      className="w-full h-16 text-lg font-black bg-secondary text-white hover:bg-secondary/90 shadow-[0_10px_40px_rgba(249,115,22,0.4)] hover:shadow-[0_15px_50px_rgba(249,115,22,0.6)] transition-all border-2 border-white"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-3">
