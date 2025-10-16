@@ -126,7 +126,7 @@ const Collections = () => {
           }`}
         >
           <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
-            7 Collections • 100+ Modèles
+            7 Collections • 100+ Combinaisons
           </span>
           <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-primary mb-8">
             Chaque cuisine raconte<br />
