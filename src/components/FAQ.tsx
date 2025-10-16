@@ -156,11 +156,11 @@ const FAQ = () => {
             </p>
           </div>
           
-          <div className="space-y-4 mb-12">
+          <div className="space-y-2 mb-12">
             {faqs.map((faq, index) => (
               <Card
                 key={index}
-                className={`border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem] overflow-hidden ${
+                className={`border border-border hover:border-foreground/20 transition-all duration-300 rounded-lg overflow-hidden ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
@@ -168,13 +168,13 @@ const FAQ = () => {
                 <CardContent className="p-0">
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full text-left p-6 md:p-8 flex justify-between items-start gap-4 hover:bg-accent/50 transition-colors"
+                    className="w-full text-left p-4 md:p-5 flex justify-between items-start gap-4 hover:bg-muted/30 transition-colors"
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-foreground flex-1">
+                    <h3 className="text-base md:text-lg font-semibold text-foreground flex-1">
                       {faq.question}
                     </h3>
                     <ChevronDown 
-                      className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 ${
+                      className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-300 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -184,7 +184,7 @@ const FAQ = () => {
                       openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-muted-foreground font-body leading-relaxed">
+                    <div className="px-4 md:px-5 pb-4 md:pb-5 text-muted-foreground font-body leading-relaxed text-sm md:text-base">
                       {faq.answer}
                     </div>
                   </div>
