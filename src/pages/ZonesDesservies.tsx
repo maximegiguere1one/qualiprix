@@ -76,12 +76,12 @@ const ZonesDesservies = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary/90 text-white relative overflow-hidden">
+      <section className="py-20 bg-primary text-white relative overflow-visible">
         {/* Decorative blobs with animation */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '0s' }} />
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white/50 rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
         </div>
         <div className="container px-4 mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
