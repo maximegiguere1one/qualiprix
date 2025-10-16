@@ -49,37 +49,30 @@ const WhyUs = () => {
           {/* Carte featured en pleine largeur */}
           <Card className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/80 text-white">
             <CardContent className="p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* Contenu texte à gauche */}
-                <div className="flex-1 text-center md:text-left">
-                  {/* Titre avec mot "garanti" stylisé */}
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                    Des armoires faites pour durer, pas juste pour paraître
-                  </h3>
-                  
-                  {/* Description avec "Garantie" en gras et animé */}
-                  <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-6">
-                    Contreplaqué supérieur, pas du MDF cheap.{" "}
-                    <span className="font-black text-2xl md:text-3xl bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent animate-[pulse_3s_ease-in-out_infinite] inline-block">
-                      Garantie 30 ans
-                    </span>
-                    , pas de blague.
-                  </p>
-                  
-                  {/* CTA avec flèche */}
-                  <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors justify-center md:justify-start">
-                    <span className="text-sm font-semibold">En savoir plus</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* Logo à droite */}
-                <div className="flex-shrink-0">
+              <div className="flex flex-col items-center text-center">
+                {/* Logo centré */}
+                <div className="mb-6">
                   <img 
                     src={garantie30Logo} 
                     alt="Garantie 30 ans - 100% contreplaqué" 
-                    className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain drop-shadow-2xl animate-[pulse_4s_ease-in-out_infinite]"
+                    className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
                   />
+                </div>
+                
+                {/* Titre */}
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                  {reasons[0].title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-white/90 text-lg leading-relaxed mb-6">
+                  {reasons[0].description}
+                </p>
+                
+                {/* CTA avec flèche */}
+                <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                  <span className="text-sm font-semibold">En savoir plus</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </CardContent>
