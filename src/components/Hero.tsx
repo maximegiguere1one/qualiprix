@@ -159,16 +159,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator PREMIUM avec animation souris */}
-      <div className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-0 transition-opacity duration-500 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <div className="flex flex-col items-center gap-3 text-white/70 hover:text-white transition-colors cursor-pointer group">
-          <div className="w-7 h-11 border-2 border-white/40 rounded-full flex items-start justify-center p-1.5 group-hover:border-white/70 transition-colors">
-            <div className="w-1.5 h-2 bg-white/70 rounded-full animate-[scroll-down_1.5s_ease-in-out_infinite] group-hover:bg-white" />
-          </div>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
-        </div>
       </div>
-        </div>
       </div>
 
       {/* Decorative gradient at bottom */}
