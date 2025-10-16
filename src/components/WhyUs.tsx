@@ -82,7 +82,7 @@ const WhyUs = () => {
                 </div>
 
                 {/* GARANTI - En haut, légèrement à gauche du centre - HERO */}
-                <div className="w-full flex justify-start pl-0 lg:pl-8 xl:pl-12 mb-3 lg:mb-5">
+                <div className="w-full flex justify-start pl-0 lg:pl-4 xl:pl-6 mb-3 lg:mb-5">
                   <div className="garanti-text text-[6rem] lg:text-[8rem] xl:text-[10rem] font-black text-white leading-none tracking-tighter whitespace-nowrap">
                     GARANTI
                   </div>
