@@ -10,7 +10,15 @@ import assemblageDelivery from "@/assets/assemblage-livraison-quebec.png";
 import installationPro from "@/assets/installation-professionnelle-armoires.png";
 
 const VisualProcess = () => {
-  const { ref: sectionRef, isVisible } = useScrollReveal();
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
+  const { ref: step1Ref, isVisible: step1Visible } = useScrollReveal();
+  const { ref: step2Ref, isVisible: step2Visible } = useScrollReveal();
+  const { ref: step3Ref, isVisible: step3Visible } = useScrollReveal();
+  const { ref: step4Ref, isVisible: step4Visible } = useScrollReveal();
+  const { ref: step5Ref, isVisible: step5Visible } = useScrollReveal();
+
+  const stepsRefs = [step1Ref, step2Ref, step3Ref, step4Ref, step5Ref];
+  const stepsVisible = [step1Visible, step2Visible, step3Visible, step4Visible, step5Visible];
 
   const steps = [
     {
@@ -46,11 +54,12 @@ const VisualProcess = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-background">
+    <section className="py-12 md:py-20 lg:py-24 bg-background">
       <div className="container px-4 mx-auto">
         <div 
+          ref={headerRef}
           className={`text-center mb-16 transition-all duration-1000 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -65,10 +74,10 @@ const VisualProcess = () => {
           {steps.map((step, index) => (
             <div 
               key={step.number}
+              ref={stepsRefs[index]}
               className={`mb-16 last:mb-0 transition-all duration-800 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                stepsVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className={`flex flex-col md:flex-row gap-8 items-center ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
