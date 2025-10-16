@@ -23,7 +23,7 @@ const VisualProcess = () => {
     },
     {
       number: 3,
-      title: "Fabrication locale",
+      title: "Assemblage et livraison locale",
       description: "Armoires fabriquées au Québec, avec un contrôle de qualité rigoureux.",
       image: qualityDetail
     },
