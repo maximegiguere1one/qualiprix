@@ -1,44 +1,5 @@
 import { useEffect } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { 
-  Calculator,
-  Palette, 
-  Wrench, 
-  Eye, 
-  Clock,
-  Check,
-  ArrowRight
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-const PriceBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-full font-semibold text-[15px]">
-    {children}
-  </span>
-);
-
-const InfoBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-2.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-medium text-[13px] tracking-normal uppercase">
-    {children}
-  </span>
-);
-
-const CheckList = ({ items }: { items: string[] }) => (
-  <ul className="space-y-2 mt-3">
-    {items.map((item, index) => (
-      <li key={index} className="flex items-start gap-2">
-        <Check className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
-        <span className="text-[15px] leading-[1.6] text-gray-600 dark:text-gray-400">{item}</span>
-      </li>
-    ))}
-  </ul>
-);
 
 const FAQ = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -102,94 +63,71 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Combien coûte vraiment une cuisine complète?",
-      icon: <Calculator className="h-5 w-5 text-gray-400" />,
-      formattedAnswer: (
-        <div className="space-y-4">
-          <p>
-            À partir de <PriceBadge>8 995$</PriceBadge> <span className="font-semibold text-primary">TOUT INCLUS</span> (armoires + comptoir quartz + installation). Pas de frais cachés. Pas de surprises. Tu paies ce qu'on annonce.
-          </p>
-          <div>
-            <p className="font-semibold text-foreground mb-2">Exemples concrets:</p>
-            <ul className="space-y-1.5">
-              <li>• Cuisine 10 pieds linéaires: <span className="font-bold text-primary">~9,500$</span></li>
-              <li>• Cuisine 15 pieds + îlot: <span className="font-bold text-primary">~14,500$</span></li>
-              <li>• Cuisine 20 pieds + comptoir quartz: <span className="font-bold text-primary">~18,500$</span></li>
-            </ul>
-          </div>
-          <p className="text-secondary font-medium">👉 Demande une soumission gratuite pour ton projet exact.</p>
-        </div>
+      emoji: "💰",
+      question: "Combien coûte vraiment une cuisine complète ?",
+      answer: (
+        <>
+          Une cuisine Armoire Qualiprix complète (armoires + quincaillerie + installation) se situe en moyenne entre <strong>8 000 $ et 14 000 $</strong>, selon la taille et les finis choisis.
+          <br /><br />
+          C'est le <strong>prix d'une cuisine haut de gamme</strong>, mais <strong>au coût d'un modèle d'entrepôt</strong>. Grâce à notre modèle direct-usine, tu ne paies <strong>aucune salle de montre</strong> ni intermédiaire.
+          <br /><br />
+          💡 <em>Exemple :</em> une cuisine équivalente à 20 000 $ ailleurs revient souvent à 12 000 $ chez nous — garantie 30 ans incluse.
+        </>
       )
     },
     {
+      emoji: "🪵",
       question: "Quelle est la différence entre mélamine et polymère ?",
-      icon: <Palette className="h-5 w-5 text-gray-400" />,
-      formattedAnswer: (
-        <div className="space-y-3">
-          <p>
-            La <span className="font-semibold text-foreground">mélamine</span> offre un excellent rapport qualité-prix avec une bonne résistance. 
-            Le <span className="font-semibold text-foreground">polymère</span> est plus durable, résiste mieux à l'humidité et aux rayures, et offre un fini plus luxueux.
-          </p>
-          <p>Nos conseillers vous aident à choisir selon votre budget et vos besoins.</p>
-        </div>
+      answer: (
+        <>
+          La <strong>mélamine</strong> est durable et économique — parfaite pour les projets modernes et pratiques. Le <strong>polymère</strong> offre un fini plus raffiné et une meilleure résistance à l'humidité et aux chocs.
+          <br /><br />
+          Chez Armoire Qualiprix, on t'offre les deux :
+          <ul className="list-disc ml-6 mt-2">
+            <li><strong>Cuisino / Cuisino Plus</strong> — mélamine et contreplaqué (garantie 15 à 30 ans)</li>
+            <li><strong>Prestige</strong> — polymère et bois éco Tafisa, pour un effet haut de gamme</li>
+          </ul>
+          🌿 Tu choisis selon ton style et ton budget, sans jamais sacrifier la qualité.
+        </>
       )
     },
     {
-      question: "Qui installe ma cuisine?",
-      icon: <Wrench className="h-5 w-5 text-gray-400" />,
-      formattedAnswer: (
-        <div className="space-y-3">
-          <p>
-            On ne fait pas l'installation nous-mêmes, <span className="font-semibold text-foreground">MAIS</span> on te réfère à nos installateurs partenaires certifiés Qualiprix.
-          </p>
-          <p>Ces pros ont installé <span className="font-bold text-primary">200+</span> de nos cuisines. Ils connaissent nos produits par cœur et font du travail impeccable.</p>
-          <CheckList items={[
-            "Professionnels certifiés",
-            "Assurés et garantis",
-            "Prix compétitifs négociés pour toi",
-            "Respect des délais promis"
-          ]} />
-          <p className="font-medium text-foreground mt-3">Tu n'as qu'un seul contact: nous. On coordonne tout.</p>
-        </div>
+      emoji: "🔧",
+      question: "Qui installe ma cuisine ?",
+      answer: (
+        <>
+          Ton installation est réalisée par <strong>nos équipes certifiées</strong> — des professionnels locaux qui travaillent <strong>exclusivement</strong> pour Armoire Qualiprix.
+          <br /><br />
+          Ils partagent nos valeurs : <em>travail bien fait, respect du client et souci du détail</em>.
+          <br /><br />
+          🤝 Résultat : une installation propre, rapide et sans stress.
+        </>
       )
     },
     {
+      emoji: "🖥️",
       question: "Comment puis-je visualiser mon projet avant l'achat ?",
-      icon: <Eye className="h-5 w-5 text-gray-400" />,
-      formattedAnswer: (
-        <div className="space-y-3">
-          <p>
-            Lors de la <span className="font-semibold text-secondary">consultation gratuite</span>, nous préparons une estimation détaillée avec croquis et spécifications complètes.
-          </p>
-          <p>
-            Vous recevrez un devis précis incluant dimensions, matériaux et plan d'agencement pour visualiser votre projet.
-          </p>
-        </div>
+      answer: (
+        <>
+          Tu vois ta cuisine avant même qu'elle soit fabriquée. Nos designers créent un <strong>rendu 3D ultra-réaliste</strong> à partir de ton espace et de tes goûts.
+          <br /><br />
+          Tu peux demander <strong>autant de modifications que tu veux</strong> jusqu'à ce que ce soit parfait.
+          <br /><br />
+          🎁 <strong>Service gratuit et sans engagement</strong> — visualise ta future cuisine dès maintenant.
+        </>
       )
     },
     {
-      question: "Combien de temps avant de recevoir ma cuisine?",
-      icon: <Clock className="h-5 w-5 text-gray-400" />,
-      formattedAnswer: (
-        <div className="space-y-4">
-          <div>
-            <p><InfoBadge>Fabrication</InfoBadge> <span className="font-bold text-primary">10-15 jours ouvrables</span> après ton acompte de 500$</p>
-            <p className="mt-1"><InfoBadge>Installation</InfoBadge> <span className="font-bold text-primary">+2-3 jours</span> selon la taille</p>
-          </div>
-          <div>
-            <p className="font-semibold text-foreground mb-2">Timeline complète du clic à ta cuisine finie:</p>
-            <ul className="space-y-1.5">
-              <li>• <span className="font-semibold">Jour 1:</span> Consultation gratuite + estimation détaillée</li>
-              <li>• <span className="font-semibold">Jour 3:</span> Tu approuves le design final</li>
-              <li>• <span className="font-semibold">Jour 4:</span> Tu paies 500$ d'acompte</li>
-              <li>• <span className="font-semibold">Jour 18:</span> Livraison chez toi</li>
-              <li>• <span className="font-semibold">Jour 20:</span> Installation terminée</li>
-            </ul>
-          </div>
-          <p className="text-secondary font-medium">
-            Délai TOTAL moyen: <span className="font-bold">3 semaines</span> (vs 4-6 mois ailleurs au Québec)
-          </p>
-        </div>
+      emoji: "🚚",
+      question: "Combien de temps avant de recevoir ma cuisine ?",
+      answer: (
+        <>
+          Nos cuisines sont <strong>fabriquées et livrées en 10 à 15 jours ouvrables</strong> après l'approbation du plan 3D.
+          <br /><br />
+          C'est un <strong>record au Québec</strong> rendu possible par notre production locale et nos stocks prêts à assembler.
+          <br /><br />
+          ⏰ Et si un retard survient, on te le rembourse — c'est garanti.
+        </>
       )
     }
   ];
@@ -202,73 +140,47 @@ const FAQ = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-4xl mx-auto">
-          <div 
-            className={`text-center mb-16 transition-all duration-700 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <h2 className="text-[40px] md:text-[48px] font-semibold tracking-tight text-gray-900 dark:text-gray-100 mb-3">
-              Questions fréquentes
-            </h2>
-            <p className="text-[19px] font-normal text-gray-600 dark:text-gray-400">
-              Tout ce que vous devez savoir sur nos cuisines
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="space-y-4 mb-16">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className={`
-                  bg-white dark:bg-gray-900
-                  border border-gray-200/80 dark:border-gray-800/80
-                  rounded-2xl px-6 md:px-8 
-                  shadow-[0_1px_3px_rgba(0,0,0,0.04)]
-                  hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-                  hover:border-gray-300/80 dark:hover:border-gray-700/80
-                  transition-all duration-200 ease-out
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
-                `}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <AccordionTrigger icon={faq.icon}>
-                  <span className="text-left text-gray-900 dark:text-gray-100">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] leading-[1.6] text-gray-600 dark:text-gray-400 font-normal pt-0 pb-6">
-                  {faq.formattedAnswer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-
-          {/* Premium CTA */}
-          <div 
-            className={`text-center transition-all duration-700 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '600ms' }}
-          >
-            <button
-              onClick={scrollToContact}
-              className="
-                group inline-flex items-center gap-3 
-                px-8 py-4 
-                bg-blue-600 hover:bg-blue-700
-                text-white font-semibold text-[17px]
-                rounded-full
-                shadow-[0_2px_8px_rgba(0,0,0,0.12)]
-                hover:shadow-[0_4px_16px_rgba(0,0,0,0.16)]
-                transition-all duration-200 ease-out
-              "
+    <section ref={sectionRef} className="py-16 bg-accent">
+      <div className="container mx-auto max-w-4xl px-4">
+        <h2 
+          className={`text-3xl font-bold text-primary mb-8 text-center transition-all duration-700 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          FAQ — On répond à vos vraies questions 👇
+        </h2>
+        
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <details 
+              key={index}
+              className={`border-b border-border pb-4 group transition-all duration-700 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <span>Obtenir ma soumission gratuite</span>
-              <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-            </button>
-          </div>
+              <summary className="text-xl font-semibold cursor-pointer flex justify-between items-center text-foreground hover:text-primary transition-colors">
+                <span>{faq.emoji} {faq.question}</span>
+                <span className="transition-transform group-open:rotate-180 text-muted-foreground">▼</span>
+              </summary>
+              <div className="mt-3 text-muted-foreground leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <a 
+            href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToContact();
+            }}
+            className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-lg font-semibold hover:opacity-90 transition-opacity"
+          >
+            📞 Réserver ma rencontre 3D gratuite
+          </a>
         </div>
       </div>
     </section>
