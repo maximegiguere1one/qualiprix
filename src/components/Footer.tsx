@@ -34,46 +34,6 @@ const Footer = () => {
               Consultation gratuite →
             </button>
           </div>
-          
-          {/* Trust badges */}
-          <div className="mt-16 flex flex-wrap justify-center gap-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🏆</span>
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white">Garantie 30 ans</div>
-                <div className="text-white/70 text-sm">Sur TOUS nos matériaux (pas juste certains)</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white">Livré en 3 semaines</div>
-                <div className="text-white/70 text-sm">Moyenne réelle de nos clients 2024</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">⭐</span>
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white">100% de satisfaction</div>
-                <div className="text-white/70 text-sm">Taux de satisfaction client</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🍁</span>
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white">100% Québécois 🍁</div>
-                <div className="text-white/70 text-sm">Fabriqué à Québec depuis 2019</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       
