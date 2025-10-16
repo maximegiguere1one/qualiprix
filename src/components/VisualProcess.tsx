@@ -18,7 +18,7 @@ const VisualProcess = () => {
     {
       number: 2,
       title: "Rencontre design et rendu 3D personnalisé",
-      description: "Tu vois ton projet en 3D avant la production — visualise le rendu avant la fabrication.",
+      description: "Visualise ton projet en 3D avant la production — tu vois ta future cuisine avant de dire oui. Estimation détaillée livrée en 48 h par courriel. Modifications illimitées jusqu'à ce que ce soit parfait.",
       image: realisationCuisineIlotBois
     },
     {
