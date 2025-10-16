@@ -4,6 +4,7 @@ import realisationCuisineOuverte from "@/assets/realisation-cuisine-ouverte-esca
 import realisationCuisineBlancheIlot from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
 import qualityDetail from "@/assets/quality-detail.jpg";
 import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
+import consultationVideo from "@/assets/consultation-video.png";
 
 const VisualProcess = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -13,7 +14,7 @@ const VisualProcess = () => {
       number: 1,
       title: "Consultation gratuite",
       description: "Appel conférence vidéo avec nos experts — on évalue ton projet et on discute de tes besoins.",
-      image: cuisineApresRenovation
+      image: consultationVideo
     },
     {
       number: 2,
