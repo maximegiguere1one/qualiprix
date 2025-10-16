@@ -130,34 +130,34 @@ const Contact = () => {
               {/* Glow effect on hover */}
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               
-              <div className="relative bg-card/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
+              <div className="relative bg-card/90 backdrop-blur-xl rounded-xl md:rounded-3xl p-5 sm:p-6 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
                 
                 {/* Badge "Places limitées" */}
-                <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-4 md:px-5 py-1.5 md:py-2 bg-secondary text-white rounded-full font-bold text-xs md:text-sm shadow-lg">
+                <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-3 md:px-5 py-1 md:py-2 bg-secondary text-white rounded-full font-bold text-xs md:text-sm shadow-lg whitespace-nowrap">
                   ⚡ Places limitées
                 </div>
                 
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-7 mt-3 md:mt-4">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 md:space-y-7 mt-2 md:mt-4">
                     
                     {/* Nom + Téléphone sur même ligne */}
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                       <FormField
                         control={form.control}
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                            <FormLabel className="text-sm md:text-base font-semibold mb-1 md:mb-2 flex flex-col gap-0.5 md:gap-1">
                               <span className="flex items-center gap-2">
                                 <span aria-hidden="true">👤</span>
                                 Ton nom complet
                               </span>
-                              <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                              <span className="text-xs md:text-sm text-muted-foreground font-normal leading-relaxed">
                                 (prénom + nom de famille)
                               </span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Ex: Martin Gagnon" {...field} className="h-12 text-base leading-normal" aria-describedby="name-hint" />
+                              <Input placeholder="Ex: Martin Gagnon" {...field} className="h-11 md:h-12 text-sm md:text-base leading-normal" aria-describedby="name-hint" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -169,12 +169,12 @@ const Contact = () => {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                            <FormLabel className="text-sm md:text-base font-semibold mb-1 md:mb-2 flex flex-col gap-0.5 md:gap-1">
                               <span className="flex items-center gap-2">
                                 <span aria-hidden="true">📞</span>
                                 Téléphone
                               </span>
-                              <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                              <span className="text-xs md:text-sm text-muted-foreground font-normal leading-relaxed">
                                 (on t'appelle aujourd'hui)
                               </span>
                             </FormLabel>
@@ -187,7 +187,7 @@ const Contact = () => {
                                   const formatted = formatPhoneNumber(e.target.value);
                                   field.onChange(formatted);
                                 }}
-                                className="h-12 text-base leading-normal"
+                                className="h-11 md:h-12 text-sm md:text-base leading-normal"
                                 aria-describedby="phone-hint"
                               />
                             </FormControl>
@@ -203,7 +203,7 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base md:text-lg font-semibold mb-2">
+                          <FormLabel className="text-sm md:text-base font-semibold mb-1 md:mb-2">
                             <span className="flex items-center gap-2">
                               <span aria-hidden="true">📧</span>
                               Courriel
@@ -214,7 +214,7 @@ const Contact = () => {
                               type="email"
                               placeholder="Ex: martin.gagnon@gmail.com"
                               {...field}
-                              className="h-12 text-base leading-normal"
+                              className="h-11 md:h-12 text-sm md:text-base leading-normal"
                               aria-describedby="email-hint"
                             />
                           </FormControl>
@@ -229,12 +229,12 @@ const Contact = () => {
                       name="city"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                          <FormLabel className="text-sm md:text-base font-semibold mb-1 md:mb-2 flex flex-col gap-0.5 md:gap-1">
                             <span className="flex items-center gap-2">
                               <span aria-hidden="true">📍</span>
                               Ta ville
                             </span>
-                            <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                            <span className="text-xs md:text-sm text-muted-foreground font-normal leading-relaxed">
                               (pour confirmer qu'on dessert ta région)
                             </span>
                           </FormLabel>
@@ -242,7 +242,7 @@ const Contact = () => {
                             <Input 
                               placeholder="Ex: Laval, Terrebonne, Québec"
                               {...field}
-                              className="h-12 text-base leading-normal"
+                              className="h-11 md:h-12 text-sm md:text-base leading-normal"
                               aria-describedby="city-hint"
                             />
                           </FormControl>
@@ -257,7 +257,7 @@ const Contact = () => {
                       name="projectType"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base md:text-lg font-semibold mb-2">
+                          <FormLabel className="text-sm md:text-base font-semibold mb-1 md:mb-2">
                             <span className="flex items-center gap-2">
                               <span aria-hidden="true">🏠</span>
                               Type de projet (optionnel)
@@ -265,7 +265,7 @@ const Contact = () => {
                           </FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="h-12 text-base">
+                              <SelectTrigger className="h-11 md:h-12 text-sm md:text-base">
                                 <SelectValue placeholder="Sélectionne un type" />
                               </SelectTrigger>
                             </FormControl>
@@ -287,37 +287,38 @@ const Contact = () => {
                       type="submit"
                       disabled={isSubmitting}
                       size="lg"
-                      className="w-full h-16 text-lg font-black bg-secondary text-white hover:bg-secondary/90 shadow-[0_10px_40px_rgba(249,115,22,0.4)] hover:shadow-[0_15px_50px_rgba(249,115,22,0.6)] transition-all"
+                      className="w-full h-14 md:h-16 text-base md:text-lg font-black bg-secondary text-white hover:bg-secondary/90 shadow-[0_10px_40px_rgba(249,115,22,0.4)] hover:shadow-[0_15px_50px_rgba(249,115,22,0.6)] transition-all"
                     >
                       {isSubmitting ? (
-                        <div className="flex items-center gap-3">
-                          <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white"></div>
-                          Envoi de ta demande... Ne ferme pas la page
+                        <div className="flex items-center gap-2 md:gap-3">
+                          <div className="animate-spin rounded-full h-4 md:h-5 w-4 md:w-5 border-2 border-white/30 border-t-white"></div>
+                          <span className="text-sm md:text-base">Envoi en cours...</span>
                         </div>
                       ) : (
                         <div className="flex items-center gap-2">
-                          ✨ Envoyer ma demande (réponse en 2h)
+                          <span className="hidden sm:inline">✨ Envoyer ma demande (réponse en 2h)</span>
+                          <span className="sm:hidden">✨ Envoyer ma demande</span>
                         </div>
                       )}
                     </Button>
                     
                     {/* Réassurance ENRICHIE */}
-                    <div className="space-y-2 pt-4">
-                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
-                        <Check className="w-4 h-4 text-green-500" />
-                        On t'appelle dans les 2 prochaines heures (garanti)
+                    <div className="space-y-1.5 md:space-y-2 pt-2 md:pt-4">
+                      <p className="text-[10px] md:text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5 md:gap-2">
+                        <Check className="w-3 md:w-4 h-3 md:h-4 text-green-500 flex-shrink-0" />
+                        <span>On t'appelle dans les 2 prochaines heures (garanti)</span>
                       </p>
-                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
-                        <Check className="w-4 h-4 text-green-500" />
-                        Zéro pression, zéro engagement - juste des réponses claires
+                      <p className="text-[10px] md:text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5 md:gap-2">
+                        <Check className="w-3 md:w-4 h-3 md:h-4 text-green-500 flex-shrink-0" />
+                        <span>Zéro pression, zéro engagement - juste des réponses claires</span>
                       </p>
-                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
-                        <Lock className="w-4 h-4 text-green-500" />
-                        Tes infos restent privées (jamais partagées ni revendues)
+                      <p className="text-[10px] md:text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5 md:gap-2">
+                        <Lock className="w-3 md:w-4 h-3 md:h-4 text-green-500 flex-shrink-0" />
+                        <span>Tes infos restent privées (jamais partagées ni revendues)</span>
                       </p>
-                      <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
-                        <Shield className="w-4 h-4 text-green-500" />
-                        500+ familles québécoises nous font confiance depuis 2020
+                      <p className="text-[10px] md:text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5 md:gap-2">
+                        <Shield className="w-3 md:w-4 h-3 md:h-4 text-green-500 flex-shrink-0" />
+                        <span>500+ familles québécoises nous font confiance depuis 2020</span>
                       </p>
                     </div>
                   </form>
