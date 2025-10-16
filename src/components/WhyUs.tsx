@@ -49,30 +49,40 @@ const WhyUs = () => {
           {/* Carte featured en pleine largeur */}
           <Card className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/80 text-white">
             <CardContent className="p-8 md:p-12">
-              <div className="flex flex-col items-center text-center">
-                {/* Logo centré */}
-                <div className="mb-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                {/* GARANTI text - Left side */}
+                <div className="flex-shrink-0">
+                  <div className="garanti-text text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight">
+                    GARANTI
+                  </div>
+                </div>
+                
+                {/* Main content - Center */}
+                <div className="flex-1 text-center">
+                  {/* Titre */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    {reasons[0].title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                    {reasons[0].description}
+                  </p>
+                  
+                  {/* CTA avec flèche */}
+                  <div className="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                    <span className="text-sm font-semibold">En savoir plus</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+
+                {/* Logo - Right side */}
+                <div className="flex-shrink-0">
                   <img 
                     src={garantie30Logo} 
                     alt="Garantie 30 ans - 100% contreplaqué" 
-                    className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+                    className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain drop-shadow-2xl"
                   />
-                </div>
-                
-                {/* Titre */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                  {reasons[0].title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-white/90 text-lg leading-relaxed mb-6">
-                  {reasons[0].description}
-                </p>
-                
-                {/* CTA avec flèche */}
-                <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
-                  <span className="text-sm font-semibold">En savoir plus</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </CardContent>
