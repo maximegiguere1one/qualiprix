@@ -96,7 +96,7 @@ const WhyUs = () => {
                   </h3>
                   
                   {/* Description - niveau 2, plus subtile */}
-                  <p className="text-base lg:text-lg xl:text-xl text-white/85 leading-snug font-light whitespace-nowrap">
+                  <p className="text-base lg:text-lg xl:text-xl text-white/85 leading-snug font-semibold whitespace-nowrap">
                     {reasons[0].description}
                   </p>
                   
