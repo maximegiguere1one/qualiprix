@@ -139,11 +139,6 @@ const WhyUs = () => {
                   <p className="font-body leading-relaxed text-muted-foreground">
                     {reason.description}
                   </p>
-                  {index === 1 && (
-                    <div className="mt-4 inline-block px-3 py-1.5 bg-secondary/20 border border-secondary rounded-full">
-                      <span className="text-xs font-bold text-secondary">⚡ Le plus populaire</span>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             ))}
