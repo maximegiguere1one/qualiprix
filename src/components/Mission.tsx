@@ -35,8 +35,8 @@ const Mission = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12">
             {[
               { number: "25+", label: "Ans d'expérience" },
-              { number: "1000+", label: "Projets livrés" },
-              { number: "4.9/5", label: "Note Google" },
+              { number: "100 %", label: "Clients satisfaits" },
+              { number: "5/5", label: "Note Google" },
               { number: "30 ans", label: "Garantie" }
             ].map((stat, index) => (
               <div 
