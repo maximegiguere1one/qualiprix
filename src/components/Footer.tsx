@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="bg-gradient-to-br from-secondary via-secondary/90 to-secondary/80 text-white py-20">
         <div className="container px-4 mx-auto text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            Ta nouvelle cuisine en 3 semaines<br />
+            Ta nouvelle cuisine en 2 semaines<br />
             <span className="text-white/90">(pas 6 mois)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
