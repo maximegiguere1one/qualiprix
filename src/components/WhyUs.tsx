@@ -2,10 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Wrench, Truck, Shield, DollarSign, ArrowRight } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
+import garantie30Logo from "@/assets/garantie-30-logo.png";
 
 const WhyUs = () => {
-  const { count: yearsCount, ref: yearsRef } = useCountUp(30, 2000);
-  const { count: clientsCount, ref: clientsRef } = useCountUp(500, 2500);
   const { count: plywoodCount, ref: plywoodRef } = useCountUp(100, 1500);
   const reasons = [
     {
@@ -76,11 +75,17 @@ const WhyUs = () => {
                   
                   {/* Stats visuelles pour card #1 */}
                   {isFeature && (
-                    <div className="mb-6 flex gap-6">
-                      <div ref={yearsRef as any}>
-                        <div className="text-5xl font-black text-white">{yearsCount}</div>
-                        <div className="text-white/80 text-sm font-semibold">ans garantie</div>
+                    <div className="mb-6 flex gap-6 items-center">
+                      {/* Logo garantie 30 ans */}
+                      <div className="flex-shrink-0">
+                        <img 
+                          src={garantie30Logo} 
+                          alt="Garantie 30 ans" 
+                          className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-lg"
+                        />
                       </div>
+                      
+                      {/* Stat contreplaqué 100% */}
                       <div ref={plywoodRef as any}>
                         <div className="text-5xl font-black text-white">{plywoodCount}%</div>
                         <div className="text-white/80 text-sm font-semibold">contreplaqué</div>
