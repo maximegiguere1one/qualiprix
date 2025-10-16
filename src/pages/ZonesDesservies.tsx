@@ -84,9 +84,6 @@ const ZonesDesservies = () => {
           <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
         </div>
         <div className="container px-4 mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            Zones desservies
-          </h1>
           <h2 className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto font-bold leading-relaxed opacity-95">
             On livre partout au Québec. Service local, qualité constante, prix imbattables.
           </h2>
