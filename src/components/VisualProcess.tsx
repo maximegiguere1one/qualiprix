@@ -30,7 +30,7 @@ const VisualProcess = () => {
     {
       number: 4,
       title: "Installation professionnelle",
-      description: "Notre équipe installe tout rapidement — tu profites sans souci.",
+      description: "Installées par des pros certifiés qu'on connaît personnellement. Notre équipe d'installateurs partage nos valeurs : travail bien fait, respect du client et souci du détail.",
       image: realisationCuisineOuverte
     },
     {
