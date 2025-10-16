@@ -101,6 +101,14 @@ const Collections = () => {
         "/src/assets/quartz-bottocinio.png",
         "/src/assets/quartz-noir-vintage.png",
         "/src/assets/quartz-perle-blanche.png"
+      ],
+      imageNames: [
+        "Athabasca",
+        "Blanc Nordique",
+        "Bomyaan Sparkle",
+        "Bottocinio",
+        "Noir Vintage",
+        "Perle Blanche"
       ]
     },
     {
@@ -217,13 +225,20 @@ const Collections = () => {
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="p-1">
+                  <div className="p-1 relative">
                     <img 
                       src={image} 
-                      alt={`${collections[selectedCollection].name} - Photo ${idx + 1} sur ${collections[selectedCollection].images.length}`}
+                      alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
                       className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
+                    
+                    {collections[selectedCollection].imageNames && (
+                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold text-lg shadow-2xl border border-white/20">
+                        {collections[selectedCollection].imageNames[idx]}
+                      </div>
+                    )}
+                    
                     <div className="text-center mt-3 text-sm text-muted-foreground">
                       Photo {idx + 1} / {collections[selectedCollection].images.length}
                     </div>
