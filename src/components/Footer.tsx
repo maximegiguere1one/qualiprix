@@ -16,7 +16,7 @@ const Footer = () => {
             <span className="text-white/90">(pas 6 mois)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
-            100% de satisfaction client. Garantie 30 ans. Prix clairs.
+            100% de satisfaction client. Garantie 30 ans. Prix d'entrepôt.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
