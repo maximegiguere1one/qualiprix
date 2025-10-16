@@ -87,7 +87,7 @@ const ZonesDesservies = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             Zones desservies – Service clé en main au Québec
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto font-light leading-relaxed opacity-95">
+          <p className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto font-semibold leading-relaxed opacity-95">
             On livre partout au Québec. Service local, qualité constante, prix imbattables.
           </p>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-full shadow-[var(--shadow-soft)] hover:bg-white/20 transition-all duration-300">
