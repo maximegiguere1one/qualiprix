@@ -67,7 +67,7 @@ const VisualProcess = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className={`flex flex-col md:flex-row gap-8 items-center ${
-                index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}>
                 {/* Image */}
                 <div className="w-full md:flex-1">
