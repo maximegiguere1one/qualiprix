@@ -31,7 +31,7 @@ const Process = () => {
       number: "4",
       icon: HardHat,
       title: "Installation",
-      description: "Livré directement chez toi et installé par des pros certifiés qu'on connaît personnellement. Ils ont fait 200+ de nos cuisines. Propre, rapide, respectueux.",
+      description: "Installées par des pros certifiés qu'on connaît personnellement. Notre équipe d'installateurs partage nos valeurs : travail bien fait, respect du client et souci du détail.",
       duration: "1-2 jours selon projet"
     }
   ];
