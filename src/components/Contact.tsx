@@ -424,11 +424,11 @@ const Contact = () => {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-xs mb-0">Région desservie</h4>
-                        <p className="text-base font-semibold text-foreground">
-                          Québec, Montréal et environs
-                        </p>
                         <p className="text-xs text-muted-foreground mt-0">
                           Service dans toute la province
+                        </p>
+                        <p className="text-base font-semibold text-foreground">
+                          Québec, Montréal et environs
                         </p>
                       </div>
                     </div>
