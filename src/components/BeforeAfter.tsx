@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import realisationCuisineBlancheIlot from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
 import cuisineAvantRenovation from "@/assets/cuisine-avant-renovation.jpg";
+import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
 import { Button } from "@/components/ui/button";
 
 const BeforeAfter = () => {
@@ -80,7 +80,7 @@ const BeforeAfter = () => {
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
               <img 
-                src={realisationCuisineBlancheIlot}
+                src={cuisineApresRenovation}
                 alt="Cuisine après rénovation - Armoires de cuisine blanches sur mesure avec îlot central et comptoir quartz à Laval - Armoire Qualiprix"
                 className="w-full h-full object-cover"
                 draggable="false"
