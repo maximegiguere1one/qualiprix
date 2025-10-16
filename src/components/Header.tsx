@@ -86,7 +86,14 @@ const Header = () => {
           isCompact ? 'py-2' : 'py-3'
         )}>
           
-          {/* Logo removed */}
+          {/* Logo */}
+          <Link to="/" className="focus-ring hover:opacity-80 transition-opacity duration-200">
+            <img 
+              src={logo} 
+              alt="Armoire Qualiprix" 
+              className={cn("w-auto transition-all duration-300", isCompact ? 'h-10' : 'h-12')}
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
