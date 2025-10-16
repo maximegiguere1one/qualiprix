@@ -380,21 +380,21 @@ const Contact = () => {
               {/* Carte contact unifiée */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/30 via-secondary/30 to-accent/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-6 shadow-[0_10px_40px_hsl(var(--primary)/0.1)] hover:-translate-y-1 transition-all duration-500">
-                  <h3 className="font-bold text-xl mb-4 text-foreground">Nous joindre</h3>
+                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-5 shadow-[0_10px_40px_hsl(var(--primary)/0.1)] hover:-translate-y-1 transition-all duration-500">
+                  <h3 className="font-bold text-lg mb-3 text-foreground">Nous joindre</h3>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* Section Téléphone */}
-                    <div className="flex items-start gap-3">
-                      <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-primary" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Phone className="w-4.5 h-4.5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm mb-0.5">Téléphone</h4>
+                        <h4 className="font-semibold text-xs mb-0">Téléphone</h4>
                         <a href="tel:5813973587" className="text-lg font-bold text-foreground hover:text-primary transition-colors">
                           581-397-3587
                         </a>
-                        <p className="text-xs text-muted-foreground mt-0.5 flex items-center gap-1.5">
+                        <p className="text-xs text-muted-foreground mt-0 flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5" />
                           Lun-Ven: 8h-17h
                         </p>
@@ -405,16 +405,16 @@ const Contact = () => {
                     <div className="border-t border-border"></div>
                     
                     {/* Section Courriel */}
-                    <div className="flex items-start gap-3">
-                      <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-secondary" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="shrink-0 w-9 h-9 rounded-xl bg-secondary/10 flex items-center justify-center">
+                        <Mail className="w-4.5 h-4.5 text-secondary" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm mb-0.5">Courriel</h4>
+                        <h4 className="font-semibold text-xs mb-0">Courriel</h4>
                         <a href="mailto:info@armoiresqualiprix.ca" className="text-base font-semibold text-foreground hover:text-secondary transition-colors break-all">
                           info@armoiresqualiprix.ca
                         </a>
-                        <p className="text-xs text-muted-foreground mt-0.5 flex items-center gap-1.5">
+                        <p className="text-xs text-muted-foreground mt-0 flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                           Réponse sous 24h
                         </p>
@@ -425,16 +425,16 @@ const Contact = () => {
                     <div className="border-t border-border"></div>
                     
                     {/* Section Région */}
-                    <div className="flex items-start gap-3">
-                      <div className="shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-accent" />
+                    <div className="flex items-start gap-2.5">
+                      <div className="shrink-0 w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center">
+                        <MapPin className="w-4.5 h-4.5 text-accent" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm mb-0.5">Région desservie</h4>
+                        <h4 className="font-semibold text-xs mb-0">Région desservie</h4>
                         <p className="text-base font-semibold text-foreground">
                           Québec, Montréal et environs
                         </p>
-                        <p className="text-xs text-muted-foreground mt-0.5">
+                        <p className="text-xs text-muted-foreground mt-0">
                           Service dans toute la province
                         </p>
                       </div>
