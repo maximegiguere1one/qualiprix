@@ -423,12 +423,12 @@ const Contact = () => {
                         <MapPin className="w-4.5 h-4.5 text-accent" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-xs mb-0">Région desservie</h4>
-                        <p className="text-xs text-muted-foreground mt-0">
-                          Service dans toute la province
-                        </p>
-                        <p className="text-base font-semibold text-foreground">
+                        <h4 className="font-semibold text-sm mb-1 text-foreground">Région desservie</h4>
+                        <p className="text-lg font-bold text-foreground leading-tight">
                           Québec, Montréal et environs
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Service dans toute la province
                         </p>
                       </div>
                     </div>
