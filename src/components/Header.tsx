@@ -87,7 +87,7 @@ const Header = () => {
         )}>
           
           {/* Logo */}
-          <Link to="/" className="hover:opacity-80 transition-opacity duration-200 -ml-10">
+          <Link to="/" className="hover:opacity-80 transition-opacity duration-200 -ml-14">
             <img 
               src={logo} 
               alt="Armoire Qualiprix" 
