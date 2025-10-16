@@ -28,7 +28,7 @@ const StickyCTA = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden animate-slide-up">
-      <div className="bg-secondary p-4 shadow-[0_-10px_40px_rgba(249,115,22,0.3)] border-t-4 border-white/20">
+      <div className="bg-secondary p-4 shadow-[0_-10px_40px_rgba(249,115,22,0.3)]">
         <Button 
           onClick={scrollToContact}
           className="w-full bg-white text-primary hover:bg-white/90 shadow-xl h-16 text-lg font-bold"

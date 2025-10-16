@@ -131,7 +131,7 @@ const Contact = () => {
               {/* Glow effect on hover */}
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               
-              <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-6 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] border border-primary/10 hover:border-primary/20 transition-all duration-500">
+              <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-6 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
                 
                 {/* Badge "Places limitées" */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
@@ -288,7 +288,7 @@ const Contact = () => {
                       type="submit"
                       disabled={isSubmitting}
                       size="lg"
-                      className="w-full h-16 text-lg font-black bg-secondary text-white hover:bg-secondary/90 shadow-[0_10px_40px_rgba(249,115,22,0.4)] hover:shadow-[0_15px_50px_rgba(249,115,22,0.6)] transition-all border-2 border-white"
+                      className="w-full h-16 text-lg font-black bg-secondary text-white hover:bg-secondary/90 shadow-[0_10px_40px_rgba(249,115,22,0.4)] hover:shadow-[0_15px_50px_rgba(249,115,22,0.6)] transition-all"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-3">
@@ -303,7 +303,7 @@ const Contact = () => {
                     </Button>
                     
                     {/* Réassurance ENRICHIE */}
-                    <div className="space-y-2 pt-4 border-t border-muted">
+                    <div className="space-y-2 pt-4">
                       <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-2">
                         <Check className="w-4 h-4 text-green-500" />
                         On t'appelle dans les 2 prochaines heures (garanti)
@@ -335,7 +335,7 @@ const Contact = () => {
           >
             <div className="space-y-8">
               {/* Stats animées */}
-              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-primary/10">
+              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
                 <h3 className="font-bold text-2xl mb-6 text-foreground">Pourquoi nous choisir?</h3>
                 
                 <div className="space-y-5">
@@ -381,7 +381,7 @@ const Contact = () => {
               {/* Carte téléphone */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--primary)/0.1)] border border-primary/10 hover:border-primary/20 hover:-translate-y-1 transition-all duration-500">
+                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--primary)/0.1)] hover:-translate-y-1 transition-all duration-500">
                   <div className="flex items-start gap-5">
                     <div className="shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
                       <Phone className="w-7 h-7 text-white" />
@@ -406,7 +406,7 @@ const Contact = () => {
               {/* Carte email */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-secondary/30 to-primary/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--secondary)/0.1)] border border-secondary/10 hover:border-secondary/20 hover:-translate-y-1 transition-all duration-500">
+                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--secondary)/0.1)] hover:-translate-y-1 transition-all duration-500">
                   <div className="flex items-start gap-5">
                     <div className="shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center shadow-lg">
                       <Mail className="w-7 h-7 text-white" />
@@ -431,7 +431,7 @@ const Contact = () => {
               {/* Carte région */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-accent/30 to-primary/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--accent)/0.1)] border border-accent/10 hover:border-accent/20 hover:-translate-y-1 transition-all duration-500">
+                <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-8 shadow-[0_10px_40px_hsl(var(--accent)/0.1)] hover:-translate-y-1 transition-all duration-500">
                   <div className="flex items-start gap-5">
                     <div className="shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-lg">
                       <MapPin className="w-7 h-7 text-white" />
@@ -450,7 +450,7 @@ const Contact = () => {
               </div>
 
               {/* Sidebar SOCIAL PROOF enrichie */}
-              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-primary/10">
+              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
                 <h3 className="font-bold text-2xl mb-6 text-foreground">Pourquoi nous choisir?</h3>
                 
                 <div className="space-y-5">
@@ -487,7 +487,7 @@ const Contact = () => {
               </div>
 
               {/* Témoignage featured */}
-              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-primary/10">
+              <div className="bg-card/90 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
