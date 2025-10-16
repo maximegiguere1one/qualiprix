@@ -48,8 +48,8 @@ const WhyUs = () => {
         <div className="max-w-7xl mx-auto mb-12 space-y-6">
           {/* Carte featured en pleine largeur */}
           <Card className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-gradient-to-b from-[#012A59] via-primary to-[#2E567D] text-white">
-            <CardContent className="p-8 md:p-12">
-              {/* Version mobile - Layout centré simple */}
+            <CardContent className="relative p-8 md:p-12 lg:p-16 overflow-hidden">
+              {/* Version Mobile - Simple et centrée */}
               <div className="flex md:hidden flex-col items-center text-center gap-6">
                 <img 
                   src={garantie30Logo} 
@@ -70,41 +70,41 @@ const WhyUs = () => {
                 </div>
               </div>
 
-              {/* Version desktop/iPad - Layout horizontal avec 3 colonnes */}
-              <div className="hidden md:flex md:flex-row items-center justify-between gap-8 lg:gap-12">
-                {/* GARANTI text - Left side */}
-                <div className="flex-shrink-0 pr-8 lg:pr-12">
-                  <div className="garanti-text text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight">
+              {/* Version Desktop/iPad - Layout exact du visuel */}
+              <div className="hidden md:flex md:flex-col md:items-center md:relative">
+                {/* Badge en position absolue - top right */}
+                <div className="absolute top-0 right-0 lg:top-4 lg:right-4">
+                  <img 
+                    src={garantie30Logo} 
+                    alt="Garantie 30 ans - 100% contreplaqué" 
+                    className="w-32 h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain drop-shadow-2xl"
+                  />
+                </div>
+
+                {/* GARANTI - En haut, légèrement à gauche du centre */}
+                <div className="w-full flex justify-start pl-0 lg:pl-8 xl:pl-12 mb-8 lg:mb-10">
+                  <div className="garanti-text text-[6rem] lg:text-[8rem] xl:text-[10rem] font-black text-white leading-none tracking-tight">
                     GARANTI
                   </div>
                 </div>
-                
-                {/* Main content - Center */}
-                <div className="flex-1 text-center px-4 md:px-8">
+
+                {/* Contenu textuel centré - empilé verticalement */}
+                <div className="flex flex-col items-center text-center gap-6 max-w-4xl px-8">
                   {/* Titre */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
                     {reasons[0].title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                  <p className="text-lg lg:text-xl text-white/90 leading-relaxed">
                     {reasons[0].description}
                   </p>
                   
-                  {/* CTA avec flèche */}
-                  <div className="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors">
-                    <span className="text-sm font-semibold">En savoir plus</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {/* CTA */}
+                  <div className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors cursor-pointer group mt-2">
+                    <span className="text-base font-semibold">En savoir plus</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
-
-                {/* Logo - Right side */}
-                <div className="flex-shrink-0">
-                  <img 
-                    src={garantie30Logo} 
-                    alt="Garantie 30 ans - 100% contreplaqué" 
-                    className="w-40 h-40 lg:w-48 lg:h-48 object-contain drop-shadow-2xl"
-                  />
                 </div>
               </div>
             </CardContent>
