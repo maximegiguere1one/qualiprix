@@ -98,27 +98,27 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Navigation</h4>
             <ul className="space-y-2 font-body">
               <li>
-                <button onClick={() => scrollToSection("collections")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <button onClick={() => scrollToSection("collections")} className="text-primary-foreground/80 font-body link-underline">
                   Nos cuisines
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection("portfolio")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <button onClick={() => scrollToSection("portfolio")} className="text-primary-foreground/80 font-body link-underline">
                   Réalisations
                 </button>
               </li>
               <li>
-                <a href="/prix-delais" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/prix-delais" className="text-primary-foreground/80 font-body link-underline">
                   Prix & Délais
                 </a>
               </li>
               <li>
-                <button onClick={() => scrollToSection("faq")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <button onClick={() => scrollToSection("faq")} className="text-primary-foreground/80 font-body link-underline">
                   FAQ
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection("contact")} className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <button onClick={() => scrollToSection("contact")} className="text-primary-foreground/80 font-body link-underline">
                   Contact
                 </button>
               </li>
@@ -130,32 +130,32 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Nos régions</h4>
             <ul className="space-y-2 font-body">
               <li>
-                <a href="/armoires-montreal" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/armoires-montreal" className="text-primary-foreground/80 font-body link-underline">
                   🏙️ Montréal
                 </a>
               </li>
               <li>
-                <a href="/armoires-laval" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/armoires-laval" className="text-primary-foreground/80 font-body link-underline">
                   🏘️ Laval
                 </a>
               </li>
               <li>
-                <a href="/armoires-rive-nord" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/armoires-rive-nord" className="text-primary-foreground/80 font-body link-underline">
                   🌲 Rive-Nord
                 </a>
               </li>
               <li>
-                <a href="/armoires-rive-sud" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/armoires-rive-sud" className="text-primary-foreground/80 font-body link-underline">
                   🌊 Rive-Sud
                 </a>
               </li>
               <li>
-                <a href="/armoires-quebec" className="text-primary-foreground/80 font-body link-underline focus-ring">
+                <a href="/armoires-quebec" className="text-primary-foreground/80 font-body link-underline">
                   ⚜️ Québec
                 </a>
               </li>
               <li className="pt-2 border-t border-primary-foreground/20">
-                <a href="/zones-desservies" className="text-primary-foreground font-body font-semibold link-underline focus-ring">
+                <a href="/zones-desservies" className="text-primary-foreground font-body font-semibold link-underline">
                   → Toutes les zones
                 </a>
               </li>
@@ -170,7 +170,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61563783007983" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110 focus-ring"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -179,7 +179,7 @@ const Footer = () => {
                 href="https://www.instagram.com/armoirequaliprix/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110 focus-ring"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-all duration-180 ease-out hover:bg-secondary hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
