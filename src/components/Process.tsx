@@ -82,13 +82,13 @@ const Process = () => {
 
           {/* Guarantee Badge */}
           <div 
-            className={`flex items-center justify-center gap-4 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-2 border-secondary/20 px-8 py-6 rounded-[1.25rem] shadow-[var(--shadow-soft)] transition-all duration-320 ease-out ${
+            className={`flex flex-col items-center justify-center gap-4 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-2 border-secondary/20 px-8 py-6 rounded-[1.25rem] shadow-[var(--shadow-soft)] transition-all duration-320 ease-out ${
               isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'
             }`}
             style={{ transitionDelay: '470ms' }}
           >
             <Shield className="w-10 h-10 text-secondary" strokeWidth={1.5} />
-            <div>
+            <div className="text-center">
               <div className="text-lg md:text-xl font-bold text-foreground">Garantie "On répare ce qui cloche" ✊</div>
               <div className="text-muted-foreground font-body">Ajustements gratuits 30 jours après installation + garantie 30 ans sur les matériaux</div>
             </div>
