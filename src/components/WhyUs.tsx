@@ -71,39 +71,39 @@ const WhyUs = () => {
               </div>
 
               {/* Version Desktop/iPad - Layout exact du visuel */}
-              <div className="hidden md:flex md:flex-col md:items-center md:relative">
+              <div className="hidden md:flex md:flex-col md:items-center md:relative md:min-h-[500px] lg:min-h-[600px]">
                 {/* Badge en position absolue - top right */}
-                <div className="absolute top-0 right-0 lg:top-4 lg:right-4">
+                <div className="absolute top-0 right-0 lg:top-6 lg:right-6">
                   <img 
                     src={garantie30Logo} 
                     alt="Garantie 30 ans - 100% contreplaqué" 
-                    className="w-32 h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain drop-shadow-2xl"
+                    className="w-28 h-28 lg:w-36 lg:h-36 xl:w-44 xl:h-44 object-contain drop-shadow-2xl opacity-95"
                   />
                 </div>
 
-                {/* GARANTI - En haut, légèrement à gauche du centre */}
-                <div className="w-full flex justify-start pl-0 lg:pl-8 xl:pl-12 mb-8 lg:mb-10">
-                  <div className="garanti-text text-[6rem] lg:text-[8rem] xl:text-[10rem] font-black text-white leading-none tracking-tight">
+                {/* GARANTI - En haut, légèrement à gauche du centre - HERO */}
+                <div className="w-full flex justify-start pl-0 lg:pl-12 xl:pl-16 mb-12 lg:mb-16 pt-4">
+                  <div className="garanti-text text-[7rem] lg:text-[9rem] xl:text-[11rem] font-black text-white leading-none tracking-tighter">
                     GARANTI
                   </div>
                 </div>
 
-                {/* Contenu textuel centré - empilé verticalement */}
-                <div className="flex flex-col items-center text-center gap-6 max-w-4xl px-8">
-                  {/* Titre */}
-                  <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
+                {/* Contenu textuel centré - empilé verticalement avec meilleure hiérarchie */}
+                <div className="flex flex-col items-center text-center gap-5 lg:gap-6 max-w-3xl lg:max-w-4xl px-8 lg:px-12">
+                  {/* Titre - niveau 1 de hiérarchie après GARANTI */}
+                  <h3 className="text-[1.65rem] lg:text-[2rem] xl:text-[2.25rem] font-bold text-white leading-tight tracking-tight">
                     {reasons[0].title}
                   </h3>
                   
-                  {/* Description */}
-                  <p className="text-lg lg:text-xl text-white/90 leading-relaxed">
+                  {/* Description - niveau 2, plus subtile */}
+                  <p className="text-base lg:text-lg xl:text-xl text-white/85 leading-relaxed font-light">
                     {reasons[0].description}
                   </p>
                   
-                  {/* CTA */}
-                  <div className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors cursor-pointer group mt-2">
-                    <span className="text-base font-semibold">En savoir plus</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {/* CTA - niveau 3, discret mais cliquable */}
+                  <div className="flex items-center justify-center gap-2 text-white/75 hover:text-white transition-all duration-300 cursor-pointer group mt-3 lg:mt-4">
+                    <span className="text-sm lg:text-base font-semibold tracking-wide">En savoir plus</span>
+                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
