@@ -234,7 +234,7 @@ const Collections = () => {
                     />
                     
                     {collections[selectedCollection].imageNames && (
-                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold text-lg shadow-2xl border border-white/20">
+                      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-4 py-2 rounded-full font-bold text-base shadow-2xl border border-white/20">
                         {collections[selectedCollection].imageNames[idx]}
                       </div>
                     )}
