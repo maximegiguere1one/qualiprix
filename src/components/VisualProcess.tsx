@@ -4,6 +4,7 @@ import realisationCuisineOuverte from "@/assets/realisation-cuisine-ouverte-esca
 import realisationCuisineBlancheIlot from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
 import qualityDetail from "@/assets/quality-detail.jpg";
 import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
+import consultationVideo from "@/assets/consultation-video.png";
 import cuisineDesign3D from "@/assets/cuisine-design-3d.png";
 
 const VisualProcess = () => {
@@ -14,13 +15,13 @@ const VisualProcess = () => {
       number: 1,
       title: "Consultation gratuite",
       description: "Appel conférence vidéo avec nos experts — on évalue ton projet et on discute de tes besoins.",
-      image: cuisineDesign3D
+      image: consultationVideo
     },
     {
       number: 2,
       title: "Rencontre design et rendu 3D personnalisé",
       description: "Visualise ton projet en 3D avant la production — tu vois ta future cuisine avant de dire oui. Estimation détaillée livrée en 48 h par courriel. Modifications illimitées jusqu'à ce que ce soit parfait.",
-      image: realisationCuisineIlotBois
+      image: cuisineDesign3D
     },
     {
       number: 3,
