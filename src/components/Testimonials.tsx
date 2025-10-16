@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, CheckCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Testimonials = () => {
@@ -61,7 +61,7 @@ const Testimonials = () => {
             {longTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
+                className={`relative bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
@@ -82,11 +82,17 @@ const Testimonials = () => {
                   ))}
                 </div>
                 <p 
-                  className="text-foreground/90"
+                  className="text-foreground/90 pb-8"
                   style={{ fontFamily: 'Montserrat, sans-serif', lineHeight: '1.6' }}
                 >
                   {testimonial.text}
                 </p>
+                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-[#F59052]/10 border border-[#F59052]/30 rounded-full px-3 py-1.5">
+                  <CheckCircle className="w-3.5 h-3.5 text-[#F59052]" />
+                  <span className="text-[#F59052] font-semibold text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    Vérifié
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -96,7 +102,7 @@ const Testimonials = () => {
             {shortTestimonials.slice(0, 3).map((testimonial, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
+                className={`relative bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
@@ -117,11 +123,17 @@ const Testimonials = () => {
                   ))}
                 </div>
                 <p 
-                  className="text-foreground/90"
+                  className="text-foreground/90 pb-8"
                   style={{ fontFamily: 'Montserrat, sans-serif', lineHeight: '1.6' }}
                 >
                   {testimonial.text}
                 </p>
+                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-[#F59052]/10 border border-[#F59052]/30 rounded-full px-3 py-1.5">
+                  <CheckCircle className="w-3.5 h-3.5 text-[#F59052]" />
+                  <span className="text-[#F59052] font-semibold text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    Vérifié
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -131,7 +143,7 @@ const Testimonials = () => {
             {shortTestimonials.slice(3, 6).map((testimonial, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
+                className={`relative bg-white rounded-2xl p-8 md:p-8 shadow-sm transition-all duration-500 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
@@ -152,11 +164,17 @@ const Testimonials = () => {
                   ))}
                 </div>
                 <p 
-                  className="text-foreground/90"
+                  className="text-foreground/90 pb-8"
                   style={{ fontFamily: 'Montserrat, sans-serif', lineHeight: '1.6' }}
                 >
                   {testimonial.text}
                 </p>
+                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-[#F59052]/10 border border-[#F59052]/30 rounded-full px-3 py-1.5">
+                  <CheckCircle className="w-3.5 h-3.5 text-[#F59052]" />
+                  <span className="text-[#F59052] font-semibold text-xs" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    Vérifié
+                  </span>
+                </div>
               </div>
             ))}
           </div>
