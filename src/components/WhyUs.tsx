@@ -51,33 +51,47 @@ const WhyUs = () => {
 
           return <Card key={index} className={`group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden ${isFeature ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-primary/80 text-white' : 'bg-card'}`}>
               <CardContent className={`p-8 ${isFeature ? 'md:p-12' : ''}`}>
-                  {/* Logo de garantie pour card #1 */}
-                  {isFeature && (
-                    <div className="mb-8 flex justify-center md:justify-start">
-                      <img 
-                        src={garantie30Logo} 
-                        alt="Garantie 30 ans - 100% contreplaqué" 
-                        className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
-                      />
+                  {isFeature ? (
+                    <div className="flex flex-col items-center text-center">
+                      {/* Logo centré */}
+                      <div className="mb-6">
+                        <img 
+                          src={garantie30Logo} 
+                          alt="Garantie 30 ans - 100% contreplaqué" 
+                          className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+                        />
+                      </div>
+                      
+                      {/* Titre */}
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                        {reason.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-white/90 text-lg leading-relaxed mb-6">
+                        {reason.description}
+                      </p>
+                      
+                      {/* CTA avec flèche */}
+                      <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                        <span className="text-sm font-semibold">En savoir plus</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
+                  ) : (
+                    <>
+                      <p className="font-body leading-relaxed text-muted-foreground">
+                        {reason.description}
+                      </p>
+                      
+                      {/* Badge "POPULAIRE" pour card #2 */}
+                      {index === 1 && (
+                        <div className="mt-4 inline-block px-3 py-1.5 bg-secondary/20 border border-secondary rounded-full">
+                          <span className="text-xs font-bold text-secondary">⚡ Le plus populaire</span>
+                        </div>
+                      )}
+                    </>
                   )}
-                  
-                  
-                  
-                  <p className={`font-body leading-relaxed ${isFeature ? 'text-white/90 text-lg' : 'text-muted-foreground'}`}>
-                    {reason.description}
-                  </p>
-                  
-                  {/* Badge "POPULAIRE" pour card #2 */}
-                  {index === 1 && <div className="mt-4 inline-block px-3 py-1.5 bg-secondary/20 border border-secondary rounded-full">
-                      <span className="text-xs font-bold text-secondary">⚡ Le plus populaire</span>
-                    </div>}
-                  
-                  {/* Micro-interaction: Arrow on hover */}
-                  {isFeature && <div className="mt-6 flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
-                      <span className="text-sm font-semibold">En savoir plus</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>}
                 </CardContent>
               </Card>;
         })}
