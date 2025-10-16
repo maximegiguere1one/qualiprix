@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wrench, Truck, Shield, DollarSign, ArrowRight } from "lucide-react";
+import { Wrench, Truck, Shield, DollarSign, ArrowRight, Zap, Sparkles, MapPin } from "lucide-react";
 import garantie30Logo from "@/assets/garantie-30-logo.png";
 const WhyUs = () => {
   const reasons = [{
@@ -113,20 +113,33 @@ const WhyUs = () => {
           {/* 3 cartes en dessous */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {reasons.slice(1).map((reason, index) => (
-              <Card key={index + 1} className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-card">
-                <CardContent className="p-8">
-                  {/* Titre */}
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-card border-border h-full"
+              >
+                <CardContent className="p-8 text-center">
+                  {/* Icône visuelle avec cercle coloré */}
+                  <div className="flex justify-center mb-6">
+                    <div className={`
+                      w-16 h-16 md:w-20 md:h-20 rounded-full 
+                      flex items-center justify-center
+                      ${index === 0 ? 'bg-secondary/10' : ''}
+                      ${index === 1 ? 'bg-yellow-500/10' : ''}
+                      ${index === 2 ? 'bg-primary/10' : ''}
+                    `}>
+                      {index === 0 && <Zap className="w-9 h-9 md:w-11 md:h-11 text-secondary" />}
+                      {index === 1 && <Sparkles className="w-9 h-9 md:w-11 md:h-11 text-yellow-500" />}
+                      {index === 2 && <MapPin className="w-9 h-9 md:w-11 md:h-11 text-primary" />}
+                    </div>
+                  </div>
+                  
                   <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 leading-tight">
                     {reason.title}
                   </h3>
-                  
-                  {/* Description */}
                   <p className="font-body leading-relaxed text-muted-foreground">
                     {reason.description}
                   </p>
-                  
-                  {/* Badge "POPULAIRE" pour card #2 (maintenant index 0 du slice) */}
-                  {index === 0 && (
+                  {index === 1 && (
                     <div className="mt-4 inline-block px-3 py-1.5 bg-secondary/20 border border-secondary rounded-full">
                       <span className="text-xs font-bold text-secondary">⚡ Le plus populaire</span>
                     </div>
