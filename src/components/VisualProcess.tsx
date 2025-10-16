@@ -24,7 +24,7 @@ const VisualProcess = () => {
     {
       number: 3,
       title: "Assemblage et livraison locale",
-      description: "Armoires fabriquées au Québec, avec un contrôle de qualité rigoureux.",
+      description: "Armoires assemblées au Québec avec le souci du détail. Préparées et livrées en 10 à 15 jours, prêtes à installer.",
       image: qualityDetail
     },
     {
