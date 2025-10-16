@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { 
-  DollarSign, 
+  Calculator,
   Palette, 
   Wrench, 
   Eye, 
@@ -103,7 +103,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Combien coûte vraiment une cuisine complète?",
-      icon: <DollarSign className="h-5 w-5 text-gray-400" />,
+      icon: <Calculator className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-4">
           <p>
