@@ -202,7 +202,7 @@ const FAQ = () => {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="text-lg"
+              className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8"
             >
               Réserver ma rencontre 3D gratuite
             </Button>
