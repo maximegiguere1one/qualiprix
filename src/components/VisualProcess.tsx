@@ -7,6 +7,7 @@ import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
 import consultationVideo from "@/assets/consultation-video.png";
 import cuisineDesign3D from "@/assets/cuisine-design-3d.png";
 import assemblageDelivery from "@/assets/assemblage-livraison-quebec.png";
+import installationPro from "@/assets/installation-professionnelle-armoires.png";
 
 const VisualProcess = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -34,7 +35,7 @@ const VisualProcess = () => {
       number: 4,
       title: "Installation professionnelle",
       description: "Installées par des pros certifiés qu'on connaît personnellement. Notre équipe d'installateurs partage nos valeurs : travail bien fait, respect du client et souci du détail.",
-      image: realisationCuisineOuverte
+      image: installationPro
     },
     {
       number: 5,
