@@ -1,5 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 const FAQ = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -61,9 +64,10 @@ const FAQ = () => {
     };
   }, []);
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const faqs = [
     {
-      emoji: "💰",
       question: "Combien coûte vraiment une cuisine complète ?",
       answer: (
         <>
@@ -76,7 +80,6 @@ const FAQ = () => {
       )
     },
     {
-      emoji: "🪵",
       question: "Quelle est la différence entre mélamine et polymère ?",
       answer: (
         <>
@@ -92,7 +95,6 @@ const FAQ = () => {
       )
     },
     {
-      emoji: "🔧",
       question: "Qui installe ma cuisine ?",
       answer: (
         <>
@@ -105,7 +107,6 @@ const FAQ = () => {
       )
     },
     {
-      emoji: "🖥️",
       question: "Comment puis-je visualiser mon projet avant l'achat ?",
       answer: (
         <>
@@ -118,7 +119,6 @@ const FAQ = () => {
       )
     },
     {
-      emoji: "🚚",
       question: "Combien de temps avant de recevoir ma cuisine ?",
       answer: (
         <>
@@ -140,47 +140,73 @@ const FAQ = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 bg-accent">
-      <div className="container mx-auto max-w-4xl px-4">
-        <h2 
-          className={`text-3xl font-bold text-primary mb-8 text-center transition-all duration-700 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          FAQ — On répond à vos vraies questions 👇
-        </h2>
-        
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <details 
-              key={index}
-              className={`border-b border-border pb-4 group transition-all duration-700 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <summary className="text-xl font-semibold cursor-pointer flex justify-between items-center text-foreground hover:text-primary transition-colors">
-                <span>{faq.emoji} {faq.question}</span>
-                <span className="transition-transform group-open:rotate-180 text-muted-foreground">▼</span>
-              </summary>
-              <div className="mt-3 text-muted-foreground leading-relaxed">
-                {faq.answer}
-              </div>
-            </details>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <a 
-            href="#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToContact();
-            }}
-            className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-lg font-semibold hover:opacity-90 transition-opacity"
+    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-background">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <div 
+            className={`text-center mb-16 transition-all duration-320 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
           >
-            📞 Réserver ma rencontre 3D gratuite
-          </a>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Questions fréquentes
+            </h2>
+            <p className="text-xl text-muted-foreground font-body">
+              On répond à vos vraies questions
+            </p>
+          </div>
+          
+          <div className="space-y-4 mb-12">
+            {faqs.map((faq, index) => (
+              <Card
+                key={index}
+                className={`border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 rounded-[1.25rem] overflow-hidden ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                }`}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <CardContent className="p-0">
+                  <button
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    className="w-full text-left p-6 md:p-8 flex justify-between items-start gap-4 hover:bg-accent/50 transition-colors"
+                  >
+                    <h3 className="text-lg md:text-xl font-bold text-foreground flex-1">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 ${
+                        openIndex === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-muted-foreground font-body leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div 
+            className={`text-center transition-all duration-320 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}
+            style={{ transitionDelay: '400ms' }}
+          >
+            <Button
+              size="lg"
+              onClick={scrollToContact}
+              className="text-lg"
+            >
+              Réserver ma rencontre 3D gratuite
+            </Button>
+          </div>
         </div>
       </div>
     </section>
