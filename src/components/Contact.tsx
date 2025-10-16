@@ -368,13 +368,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                
-                {/* Social proof dynamique */}
-                <div className="mt-6 pt-6 border-t border-muted">
-                  <p className="text-sm text-muted-foreground text-center">
-                    🔥 <span className="font-bold text-foreground">{todayLeads} personnes</span> ont demandé une soumission aujourd'hui
-                  </p>
-                </div>
               </div>
 
               {/* Carte contact unifiée */}
