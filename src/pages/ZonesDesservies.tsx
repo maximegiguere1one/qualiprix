@@ -84,9 +84,9 @@ const ZonesDesservies = () => {
           <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
         </div>
         <div className="container px-4 mx-auto text-center relative z-10">
-          <h2 className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto font-bold leading-relaxed opacity-95">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-12 max-w-4xl mx-auto font-bold leading-tight">
             On livre partout au Québec. Service local, qualité constante, prix imbattables.
-          </h2>
+          </h1>
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-full shadow-[var(--shadow-soft)] hover:bg-white/20 transition-all duration-300">
             <MapPin className="w-6 h-6" />
             <span className="font-semibold text-lg">25 ans dans le domaine</span>
