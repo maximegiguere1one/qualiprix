@@ -102,13 +102,13 @@ const Hero = () => {
       </a>
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 animate-fade-in text-white [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]" style={{ animationDelay: '50ms' }}>
+          <h1 className="font-display text-6xl md:text-7xl font-black tracking-tight leading-[1.15] mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]" style={{ animationDelay: '50ms' }}>
             Ta cuisine de rêve<br />
             <span className="text-secondary">livrée en 4 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
-      <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-12 animate-fade-in font-body leading-tight max-w-4xl mx-auto font-medium" style={{ animationDelay: '100ms' }}>
+      <p className="text-xl md:text-2xl text-accessible-light-muted mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium" style={{ animationDelay: '100ms' }}>
         Qualité boutique. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>

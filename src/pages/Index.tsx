@@ -26,7 +26,7 @@ const Index = () => {
     <div className="min-h-screen">
       <StickyPromoBar />
       <Header />
-      <main className="pt-[52px]">{/* Padding pour sticky promo bar */}
+      <main id="main-content" className="pt-[52px]">{/* Padding pour sticky promo bar */}
         <Hero />
         <WhyUs />
         {/* QUICK WIN: Separate Suspense boundaries for better CLS */}

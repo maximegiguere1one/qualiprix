@@ -28,6 +28,12 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
+    compoundVariants: [
+      {
+        size: ["default", "lg"],
+        className: "min-h-[44px] min-w-[44px]",
+      },
+    ],
   },
 );
 

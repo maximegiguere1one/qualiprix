@@ -68,6 +68,38 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dyslexia-friendly spacing */
+    --text-spacing-tight: 1.4;
+    --text-spacing-normal: 1.6;
+    --text-spacing-relaxed: 1.8;
+    --text-spacing-loose: 2.0;
+    
+    /* Paragraph spacing (WCAG 2.1 - 1.5x font-size minimum) */
+    --paragraph-spacing: 1.5em;
+    
+    /* Letter spacing for dyslexia */
+    --tracking-dyslexia: 0.03em;
+    
+    /* Word spacing for readability */
+    --word-spacing-comfortable: 0.16em;
+    
+    /* WCAG AAA contrast levels (7:1+) */
+    --text-primary: 0 0% 10%;
+    --text-secondary: 0 0% 25%;
+    --text-tertiary: 0 0% 40%;
+    
+    /* Text on dark backgrounds */
+    --text-on-dark: 0 0% 98%;
+    --text-on-dark-muted: 0 0% 85%;
+    
+    /* Backgrounds with guaranteed contrast */
+    --bg-subtle: 0 0% 97%;
+    --bg-elevated: 0 0% 100%;
+    
+    /* Interactive elements */
+    --link-color: 211 95% 35%;
+    --link-hover: 211 95% 25%;
   }
 
   .dark {
@@ -119,9 +151,41 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+body {
+  @apply bg-background text-foreground;
+  
+  /* Dyslexia-friendly defaults */
+  line-height: var(--text-spacing-normal);
+  letter-spacing: 0.01em;
+  word-spacing: 0.08em;
+  
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Apply to all paragraphs */
+p {
+  margin-bottom: var(--paragraph-spacing);
+  line-height: var(--text-spacing-relaxed);
+}
+
+/* Headings with proper spacing */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  line-height: var(--text-spacing-tight);
+}
+
+/* Lists need breathing room */
+ul, ol {
+  margin-bottom: var(--paragraph-spacing);
+}
+
+li {
+  margin-bottom: 0.5em;
+  line-height: var(--text-spacing-normal);
+}
 
   /* Smooth scroll behavior */
   html {
@@ -187,7 +251,58 @@ All colors MUST be HSL.
 
   /* Focus ring utility */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply focus-visible:outline-none 
+           focus-visible:ring-4 
+           focus-visible:ring-secondary/60 
+           focus-visible:ring-offset-4 
+           focus-visible:ring-offset-background;
+    box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 0 8px hsl(var(--secondary) / 0.6);
+  }
+  
+  /* Enhanced focus for buttons and links */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 3px solid hsl(var(--secondary));
+    outline-offset: 4px;
+    box-shadow: 0 0 0 6px hsl(var(--secondary) / 0.2);
+  }
+  
+  /* Utility classes for accessibility */
+  .text-dyslexia-friendly {
+    line-height: var(--text-spacing-loose);
+    letter-spacing: var(--tracking-dyslexia);
+    word-spacing: var(--word-spacing-comfortable);
+  }
+  
+  .paragraph-spacing {
+    margin-bottom: var(--paragraph-spacing);
+  }
+  
+  .text-accessible-light {
+    color: hsl(var(--text-on-dark));
+  }
+  
+  .text-accessible-light-muted {
+    color: hsl(var(--text-on-dark-muted));
+  }
+  
+  .text-high-contrast {
+    color: hsl(var(--text-primary));
+  }
+  
+  .text-medium-contrast {
+    color: hsl(var(--text-secondary));
+  }
+  
+  .link-accessible {
+    color: hsl(var(--link-color));
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  
+  .link-accessible:hover {
+    color: hsl(var(--link-hover));
+    text-decoration-thickness: 3px;
   }
 
   /* Image hover scale */

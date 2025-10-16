@@ -130,7 +130,7 @@ const Contact = () => {
               {/* Glow effect on hover */}
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               
-              <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] border border-primary/10 hover:border-primary/20 transition-all duration-500">
+              <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-6 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] border border-primary/10 hover:border-primary/20 transition-all duration-500">
                 
                 {/* Badge "Places limitées" */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
@@ -147,12 +147,17 @@ const Contact = () => {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                              👤 Ton nom complet
-                              <span className="text-xs text-muted-foreground font-normal">(prénom + nom de famille)</span>
+                            <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                              <span className="flex items-center gap-2">
+                                <span aria-hidden="true">👤</span>
+                                Ton nom complet
+                              </span>
+                              <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                                (prénom + nom de famille)
+                              </span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Martin Gagnon" {...field} className="h-12" />
+                              <Input placeholder="Ex: Martin Gagnon" {...field} className="h-12 text-base leading-normal" aria-describedby="name-hint" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -164,20 +169,26 @@ const Contact = () => {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                              📞 Téléphone
-                              <span className="text-xs text-muted-foreground font-normal">(on t'appelle aujourd'hui)</span>
+                            <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                              <span className="flex items-center gap-2">
+                                <span aria-hidden="true">📞</span>
+                                Téléphone
+                              </span>
+                              <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                                (on t'appelle aujourd'hui)
+                              </span>
                             </FormLabel>
                             <FormControl>
                               <Input 
                                 type="tel"
-                                placeholder="(581) 234-5678"
+                                placeholder="Ex: (581) 234-5678"
                                 {...field}
                                 onChange={(e) => {
                                   const formatted = formatPhoneNumber(e.target.value);
                                   field.onChange(formatted);
                                 }}
-                                className="h-12"
+                                className="h-12 text-base leading-normal"
+                                aria-describedby="phone-hint"
                               />
                             </FormControl>
                             <FormMessage />
@@ -192,15 +203,19 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                            📧 Courriel
+                          <FormLabel className="text-base md:text-lg font-semibold mb-2">
+                            <span className="flex items-center gap-2">
+                              <span aria-hidden="true">📧</span>
+                              Courriel
+                            </span>
                           </FormLabel>
                           <FormControl>
                             <Input 
                               type="email"
-                              placeholder="martin.gagnon@gmail.com"
+                              placeholder="Ex: martin.gagnon@gmail.com"
                               {...field}
-                              className="h-12"
+                              className="h-12 text-base leading-normal"
+                              aria-describedby="email-hint"
                             />
                           </FormControl>
                           <FormMessage />
@@ -214,15 +229,21 @@ const Contact = () => {
                       name="city"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                            📍 Ta ville
-                            <span className="text-xs text-muted-foreground font-normal">(pour confirmer qu'on dessert ta région)</span>
+                          <FormLabel className="text-base md:text-lg font-semibold mb-2 flex flex-col gap-1">
+                            <span className="flex items-center gap-2">
+                              <span aria-hidden="true">📍</span>
+                              Ta ville
+                            </span>
+                            <span className="text-sm text-muted-foreground font-normal leading-relaxed">
+                              (pour confirmer qu'on dessert ta région)
+                            </span>
                           </FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="Entre ta ville (ex: Laval, Terrebonne, Québec)"
+                              placeholder="Ex: Laval, Terrebonne, Québec"
                               {...field}
-                              className="h-12"
+                              className="h-12 text-base leading-normal"
+                              aria-describedby="city-hint"
                             />
                           </FormControl>
                           <FormMessage />
@@ -236,12 +257,15 @@ const Contact = () => {
                       name="projectType"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                            🏠 Type de projet (optionnel)
+                          <FormLabel className="text-base md:text-lg font-semibold mb-2">
+                            <span className="flex items-center gap-2">
+                              <span aria-hidden="true">🏠</span>
+                              Type de projet (optionnel)
+                            </span>
                           </FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="h-12">
+                              <SelectTrigger className="h-12 text-base">
                                 <SelectValue placeholder="Sélectionne un type" />
                               </SelectTrigger>
                             </FormControl>

@@ -74,6 +74,12 @@ const Header = () => {
       "fixed top-0 w-full z-50 backdrop-blur-xl bg-background/95 border-b transition-all duration-300",
       isScrolled ? 'border-foreground/10 shadow-lg' : 'border-foreground/5'
     )}>
+      <a 
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-secondary focus:text-white focus:px-6 focus:py-3 focus:rounded-lg focus:shadow-2xl focus:outline-none focus:ring-4 focus:ring-secondary/50"
+      >
+        Aller au contenu principal
+      </a>
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className={cn(
           "flex items-center justify-between transition-all duration-300",
