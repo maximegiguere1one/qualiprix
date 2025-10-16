@@ -21,10 +21,10 @@ const Portfolio = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3 sm:mb-4">
             Inspirez-vous
           </h2>
-          <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto px-4">
             Projets réels de vrais clients. Du concret livré partout au Québec.
           </p>
         </div>

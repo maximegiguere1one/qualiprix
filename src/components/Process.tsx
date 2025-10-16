@@ -45,10 +45,10 @@ const Process = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 px-4">
               Processus clé en main – sans stress, sans surprises
             </h2>
-            <p className="text-xl text-muted-foreground font-body">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body px-4">
               De l'idée à ta nouvelle cuisine, en 4 étapes simples
             </p>
           </div>

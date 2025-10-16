@@ -38,11 +38,11 @@ const WhyUs = () => {
           <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-4 tracking-wide uppercase">
             Pourquoi Qualiprix
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-foreground mb-4 sm:mb-5 md:mb-6 px-4">
             Parce que ta cuisine mérite <br className="hidden sm:block" />
             <span className="text-secondary">mieux qu'une promesse</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed px-4">
             Aucun blabla. Juste des faits et une garantie de 30 ans.
           </p>
         </div>

@@ -125,15 +125,15 @@ const Collections = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
+          <span className="inline-block px-4 sm:px-5 py-1.5 sm:py-2 bg-secondary/10 text-secondary text-xs sm:text-sm font-bold rounded-full mb-4 sm:mb-6 tracking-wide uppercase">
             7 Collections • 100+ Combinaisons
           </span>
-          <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-primary mb-8">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-primary mb-4 sm:mb-6 md:mb-8">
             Chaque cuisine raconte<br />
             <span className="text-primary">une histoire unique</span>
           </h2>
           <p 
-            className={`text-xl md:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed transition-all duration-320 ease-out delay-75 ${
+            className={`text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed transition-all duration-320 ease-out delay-75 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
@@ -143,12 +143,12 @@ const Collections = () => {
         </div>
 
         {/* Collection PRESTIGE en HERO CARD (pleine largeur) */}
-        <div className="max-w-7xl mx-auto mb-8">
+        <div className="max-w-7xl mx-auto mb-6 md:mb-8">
           <div 
-            className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_30px_80px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-pointer"
+            className="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[0_30px_80px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-pointer"
             onClick={() => setSelectedCollection(0)}
           >
-            <div className="aspect-[21/9] relative">
+            <div className="aspect-[16/9] sm:aspect-[21/9] relative">
               <img 
                 src={collections[0].images[0]}
                 alt={collections[0].name}
@@ -159,17 +159,17 @@ const Collections = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               
               {/* Badge "NOTRE PRÉFÉRÉE" */}
-              <div className="absolute top-6 right-6 px-5 py-2.5 bg-secondary text-white rounded-full font-bold text-sm shadow-2xl">
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-secondary text-white rounded-full font-bold text-xs sm:text-sm shadow-2xl">
                 ⭐ Notre préférée
               </div>
               
               {/* Content superposé */}
-              <div className="absolute bottom-0 left-0 right-0 p-10">
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4">{collections[0].name}</h3>
-                <p className="text-white/90 text-lg mb-6 max-w-2xl">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 lg:p-10">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-3 md:mb-4">{collections[0].name}</h3>
+                <p className="text-white/90 text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 max-w-2xl">
                   {collections[0].benefits.join(' • ')}
                 </p>
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-full text-white font-bold hover:bg-white/30 transition-all">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full text-white text-sm sm:text-base font-bold hover:bg-white/30 transition-all">
                   Voir les {collections[0].images.length} photos →
                 </div>
               </div>

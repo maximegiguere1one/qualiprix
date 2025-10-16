@@ -65,74 +65,75 @@ const Hero = () => {
       
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className={`font-display text-6xl md:text-7xl font-black tracking-tight leading-[1.15] mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h1 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 animate-fade-in text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             Ta cuisine de rêve<br />
             <span className="text-secondary">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
-      <p className={`text-xl md:text-2xl text-accessible-light-muted mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-accessible-light-muted mb-6 md:mb-8 leading-relaxed paragraph-spacing max-w-readable mx-auto animate-fade-in font-body font-medium transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         Qualité haut de gamme. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>
 
       {/* USP Pills HIÉRARCHISÉES avec tailles différentes */}
-      <div className={`flex flex-wrap justify-center items-center gap-4 mb-14 animate-fade-in transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-14 animate-fade-in transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         
         {/* Pill #1 : FEATURED (plus grosse) */}
-        <div className="flex items-center gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-8 py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
-          <span className="text-3xl">⚡</span>
+        <div className="flex items-center gap-2 sm:gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
+          <span className="text-xl sm:text-2xl md:text-3xl">⚡</span>
           <div className="text-left">
-            <div className="text-white/70 text-xs font-semibold uppercase">Livraison</div>
-            <div className="text-white text-xl font-black">2 semaines</div>
+            <div className="text-white/70 text-[10px] sm:text-xs font-semibold uppercase">Livraison</div>
+            <div className="text-white text-base sm:text-lg md:text-xl font-black">2 semaines</div>
           </div>
         </div>
         
         {/* Pills #2 et #3 : Normales */}
-        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
-          <span className="text-2xl">⭐</span>
-          <span className="text-white font-semibold">5/5 étoiles</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+          <span className="text-lg sm:text-xl md:text-2xl">⭐</span>
+          <span className="text-white text-sm sm:text-base font-semibold">5/5 étoiles</span>
         </div>
-        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
-          <span className="text-2xl">🏆</span>
-          <span className="text-white font-semibold">Garantie 30 ans</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+          <span className="text-lg sm:text-xl md:text-2xl">🏆</span>
+          <span className="text-white text-sm sm:text-base font-semibold">Garantie 30 ans</span>
         </div>
       </div>
 
           {/* CTA DOUBLE : Primaire + Secondaire */}
-          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in transition-all duration-1000 delay-300 px-4 sm:px-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             
             {/* CTA Primaire MASSIF */}
-            <Button size="lg" onClick={scrollToContact} className="group relative text-lg md:text-xl px-10 md:px-14 py-5 md:py-7 h-auto bg-secondary hover:bg-secondary/90 text-white font-black rounded-full shadow-[0_20px_60px_-10px_rgb(249_115_22_/_60%)] hover:shadow-[0_30px_80px_-10px_rgb(249_115_22_/_80%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden hover:scale-105">
+            <Button size="lg" onClick={scrollToContact} className="group relative text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-14 py-4 sm:py-5 md:py-7 h-auto bg-secondary hover:bg-secondary/90 text-white font-black rounded-full shadow-[0_20px_60px_-10px_rgb(249_115_22_/_60%)] hover:shadow-[0_30px_80px_-10px_rgb(249_115_22_/_80%)] transition-all duration-300 border-2 border-secondary hover:border-secondary/80 overflow-hidden hover:scale-105 w-full sm:w-auto">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-              <span className="relative z-10 flex items-center gap-3">
-                Obtiens ta consultation gratuite
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                <span className="hidden sm:inline">Obtiens ta consultation gratuite</span>
+                <span className="sm:hidden">Consultation gratuite</span>
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform flex-shrink-0" />
               </span>
             </Button>
             
             {/* CTA Secondaire (téléphone) */}
-            <Button size="lg" variant="outline" asChild className="group text-base md:text-lg px-8 md:px-10 py-5 md:py-7 h-auto bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 font-bold rounded-full transition-all duration-300">
-              <a href="tel:5813973587" className="flex items-center gap-3">
-                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            <Button size="lg" variant="outline" asChild className="group text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-7 h-auto bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 font-bold rounded-full transition-all duration-300 w-full sm:w-auto">
+              <a href="tel:5813973587" className="flex items-center justify-center gap-2 sm:gap-3">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform flex-shrink-0" />
                 Appelle maintenant
               </a>
             </Button>
           </div>
 
       {/* Social proof micro ENRICHI */}
-      <div className={`mt-10 animate-fade-in transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="flex items-center justify-center gap-6 text-white/70 text-sm">
+      <div className={`mt-6 sm:mt-8 md:mt-10 animate-fade-in transition-all duration-1000 delay-[400ms] px-4 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/70 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">JT</div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">ML</div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">SP</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">JT</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">ML</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">SP</div>
             </div>
             <span className="font-semibold">100% de satisfaction</span>
           </div>
-          <div className="w-px h-4 bg-white/30" />
-          <span>📍 Québec • Montréal • Rive-Nord</span>
+          <div className="hidden sm:block w-px h-4 bg-white/30" />
+          <span className="text-center">📍 Québec • Montréal • Rive-Nord</span>
         </div>
       </div>
 
