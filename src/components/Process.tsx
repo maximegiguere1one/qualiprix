@@ -50,11 +50,11 @@ const Process = () => {
           </div>
 
           {/* Timeline */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12 justify-items-center">
             {steps.map((step, index) => (
               <Card 
                 key={index}
-                className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-shadow duration-200 rounded-[1.25rem]"
+                className="border-none shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-shadow duration-200 rounded-[1.25rem] w-full max-w-md mx-auto"
               >
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-center justify-center gap-4 mb-6">
