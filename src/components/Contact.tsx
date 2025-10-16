@@ -130,7 +130,7 @@ const Contact = () => {
               {/* Glow effect on hover */}
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               
-              <div className="relative bg-card/90 backdrop-blur-xl rounded-3xl p-6 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
+              <div className="relative bg-card/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-[0_20px_80px_hsl(var(--primary)/0.15)] transition-all duration-500">
                 
                 {/* Badge "Places limitées" */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
