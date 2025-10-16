@@ -4,8 +4,14 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ZonesDesservies = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: regionsHeaderRef, isVisible: regionsHeaderVisible } = useScrollReveal();
+  const { ref: regionsGridRef, isVisible: regionsGridVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
+  const { ref: mapRef, isVisible: mapVisible } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

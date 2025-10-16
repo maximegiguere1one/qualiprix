@@ -8,7 +8,7 @@ interface UseScrollRevealOptions {
 
 export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
   const { threshold = 0.1, rootMargin = '0px' } = options;
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 

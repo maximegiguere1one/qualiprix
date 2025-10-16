@@ -6,8 +6,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, CheckCircle, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ArmoiresMontreal = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: introRef, isVisible: introVisible } = useScrollReveal();
+  const { ref: neighborhoodRef, isVisible: neighborhoodVisible } = useScrollReveal();
+  const { ref: whyUsRef, isVisible: whyUsVisible } = useScrollReveal();
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollReveal();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
+  const { ref: linksRef, isVisible: linksVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
@@ -118,19 +127,27 @@ const ArmoiresMontreal = () => {
       </section>
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-primary text-white">
+      <section ref={heroRef} className="py-20 bg-gradient-to-br from-secondary via-secondary to-primary text-white">
         <div className="container px-4 mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
+          <div className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6 transition-all duration-1000 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <MapPin className="w-5 h-5" />
             <span className="font-semibold">Montréal & environs</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 delay-100 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             Armoires sur mesure à Montréal – Expert local depuis 25 ans
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             De Rosemont au Plateau, en passant par NDG et Villeray. 100% de satisfaction client, 2 semaines de délai garanti.
           </p>
-          <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
+          <Button size="lg" className={`h-14 px-8 text-lg bg-white text-primary hover:bg-white/90 transition-all duration-1000 delay-300 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <Phone className="w-5 h-5 mr-2" />
             Consultation gratuite à Montréal – 581-397-3587
           </Button>
@@ -141,7 +158,9 @@ const ArmoiresMontreal = () => {
       <section className="py-16 bg-background">
         <div className="container px-4 mx-auto max-w-6xl">
           {/* Intro */}
-          <div className="mb-16">
+          <div ref={introRef} className={`mb-16 transition-all duration-1000 ${
+            introVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <p className="text-lg leading-relaxed mb-6">
               De <strong>Rosemont</strong> à <strong>Notre-Dame-de-Grâce</strong>, en passant par le <strong>Plateau-Mont-Royal</strong> et <strong>Villeray</strong>, 
               on garantit un <strong>taux de satisfaction client de 100%</strong>. 
@@ -154,11 +173,19 @@ const ArmoiresMontreal = () => {
           </div>
 
           {/* Quartiers desservis */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Quartiers desservis à Montréal</h2>
+          <div ref={neighborhoodRef} className="mb-16">
+            <h2 className={`text-3xl font-bold mb-8 text-center transition-all duration-1000 ${
+              neighborhoodVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>Quartiers desservis à Montréal</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {neighborhoods.map((neighborhood, index) => (
-                <Card key={index} className="text-center p-4 hover:shadow-[var(--shadow-elegant)] transition-shadow">
+                <Card 
+                  key={index} 
+                  className={`text-center p-4 hover:shadow-[var(--shadow-elegant)] transition-all duration-800 ${
+                    neighborhoodVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${100 + index * 60}ms` }}
+                >
                   <CheckCircle className="w-6 h-6 text-primary mx-auto mb-2" />
                   <p className="font-semibold text-sm">{neighborhood}</p>
                 </Card>

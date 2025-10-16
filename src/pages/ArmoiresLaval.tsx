@@ -6,8 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, CheckCircle, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ArmoiresLaval = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: neighborhoodRef, isVisible: neighborhoodVisible } = useScrollReveal();
+  const { ref: whyUsRef, isVisible: whyUsVisible } = useScrollReveal();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
@@ -68,22 +74,30 @@ const ArmoiresLaval = () => {
       </section>
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-primary text-white">
+      <section ref={heroRef} className="py-20 bg-gradient-to-br from-secondary via-secondary to-primary text-white">
         <div className="container px-4 mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
+          <div className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6 transition-all duration-1000 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <MapPin className="w-5 h-5" />
             <span className="font-semibold">Laval</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 delay-100 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             Armoires sur mesure à Laval – Qualité locale garantie
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             Chomedey, Vimont, Sainte-Rose, Auteuil. Service rapide, prix clairs.
           </p>
           <Button 
             size="lg" 
             onClick={scrollToContact}
-            className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90"
+            className={`h-14 px-8 text-lg bg-white text-primary hover:bg-white/90 transition-all duration-1000 delay-300 ${
+              heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
           >
             <Phone className="w-5 h-5 mr-2" />
             Consultation gratuite à Laval – 581-397-3587
@@ -96,13 +110,21 @@ const ArmoiresLaval = () => {
         <div className="container px-4 mx-auto max-w-6xl">
           
           {/* Neighborhoods Served */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">
+          <div ref={neighborhoodRef} className="mb-16">
+            <h2 className={`text-3xl font-bold text-center mb-8 transition-all duration-1000 ${
+              neighborhoodVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
               Zones desservies à Laval
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {neighborhoods.map((neighborhood, index) => (
-                <Card key={index} className="border-2">
+                <Card 
+                  key={index} 
+                  className={`border-2 transition-all duration-800 ${
+                    neighborhoodVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${100 + index * 80}ms` }}
+                >
                   <CardContent className="p-4 text-center">
                     <MapPin className="w-6 h-6 mx-auto mb-2 text-primary" />
                     <p className="font-semibold">{neighborhood}</p>
@@ -113,12 +135,16 @@ const ArmoiresLaval = () => {
           </div>
 
           {/* Why Choose Us */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">
+          <div ref={whyUsRef} className="mb-16">
+            <h2 className={`text-3xl font-bold text-center mb-8 transition-all duration-1000 ${
+              whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
               Pourquoi choisir QualiPrix à Laval?
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="border-2">
+              <Card className={`border-2 transition-all duration-800 delay-150 ${
+                whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                     <CheckCircle className="w-6 h-6 text-primary" />
@@ -132,7 +158,9 @@ const ArmoiresLaval = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className={`border-2 transition-all duration-800 delay-[250ms] ${
+                whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                     <CheckCircle className="w-6 h-6 text-primary" />
@@ -146,7 +174,9 @@ const ArmoiresLaval = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className={`border-2 transition-all duration-800 delay-[350ms] ${
+                whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                     <CheckCircle className="w-6 h-6 text-primary" />
@@ -163,13 +193,21 @@ const ArmoiresLaval = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">
+          <div ref={testimonialsRef} className="mb-16">
+            <h2 className={`text-3xl font-bold text-center mb-8 transition-all duration-1000 ${
+              testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
               Nos clients à Laval témoignent
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="border-2">
+                <Card 
+                  key={index} 
+                  className={`border-2 transition-all duration-800 ${
+                    testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${150 + index * 100}ms` }}
+                >
                   <CardContent className="p-6">
                     <div className="flex gap-1 mb-3">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -190,7 +228,9 @@ const ArmoiresLaval = () => {
           </div>
 
           {/* Final CTA */}
-          <div className="text-center bg-gradient-to-br from-primary/10 to-secondary/10 p-8 md:p-12 rounded-2xl">
+          <div ref={ctaRef} className={`text-center bg-gradient-to-br from-primary/10 to-secondary/10 p-8 md:p-12 rounded-2xl transition-all duration-1000 ${
+            ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-3xl font-bold mb-4">
               Prêt pour ta nouvelle cuisine à Laval?
             </h2>

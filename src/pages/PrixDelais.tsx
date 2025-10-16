@@ -5,8 +5,16 @@ import { Check, Clock, DollarSign } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuickEstimate from "@/components/QuickEstimate";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PrixDelais = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: factorsHeaderRef, isVisible: factorsHeaderVisible } = useScrollReveal();
+  const { ref: factorsGridRef, isVisible: factorsGridVisible } = useScrollReveal();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
+  const { ref: estimateRef, isVisible: estimateVisible } = useScrollReveal();
+  const { ref: faqRef, isVisible: faqVisible } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

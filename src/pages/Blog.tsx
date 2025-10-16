@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Blog = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: articlesRef, isVisible: articlesVisible } = useScrollReveal();
+  const { ref: newsletterRef, isVisible: newsletterVisible } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

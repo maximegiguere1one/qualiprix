@@ -49,8 +49,8 @@ const VisualProcess = () => {
     <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-background">
       <div className="container px-4 mx-auto">
         <div 
-          className={`text-center mb-16 transition-all duration-320 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+          className={`text-center mb-16 transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -65,8 +65,8 @@ const VisualProcess = () => {
           {steps.map((step, index) => (
             <div 
               key={step.number}
-              className={`mb-16 last:mb-0 transition-all duration-320 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              className={`mb-16 last:mb-0 transition-all duration-800 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >

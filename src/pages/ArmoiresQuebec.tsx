@@ -6,8 +6,15 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Star, Shield } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ArmoiresQuebec = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
+  const { ref: introRef, isVisible: introVisible } = useScrollReveal();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal();
+  const { ref: regionsRef, isVisible: regionsVisible } = useScrollReveal();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
