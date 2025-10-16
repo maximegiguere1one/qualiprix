@@ -225,29 +225,29 @@ const Collections = () => {
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="p-1 relative">
+                  <div className="p-0.5 sm:p-1 relative">
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
+                      className="w-full h-[220px] sm:h-[400px] md:h-[500px] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     
                     {collections[selectedCollection].imageNames && (
-                      <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-sm sm:text-base shadow-2xl border border-white/20">
+                      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
                         {collections[selectedCollection].imageNames[idx]}
                       </div>
                     )}
                     
-                    <div className="text-center mt-3 text-sm text-muted-foreground">
+                    <div className="text-center mt-2 text-xs sm:text-sm text-muted-foreground">
                       Photo {idx + 1} / {collections[selectedCollection].images.length}
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="h-10 w-10 md:h-12 md:w-12" />
-            <CarouselNext className="h-10 w-10 md:h-12 md:w-12" />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </DialogContent>
       </Dialog>
