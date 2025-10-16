@@ -58,7 +58,7 @@ const ArmoiresMontreal = () => {
     document.title = "Armoires sur mesure Montréal 2025 | +500 projets livrés | QualiPrix";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Expert armoires cuisine à Montréal depuis 25 ans. Du Plateau à NDG, Rosemont à Villeray. +500 projets, livrés en 4 semaines. Consultation gratuite → 581-397-3587');
+      metaDesc.setAttribute('content', 'Expert armoires cuisine à Montréal depuis 25 ans. Du Plateau à NDG, Rosemont à Villeray. +500 projets, livrés en 2 semaines. Consultation gratuite → 581-397-3587');
     }
 
     // Add canonical tag
@@ -128,7 +128,7 @@ const ArmoiresMontreal = () => {
             Armoires sur mesure à Montréal – Expert local depuis 25 ans
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            De Rosemont au Plateau, en passant par NDG et Villeray. +500 projets livrés, 4 semaines de délai garanti.
+            De Rosemont au Plateau, en passant par NDG et Villeray. +500 projets livrés, 2 semaines de délai garanti.
           </p>
           <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />

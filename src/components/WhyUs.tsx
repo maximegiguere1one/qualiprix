@@ -15,7 +15,7 @@ const WhyUs = () => {
     },
     {
       icon: Truck,
-      title: "4 semaines, pas 6 mois",
+      title: "2 semaines, pas 6 mois",
       description: "Parce que ta vie continue pendant les rénos. On respecte nos délais, toujours."
     },
     {

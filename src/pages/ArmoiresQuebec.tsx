@@ -80,7 +80,7 @@ const ArmoiresQuebec = () => {
             </h2>
             <p className="text-xl text-muted-foreground">
               Depuis +25 ans, on aide les familles québécoises à créer leur cuisine idéale. 
-              Qualité boutique, prix d'entrepôt, livraison en 4 semaines.
+              Qualité boutique, prix d'entrepôt, livraison en 2 semaines.
             </p>
           </div>
 
@@ -117,7 +117,7 @@ const ArmoiresQuebec = () => {
                 </div>
                 <CardTitle>Livraison rapide</CardTitle>
                 <CardDescription>
-                  4 semaines max. Livraison incluse dans toute la région de Québec et Lévis.
+                  2 semaines max. Livraison incluse dans toute la région de Québec et Lévis.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -217,7 +217,7 @@ const ArmoiresQuebec = () => {
           <div className="text-center bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20 p-12 rounded-[1.25rem]">
             <h3 className="text-3xl font-bold mb-4">Prêt à transformer ta cuisine?</h3>
             <p className="text-xl text-muted-foreground mb-8">
-              Consultation gratuite, design 3D en 48h, livraison en 4 semaines. Simple et sans stress.
+              Consultation gratuite, design 3D en 48h, livraison en 2 semaines. Simple et sans stress.
             </p>
             <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />

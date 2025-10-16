@@ -459,7 +459,7 @@ const Contact = () => {
                       <Clock className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <div className="font-bold text-xl text-foreground mb-1">Livraison en 4 semaines</div>
+                      <div className="font-bold text-xl text-foreground mb-1">Livraison en 2 semaines</div>
                       <div className="text-sm text-muted-foreground">Pas 6 mois comme ailleurs</div>
                     </div>
                   </div>

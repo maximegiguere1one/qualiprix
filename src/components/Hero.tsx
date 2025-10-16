@@ -82,7 +82,7 @@ const Hero = () => {
           animationDelay: '50ms'
         }}>
             Ta cuisine de rêve<br />
-            <span className="text-secondary">livrée en 4 semaines</span>
+            <span className="text-secondary">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
@@ -103,7 +103,7 @@ const Hero = () => {
           <span className="text-3xl">⚡</span>
           <div className="text-left">
             <div className="text-white/70 text-xs font-semibold uppercase">Livraison</div>
-            <div className="text-white text-xl font-black">4 semaines</div>
+            <div className="text-white text-xl font-black">2 semaines</div>
           </div>
         </div>
         

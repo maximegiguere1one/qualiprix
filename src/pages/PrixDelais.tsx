@@ -10,9 +10,9 @@ const PrixDelais = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Prix clairs sans surprise. Délai 4 semaines garanti. Découvre ce qui influence ton investissement cuisine au Québec. Soumission gratuite en 24h.');
+      metaDescription.setAttribute('content', 'Prix clairs sans surprise. Délai 2 semaines garanti. Découvre ce qui influence ton investissement cuisine au Québec. Soumission gratuite en 24h.');
     }
-    document.title = "Prix & Délais | Transparence totale | Livraison 4 semaines";
+    document.title = "Prix & Délais | Transparence totale | Livraison 2 semaines";
     
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';

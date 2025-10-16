@@ -46,7 +46,7 @@ const ArmoiresLaval = () => {
     {
       name: "Martin Gagnon",
       area: "Vimont",
-      text: "Livré en 4 semaines comme promis. Je recommande à 100%!",
+      text: "Livré en 2 semaines comme promis. Je recommande à 100%!",
       rating: 5
     }
   ];

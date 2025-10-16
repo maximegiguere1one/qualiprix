@@ -11,7 +11,7 @@ const ArmoiresRiveNord = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. +80 projets à Terrebonne, Repentigny, Mascouche. Livraison 4 semaines garantie. Soumission gratuite → 581-397-3587');
+      metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. +80 projets à Terrebonne, Repentigny, Mascouche. Livraison 2 semaines garantie. Soumission gratuite → 581-397-3587');
     }
     document.title = "Armoires sur mesure Rive-Nord | +80 projets | Livraison rapide";
     
@@ -61,7 +61,7 @@ const ArmoiresRiveNord = () => {
             Armoires sur mesure sur la Rive-Nord – Service local rapide
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            De Terrebonne à Saint-Jérôme, on livre en 4 semaines. Qualité garantie, prix d'entrepôt.
+            De Terrebonne à Saint-Jérôme, on livre en 2 semaines. Qualité garantie, prix d'entrepôt.
           </p>
           <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
@@ -93,7 +93,7 @@ const ArmoiresRiveNord = () => {
                   On connaît la Rive-Nord comme le fond de notre poche. +200 projets réalisés de Terrebonne à Saint-Jérôme.
                 </p>
                 <p>
-                  <strong className="text-foreground">Livraison rapide incluse.</strong> En 4 semaines max, ta cuisine est installée.
+                  <strong className="text-foreground">Livraison rapide incluse.</strong> En 2 semaines max, ta cuisine est installée.
                 </p>
                 <p>
                   <strong className="text-foreground">Prix clairs, sans surprise.</strong> Aucun frais caché. Ce qu'on te dit, c'est ce que tu paies.
@@ -146,7 +146,7 @@ const ArmoiresRiveNord = () => {
           <div className="text-center bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/20 p-12 rounded-[1.25rem]">
             <h3 className="text-3xl font-bold mb-4">Prêt pour ta nouvelle cuisine?</h3>
             <p className="text-xl text-muted-foreground mb-8">
-              Consultation gratuite à domicile, estimation en 48h, livraison en 4 semaines.
+              Consultation gratuite à domicile, estimation en 48h, livraison en 2 semaines.
             </p>
             <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />
