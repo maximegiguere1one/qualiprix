@@ -84,7 +84,7 @@ const ZonesDesservies = () => {
           <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white rounded-full blur-3xl animate-blob-float" style={{ animationDelay: '4s' }} />
         </div>
         <div className="container px-4 mx-auto text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 max-w-4xl mx-auto font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 max-w-4xl mx-auto font-bold leading-tight whitespace-nowrap">
             On livre partout au Québec
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl mx-auto font-semibold leading-relaxed opacity-90">
