@@ -72,68 +72,68 @@ const ExitIntentPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto p-0">
+      <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[450px] max-h-[90vh] overflow-y-auto p-0 mx-4">
         <button 
           onClick={() => setIsOpen(false)}
-          className="absolute right-4 top-4 z-10 rounded-full p-2 bg-background/80 backdrop-blur-sm opacity-70 ring-offset-background transition-all hover:opacity-100 hover:bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          className="absolute right-3 top-3 sm:right-4 sm:top-4 z-10 rounded-full p-2.5 sm:p-2 bg-background/90 backdrop-blur-sm opacity-80 ring-offset-background transition-all hover:opacity-100 hover:bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 touch-manipulation"
           aria-label="Fermer"
         >
-          <X className="h-4 w-4" />
+          <X className="h-5 w-5 sm:h-4 sm:w-4" />
           <span className="sr-only">Close</span>
         </button>
         
-        <DialogHeader className="px-6 pt-6 pb-4 space-y-2">
-          <DialogTitle className="text-xl md:text-2xl font-black leading-tight">
+        <DialogHeader className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 space-y-1.5 sm:space-y-2">
+          <DialogTitle className="text-lg sm:text-xl md:text-2xl font-black leading-tight pr-8">
             Offre PHOTO -40% 📸
-            <span className="block text-secondary text-base md:text-lg font-bold mt-1">
+            <span className="block text-secondary text-sm sm:text-base md:text-lg font-bold mt-1">
               Ta cuisine contre des photos
             </span>
           </DialogTitle>
-          <DialogDescription className="text-sm md:text-base text-muted-foreground">
+          <DialogDescription className="text-xs sm:text-sm md:text-base text-muted-foreground leading-snug">
             On photographie ta cuisine finie pour Instagram/Facebook = 40% de rabais instantané
           </DialogDescription>
         </DialogHeader>
         
-        <div className="px-6 pb-4">
-          <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-2 border-secondary/20 rounded-2xl p-4 md:p-5">
-            <div className="flex items-center justify-between mb-3">
-              <div className="text-4xl md:text-5xl font-black text-secondary">-40%</div>
-              <div className="text-xs md:text-sm font-semibold text-right text-foreground/80 max-w-[140px]">
+        <div className="px-4 sm:px-6 pb-3 sm:pb-4">
+          <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-2 border-secondary/20 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 md:p-5">
+            <div className="flex items-center justify-between mb-2.5 sm:mb-3">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-black text-secondary">-40%</div>
+              <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-right text-foreground/80 max-w-[120px] sm:max-w-[140px] leading-tight">
                 de rabais sur ta cuisine complète
               </div>
             </div>
             
-            <ul className="space-y-1.5 text-xs md:text-sm">
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs md:text-sm">
+              <li className="flex items-start gap-1.5 sm:gap-2">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                <span>Séance photo professionnelle gratuite</span>
+                <span className="leading-snug">Séance photo professionnelle gratuite</span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li className="flex items-start gap-1.5 sm:gap-2">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                <span>Tes photos sur nos réseaux sociaux</span>
+                <span className="leading-snug">Tes photos sur nos réseaux sociaux</span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li className="flex items-start gap-1.5 sm:gap-2">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                <span>-40% sur le prix total (valeur 8000$+)</span>
+                <span className="leading-snug">-40% sur le prix total (valeur 8000$+)</span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <li className="flex items-start gap-1.5 sm:gap-2">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                 </svg>
-                <span>Consultation + estimation incluses</span>
+                <span className="leading-snug">Consultation + estimation incluses</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="px-6 pb-4">
-          <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="px-4 sm:px-6 pb-3 sm:pb-4">
+          <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3">
             <div className="relative">
               <Input 
                 type="email" 
@@ -141,24 +141,25 @@ const ExitIntentPopup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="h-11 pl-4 pr-4 text-sm border-2 border-input hover:border-secondary/40 focus:border-secondary transition-colors"
+                className="h-12 sm:h-11 pl-4 pr-4 text-sm border-2 border-input hover:border-secondary/40 focus:border-secondary transition-colors touch-manipulation"
               />
             </div>
             
             <Button 
               type="submit" 
-              className="w-full h-11 text-sm font-bold bg-secondary hover:bg-secondary/90 hover:shadow-lg transition-all duration-200"
+              className="w-full h-12 sm:h-11 text-xs sm:text-sm font-bold bg-secondary hover:bg-secondary/90 hover:shadow-lg transition-all duration-200 touch-manipulation"
             >
-              📸 Je veux économiser 40% (2 places restantes)
+              📸 Je veux économiser 40%
+              <span className="hidden xs:inline"> (2 places restantes)</span>
             </Button>
           </form>
         </div>
         
-        <div className="px-6 pb-6">
-          <div className="bg-muted/50 border border-muted-foreground/20 rounded-lg p-3 text-center">
-            <p className="text-xs md:text-sm font-medium text-foreground/80 flex items-center justify-center gap-2">
+        <div className="px-4 sm:px-6 pb-5 sm:pb-6">
+          <div className="bg-muted/50 border border-muted-foreground/20 rounded-lg p-2.5 sm:p-3 text-center">
+            <p className="text-[11px] sm:text-xs md:text-sm font-medium text-foreground/80 flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap leading-snug">
               <span className="text-secondary">⏱️</span>
-              <span>Dernières heures! <strong className="font-bold">2/2 places restantes</strong> en octobre 2025</span>
+              <span className="inline-block">Dernières heures! <strong className="font-bold">2/2 places restantes</strong> en octobre 2025</span>
             </p>
           </div>
         </div>
