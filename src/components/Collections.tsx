@@ -180,14 +180,6 @@ const Collections = () => {
               {/* Animated border glow on hover */}
               <div className="absolute inset-0 rounded-[1.25rem] p-[2px] bg-gradient-to-br from-primary/0 via-secondary/0 to-primary/0 group-hover:from-primary/30 group-hover:via-secondary/30 group-hover:to-primary/30 transition-all duration-500 -z-10"></div>
               
-              {collection.isRealProjects && (
-                <div className="absolute top-4 right-4 bg-secondary text-primary-foreground px-3 py-1.5 rounded-full text-sm font-bold z-10 shadow-lg animate-[glow-pulse_2s_ease-in-out_infinite] will-change-[box-shadow]">
-                  <span className="relative z-10">✨ Projets réels</span>
-                  {/* Shine effect */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                </div>
-              )}
-              
               <CardContent className="p-6 md:p-8 relative">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
