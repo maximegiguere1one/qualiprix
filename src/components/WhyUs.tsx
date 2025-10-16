@@ -73,7 +73,7 @@ const WhyUs = () => {
               {/* Version Desktop/iPad - Layout exact du visuel */}
               <div className="hidden md:flex md:flex-col md:items-center md:relative md:min-h-[320px] lg:min-h-[360px]">
                 {/* Badge en position absolue - top right */}
-                <div className="absolute top-0 right-0 lg:top-2 lg:right-2">
+                <div className="absolute top-0 right-8 lg:top-2 lg:right-12 xl:right-16">
                   <img 
                     src={garantie30Logo} 
                     alt="Garantie 30 ans - 100% contreplaqué" 
@@ -82,7 +82,7 @@ const WhyUs = () => {
                 </div>
 
                 {/* GARANTI - En haut, légèrement à gauche du centre - HERO */}
-                <div className="w-full flex justify-start pl-0 lg:pl-4 xl:pl-6 mb-3 lg:mb-5">
+                <div className="w-full flex justify-center mb-3 lg:mb-5">
                   <div className="garanti-text text-[6rem] lg:text-[8rem] xl:text-[10rem] font-black text-white leading-none tracking-tighter whitespace-nowrap">
                     GARANTI
                   </div>
