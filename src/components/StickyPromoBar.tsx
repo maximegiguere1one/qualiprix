@@ -12,7 +12,7 @@ const StickyPromoBar = () => {
         <div className="flex items-center justify-between py-3">
           <div className="flex-1 flex items-center justify-center gap-3">
             <span className="text-sm md:text-base font-bold">
-              ⚡ PROMO EXCLUSIVE : $300 de rabais sur cuisines complètes ce mois-ci
+              📸 PRIX DÉMO -40% : Votre cuisine en échange de photos pour nos réseaux sociaux
             </span>
             <a 
               href="#contact"
@@ -22,7 +22,7 @@ const StickyPromoBar = () => {
               }}
               className="hidden sm:inline-block bg-white text-secondary px-4 py-1.5 rounded-full text-sm font-bold hover:scale-105 transition-transform"
             >
-              J'en profite →
+              Postuler maintenant →
             </a>
           </div>
           <button 
