@@ -152,7 +152,7 @@ const Hero = () => {
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">ML</div>
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-white flex items-center justify-center text-xs font-bold text-white">SP</div>
             </div>
-            <span className="font-semibold">+500 clients ravis</span>
+            <span className="font-semibold">100% de satisfaction</span>
           </div>
           <div className="w-px h-4 bg-white/30" />
           <span>📍 Québec • Montréal • Rive-Nord</span>

@@ -11,9 +11,9 @@ const ArmoiresRiveSud = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Cuisines sur mesure Rive-Sud. Longueuil, Brossard, St-Jean. +60 clients satisfaits 5⭐. Qualité garantie 30 ans. Consultation gratuite → 581-397-3587');
+      metaDescription.setAttribute('content', 'Cuisines sur mesure Rive-Sud. Longueuil, Brossard, St-Jean. 100% de satisfaction 5⭐. Qualité garantie 30 ans. Consultation gratuite → 581-397-3587');
     }
-    document.title = "Armoires sur mesure Rive-Sud | +60 clients 5⭐ | Garantie 30 ans";
+    document.title = "Armoires sur mesure Rive-Sud | 100% satisfaction 5⭐ | Garantie 30 ans";
     
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
@@ -90,7 +90,7 @@ const ArmoiresRiveSud = () => {
               <h2 className="text-3xl font-bold mb-6">L'avantage QualiPrix Rive-Sud</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  +150 projets réalisés sur la Rive-Sud. De Longueuil à Saint-Jean, on livre partout.
+                  100% de satisfaction sur la Rive-Sud. De Longueuil à Saint-Jean, on livre partout.
                 </p>
                 <p>
                   <strong className="text-foreground">Pas de frais de transport cachés.</strong> Livraison incluse dans le prix.

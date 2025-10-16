@@ -11,9 +11,9 @@ const ArmoiresQuebec = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Armoires cuisine Québec. Service Québec, Lévis, Beauport. +40 projets livrés. Fabrication locale, délai respecté. Consultation gratuite → 581-397-3587');
+      metaDescription.setAttribute('content', 'Armoires cuisine Québec. Service Québec, Lévis, Beauport. 100% de satisfaction. Fabrication locale, délai respecté. Consultation gratuite → 581-397-3587');
     }
-    document.title = "Armoires sur mesure Québec | +40 projets | Fabrication locale";
+    document.title = "Armoires sur mesure Québec | 100% satisfaction | Fabrication locale";
     
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';

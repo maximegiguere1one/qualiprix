@@ -16,7 +16,7 @@ const Footer = () => {
             <span className="text-white/90">(pas 6 mois)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
-            +500 clients ravis. Garantie 30 ans. Prix clairs.
+            100% de satisfaction client. Garantie 30 ans. Prix clairs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
@@ -60,8 +60,8 @@ const Footer = () => {
                 <span className="text-2xl">⭐</span>
               </div>
               <div className="text-left">
-                <div className="font-bold text-white">4.9/5 étoiles (87 avis)</div>
-                <div className="text-white/70 text-sm">Google Reviews vérifié</div>
+                <div className="font-bold text-white">100% de satisfaction</div>
+                <div className="text-white/70 text-sm">Taux de satisfaction client</div>
               </div>
             </div>
             <div className="flex items-center gap-3">

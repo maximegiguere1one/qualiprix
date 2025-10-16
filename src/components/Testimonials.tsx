@@ -93,8 +93,8 @@ const Testimonials = () => {
           </div>
           
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-6">
-            +500 cuisines livrées,<br />
-            <span className="text-secondary">+500 clients ravis</span>
+            100% de satisfaction,<br />
+            <span className="text-secondary">Taux de satisfaction client</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground font-body max-w-2xl mx-auto">

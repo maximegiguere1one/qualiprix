@@ -11,9 +11,9 @@ const ArmoiresRiveNord = () => {
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. +80 projets à Terrebonne, Repentigny, Mascouche. Livraison 2 semaines garantie. Soumission gratuite → 581-397-3587');
+      metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. 100% de satisfaction à Terrebonne, Repentigny, Mascouche. Livraison 2 semaines garantie. Soumission gratuite → 581-397-3587');
     }
-    document.title = "Armoires sur mesure Rive-Nord | +80 projets | Livraison rapide";
+    document.title = "Armoires sur mesure Rive-Nord | 100% satisfaction | Livraison rapide";
     
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
@@ -90,7 +90,7 @@ const ArmoiresRiveNord = () => {
               <h2 className="text-3xl font-bold mb-6">Pourquoi QualiPrix sur la Rive-Nord?</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  On connaît la Rive-Nord comme le fond de notre poche. +200 projets réalisés de Terrebonne à Saint-Jérôme.
+                  On connaît la Rive-Nord comme le fond de notre poche. Taux de satisfaction 100%.
                 </p>
                 <p>
                   <strong className="text-foreground">Livraison rapide incluse.</strong> En 2 semaines max, ta cuisine est installée.

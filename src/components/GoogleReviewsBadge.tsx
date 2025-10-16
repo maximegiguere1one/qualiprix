@@ -9,8 +9,8 @@ const GoogleReviewsBadge = () => {
         ))}
       </div>
       <div className="text-white">
-        <div className="text-lg font-bold">4.9/5</div>
-        <div className="text-xs opacity-90">127 avis Google</div>
+        <div className="text-lg font-bold">100%</div>
+        <div className="text-xs opacity-90">Taux de satisfaction</div>
       </div>
     </div>
   );

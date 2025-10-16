@@ -55,10 +55,10 @@ const ArmoiresMontreal = () => {
     document.head.appendChild(breadcrumb);
 
     // Update meta tags for Montreal page
-    document.title = "Armoires sur mesure Montréal 2025 | +500 projets livrés | QualiPrix";
+    document.title = "Armoires sur mesure Montréal 2025 | 100% satisfaction | QualiPrix";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Expert armoires cuisine à Montréal depuis 25 ans. Du Plateau à NDG, Rosemont à Villeray. +500 projets, livrés en 2 semaines. Consultation gratuite → 581-397-3587');
+      metaDesc.setAttribute('content', 'Expert armoires cuisine à Montréal depuis 25 ans. Du Plateau à NDG, Rosemont à Villeray. 100% satisfaction, livrés en 2 semaines. Consultation gratuite → 581-397-3587');
     }
 
     // Add canonical tag
@@ -128,7 +128,7 @@ const ArmoiresMontreal = () => {
             Armoires sur mesure à Montréal – Expert local depuis 25 ans
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            De Rosemont au Plateau, en passant par NDG et Villeray. +500 projets livrés, 2 semaines de délai garanti.
+            De Rosemont au Plateau, en passant par NDG et Villeray. 100% de satisfaction client, 2 semaines de délai garanti.
           </p>
           <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
@@ -144,7 +144,7 @@ const ArmoiresMontreal = () => {
           <div className="mb-16">
             <p className="text-lg leading-relaxed mb-6">
               De <strong>Rosemont</strong> à <strong>Notre-Dame-de-Grâce</strong>, en passant par le <strong>Plateau-Mont-Royal</strong> et <strong>Villeray</strong>, 
-              on a livré <strong>+500 projets d'armoires sur mesure à Montréal</strong>. 
+              on garantit un <strong>taux de satisfaction client de 100%</strong>. 
             </p>
             <p className="text-lg leading-relaxed mb-6">
               Nos clients du <strong>Mile-End</strong> adorent notre style <strong>moderne deux-tons</strong>. 
@@ -202,7 +202,7 @@ const ArmoiresMontreal = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Star className="w-6 h-6 text-primary" />
-                    +127 avis 5 étoiles
+                    100% de satisfaction client
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

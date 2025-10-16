@@ -16,10 +16,10 @@ const ArmoiresLaval = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Cuisines sur mesure Laval. +50 projets livrés à Chomedey, Vimont, Sainte-Rose. Qualité boutique, prix d\'entrepôt. Évaluation gratuite → 581-397-3587');
+      metaDescription.setAttribute('content', 'Cuisines sur mesure Laval. 100% de satisfaction à Chomedey, Vimont, Sainte-Rose. Qualité boutique, prix d\'entrepôt. Évaluation gratuite → 581-397-3587');
     }
 
-    document.title = "Armoires sur mesure Laval | +50 projets 5⭐ | Service rapide";
+    document.title = "Armoires sur mesure Laval | 100% satisfaction 5⭐ | Service rapide";
 
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';

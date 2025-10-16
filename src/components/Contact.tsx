@@ -35,7 +35,6 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { count: weeksCount, ref: weeksRef } = useCountUp(4, 1500);
   const { count: yearsCount, ref: yearsRef } = useCountUp(30, 2000);
-  const { count: clientsCount, ref: clientsRef } = useCountUp(500, 2500);
   
   // Dynamic social proof
   const [todayLeads] = useState(() => Math.floor(Math.random() * 8) + 5); // 5-12
@@ -363,9 +362,9 @@ const Contact = () => {
                     <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
                       <Users className="w-6 h-6 text-secondary" />
                     </div>
-                    <div ref={clientsRef as any}>
-                      <div className="font-bold text-xl text-foreground mb-1">+{clientsCount} clients ravis</div>
-                      <div className="text-sm text-muted-foreground">5/5 étoiles sur Google</div>
+                    <div>
+                      <div className="font-bold text-xl text-foreground mb-1">100% de satisfaction</div>
+                      <div className="text-sm text-muted-foreground">Taux de satisfaction client</div>
                     </div>
                   </div>
                 </div>
@@ -479,8 +478,8 @@ const Contact = () => {
                       <Users className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <div className="font-bold text-xl text-foreground mb-1">+500 clients ravis</div>
-                      <div className="text-sm text-muted-foreground">5/5 étoiles sur Google</div>
+                      <div className="font-bold text-xl text-foreground mb-1">100% de satisfaction</div>
+                      <div className="text-sm text-muted-foreground">Taux de satisfaction client</div>
                     </div>
                   </div>
                 </div>
