@@ -62,12 +62,7 @@ const WhyUs = () => {
           const isFeature = index === 0; // Premier élément = featured
 
           return <Card key={index} className={`group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden ${isFeature ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-primary to-primary/80 text-white' : 'bg-card'}`}>
-                <CardContent className={`p-8 ${isFeature ? 'md:p-12' : ''}`}>
-                  {/* Icon wrapper */}
-                  <div className={`w-16 h-16 mb-6 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 ${isFeature ? 'bg-white/10 backdrop-blur-sm' : 'bg-secondary/10'}`}>
-                    <reason.icon className={`w-8 h-8 ${isFeature ? 'text-white' : 'text-secondary'}`} strokeWidth={1.5} />
-                  </div>
-                  
+              <CardContent className={`p-8 ${isFeature ? 'md:p-12' : ''}`}>
                   {/* Stats visuelles pour card #1 */}
                   {isFeature && <div className="mb-6 flex gap-6">
                       <div ref={yearsRef as any}>
