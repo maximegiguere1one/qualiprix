@@ -178,24 +178,24 @@ const Collections = () => {
               onClick={() => setSelectedCollection(index + 1)}
             >
               {/* Animated border glow on hover */}
-              <div className="absolute inset-0 rounded-[1.25rem] p-[2px] bg-gradient-to-br from-primary/0 via-secondary/0 to-primary/0 group-hover:from-primary/30 group-hover:via-secondary/30 group-hover:to-primary/30 transition-all duration-500 -z-10"></div>
+              <div className="absolute inset-0 rounded-[1.25rem] p-[2px] -z-10"></div>
               
               <CardContent className="p-6 md:p-8 relative">
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 opacity-0"></div>
                 
-                <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10 group-hover:text-primary transition-colors duration-300">{collection.name}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">{collection.name}</h3>
                 <ul className="space-y-3 mb-6 relative z-10">
                   {collection.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 transition-[transform,color] duration-300 ease-out group-hover:scale-125 group-hover:text-primary will-change-transform" />
-                      <span className="text-muted-foreground font-body group-hover:text-foreground transition-colors duration-300">{benefit}</span>
+                      <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground font-body">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <Button 
                   variant="ghost" 
-                  className="w-full relative z-10 group-hover:bg-primary group-hover:text-primary-foreground"
+                  className="w-full relative z-10"
                 >
                   Voir la collection
                 </Button>
