@@ -33,7 +33,7 @@ const Contact = () => {
   const { toast } = useToast();
   const { ref: sectionRef, isVisible } = useScrollReveal();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { count: weeksCount, ref: weeksRef } = useCountUp(4, 1500);
+  const { count: weeksCount, ref: weeksRef } = useCountUp(2, 1500);
   const { count: yearsCount, ref: yearsRef } = useCountUp(30, 2000);
   
   // Dynamic social proof
