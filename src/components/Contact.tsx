@@ -134,7 +134,7 @@ const Contact = () => {
                 
                 {/* Badge "Places limitées" */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-secondary text-white rounded-full font-bold text-sm shadow-lg">
-                  ⚡ Seulement 3 places ce mois-ci
+                  ⚡ Places limitées
                 </div>
                 
                 <Form {...form}>
