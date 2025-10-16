@@ -87,11 +87,11 @@ const Header = () => {
         )}>
           
           {/* Logo */}
-          <Link to="/" className="hover:opacity-80 transition-opacity duration-200">
+          <Link to="/" className="hover:opacity-80 transition-opacity duration-200 -ml-2">
             <img 
               src={logo} 
               alt="Armoire Qualiprix" 
-              className={cn("w-auto transition-all duration-300", isCompact ? 'h-10' : 'h-12')}
+              className={cn("w-auto transition-all duration-300", isCompact ? 'h-14' : 'h-20')}
             />
           </Link>
 
