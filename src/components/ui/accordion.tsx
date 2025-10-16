@@ -27,7 +27,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all duration-300 ease-out hover:text-secondary group",
+        "flex flex-1 items-center justify-between py-5 px-0 font-semibold text-[17px] transition-opacity duration-200 ease-out hover:opacity-70 group",
         className,
       )}
       {...props}
@@ -41,7 +41,7 @@ const AccordionTrigger = React.forwardRef<
         {children}
       </div>
       <div className="relative">
-        <ChevronDown className="h-5 w-5 shrink-0 transition-all duration-300 ease-out group-data-[state=open]:rotate-45" />
+        <ChevronDown className="h-4 w-4 text-gray-400 shrink-0 transition-transform duration-200 ease-out group-data-[state=open]:rotate-180" />
       </div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>

@@ -18,13 +18,13 @@ import {
 import { Button } from "@/components/ui/button";
 
 const PriceBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-2 py-0.5 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-md font-bold text-base">
+  <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-full font-semibold text-[15px]">
     {children}
   </span>
 );
 
 const InfoBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-2 py-0.5 bg-secondary/10 text-secondary rounded-md font-semibold text-sm uppercase tracking-wide">
+  <span className="inline-block px-2.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-medium text-[13px] tracking-normal uppercase">
     {children}
   </span>
 );
@@ -33,8 +33,8 @@ const CheckList = ({ items }: { items: string[] }) => (
   <ul className="space-y-2 mt-3">
     {items.map((item, index) => (
       <li key={index} className="flex items-start gap-2">
-        <Check className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
-        <span>{item}</span>
+        <Check className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
+        <span className="text-[15px] leading-[1.6] text-gray-600 dark:text-gray-400">{item}</span>
       </li>
     ))}
   </ul>
@@ -103,7 +103,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Combien coûte vraiment une cuisine complète?",
-      icon: <DollarSign className="h-6 w-6 text-secondary" />,
+      icon: <DollarSign className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-4">
           <p>
@@ -123,7 +123,7 @@ const FAQ = () => {
     },
     {
       question: "Quelle est la différence entre mélamine et polymère ?",
-      icon: <Palette className="h-6 w-6 text-secondary" />,
+      icon: <Palette className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-3">
           <p>
@@ -136,7 +136,7 @@ const FAQ = () => {
     },
     {
       question: "Qui installe ma cuisine?",
-      icon: <Wrench className="h-6 w-6 text-secondary" />,
+      icon: <Wrench className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-3">
           <p>
@@ -155,7 +155,7 @@ const FAQ = () => {
     },
     {
       question: "Comment puis-je visualiser mon projet avant l'achat ?",
-      icon: <Eye className="h-6 w-6 text-secondary" />,
+      icon: <Eye className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-3">
           <p>
@@ -169,7 +169,7 @@ const FAQ = () => {
     },
     {
       question: "Combien de temps avant de recevoir ma cuisine?",
-      icon: <Clock className="h-6 w-6 text-secondary" />,
+      icon: <Clock className="h-5 w-5 text-gray-400" />,
       formattedAnswer: (
         <div className="space-y-4">
           <div>
@@ -202,69 +202,43 @@ const FAQ = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-20 lg:py-24 bg-gradient-radial relative overflow-hidden">
-      {/* Breathing decorative blobs with parallax */}
-      <div 
-        className="blob-decoration w-[500px] h-[500px] bg-primary/5 top-10 right-20 transition-transform duration-1000" 
-        style={{ 
-          animationDelay: '1s',
-          transform: isVisible ? 'translateY(-10px)' : 'translateY(0)'
-        }} 
-      />
-      <div 
-        className="blob-decoration w-96 h-96 bg-secondary/5 bottom-32 left-20 transition-transform duration-1000" 
-        style={{ 
-          animationDelay: '4s',
-          transform: isVisible ? 'translateY(10px)' : 'translateY(0)'
-        }} 
-      />
-      
+    <section ref={sectionRef} className="py-16 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
       <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div 
-            className={`text-center mb-16 transition-all duration-320 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            className={`text-center mb-16 transition-all duration-700 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-[40px] md:text-[48px] font-semibold tracking-tight text-gray-900 dark:text-gray-100 mb-3">
               Questions fréquentes
             </h2>
-            <p className="text-xl text-muted-foreground font-body">
+            <p className="text-[19px] font-normal text-gray-600 dark:text-gray-400">
               Tout ce que vous devez savoir sur nos cuisines
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-3 md:space-y-4 mb-12">
+          <Accordion type="single" collapsible className="space-y-4 mb-16">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
                 className={`
-                  relative overflow-hidden
-                  bg-white/60 dark:bg-slate-900/60 
-                  backdrop-blur-sm 
-                  border border-white/20
-                  rounded-[1.25rem] px-4 md:px-6 
-                  shadow-[var(--shadow-soft)] 
-                  transition-all duration-300 ease-out
-                  hover:shadow-[var(--shadow-elegant)]
-                  hover:border-secondary/30
-                  before:absolute before:inset-0 
-                  before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
-                  before:translate-x-[-200%] 
-                  hover:before:translate-x-[200%]
-                  before:transition-transform before:duration-700
+                  bg-white dark:bg-gray-900
+                  border border-gray-200/80 dark:border-gray-800/80
+                  rounded-2xl px-6 md:px-8 
+                  shadow-[0_1px_3px_rgba(0,0,0,0.04)]
+                  hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+                  hover:border-gray-300/80 dark:hover:border-gray-700/80
+                  transition-all duration-200 ease-out
                   ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
                 `}
-                style={{ transitionDelay: `${150 + index * 60}ms` }}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <AccordionTrigger 
-                  className="text-left font-bold text-lg focus-ring"
-                  icon={faq.icon}
-                >
-                  {faq.question}
+                <AccordionTrigger icon={faq.icon}>
+                  <span className="text-left text-gray-900 dark:text-gray-100">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-body leading-relaxed pt-2">
+                <AccordionContent className="text-[15px] leading-[1.6] text-gray-600 dark:text-gray-400 font-normal pt-0 pb-6">
                   {faq.formattedAnswer}
                 </AccordionContent>
               </AccordionItem>
@@ -273,38 +247,27 @@ const FAQ = () => {
 
           {/* Premium CTA */}
           <div 
-            className={`text-center transition-all duration-500 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`text-center transition-all duration-700 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ transitionDelay: '500ms' }}
+            style={{ transitionDelay: '600ms' }}
           >
-            <Button 
+            <button
               onClick={scrollToContact}
-              size="lg"
               className="
-                relative overflow-hidden
-                bg-gradient-to-r from-secondary to-secondary/90
-                hover:from-secondary/90 hover:to-secondary
-                text-secondary-foreground
-                font-bold text-lg
-                px-8 py-6
-                rounded-[1.25rem]
-                shadow-[var(--shadow-elegant)]
-                hover:shadow-[0_25px_70px_-15px_hsl(var(--secondary)/0.4)]
-                transition-all duration-300
-                group
-                before:absolute before:inset-0 
-                before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
-                before:translate-x-[-200%] 
-                hover:before:translate-x-[200%]
-                before:transition-transform before:duration-700
+                group inline-flex items-center gap-3 
+                px-8 py-4 
+                bg-blue-600 hover:bg-blue-700
+                text-white font-semibold text-[17px]
+                rounded-full
+                shadow-[0_2px_8px_rgba(0,0,0,0.12)]
+                hover:shadow-[0_4px_16px_rgba(0,0,0,0.16)]
+                transition-all duration-200 ease-out
               "
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Obtenir ma soumission gratuite
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </Button>
+              <span>Obtenir ma soumission gratuite</span>
+              <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
       </div>
