@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Ruler, Palette, Package, Shield } from "lucide-react";
+import { Ruler, Palette, Wrench, Truck, Shield } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Process = () => {
@@ -22,10 +22,17 @@ const Process = () => {
     },
     {
       number: "3",
-      icon: Package,
-      title: "Préparation et livraison",
-      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Préparé par nos artisans québécois et livré directement chez toi. Installation par des pros certifiés incluse.",
+      icon: Wrench,
+      title: "Fabrication",
+      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Préparé par nos artisans québécois. Chaque porte testée avant emballage.",
       duration: "10-15 jours"
+    },
+    {
+      number: "4",
+      icon: Truck,
+      title: "Installation",
+      description: "Livré directement chez toi et installé par des pros certifiés qu'on connaît personnellement. Ils ont fait 200+ de nos cuisines. Propre, rapide, respectueux.",
+      duration: "1-2 jours selon projet"
     }
   ];
 
@@ -42,12 +49,12 @@ const Process = () => {
               Processus clé en main – sans stress, sans surprises
             </h2>
             <p className="text-xl text-muted-foreground font-body">
-              De l'idée à ta nouvelle cuisine, en 3 étapes simples
+              De l'idée à ta nouvelle cuisine, en 4 étapes simples
             </p>
           </div>
 
           {/* Timeline */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
             {steps.map((step, index) => (
               <Card 
                 key={index}
