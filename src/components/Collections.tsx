@@ -95,11 +95,12 @@ const Collections = () => {
         "Look sophistiqué"
       ],
       images: [
-        "/src/assets/quartz-beige-clair.jpg",
-        "/src/assets/quartz-athabaska.jpg",
-        "/src/assets/quartz-bottocinio.jpg",
-        "/src/assets/quartz-blanc-texture.jpg",
-        "/src/assets/quartz-vintage-black.jpg"
+        "/src/assets/quartz-athabasca.png",
+        "/src/assets/quartz-blanc-nordique.png",
+        "/src/assets/quartz-bomyaan-sparkle.png",
+        "/src/assets/quartz-bottocinio.png",
+        "/src/assets/quartz-noir-vintage.png",
+        "/src/assets/quartz-perle-blanche.png"
       ]
     },
     {
