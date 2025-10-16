@@ -1,7 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import realisationCuisineIlotBois from "@/assets/realisation-cuisine-ilot-bois-comptoir-repentigny.jpg";
 import realisationCuisineOuverte from "@/assets/realisation-cuisine-ouverte-escalier-montreal.jpg";
-import realisationCuisineBlancheIlot from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
+import resultatFinal from "@/assets/resultat-final-cuisine-couple.png";
 import qualityDetail from "@/assets/quality-detail.jpg";
 import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
 import consultationVideo from "@/assets/consultation-video.png";
@@ -41,7 +41,7 @@ const VisualProcess = () => {
       number: 5,
       title: "Résultat final",
       description: "Ta nouvelle cuisine, prête à vivre et à admirer.",
-      image: realisationCuisineBlancheIlot
+      image: resultatFinal
     }
   ];
 
