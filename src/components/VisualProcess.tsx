@@ -1,4 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useStaggeredReveal } from "@/hooks/useStaggeredReveal";
 import realisationCuisineIlotBois from "@/assets/realisation-cuisine-ilot-bois-comptoir-repentigny.jpg";
 import realisationCuisineOuverte from "@/assets/realisation-cuisine-ouverte-escalier-montreal.jpg";
 import resultatFinal from "@/assets/resultat-final-cuisine-couple.png";
@@ -11,14 +12,6 @@ import installationPro from "@/assets/installation-professionnelle-armoires.png"
 
 const VisualProcess = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
-  const { ref: step1Ref, isVisible: step1Visible } = useScrollReveal();
-  const { ref: step2Ref, isVisible: step2Visible } = useScrollReveal();
-  const { ref: step3Ref, isVisible: step3Visible } = useScrollReveal();
-  const { ref: step4Ref, isVisible: step4Visible } = useScrollReveal();
-  const { ref: step5Ref, isVisible: step5Visible } = useScrollReveal();
-
-  const stepsRefs = [step1Ref, step2Ref, step3Ref, step4Ref, step5Ref];
-  const stepsVisible = [step1Visible, step2Visible, step3Visible, step4Visible, step5Visible];
 
   const steps = [
     {
@@ -71,38 +64,107 @@ const VisualProcess = () => {
         </div>
 
         <div className="max-w-[1100px] mx-auto">
-          {steps.map((step, index) => (
-            <div 
-              key={step.number}
-              ref={stepsRefs[index]}
-              className={`mb-16 last:mb-0 transition-all duration-800 ease-out ${
-                stepsVisible[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <div className={`flex flex-col md:flex-row gap-8 items-center ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}>
-                {/* Image */}
-                <div className="w-full md:flex-1">
-                  <img 
-                    src={step.image}
-                    alt={`Étape ${step.number}: ${step.title} - Armoires Qualiprix`}
-                    className="w-full max-w-[520px] mx-auto rounded-2xl shadow-lg object-cover"
-                    loading="lazy"
-                  />
-                </div>
+          {steps.map((step, index) => {
+            const StepContent = () => {
+              const { 
+                containerRef, 
+                isContainerVisible,
+                getElementDelay 
+              } = useStaggeredReveal({
+                staggerDelay: 150,
+                elementCount: 4
+              });
 
-                {/* Contenu */}
-                <div className="w-full md:flex-1">
-                  <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center font-bold text-xl mb-3" style={{ backgroundColor: '#084BA9', color: 'white' }}>
-                    {step.number}
+              return (
+                <div 
+                  ref={containerRef}
+                  className="mb-16 last:mb-0"
+                >
+                  <div className={`flex flex-col md:flex-row gap-8 items-center ${
+                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}>
+                    {/* Image */}
+                    <div className="w-full md:flex-1">
+                      <div
+                        className={`transition-all will-change-[transform,opacity] ${
+                          isContainerVisible 
+                            ? 'opacity-100 translate-y-0 scale-100' 
+                            : 'opacity-0 translate-y-8 scale-95'
+                        }`}
+                        style={{
+                          transitionDelay: `${getElementDelay(1)}ms`,
+                          transitionDuration: '1200ms',
+                          transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        }}
+                      >
+                        <img 
+                          src={step.image}
+                          alt={`Étape ${step.number}: ${step.title} - Armoires Qualiprix`}
+                          className="w-full max-w-[520px] mx-auto rounded-2xl shadow-lg object-cover transform-gpu"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Contenu */}
+                    <div className="w-full md:flex-1">
+                      {/* Badge numéro */}
+                      <div
+                        className={`w-[50px] h-[50px] rounded-full flex items-center justify-center font-bold text-xl mb-3 transition-all will-change-[transform,opacity] ${
+                          isContainerVisible 
+                            ? 'opacity-100 translate-y-0 scale-100 rotate-[-2deg]' 
+                            : 'opacity-0 translate-y-6 scale-80 rotate-[-3deg]'
+                        }`}
+                        style={{
+                          backgroundColor: '#084BA9',
+                          color: 'white',
+                          transitionDelay: `${getElementDelay(0)}ms`,
+                          transitionDuration: '800ms',
+                          transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        }}
+                      >
+                        {step.number}
+                      </div>
+
+                      {/* Titre */}
+                      <h3 
+                        className={`text-2xl font-bold text-foreground mb-3 transition-all will-change-[transform,opacity] ${
+                          isContainerVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-10'
+                        }`}
+                        style={{
+                          transitionDelay: `${getElementDelay(2)}ms`,
+                          transitionDuration: '1000ms',
+                          transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        }}
+                      >
+                        {step.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p 
+                        className={`text-lg text-muted-foreground leading-relaxed transition-all will-change-[transform,opacity] ${
+                          isContainerVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-8'
+                        }`}
+                        style={{
+                          transitionDelay: `${getElementDelay(3)}ms`,
+                          transitionDuration: '1000ms',
+                          transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        }}
+                      >
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
-              </div>
-            </div>
-          ))}
+              );
+            };
+
+            return <StepContent key={step.number} />;
+          })}
         </div>
       </div>
     </section>

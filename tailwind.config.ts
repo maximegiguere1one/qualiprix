@@ -231,6 +231,46 @@ export default {
           "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
           "50%": { opacity: "0.5", transform: "scale(1.1)" },
         },
+        "fade-up-scale": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px) scale(0.92)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)",
+          },
+        },
+        "fade-in-smooth": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) scale(0.96)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)",
+          },
+        },
+        "slide-fade-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "badge-pop": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) scale(0.8) rotate(-3deg)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1) rotate(-2deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 220ms cubic-bezier(0.2, 0.8, 0.2, 1)",
@@ -248,6 +288,10 @@ export default {
         "mesh-move": "mesh-move 15s ease-in-out infinite",
         "particle-float": "particle-float 1s ease-out",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "fade-up-scale": "fade-up-scale 1000ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "fade-in-smooth": "fade-in-smooth 1200ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-fade-up": "slide-fade-up 1000ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "badge-pop": "badge-pop 800ms cubic-bezier(0.34, 1.56, 0.64, 1)",
       },
     },
   },
