@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import realisationCuisineBlancheIlot from "@/assets/realisation-cuisine-blanche-ilot-quartz-laval.jpg";
+import cuisineAvantRenovation from "@/assets/cuisine-avant-renovation.jpg";
 import { Button } from "@/components/ui/button";
 
 const BeforeAfter = () => {
@@ -63,9 +64,9 @@ const BeforeAfter = () => {
             {/* Image "Avant" (avec filtre gris) */}
             <div className="absolute inset-0">
               <img 
-                src={realisationCuisineBlancheIlot}
+                src={cuisineAvantRenovation}
                 alt="Cuisine avant rénovation - Armoires vieillies"
-                className="w-full h-full object-cover grayscale brightness-75"
+                className="w-full h-full object-cover"
                 draggable="false"
               />
               <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full">
