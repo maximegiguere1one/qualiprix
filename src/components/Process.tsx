@@ -22,9 +22,9 @@ const Process = () => {
     },
     {
       number: "3",
-      icon: Wrench,
-      title: "Fabrication",
-      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Préparé par nos artisans québécois. Chaque porte testée avant emballage.",
+      icon: Truck,
+      title: "Livraison",
+      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Préparé par nos artisans québécois et livré directement chez toi.",
       duration: "10-15 jours"
     },
     {
