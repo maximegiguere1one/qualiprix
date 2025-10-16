@@ -2,14 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useState } from "react";
 import { projects } from "@/data/projects";
 
 const Collections = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
-  const [selectedCollection, setSelectedCollection] = useState<number | null>(null);
   
   const collections = [
     {
@@ -137,8 +133,7 @@ const Collections = () => {
         {/* Collection PRESTIGE en HERO CARD (pleine largeur) */}
         <div className="max-w-7xl mx-auto mb-6 md:mb-8">
           <div 
-            className="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[0_30px_80px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-pointer"
-            onClick={() => setSelectedCollection(0)}
+            className="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl hover:shadow-[0_30px_80px_rgba(0,0,0,0.25)] transition-all duration-500"
           >
             <div className="aspect-[16/9] sm:aspect-[21/9] relative">
               <img 
@@ -172,10 +167,9 @@ const Collections = () => {
         {/* Grid 2 colonnes pour le reste */}
         <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {collections.slice(1).map((collection, index) => (
-              <Card 
+            <Card 
               key={index} 
-              className="border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group cursor-pointer relative transition-[transform,box-shadow] duration-200 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1"
-              onClick={() => setSelectedCollection(index + 1)}
+              className="border-none shadow-[var(--shadow-soft)] rounded-[1.25rem] overflow-hidden group relative transition-[transform,box-shadow] duration-200 ease-out hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1"
             >
               {/* Animated border glow on hover */}
               <div className="absolute inset-0 rounded-[1.25rem] p-[2px] -z-10"></div>
@@ -204,37 +198,6 @@ const Collections = () => {
           ))}
         </div>
       </div>
-
-      <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">
-              {selectedCollection !== null && collections[selectedCollection].name}
-            </DialogTitle>
-          </DialogHeader>
-          <Carousel className="w-full">
-            <CarouselContent>
-              {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
-                <CarouselItem key={idx}>
-                  <div className="p-1">
-                    <img 
-                      src={image} 
-                      alt={`${collections[selectedCollection].name} - Photo ${idx + 1} sur ${collections[selectedCollection].images.length}`}
-                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-lg"
-                      loading="lazy"
-                    />
-                    <div className="text-center mt-3 text-sm text-muted-foreground">
-                      Photo {idx + 1} / {collections[selectedCollection].images.length}
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="h-10 w-10 md:h-12 md:w-12" />
-            <CarouselNext className="h-10 w-10 md:h-12 md:w-12" />
-          </Carousel>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };
