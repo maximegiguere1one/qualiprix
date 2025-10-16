@@ -72,62 +72,96 @@ const ExitIntentPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto p-0">
         <button 
           onClick={() => setIsOpen(false)}
-          className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+          className="absolute right-4 top-4 z-10 rounded-full p-2 bg-background/80 backdrop-blur-sm opacity-70 ring-offset-background transition-all hover:opacity-100 hover:bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Fermer"
         >
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </button>
         
-        <DialogHeader>
-          <DialogTitle className="text-2xl md:text-3xl font-black">
-            Offre PHOTO -40% : <span className="text-secondary">Ta cuisine contre des photos 📸</span>
+        <DialogHeader className="px-6 pt-6 pb-4 space-y-2">
+          <DialogTitle className="text-xl md:text-2xl font-black leading-tight">
+            Offre PHOTO -40% 📸
+            <span className="block text-secondary text-base md:text-lg font-bold mt-1">
+              Ta cuisine contre des photos
+            </span>
           </DialogTitle>
-          <DialogDescription className="text-base md:text-lg">
-            On photographie ta cuisine finie pour <span className="font-bold">Instagram/Facebook</span> = 40% de rabais instantané
+          <DialogDescription className="text-sm md:text-base text-muted-foreground">
+            On photographie ta cuisine finie pour Instagram/Facebook = 40% de rabais instantané
           </DialogDescription>
         </DialogHeader>
         
-        <div className="bg-secondary/10 border-2 border-secondary/30 rounded-xl p-6 mb-4">
-          <div className="text-center mb-4">
-            <div className="text-5xl font-black text-secondary mb-2">-40%</div>
-            <div className="text-sm font-semibold text-foreground">de rabais sur ta cuisine complète</div>
+        <div className="px-6 pb-4">
+          <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-2 border-secondary/20 rounded-2xl p-4 md:p-5">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-4xl md:text-5xl font-black text-secondary">-40%</div>
+              <div className="text-xs md:text-sm font-semibold text-right text-foreground/80 max-w-[140px]">
+                de rabais sur ta cuisine complète
+              </div>
+            </div>
+            
+            <ul className="space-y-1.5 text-xs md:text-sm">
+              <li className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span>Séance photo professionnelle gratuite</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span>Tes photos sur nos réseaux sociaux</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span>-40% sur le prix total (valeur 8000$+)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span>Plan 3D + livraison inclus</span>
+              </li>
+            </ul>
           </div>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Séance photo professionnelle gratuite
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Tes photos sur nos réseaux sociaux
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> -40% sur le prix total (valeur 8000$+)
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-secondary">✓</span> Plan 3D + livraison inclus
-            </li>
-          </ul>
         </div>
         
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input 
-            type="email" 
-            placeholder="ton@email.com pour postuler"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="h-12"
-          />
-          <Button type="submit" className="w-full h-12 text-base bg-secondary hover:bg-secondary/90" size="lg">
-            📸 Je veux économiser 40% (2 places restantes)
-          </Button>
-        </form>
+        <div className="px-6 pb-4">
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div className="relative">
+              <Input 
+                type="email" 
+                placeholder="ton@email.com pour postuler"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="h-11 pl-4 pr-4 text-sm border-2 border-input hover:border-secondary/40 focus:border-secondary transition-colors"
+              />
+            </div>
+            
+            <Button 
+              type="submit" 
+              className="w-full h-11 text-sm font-bold bg-secondary hover:bg-secondary/90 hover:shadow-lg transition-all duration-200"
+            >
+              📸 Je veux économiser 40% (2 places restantes)
+            </Button>
+          </form>
+        </div>
         
-        <p className="text-xs text-center text-muted-foreground">
-          ⏱️ Dernières heures! 2/2 places restantes en octobre 2025
-        </p>
+        <div className="px-6 pb-6">
+          <div className="bg-muted/50 border border-muted-foreground/20 rounded-lg p-3 text-center">
+            <p className="text-xs md:text-sm font-medium text-foreground/80 flex items-center justify-center gap-2">
+              <span className="text-secondary">⏱️</span>
+              <span>Dernières heures! <strong className="font-bold">2/2 places restantes</strong> en octobre 2025</span>
+            </p>
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
