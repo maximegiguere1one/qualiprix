@@ -24,7 +24,7 @@ const Process = () => {
       number: "3",
       icon: Truck,
       title: "Livraison",
-      description: "Fabriqué à Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Préparé par nos artisans québécois et livré directement chez toi.",
+      description: "Préparé et assemblé au Québec avec du VRAI contreplaqué ¾\" (pas du MDF cheap). Livré directement chez toi en 10-15 jours.",
       duration: "10-15 jours"
     },
     {
