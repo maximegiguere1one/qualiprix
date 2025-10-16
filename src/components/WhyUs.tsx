@@ -71,42 +71,40 @@ const WhyUs = () => {
               </div>
 
               {/* Version desktop/iPad - Layout horizontal avec 3 colonnes */}
-              <div className="hidden md:flex md:flex-col items-center gap-6">
-                <div className="w-full flex flex-row items-center justify-between gap-6 lg:gap-8">
-                  {/* GARANTI text - Left side - TRÈS GRAND */}
-                  <div className="flex-shrink-0">
-                    <div className="garanti-text text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black text-white leading-none" style={{ letterSpacing: '-0.02em' }}>
-                      GARANTI
-                    </div>
+              <div className="hidden md:flex md:flex-row items-center justify-between gap-8 lg:gap-12">
+                {/* GARANTI text - Left side */}
+                <div className="flex-shrink-0 pr-8 lg:pr-12">
+                  <div className="garanti-text text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight">
+                    GARANTI
                   </div>
+                </div>
+                
+                {/* Main content - Center */}
+                <div className="flex-1 text-center px-4 md:px-8">
+                  {/* Titre */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    {reasons[0].title}
+                  </h3>
                   
-                  {/* Main content - Center */}
-                  <div className="flex-1 text-center px-4 md:px-8">
-                    {/* Titre */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 leading-tight">
-                      {reasons[0].title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-white/90 text-base lg:text-lg leading-relaxed">
-                      {reasons[0].description}
-                    </p>
-                  </div>
-
-                  {/* Logo - Right side */}
-                  <div className="flex-shrink-0">
-                    <img 
-                      src={garantie30Logo} 
-                      alt="Garantie 30 ans - 100% contreplaqué" 
-                      className="w-32 h-32 lg:w-40 lg:h-40 xl:w-44 xl:h-44 object-contain drop-shadow-2xl"
-                    />
+                  {/* Description */}
+                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                    {reasons[0].description}
+                  </p>
+                  
+                  {/* CTA avec flèche */}
+                  <div className="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                    <span className="text-sm font-semibold">En savoir plus</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
 
-                {/* CTA avec flèche - En bas, centré */}
-                <div className="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors mt-2">
-                  <span className="text-sm font-semibold">En savoir plus</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Logo - Right side */}
+                <div className="flex-shrink-0">
+                  <img 
+                    src={garantie30Logo} 
+                    alt="Garantie 30 ans - 100% contreplaqué" 
+                    className="w-40 h-40 lg:w-48 lg:h-48 object-contain drop-shadow-2xl"
+                  />
                 </div>
               </div>
             </CardContent>

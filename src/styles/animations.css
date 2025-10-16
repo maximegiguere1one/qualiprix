@@ -94,30 +94,28 @@
   }
 }
 
-/* GARANTI text - effet glow TRÈS prononcé et diffus */
+/* Subtle glow for GARANTI text - effet diffus et doux */
 @keyframes garanti-glow {
   0%, 100% {
     text-shadow: 
-      0 0 30px rgba(255, 255, 255, 0.8),
-      0 0 60px rgba(255, 255, 255, 0.6),
-      0 0 90px rgba(255, 255, 255, 0.4),
-      0 0 120px rgba(255, 255, 255, 0.3),
-      0 0 150px rgba(255, 255, 255, 0.2);
-    opacity: 0.95;
+      0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.3),
+      0 0 60px rgba(255, 255, 255, 0.2),
+      0 0 80px rgba(255, 255, 255, 0.1);
+    opacity: 0.98;
   }
   50% {
     text-shadow: 
-      0 0 40px rgba(255, 255, 255, 1),
-      0 0 80px rgba(255, 255, 255, 0.8),
-      0 0 120px rgba(255, 255, 255, 0.6),
-      0 0 160px rgba(255, 255, 255, 0.4),
-      0 0 200px rgba(255, 255, 255, 0.3);
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 50px rgba(255, 255, 255, 0.4),
+      0 0 70px rgba(255, 255, 255, 0.3),
+      0 0 90px rgba(255, 255, 255, 0.15);
     opacity: 1;
   }
 }
 
 .garanti-text {
-  animation: garanti-glow 2s ease-in-out infinite;
+  animation: garanti-glow 1.2s ease-in-out infinite;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
-  font-weight: 900;
+  letter-spacing: -0.02em;
 }
