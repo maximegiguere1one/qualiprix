@@ -15,7 +15,6 @@ const MonthlyOffer = lazy(() => import("@/components/MonthlyOffer"));
 const Portfolio = lazy(() => import("@/components/Portfolio"));
 const BeforeAfter = lazy(() => import("@/components/BeforeAfter"));
 const VisualProcess = lazy(() => import("@/components/VisualProcess"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Services = lazy(() => import("@/components/Services"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
@@ -49,9 +48,6 @@ const Index = () => {
         </Suspense>
         <Suspense fallback={<div className="h-64"><Skeleton className="w-full h-full" /></div>}>
           <VisualProcess />
-        </Suspense>
-        <Suspense fallback={<div className="h-96"><Skeleton className="w-full h-full" /></div>}>
-          <Testimonials />
         </Suspense>
         <Suspense fallback={<div className="h-screen"><Skeleton className="w-full h-full" /></div>}>
           <Services />
