@@ -48,19 +48,19 @@ const WhyUs = () => {
         <div className="max-w-7xl mx-auto mb-12 space-y-6">
           {/* Carte featured en pleine largeur */}
           <Card className="group border-none shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden bg-gradient-to-b from-[#012A59] via-primary to-[#2E567D] text-white">
-            <CardContent className="relative p-8 md:p-12 lg:p-16 overflow-hidden">
+            <CardContent className="relative p-6 md:p-8 lg:p-10 overflow-hidden">
               {/* Version Mobile - Simple et centrée */}
-              <div className="flex md:hidden flex-col items-center text-center gap-6">
+              <div className="flex md:hidden flex-col items-center text-center gap-4">
                 <img 
                   src={garantie30Logo} 
                   alt="Garantie 30 ans - 100% contreplaqué" 
                   className="w-32 h-32 object-contain drop-shadow-2xl"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
                     {reasons[0].title}
                   </h3>
-                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                  <p className="text-white/90 text-lg leading-relaxed mb-4">
                     {reasons[0].description}
                   </p>
                   <div className="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors">
@@ -71,9 +71,9 @@ const WhyUs = () => {
               </div>
 
               {/* Version Desktop/iPad - Layout exact du visuel */}
-              <div className="hidden md:flex md:flex-col md:items-center md:relative md:min-h-[500px] lg:min-h-[600px]">
+              <div className="hidden md:flex md:flex-col md:items-center md:relative md:min-h-[400px] lg:min-h-[450px]">
                 {/* Badge en position absolue - top right */}
-                <div className="absolute top-0 right-0 lg:top-6 lg:right-6">
+                <div className="absolute top-0 right-0 lg:top-4 lg:right-4">
                   <img 
                     src={garantie30Logo} 
                     alt="Garantie 30 ans - 100% contreplaqué" 
@@ -82,27 +82,27 @@ const WhyUs = () => {
                 </div>
 
                 {/* GARANTI - En haut, légèrement à gauche du centre - HERO */}
-                <div className="w-full flex justify-start pl-0 lg:pl-12 xl:pl-16 mb-12 lg:mb-16 pt-4">
-                  <div className="garanti-text text-[7rem] lg:text-[9rem] xl:text-[11rem] font-black text-white leading-none tracking-tighter">
+                <div className="w-full flex justify-start pl-0 lg:pl-12 xl:pl-16 mb-6 lg:mb-8 pt-2">
+                  <div className="garanti-text text-[7rem] lg:text-[9rem] xl:text-[11rem] font-black text-white leading-none tracking-tighter whitespace-nowrap">
                     GARANTI
                   </div>
                 </div>
 
                 {/* Contenu textuel centré - empilé verticalement avec meilleure hiérarchie */}
-                <div className="flex flex-col items-center text-center gap-5 lg:gap-6 max-w-3xl lg:max-w-4xl px-8 lg:px-12">
+                <div className="flex flex-col items-center text-center gap-3 lg:gap-4 max-w-3xl lg:max-w-4xl px-8 lg:px-12">
                   {/* Titre - niveau 1 de hiérarchie après GARANTI */}
-                  <h3 className="text-[1.65rem] lg:text-[2rem] xl:text-[2.25rem] font-bold text-white leading-tight tracking-tight">
+                  <h3 className="text-[1.65rem] lg:text-[2rem] xl:text-[2.25rem] font-bold text-white leading-tight tracking-tight whitespace-nowrap">
                     {reasons[0].title}
                   </h3>
                   
                   {/* Description - niveau 2, plus subtile */}
-                  <p className="text-base lg:text-lg xl:text-xl text-white/85 leading-relaxed font-light">
+                  <p className="text-base lg:text-lg xl:text-xl text-white/85 leading-snug font-light whitespace-nowrap">
                     {reasons[0].description}
                   </p>
                   
                   {/* CTA - niveau 3, discret mais cliquable */}
-                  <div className="flex items-center justify-center gap-2 text-white/75 hover:text-white transition-all duration-300 cursor-pointer group mt-3 lg:mt-4">
-                    <span className="text-sm lg:text-base font-semibold tracking-wide">En savoir plus</span>
+                  <div className="flex items-center justify-center gap-2 text-white/75 hover:text-white transition-all duration-300 cursor-pointer group mt-2 lg:mt-3">
+                    <span className="text-sm lg:text-base font-semibold tracking-wide whitespace-nowrap">En savoir plus</span>
                     <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
