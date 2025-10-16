@@ -28,7 +28,7 @@ const Portfolio = () => {
             Inspirez-vous
           </h2>
           <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
-            Projets réels de vrais clients. Pas de photos stock, que du concret livré partout au Québec.
+            Projets réels de vrais clients. Du concret livré partout au Québec.
           </p>
         </div>
 
