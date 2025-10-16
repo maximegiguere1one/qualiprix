@@ -116,7 +116,7 @@ const Collections = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="collections" className="py-24 md:py-32 bg-gradient-to-b from-background via-muted/5 to-background">
+    <section ref={sectionRef} id="collections" className="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-b from-background via-muted/5 to-background">
       <div className="container px-4 mx-auto">
         
         {/* Header OPTIMISÉ */}
