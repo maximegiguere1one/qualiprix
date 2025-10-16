@@ -112,10 +112,7 @@ const ZonesDesservies = () => {
               {regions.map((region, index) => (
                 <Card key={index} className="border-2 border-border shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] hover:scale-[1.02] transition-all duration-300 hover:border-secondary/50 group">
                   <CardHeader className="pb-4">
-                    <div className="flex items-center gap-4 mb-3">
-                      <span className="text-5xl group-hover:scale-110 transition-transform duration-300">{region.icon}</span>
-                      <CardTitle className="text-3xl font-bold">{region.name}</CardTitle>
-                    </div>
+                    <CardTitle className="text-3xl font-bold">{region.name}</CardTitle>
                     <CardDescription className="text-base leading-relaxed">
                       {region.description}
                     </CardDescription>
