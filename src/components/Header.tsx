@@ -83,25 +83,25 @@ const Header = () => {
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className={cn(
           "flex items-center justify-between transition-all duration-300",
-          isCompact ? 'py-2' : 'py-3'
+          isCompact ? 'py-3' : 'py-4'
         )}>
           
           {/* Logo */}
-          <Link to="/" className="hover:opacity-80 transition-opacity duration-200 -ml-14">
+          <Link to="/" className="hover:opacity-80 transition-opacity duration-200 -ml-14 flex items-center">
             <img 
               src={logo} 
               alt="Armoire Qualiprix" 
-              className={cn("w-auto transition-all duration-300", isCompact ? 'h-14' : 'h-20')}
+              className={cn("w-auto transition-all duration-300", isCompact ? 'h-12' : 'h-16')}
             />
           </Link>
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-2">
               
               {/* Nos Cuisines */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Nos Cuisines
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -124,7 +124,7 @@ const Header = () => {
 
               {/* Nos Régions */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Nos Régions
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -163,7 +163,7 @@ const Header = () => {
 
               {/* Ressources */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
                   Ressources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -191,18 +191,18 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-6">
             <a 
               href="tel:5813973587"
-              className="flex flex-col items-start gap-0.5 text-xs font-medium text-foreground/60 hover:text-foreground transition-colors duration-200"
+              className="flex flex-col items-end gap-0.5 text-sm font-semibold text-foreground hover:text-primary transition-colors duration-200 group"
             >
-              <div className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5" />
-                <span>581-397-3587</span>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <span className="tracking-tight">581-397-3587</span>
               </div>
-              <span className="text-[10px] text-muted-foreground">(on répond maintenant)</span>
+              <span className="text-xs text-muted-foreground font-normal">On répond maintenant</span>
             </a>
 
             <Button 
               onClick={scrollToContact}
-              className="items-center gap-2 px-8 py-3 text-sm font-semibold bg-secondary text-white rounded-full hover:bg-secondary/90 hover:shadow-lg transition-all duration-200"
+              className="items-center gap-2.5 px-6 py-2.5 h-11 text-[15px] font-semibold bg-secondary text-white rounded-full hover:bg-secondary/90 hover:shadow-lg transition-all duration-200"
             >
               Prix gratuit sous 24h
               <ArrowRight className="w-4 h-4" />
@@ -211,8 +211,9 @@ const Header = () => {
 
           {/* Mobile Menu */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger className="lg:hidden">
+            <SheetTrigger className="lg:hidden p-2 hover:bg-accent rounded-lg transition-colors">
               <Menu className="w-6 h-6" />
+              <span className="sr-only">Ouvrir le menu</span>
             </SheetTrigger>
             <SheetContent className="w-[300px] overflow-y-auto">
               <div className="flex flex-col h-full py-6">
