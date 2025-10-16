@@ -11,9 +11,9 @@ const StickyPromoBar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-3">
           <div className="flex-1 flex items-center justify-center gap-3">
-            <span className="text-sm md:text-base font-bold">
-              📸 PHOTOS = -40% : Ta cuisine à prix démo si on peut la photographier pour Instagram
-            </span>
+          <span className="text-sm md:text-base font-bold">
+            📸 PHOTOS = -40% : Ta cuisine à prix démo si on peut la photographier pour Facebook
+          </span>
             <a 
               href="#contact"
               onClick={(e) => {
