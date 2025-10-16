@@ -21,9 +21,6 @@ const Portfolio = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <span className="inline-block px-5 py-2 bg-secondary/10 text-secondary text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
-            +50 Projets Réels
-          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
             Inspirez-vous
           </h2>
