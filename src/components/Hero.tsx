@@ -61,9 +61,9 @@ const Hero = () => {
       
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 text-white">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 text-white [text-shadow:0_0_40px_rgba(255,255,255,0.5),0_0_80px_rgba(255,255,255,0.3)]">
             Ta cuisine de rêve<br />
-            <span className="text-secondary">livrée en 2 semaines</span>
+            <span className="text-secondary [text-shadow:0_0_40px_rgba(249,115,22,0.6),0_0_80px_rgba(249,115,22,0.4)]">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
