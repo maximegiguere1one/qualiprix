@@ -81,7 +81,7 @@ const BeforeAfter = () => {
             >
               <img 
                 src={cuisineApresRenovation}
-                alt="Cuisine après rénovation - Armoires de cuisine blanches sur mesure avec îlot central et comptoir quartz à Laval - Armoire Qualiprix"
+                alt="Cuisine après rénovation - Armoires blanches modernes avec comptoir quartz et poignées élégantes - Armoire Qualiprix"
                 className="w-full h-full object-cover"
                 draggable="false"
               />
