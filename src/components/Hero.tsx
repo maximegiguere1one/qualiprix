@@ -40,23 +40,7 @@ const Hero = () => {
       behavior: "smooth"
     });
   };
-  return <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Multi-layer Parallax */}
-      <div className="absolute inset-0 z-0" style={{
-      transform: `translateY(${imageOffset * 100}%)`,
-      willChange: 'transform'
-    }}>
-        <img src={heroImage} alt="Cuisine moderne avec luminaires intégrés - Armoires de cuisine sur mesure Terrebonne Montréal - Armoire Qualiprix 2024" className="w-full h-full object-cover" loading="eager" fetchPriority="high" width="1920" height="1080" />
-        
-        {/* Animated mesh gradient overlay for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(1,42,89,0.3),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(243,122,41,0.2),transparent_50%)] animate-[mesh-move_15s_ease-in-out_infinite]"></div>
-      </div>
-      
-      {/* Separate overlay with different parallax speed + gradient animation */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/50 to-black/40" style={{
-      transform: `translateY(${overlayOffset * 100}%)`,
-      willChange: 'transform'
-    }} />
+  return <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
 
       {/* Content */}
       <div className="container relative z-10 px-4 py-12 md:py-20 mx-auto">
@@ -65,13 +49,13 @@ const Hero = () => {
       
 
           {/* H1 REPENSÉ : Plus court, plus impactant */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 text-accessible-light [text-shadow:_0_0_80px_rgb(249_115_22_/_50%),_0_0_40px_rgb(249_115_22_/_70%),_0_4px_6px_rgb(0_0_0_/_90%),_0_10px_20px_rgb(0_0_0_/_50%),_0_-2px_10px_rgb(255_255_255_/_40%)]">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-6 md:mb-8 text-primary">
             Ta cuisine de rêve<br />
             <span className="text-secondary">livrée en 2 semaines</span>
           </h1>
 
       {/* Subheading RÉÉCRIT pour impact émotionnel */}
-      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-accessible-light-muted mb-6 md:mb-8 leading-relaxed max-w-readable mx-auto font-body font-medium">
+      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8 leading-relaxed max-w-readable mx-auto font-body font-medium">
         Qualité haut de gamme. Prix d'entrepôt. <br className="hidden sm:block" />
         <span className="text-secondary font-bold">Zéro</span> stress. <span className="text-secondary font-bold">Zéro</span> surprise.
       </p>
@@ -80,22 +64,22 @@ const Hero = () => {
       <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-14">
         
         {/* Pill #1 : FEATURED (plus grosse) */}
-        <div className="flex items-center gap-2 sm:gap-3 bg-secondary/20 backdrop-blur-sm border-2 border-secondary/50 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-secondary/30 transition-all duration-300 cursor-default shadow-[0_10px_30px_rgb(249_115_22_/_30%)]">
+        <div className="flex items-center gap-2 sm:gap-3 bg-secondary/10 border-2 border-secondary px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-secondary/20 transition-all duration-300 cursor-default shadow-lg">
           <span className="text-xl sm:text-2xl md:text-3xl">⚡</span>
           <div className="text-left">
-            <div className="text-white/70 text-[10px] sm:text-xs font-semibold uppercase">Livraison</div>
-            <div className="text-white text-base sm:text-lg md:text-xl font-black">2 semaines</div>
+            <div className="text-muted-foreground text-[10px] sm:text-xs font-semibold uppercase">Livraison</div>
+            <div className="text-primary text-base sm:text-lg md:text-xl font-black">2 semaines</div>
           </div>
         </div>
         
         {/* Pills #2 et #3 : Normales */}
-        <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-accent/10 border border-border px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-accent/20 transition-all duration-300 cursor-default">
           <span className="text-lg sm:text-xl md:text-2xl">⭐</span>
-          <span className="text-white text-sm sm:text-base font-semibold">5/5 étoiles</span>
+          <span className="text-primary text-sm sm:text-base font-semibold">5/5 étoiles</span>
         </div>
-        <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-white/15 transition-all duration-300 cursor-default">
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-accent/10 border border-border px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full hover:bg-accent/20 transition-all duration-300 cursor-default">
           <span className="text-lg sm:text-xl md:text-2xl">🏆</span>
-          <span className="text-white text-sm sm:text-base font-semibold">Garantie 30 ans</span>
+          <span className="text-primary text-sm sm:text-base font-semibold">Garantie 30 ans</span>
         </div>
       </div>
 
@@ -113,7 +97,7 @@ const Hero = () => {
             </Button>
             
             {/* CTA Secondaire (téléphone) */}
-            <Button size="lg" variant="outline" asChild className="group text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-7 h-auto bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 font-bold rounded-full transition-all duration-300 w-full sm:w-auto">
+            <Button size="lg" variant="outline" asChild className="group text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-7 h-auto bg-background hover:bg-accent text-primary border-2 border-border hover:border-primary font-bold rounded-full transition-all duration-300 w-full sm:w-auto">
               <a href="tel:5813973587" className="flex items-center justify-center gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform flex-shrink-0" />
                 Appelle maintenant
@@ -123,16 +107,16 @@ const Hero = () => {
 
       {/* Social proof micro ENRICHI */}
       <div className="mt-6 sm:mt-8 md:mt-10 px-4">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/70 text-xs sm:text-sm">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-muted-foreground text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">JT</div>
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">ML</div>
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">SP</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/70 border-2 border-background flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">JT</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-primary to-primary/70 border-2 border-background flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">ML</div>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-accent to-accent/70 border-2 border-background flex items-center justify-center text-[10px] sm:text-xs font-bold text-white">SP</div>
             </div>
             <span className="font-semibold">100% de satisfaction</span>
           </div>
-          <div className="hidden sm:block w-px h-4 bg-white/30" />
+          <div className="hidden sm:block w-px h-4 bg-border" />
           <span className="text-center">📍 Québec • Montréal • Rive-Nord</span>
         </div>
       </div>
