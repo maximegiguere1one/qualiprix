@@ -49,7 +49,7 @@ const BeforeAfter = () => {
 
         <div className="max-w-5xl mx-auto">
           <div 
-            className={`relative overflow-hidden rounded-[1.25rem] shadow-[var(--shadow-elegant)] aspect-[4/3] select-none transition-all duration-320 ease-out ${
+            className={`relative overflow-hidden rounded-[1.25rem] shadow-[var(--shadow-elegant)] aspect-[16/9] select-none transition-all duration-320 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}
             onMouseDown={() => setIsDragging(true)}
