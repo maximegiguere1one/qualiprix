@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import cuisineAvantRenovation from "@/assets/cuisine-avant-renovation-old.jpg";
+import cuisineAvantRenovation from "@/assets/cuisine-avant-renovation.jpg";
 import cuisineApresRenovation from "@/assets/cuisine-apres-renovation.jpg";
 import { Button } from "@/components/ui/button";
 
@@ -65,7 +65,7 @@ const BeforeAfter = () => {
             <div className="absolute inset-0">
               <img 
                 src={cuisineAvantRenovation}
-                alt="Cuisine avant rénovation - Armoires en chêne datées"
+                alt="Cuisine avant rénovation - Armoires en bois clair à rénover"
                 className="w-full h-full object-cover"
                 draggable="false"
               />
