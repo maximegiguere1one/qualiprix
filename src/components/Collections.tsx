@@ -265,8 +265,8 @@ const Collections = () => {
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="relative flex flex-col items-center justify-center h-full px-2 sm:px-0">
-                    <div className="w-full aspect-video sm:aspect-auto sm:max-h-[60vh] overflow-hidden rounded-lg bg-black/5">
+                  <div className="relative flex flex-col items-center justify-center h-full px-1 sm:px-0">
+                    <div className="w-full aspect-[9/16] sm:aspect-auto sm:max-h-[60vh] overflow-hidden rounded-lg bg-black/5">
                       <img 
                         src={image} 
                         alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
