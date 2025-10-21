@@ -261,25 +261,25 @@ const Collections = () => {
               {selectedCollection !== null && collections[selectedCollection].name}
             </DialogTitle>
           </DialogHeader>
-          <Carousel className="w-full flex-1 flex flex-col justify-center">
-            <CarouselContent>
+          <Carousel className="w-full h-full flex flex-col justify-center">
+            <CarouselContent className="-ml-0">
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
-                <CarouselItem key={idx}>
-                  <div className="relative flex flex-col items-center justify-center">
+                <CarouselItem key={idx} className="pl-0">
+                  <div className="relative flex flex-col items-center justify-center w-full h-[85vh] sm:h-[80vh]">
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full max-h-[50vh] sm:max-h-[60vh] object-contain bg-black/5"
+                      className="w-full h-full object-contain"
                       loading="lazy"
                     />
                     
                     {collections[selectedCollection].imageNames && (
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
+                      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
                         {collections[selectedCollection].imageNames[idx]}
                       </div>
                     )}
                     
-                    <div className="text-center mt-3 text-xs sm:text-sm text-muted-foreground">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs sm:text-sm text-muted-foreground">
                       Photo {idx + 1} / {collections[selectedCollection].images.length}
                     </div>
                   </div>
