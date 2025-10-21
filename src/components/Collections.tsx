@@ -255,8 +255,8 @@ const Collections = () => {
       </div>
 
       <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="w-full h-full max-w-full max-h-full sm:w-[95vw] sm:max-w-4xl sm:h-[95vh] sm:max-h-[95vh] sm:rounded-lg overflow-y-auto p-2 sm:p-6 m-0 sm:m-4">
-          <DialogHeader className="mb-2 sm:mb-4">
+        <DialogContent className="w-full h-full max-w-full max-h-full sm:w-[95vw] sm:max-w-4xl sm:h-[95vh] sm:max-h-[95vh] sm:rounded-lg overflow-y-auto p-1 sm:p-4 m-0">
+          <DialogHeader className="mb-1 sm:mb-2">
             <DialogTitle className="text-base sm:text-2xl pr-8">
               {selectedCollection !== null && collections[selectedCollection].name}
             </DialogTitle>
@@ -265,11 +265,11 @@ const Collections = () => {
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="relative flex flex-col items-center justify-center h-full">
+                  <div className="relative flex flex-col items-center justify-center">
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full max-h-[50vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
+                      className="w-full max-h-[50vh] sm:max-h-[60vh] object-contain bg-black/5"
                       loading="lazy"
                     />
                     
