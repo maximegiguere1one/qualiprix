@@ -7,6 +7,46 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { useState } from "react";
 import { projects } from "@/data/projects";
 
+// Import all collection images
+import collectionPrestige1 from "@/assets/collection-prestige-1.jpg";
+import collectionPrestige2 from "@/assets/collection-prestige-2.jpg";
+import collectionPrestige3 from "@/assets/collection-prestige-3.jpg";
+import collectionPrestige4 from "@/assets/collection-prestige-4.jpg";
+import collectionPrestige5 from "@/assets/collection-prestige-5.jpg";
+import collectionPrestige6 from "@/assets/collection-prestige-6.jpg";
+import collectionPrestige7 from "@/assets/collection-prestige-7.jpg";
+import collectionPrestige8 from "@/assets/collection-prestige-8.jpg";
+import collectionPrestige9 from "@/assets/collection-prestige-9.jpg";
+import collectionPrestige10 from "@/assets/collection-prestige-10.jpg";
+
+import serieEssentiel1 from "@/assets/serie-essentiel-1.jpg";
+import serieEssentiel2 from "@/assets/serie-essentiel-2.jpg";
+import serieEssentiel3 from "@/assets/serie-essentiel-3.jpg";
+import serieEssentiel4 from "@/assets/serie-essentiel-4.jpg";
+import serieEssentiel5 from "@/assets/serie-essentiel-5.jpg";
+
+import serieShaker1 from "@/assets/serie-shaker-1.jpg";
+import serieShaker2 from "@/assets/serie-shaker-2.jpg";
+import serieShaker3 from "@/assets/serie-shaker-3.jpg";
+import serieShaker4 from "@/assets/serie-shaker-4.jpg";
+import serieShaker5 from "@/assets/serie-shaker-5.jpg";
+
+import kitchenStoneWall from "@/assets/kitchen-stone-wall.jpg";
+import kitchenIsland from "@/assets/kitchen-island.jpg";
+
+import serieElite1 from "@/assets/serie-elite-1.jpg";
+import serieElite2 from "@/assets/serie-elite-2.jpg";
+import serieElite3 from "@/assets/serie-elite-3.jpg";
+import serieElite4 from "@/assets/serie-elite-4.jpg";
+import serieElite5 from "@/assets/serie-elite-5.jpg";
+
+import quartzAthabasca from "@/assets/quartz-athabasca.png";
+import quartzBlancNordique from "@/assets/quartz-blanc-nordique.png";
+import quartzBomyaanSparkle from "@/assets/quartz-bomyaan-sparkle.png";
+import quartzBottocinio from "@/assets/quartz-bottocinio.png";
+import quartzNoirVintage from "@/assets/quartz-noir-vintage.png";
+import quartzPerleBlanche from "@/assets/quartz-perle-blanche.png";
+
 const Collections = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
   const [selectedCollection, setSelectedCollection] = useState<number | null>(null);
@@ -21,16 +61,16 @@ const Collections = () => {
         "Couleurs exclusives à tarif préférentiel"
       ],
       images: [
-        "/src/assets/collection-prestige-1.jpg",
-        "/src/assets/collection-prestige-2.jpg", 
-        "/src/assets/collection-prestige-3.jpg",
-        "/src/assets/collection-prestige-4.jpg",
-        "/src/assets/collection-prestige-5.jpg",
-        "/src/assets/collection-prestige-6.jpg",
-        "/src/assets/collection-prestige-7.jpg",
-        "/src/assets/collection-prestige-8.jpg",
-        "/src/assets/collection-prestige-9.jpg",
-        "/src/assets/collection-prestige-10.jpg"
+        collectionPrestige1,
+        collectionPrestige2, 
+        collectionPrestige3,
+        collectionPrestige4,
+        collectionPrestige5,
+        collectionPrestige6,
+        collectionPrestige7,
+        collectionPrestige8,
+        collectionPrestige9,
+        collectionPrestige10
       ]
     },
     {
@@ -41,11 +81,11 @@ const Collections = () => {
         "Parfait premier achat"
       ],
       images: [
-        "/src/assets/serie-essentiel-1.jpg",
-        "/src/assets/serie-essentiel-2.jpg",
-        "/src/assets/serie-essentiel-3.jpg",
-        "/src/assets/serie-essentiel-4.jpg",
-        "/src/assets/serie-essentiel-5.jpg"
+        serieEssentiel1,
+        serieEssentiel2,
+        serieEssentiel3,
+        serieEssentiel4,
+        serieEssentiel5
       ]
     },
     {
@@ -56,11 +96,11 @@ const Collections = () => {
         "Chaleur et modernité"
       ],
       images: [
-        "/src/assets/serie-shaker-1.jpg",
-        "/src/assets/serie-shaker-2.jpg",
-        "/src/assets/serie-shaker-3.jpg",
-        "/src/assets/serie-shaker-4.jpg",
-        "/src/assets/serie-shaker-5.jpg"
+        serieShaker1,
+        serieShaker2,
+        serieShaker3,
+        serieShaker4,
+        serieShaker5
       ]
     },
     {
@@ -70,7 +110,7 @@ const Collections = () => {
         "Lignes épurées",
         "Finitions mates"
       ],
-      images: ["/src/assets/kitchen-stone-wall.jpg", "/src/assets/kitchen-island.jpg"]
+      images: [kitchenStoneWall, kitchenIsland]
     },
     {
       name: "Série Élite",
@@ -80,11 +120,11 @@ const Collections = () => {
         "Fabrication locale"
       ],
       images: [
-        "/src/assets/serie-elite-1.jpg",
-        "/src/assets/serie-elite-2.jpg",
-        "/src/assets/serie-elite-3.jpg",
-        "/src/assets/serie-elite-4.jpg",
-        "/src/assets/serie-elite-5.jpg"
+        serieElite1,
+        serieElite2,
+        serieElite3,
+        serieElite4,
+        serieElite5
       ]
     },
     {
@@ -95,12 +135,12 @@ const Collections = () => {
         "Look sophistiqué"
       ],
       images: [
-        "/src/assets/quartz-athabasca.png",
-        "/src/assets/quartz-blanc-nordique.png",
-        "/src/assets/quartz-bomyaan-sparkle.png",
-        "/src/assets/quartz-bottocinio.png",
-        "/src/assets/quartz-noir-vintage.png",
-        "/src/assets/quartz-perle-blanche.png"
+        quartzAthabasca,
+        quartzBlancNordique,
+        quartzBomyaanSparkle,
+        quartzBottocinio,
+        quartzNoirVintage,
+        quartzPerleBlanche
       ],
       imageNames: [
         "Athabasca",
