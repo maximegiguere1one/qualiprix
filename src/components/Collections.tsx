@@ -269,7 +269,7 @@ const Collections = () => {
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full max-h-[70vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
+                      className="w-full max-h-[50vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     
