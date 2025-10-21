@@ -255,8 +255,8 @@ const Collections = () => {
       </div>
 
       <Dialog open={selectedCollection !== null} onOpenChange={() => setSelectedCollection(null)}>
-        <DialogContent className="w-full h-full max-w-full max-h-full sm:w-[95vw] sm:max-w-4xl sm:h-[95vh] sm:max-h-[95vh] sm:rounded-lg overflow-y-auto p-2 sm:p-6 m-0 sm:m-4">
-          <DialogHeader className="mb-2 sm:mb-4">
+        <DialogContent className="w-full h-[calc(100vh-2rem)] max-w-full sm:w-[95vw] sm:max-w-4xl sm:h-[95vh] sm:max-h-[95vh] sm:rounded-lg overflow-hidden p-1 sm:p-6 m-0 sm:m-4">
+          <DialogHeader className="mb-1 sm:mb-4">
             <DialogTitle className="text-base sm:text-2xl pr-8">
               {selectedCollection !== null && collections[selectedCollection].name}
             </DialogTitle>
@@ -269,7 +269,7 @@ const Collections = () => {
                     <img 
                       src={image} 
                       alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full max-h-[35vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
+                      className="w-full max-h-[25vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
                       loading="lazy"
                     />
                     
@@ -279,7 +279,7 @@ const Collections = () => {
                       </div>
                     )}
                     
-                    <div className="text-center mt-3 text-xs sm:text-sm text-muted-foreground">
+                    <div className="text-center mt-1 sm:mt-3 text-xs sm:text-sm text-muted-foreground">
                       Photo {idx + 1} / {collections[selectedCollection].images.length}
                     </div>
                   </div>
