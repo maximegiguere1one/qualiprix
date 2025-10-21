@@ -265,13 +265,15 @@ const Collections = () => {
             <CarouselContent>
               {selectedCollection !== null && collections[selectedCollection].images.map((image, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="relative flex flex-col items-center justify-center h-full">
-                    <img 
-                      src={image} 
-                      alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                      className="w-full max-h-[25vh] sm:max-h-[60vh] object-contain rounded-lg bg-black/5"
-                      loading="lazy"
-                    />
+                  <div className="relative flex flex-col items-center justify-center h-full px-2 sm:px-0">
+                    <div className="w-full aspect-video sm:aspect-auto sm:max-h-[60vh] overflow-hidden rounded-lg bg-black/5">
+                      <img 
+                        src={image} 
+                        alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
+                        className="w-full h-full object-cover sm:object-contain"
+                        loading="lazy"
+                      />
+                    </div>
                     
                     {collections[selectedCollection].imageNames && (
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-base shadow-2xl border border-white/20 whitespace-nowrap">
