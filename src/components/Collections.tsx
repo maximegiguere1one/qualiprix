@@ -270,7 +270,7 @@ const Collections = () => {
                       <img 
                         src={image} 
                         alt={`${collections[selectedCollection].name} - ${collections[selectedCollection].imageNames?.[idx] || `Photo ${idx + 1}`}`}
-                        className="w-full h-full object-cover sm:object-contain"
+                        className="w-full h-full object-contain"
                         loading="lazy"
                       />
                     </div>
