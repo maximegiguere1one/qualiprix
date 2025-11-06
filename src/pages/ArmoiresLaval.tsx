@@ -43,15 +43,13 @@ const ArmoiresLaval = () => {
 
   const testimonials = [
     {
-      name: "Sophie Dumas",
-      area: "Chomedey",
-      text: "Service impeccable, prix honnête. Ma cuisine est magnifique!",
+      name: "Hanane Felhane",
+      text: "Très bon service et excellente qualité des armoires ! Je suis entièrement satisfaite et je recommande fortement.",
       rating: 5
     },
     {
-      name: "Martin Gagnon",
-      area: "Vimont",
-      text: "Livré en 2 semaines comme promis. Je recommande à 100%!",
+      name: "Samia Ghilas",
+      text: "Le vendeur a fait preuve d'une grande écoute et de professionnalisme. Il a fourni des explications claires et un excellent encadrement. Merci !",
       rating: 5
     }
   ];
@@ -206,7 +204,6 @@ const ArmoiresLaval = () => {
                     </p>
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.area}, Laval</p>
                     </div>
                   </CardContent>
                 </Card>
