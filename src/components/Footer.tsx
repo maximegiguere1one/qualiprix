@@ -26,9 +26,7 @@ const Footer = () => {
               📞 581-397-3587
             </a>
             <button 
-              onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => window.location.href = 'tel:5813973587'}
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all"
             >
               Consultation gratuite →
