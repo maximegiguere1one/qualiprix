@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,18 +41,6 @@ const ArmoiresRiveNord = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Breadcrumbs */}
-      <section className="pt-24 pb-6 bg-background border-b">
-        <div className="container px-4 mx-auto max-w-6xl">
-          <Breadcrumb 
-            items={[
-              { label: "Nos régions", href: "/zones-desservies" },
-              { label: "Rive-Nord" }
-            ]} 
-          />
-        </div>
-      </section>
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary via-primary to-secondary text-white">
