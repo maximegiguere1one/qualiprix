@@ -101,7 +101,7 @@ const Header = () => {
               
               {/* Nos Cuisines */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold relative hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:text-primary hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-out before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-primary before:to-secondary before:transition-all before:duration-300 hover:before:w-3/4 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Nos Cuisines
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -111,7 +111,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-gradient-to-r hover:from-primary/10 hover:via-primary/5 hover:to-transparent hover:text-primary hover:shadow-md hover:translate-x-1 hover:border-l-2 hover:border-primary focus-visible:ring-2 focus-visible:ring-primary group relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0"
                           >
                             {item.label}
                           </button>
@@ -124,7 +124,7 @@ const Header = () => {
 
               {/* Nos Régions */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold relative hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:text-primary hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-out before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-primary before:to-secondary before:transition-all before:duration-300 hover:before:w-3/4 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Nos Régions
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -135,9 +135,9 @@ const Header = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={item.href}
-                              className="flex items-center gap-2 select-none rounded-lg px-3 py-2.5 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary border border-transparent hover:border-primary/20 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+                              className="flex items-center gap-2 select-none rounded-lg px-3 py-2.5 text-sm font-medium leading-none no-underline outline-none transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:text-primary hover:scale-105 hover:shadow-lg border border-transparent hover:border-primary/30 focus-visible:ring-2 focus-visible:ring-primary group relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-white/40 before:to-white/20 before:translate-x-[-200%] before:skew-x-[-25deg] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
                             >
-                              <span className="text-base">{item.icon}</span>
+                              <span className="text-base group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">{item.icon}</span>
                               <span className="text-sm font-medium">{item.label}</span>
                             </Link>
                           </NavigationMenuLink>
@@ -150,10 +150,10 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <Link
                           to="/zones-desservies"
-                          className="flex items-center justify-between select-none rounded-lg px-4 py-3 text-sm font-bold bg-gradient-to-r from-secondary/10 to-secondary/5 border border-secondary/20 leading-none no-underline outline-none transition-all duration-200 hover:bg-secondary/15 hover:border-secondary/30 hover:shadow-md text-secondary focus-visible:ring-2 focus-visible:ring-secondary"
+                          className="flex items-center justify-between select-none rounded-lg px-4 py-3 text-sm font-bold bg-gradient-to-r from-secondary/10 to-secondary/5 border border-secondary/20 leading-none no-underline outline-none transition-all duration-300 hover:from-secondary/20 hover:to-secondary/10 hover:border-secondary/40 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:scale-[1.02] text-secondary focus-visible:ring-2 focus-visible:ring-secondary group relative overflow-hidden"
                         >
                           <span>Toutes les zones</span>
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Link>
                       </NavigationMenuLink>
                     </div>
@@ -163,7 +163,7 @@ const Header = () => {
 
               {/* Ressources */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold hover:bg-primary/5 hover:text-primary transition-all duration-200">
+                <NavigationMenuTrigger className="h-11 px-5 text-[15px] font-semibold relative hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:text-primary hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-out before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-primary before:to-secondary before:transition-all before:duration-300 hover:before:w-3/4 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Ressources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -173,7 +173,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <button
                             onClick={() => handleNavigation(item.href)}
-                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-primary/5 hover:text-primary hover:shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+                            className="block w-full text-left select-none rounded-lg px-4 py-3 text-sm font-medium leading-none no-underline outline-none transition-all duration-200 hover:bg-gradient-to-r hover:from-primary/10 hover:via-primary/5 hover:to-transparent hover:text-primary hover:shadow-md hover:translate-x-1 hover:border-l-2 hover:border-primary focus-visible:ring-2 focus-visible:ring-primary group relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0"
                           >
                             {item.label}
                           </button>
@@ -191,10 +191,10 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-6">
             <a 
               href="tel:5813973587"
-              className="flex flex-col items-end gap-0.5 text-sm font-semibold text-foreground hover:text-primary transition-colors duration-200 group"
+              className="flex flex-col items-end gap-0.5 text-sm font-semibold text-foreground hover:text-primary transition-all duration-300 group hover:scale-105"
             >
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <Phone className="w-4 h-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 animate-pulse" />
                 <span className="tracking-tight">581-397-3587</span>
               </div>
               <span className="text-xs text-muted-foreground font-normal">On répond maintenant</span>
@@ -202,10 +202,10 @@ const Header = () => {
 
             <Button 
               onClick={scrollToContact}
-              className="items-center gap-2.5 px-6 py-2.5 h-11 text-[15px] font-semibold bg-secondary text-white rounded-full hover:bg-secondary/90 hover:shadow-lg transition-all duration-200"
+              className="items-center gap-2.5 px-6 py-2.5 h-11 text-[15px] font-semibold bg-secondary text-white rounded-full hover:bg-secondary/90 hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 group relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-200%] before:skew-x-[-25deg] hover:before:translate-x-[200%] before:transition-transform before:duration-700 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
             >
               Prix gratuit sous 24h
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300" />
             </Button>
           </div>
 
@@ -228,7 +228,7 @@ const Header = () => {
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item.href)}
-                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent hover:text-primary hover:translate-x-2 transition-all duration-300 text-sm font-medium border border-transparent hover:border-primary/20 hover:shadow-md hover:border-l-4 hover:border-l-primary focus-visible:ring-2 focus-visible:ring-primary"
                       >
                         {item.label}
                       </button>
@@ -246,7 +246,7 @@ const Header = () => {
                       <Link
                         key={item.label}
                         to={item.href}
-                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent hover:text-primary hover:translate-x-2 transition-all duration-300 text-sm font-medium border border-transparent hover:border-primary/20 hover:shadow-md hover:border-l-4 hover:border-l-primary focus-visible:ring-2 focus-visible:ring-primary"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <span className="mr-2">{item.icon}</span>
@@ -266,7 +266,7 @@ const Header = () => {
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item.href)}
-                        className="text-left py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200 text-sm font-medium border border-transparent hover:border-primary/10"
+                        className="text-left py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent hover:text-primary hover:translate-x-2 transition-all duration-300 text-sm font-medium border border-transparent hover:border-primary/20 hover:shadow-md hover:border-l-4 hover:border-l-primary focus-visible:ring-2 focus-visible:ring-primary"
                       >
                         {item.label}
                       </button>
@@ -285,10 +285,10 @@ const Header = () => {
                   </a>
                   <Button 
                     onClick={scrollToContact}
-                    className="w-full bg-secondary text-white hover:bg-secondary/90"
+                    className="w-full bg-secondary text-white hover:bg-secondary/90 hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:scale-105 transition-all duration-300 group relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-200%] before:skew-x-[-25deg] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
                   >
                     Prix gratuit sous 24h
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300" />
                   </Button>
                 </div>
               </div>
