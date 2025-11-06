@@ -221,7 +221,7 @@ const ArmoiresLaval = () => {
             <p className="text-xl text-muted-foreground mb-6">
               Consultation gratuite, estimation détaillée offerte. Zéro engagement.
             </p>
-            <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg">
+            <Button size="lg" onClick={() => window.location.href = 'tel:5813973587'} className="h-14 px-8 text-lg">
               <Phone className="w-5 h-5 mr-2" />
               Contacte-nous maintenant – 581-397-3587
             </Button>
