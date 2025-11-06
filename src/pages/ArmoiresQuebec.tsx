@@ -164,7 +164,7 @@ const ArmoiresQuebec = () => {
 
           {/* Testimonials */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">Ce que nos clients de Québec disent</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center">Ce que nos clients disent</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="border-2">
                 <CardHeader>
