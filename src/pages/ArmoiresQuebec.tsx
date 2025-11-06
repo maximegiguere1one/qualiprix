@@ -171,12 +171,11 @@ const ArmoiresQuebec = () => {
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
-                  <CardTitle className="text-lg">Nicolas St-Aubin</CardTitle>
-                  <CardDescription>Beauport</CardDescription>
+                  <CardTitle className="text-lg">Hanane Felhane</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground italic text-sm">
-                    "Très belle qualité, résistant, gens de confiance, nous adorons notre nouvelle cuisine!"
+                    "Très bon service et excellente qualité des armoires ! Je suis entièrement satisfaite et je recommande fortement."
                   </p>
                 </CardContent>
               </Card>
@@ -186,12 +185,11 @@ const ArmoiresQuebec = () => {
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
-                  <CardTitle className="text-lg">Jean-Sylvain Bélair</CardTitle>
-                  <CardDescription>Québec</CardDescription>
+                  <CardTitle className="text-lg">Samia Ghilas</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground italic text-sm">
-                    "Super service!! À l'écoute des clients!! Je le recommande fortement."
+                    "Le vendeur a fait preuve d'une grande écoute et de professionnalisme. Il a fourni des explications claires et un excellent encadrement. Merci !"
                   </p>
                 </CardContent>
               </Card>
@@ -201,12 +199,11 @@ const ArmoiresQuebec = () => {
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
-                  <CardTitle className="text-lg">Chantale Pion</CardTitle>
-                  <CardDescription>Lévis</CardDescription>
+                  <CardTitle className="text-lg">Belkacem Massi</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground italic text-sm">
-                    "Bon service, belle qualité et prix raisonnable."
+                    "Excellent service, rapide et très efficace ! Produit de qualité, je les conseille fortement : des gens de confiance."
                   </p>
                 </CardContent>
               </Card>
