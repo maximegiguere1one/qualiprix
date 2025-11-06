@@ -1,48 +1,62 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Star, Shield } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
 const ArmoiresQuebec = () => {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
-  const { ref: introRef, isVisible: introVisible } = useScrollReveal();
-  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal();
-  const { ref: regionsRef, isVisible: regionsVisible } = useScrollReveal();
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
+  const {
+    ref: heroRef,
+    isVisible: heroVisible
+  } = useScrollReveal();
+  const {
+    ref: introRef,
+    isVisible: introVisible
+  } = useScrollReveal();
+  const {
+    ref: servicesRef,
+    isVisible: servicesVisible
+  } = useScrollReveal();
+  const {
+    ref: regionsRef,
+    isVisible: regionsVisible
+  } = useScrollReveal();
+  const {
+    ref: testimonialsRef,
+    isVisible: testimonialsVisible
+  } = useScrollReveal();
+  const {
+    ref: ctaRef,
+    isVisible: ctaVisible
+  } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Armoires cuisine Québec. Service Québec, Lévis, Beauport. 100% de satisfaction. Fabrication locale, délai respecté. Consultation gratuite → 581-397-3587');
     }
     document.title = "Armoires sur mesure Québec | 100% satisfaction | Fabrication locale";
-    
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
     canonical.href = 'https://armoirequaliprixmontreal.com/armoires-quebec';
     document.head.appendChild(canonical);
-
     return () => {
       document.head.removeChild(canonical);
     };
   }, []);
-
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
-
-  const regions = [
-    "Québec", "Lévis", "Beauport", "Charlesbourg",
-    "Sainte-Foy", "Limoilou", "Cap-Rouge", "L'Ancienne-Lorette"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const regions = ["Québec", "Lévis", "Beauport", "Charlesbourg", "Sainte-Foy", "Limoilou", "Cap-Rouge", "L'Ancienne-Lorette"];
+  return <div className="min-h-screen bg-background">
       <Header />
+
+      {/* Breadcrumbs */}
+      <section className="pt-24 pb-6 bg-background border-b">
+        
+      </section>
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary via-secondary to-primary text-white">
@@ -57,7 +71,7 @@ const ArmoiresQuebec = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             De Québec à Lévis, service complet. +25 ans d'expérience au service des familles d'ici.
           </p>
-          <Button size="lg" onClick={() => window.location.href = 'tel:5813973587'} className="h-14 px-8 text-lg bg-primary/90 text-white hover:bg-primary">
+          <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
             Obtiens ta consultation gratuite – Québec
           </Button>
@@ -122,12 +136,10 @@ const ArmoiresQuebec = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6">Secteurs desservis</h3>
               <div className="grid grid-cols-2 gap-3">
-                {regions.map((region, index) => (
-                  <div key={index} className="flex items-center gap-2 text-muted-foreground">
+                {regions.map((region, index) => <div key={index} className="flex items-center gap-2 text-muted-foreground">
                     <div className="w-2 h-2 rounded-full bg-secondary" />
                     <span>{region}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <p className="mt-6 text-muted-foreground">
                 Ton secteur n'est pas listé? <strong className="text-foreground">Appelle-nous!</strong> On livre dans toute la région.
@@ -157,9 +169,7 @@ const ArmoiresQuebec = () => {
               <Card className="border-2">
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
                   <CardTitle className="text-lg">Nicolas St-Aubin</CardTitle>
                   <CardDescription>Beauport</CardDescription>
@@ -174,9 +184,7 @@ const ArmoiresQuebec = () => {
               <Card className="border-2">
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
                   <CardTitle className="text-lg">Jean-Sylvain Bélair</CardTitle>
                   <CardDescription>Québec</CardDescription>
@@ -191,9 +199,7 @@ const ArmoiresQuebec = () => {
               <Card className="border-2">
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
                   <CardTitle className="text-lg">Chantale Pion</CardTitle>
                   <CardDescription>Lévis</CardDescription>
@@ -222,8 +228,6 @@ const ArmoiresQuebec = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ArmoiresQuebec;
