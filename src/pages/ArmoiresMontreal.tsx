@@ -102,19 +102,16 @@ const ArmoiresMontreal = () => {
   }, []);
   const neighborhoods = ["Plateau-Mont-Royal", "Rosemont", "Villeray", "Ahuntsic", "Notre-Dame-de-Grâce (NDG)", "Côte-des-Neiges", "Mile-End", "Hochelaga-Maisonneuve", "Verdun", "Saint-Laurent"];
   const testimonials = [{
-    name: "Sophie T.",
-    area: "Plateau-Mont-Royal",
-    text: "Cuisine moderne deux-tons parfaite pour mon condo. Livrée en 3 semaines!",
+    name: "Hanane Felhane",
+    text: "Très bon service et excellente qualité des armoires ! Je suis entièrement satisfaite et je recommande fortement.",
     rating: 5
   }, {
-    name: "Jean-François L.",
-    area: "Rosemont",
-    text: "Qualité incroyable, prix honnête. Mon voisin a payé 40% plus cher ailleurs.",
+    name: "Samia Ghilas",
+    text: "Le vendeur a fait preuve d'une grande écoute et de professionnalisme. Il a fourni des explications claires et un excellent encadrement. Merci !",
     rating: 5
   }, {
-    name: "Amélie D.",
-    area: "Villeray",
-    text: "Service impeccable du début à la fin. Je recommande à tous mes amis!",
+    name: "Belkacem Massi",
+    text: "Excellent service, rapide et très efficace ! Produit de qualité, je les conseille fortement : des gens de confiance.",
     rating: 5
   }];
   return <div className="min-h-screen bg-background">
@@ -283,7 +280,6 @@ const ArmoiresMontreal = () => {
                       {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
                     </div>
                     <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{testimonial.area}</p>
                   </CardHeader>
                   <CardContent>
                     <p className="italic">"{testimonial.text}"</p>
