@@ -151,7 +151,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Contactez-nous</h4>
             <ul className="space-y-2 text-primary-foreground/80 font-body">
-              <li>581-397-3587</li>
+              <li><a href="tel:5813973587" className="hover:text-primary-foreground transition-colors">581-397-3587</a></li>
               <li>info@armoiresqualiprix.ca</li>
               <li>Québec et environs</li>
             </ul>
