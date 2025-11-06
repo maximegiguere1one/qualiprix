@@ -1,46 +1,54 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
 const ArmoiresRiveNord = () => {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
-  const { ref: contentRef, isVisible: contentVisible } = useScrollReveal();
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollReveal();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
+  const {
+    ref: heroRef,
+    isVisible: heroVisible
+  } = useScrollReveal();
+  const {
+    ref: contentRef,
+    isVisible: contentVisible
+  } = useScrollReveal();
+  const {
+    ref: testimonialsRef,
+    isVisible: testimonialsVisible
+  } = useScrollReveal();
+  const {
+    ref: ctaRef,
+    isVisible: ctaVisible
+  } = useScrollReveal();
   useEffect(() => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Armoires cuisine Rive-Nord. 100% de satisfaction à Terrebonne, Repentigny, Mascouche. Livraison 2 semaines garantie. Soumission gratuite → 581-397-3587');
     }
     document.title = "Armoires sur mesure Rive-Nord | 100% satisfaction | Livraison rapide";
-    
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
     canonical.href = 'https://armoirequaliprixmontreal.com/armoires-rive-nord';
     document.head.appendChild(canonical);
-
     return () => {
       document.head.removeChild(canonical);
     };
   }, []);
-
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
-
-  const cities = [
-    "Terrebonne", "Repentigny", "Mascouche", "Saint-Jérôme", 
-    "Mirabel", "Blainville", "Boisbriand", "Sainte-Thérèse"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const cities = ["Terrebonne", "Repentigny", "Mascouche", "Saint-Jérôme", "Mirabel", "Blainville", "Boisbriand", "Sainte-Thérèse"];
+  return <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Breadcrumbs */}
+      <section className="pt-24 pb-6 bg-background border-b">
+        
+      </section>
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary via-primary to-secondary text-white">
@@ -69,12 +77,10 @@ const ArmoiresRiveNord = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Villes desservies sur la Rive-Nord</h2>
               <div className="grid grid-cols-2 gap-3">
-                {cities.map((city, index) => (
-                  <div key={index} className="flex items-center gap-2 text-muted-foreground">
+                {cities.map((city, index) => <div key={index} className="flex items-center gap-2 text-muted-foreground">
                     <div className="w-2 h-2 rounded-full bg-secondary" />
                     <span>{city}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
@@ -101,9 +107,7 @@ const ArmoiresRiveNord = () => {
               <Card className="border-2">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
                   <CardTitle>Projet à Terrebonne</CardTitle>
                   <CardDescription>Cuisine moderne deux-tons, 24 500$</CardDescription>
@@ -118,9 +122,7 @@ const ArmoiresRiveNord = () => {
               <Card className="border-2">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />)}
                   </div>
                   <CardTitle>Projet à Mascouche</CardTitle>
                   <CardDescription>Cuisine premium laque, 32 000$</CardDescription>
@@ -149,8 +151,6 @@ const ArmoiresRiveNord = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ArmoiresRiveNord;
