@@ -81,8 +81,8 @@ const ArmoiresLaval = () => {
           </p>
           <Button 
             size="lg" 
-            onClick={scrollToContact}
-            className={`h-14 px-8 text-lg bg-white text-primary hover:bg-white/90 transition-all duration-1000 delay-300 ${
+            onClick={() => window.location.href = 'tel:5813973587'}
+            className={`h-14 px-8 text-lg bg-white text-white hover:bg-white/90 transition-all duration-1000 delay-300 ${
               heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
