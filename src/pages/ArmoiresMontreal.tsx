@@ -135,7 +135,7 @@ const ArmoiresMontreal = () => {
           <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             De Rosemont au Plateau, en passant par NDG et Villeray. 100% de satisfaction client, 2 semaines de délai garanti.
           </p>
-          <Button size="lg" className={`h-14 px-8 text-lg bg-white text-primary hover:bg-white/90 transition-all duration-1000 delay-300 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <Button size="lg" className={`h-14 px-8 text-lg bg-white text-white hover:bg-white/90 transition-all duration-1000 delay-300 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Phone className="w-5 h-5 mr-2" />
             Consultation gratuite à Montréal – 581-397-3587
           </Button>
