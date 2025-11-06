@@ -71,7 +71,7 @@ const ArmoiresQuebec = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             De Québec à Lévis, service complet. +25 ans d'expérience au service des familles d'ici.
           </p>
-          <Button size="lg" onClick={scrollToContact} className="h-14 px-8 text-lg bg-white text-primary hover:bg-white/90">
+          <Button size="lg" onClick={() => window.location.href = 'tel:5813973587'} className="h-14 px-8 text-lg bg-secondary text-white hover:bg-secondary/90">
             <Phone className="w-5 h-5 mr-2" />
             Obtiens ta consultation gratuite – Québec
           </Button>
