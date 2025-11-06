@@ -182,7 +182,7 @@ const ArmoiresLaval = () => {
             <h2 className={`text-3xl font-bold text-center mb-8 transition-all duration-1000 ${
               testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              Nos clients à Laval témoignent
+              Nos clients témoignent
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {testimonials.map((testimonial, index) => (
