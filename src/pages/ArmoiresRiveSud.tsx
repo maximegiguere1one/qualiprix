@@ -98,36 +98,42 @@ const ArmoiresRiveSud = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-8 text-center">Témoignages Rive-Sud</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-2">
+              <Card className="border-2 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
                     ))}
                   </div>
-                  <CardTitle>Projet à Brossard</CardTitle>
-                  <CardDescription>Cuisine complète polymère, 21 000$</CardDescription>
+                  <CardTitle>Hanane Felhane</CardTitle>
+                  <CardDescription className="flex items-center gap-2 text-secondary">
+                    <MapPin className="w-3 h-3" />
+                    Client vérifié
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground italic">
-                    "Service A1. Livré en 15 jours comme promis. On adore!"
+                  <p className="text-muted-foreground italic leading-relaxed">
+                    "Très bon service et excellente qualité des armoires ! Je suis entièrement satisfaite et je recommande fortement."
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className="border-2 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
                     ))}
                   </div>
-                  <CardTitle>Projet à Saint-Bruno</CardTitle>
-                  <CardDescription>Cuisine sur mesure, 28 500$</CardDescription>
+                  <CardTitle>Cynthia Macéan</CardTitle>
+                  <CardDescription className="flex items-center gap-2 text-secondary">
+                    <MapPin className="w-3 h-3" />
+                    Client vérifié
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground italic">
-                    "Prix honnête, qualité exceptionnelle. Merci l'équipe!"
+                  <p className="text-muted-foreground italic leading-relaxed">
+                    "Très satisfaite ! Je recommande fortement Armoire Qualiprix pour vos futurs projets. Un grand sens du professionnalisme."
                   </p>
                 </CardContent>
               </Card>
