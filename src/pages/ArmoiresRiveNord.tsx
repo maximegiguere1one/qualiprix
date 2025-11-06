@@ -73,31 +73,55 @@ const ArmoiresRiveNord = () => {
       {/* Content Section */}
       <section className="py-16">
         <div className="container px-4 mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Villes desservies sur la Rive-Nord</h2>
-              <div className="grid grid-cols-2 gap-3">
-                {cities.map((city, index) => <div key={index} className="flex items-center gap-2 text-muted-foreground">
-                    <div className="w-2 h-2 rounded-full bg-secondary" />
-                    <span>{city}</span>
-                  </div>)}
-              </div>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <Card className="border-2 border-primary/10 bg-gradient-to-br from-background to-primary/5 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-secondary/20">
+                    <MapPin className="w-6 h-6 text-secondary" />
+                  </div>
+                  <CardTitle className="text-2xl">Villes desservies sur la Rive-Nord</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-3">
+                  {cities.map((city, index) => <div key={index} className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/10 transition-colors">
+                      <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                      <span className="font-medium">{city}</span>
+                    </div>)}
+                </div>
+              </CardContent>
+            </Card>
             
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Pourquoi QualiPrix sur la Rive-Nord?</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  On connaît la Rive-Nord comme le fond de notre poche. Taux de satisfaction 100%.
-                </p>
-                <p>
-                  <strong className="text-foreground">Livraison rapide incluse.</strong> En 2 semaines max, ta cuisine est installée.
-                </p>
-                <p>
-                  <strong className="text-foreground">Prix clairs, sans surprise.</strong> Aucun frais caché. Ce qu'on te dit, c'est ce que tu paies.
-                </p>
-              </div>
-            </div>
+            <Card className="border-2 border-secondary/20 bg-gradient-to-br from-background to-secondary/5 hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-primary/20">
+                    <Star className="w-6 h-6 text-primary fill-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Pourquoi QualiPrix sur la Rive-Nord?</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed">
+                    On connaît la Rive-Nord comme le fond de notre poche. <span className="font-bold text-foreground">Taux de satisfaction 100%.</span>
+                  </p>
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-primary/5 border border-primary/10">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <p className="text-base leading-relaxed">
+                      <strong className="text-foreground">Livraison rapide incluse.</strong> En 2 semaines max, ta cuisine est installée.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/5 border border-secondary/10">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                    <p className="text-base leading-relaxed">
+                      <strong className="text-foreground">Prix clairs, sans surprise.</strong> Aucun frais caché. Ce qu'on te dit, c'est ce que tu paies.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Testimonials */}
