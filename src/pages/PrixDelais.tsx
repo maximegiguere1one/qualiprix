@@ -74,13 +74,41 @@ const PrixDelais = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-secondary text-white">
-        <div className="container px-4 mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Prix et délais – Transparence totale, sans surprise
+      <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary via-primary to-secondary text-white overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full blur-3xl animate-float-up"></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl animate-float-up" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="container px-4 mx-auto text-center relative z-10">
+          {/* Eyebrow badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6 animate-fade-in">
+            <DollarSign className="w-4 h-4" />
+            <span className="text-sm font-semibold tracking-wide uppercase">Transparence garantie</span>
+          </div>
+          
+          {/* Main heading with hierarchy */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <span className="block text-3xl md:text-4xl font-semibold mb-3 text-white/90">Prix et délais</span>
+            <span className="block bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+              Transparence totale, sans surprise
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Chaque projet est unique. On te donne un prix clair APRÈS avoir vu ton espace.
+          
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-3 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/50"></div>
+            <div className="w-2 h-2 rounded-full bg-white/70"></div>
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/50"></div>
+          </div>
+          
+          {/* Subtitle with emphasis */}
+          <p className="text-lg md:text-2xl lg:text-3xl mb-4 max-w-4xl mx-auto font-light leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            Chaque projet est unique.
+          </p>
+          <p className="text-base md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/90 font-normal animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            On te donne un prix clair <span className="font-bold text-white border-b-2 border-white/50">APRÈS avoir vu</span> ton espace.
           </p>
         </div>
       </section>
