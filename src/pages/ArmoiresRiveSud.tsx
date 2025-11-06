@@ -96,7 +96,7 @@ const ArmoiresRiveSud = () => {
 
           {/* Testimonials */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-center">Témoignages Rive-Sud</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center">Mots de nos clients</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="border-2 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
