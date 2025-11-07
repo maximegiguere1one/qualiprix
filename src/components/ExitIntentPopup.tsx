@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ExitIntentPopup = () => {
@@ -73,15 +72,6 @@ const ExitIntentPopup = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[450px] max-h-[90vh] overflow-y-auto p-0 mx-4">
-        <button 
-          onClick={() => setIsOpen(false)}
-          className="absolute right-3 top-3 sm:right-4 sm:top-4 z-10 rounded-full p-2.5 sm:p-2 bg-background/90 backdrop-blur-sm opacity-80 ring-offset-background transition-all hover:opacity-100 hover:bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 touch-manipulation"
-          aria-label="Fermer"
-        >
-          <X className="h-5 w-5 sm:h-4 sm:w-4" />
-          <span className="sr-only">Close</span>
-        </button>
-        
         <DialogHeader className="px-4 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 space-y-1.5 sm:space-y-2">
           <DialogTitle className="text-lg sm:text-xl md:text-2xl font-black leading-tight pr-8">
             Offre PHOTO -40% 📸
