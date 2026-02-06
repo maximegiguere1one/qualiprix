@@ -4,8 +4,6 @@ import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Mission from "@/components/Mission";
 import StickyCTA from "@/components/StickyCTA";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
-import StickyPromoBar from "@/components/StickyPromoBar";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Lazy load heavy components for better performance
@@ -24,9 +22,8 @@ const Footer = lazy(() => import("@/components/Footer"));
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <StickyPromoBar />
       <Header />
-      <main id="main-content" className="pt-[52px]">{/* Padding pour sticky promo bar */}
+      <main id="main-content">
         <Hero />
         <WhyUs />
         {/* QUICK WIN: Separate Suspense boundaries for better CLS */}
@@ -70,7 +67,6 @@ const Index = () => {
         </Suspense>
       </main>
       <StickyCTA />
-      <ExitIntentPopup />
     </div>
   );
 };
