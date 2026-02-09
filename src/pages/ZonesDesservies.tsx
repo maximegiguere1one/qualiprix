@@ -33,37 +33,57 @@ const ZonesDesservies = () => {
       name: "Montréal",
       description: "Service complet: Plateau, Rosemont, Villeray, NDG, Côte-des-Neiges, Ahuntsic",
       highlights: ["Livraison rapide", "Installation disponible", "Consultation à domicile gratuite"],
-      icon: "🏙️"
+      icon: "🏙️",
+      link: "/armoires-montreal"
     },
     {
       name: "Laval",
       description: "Toutes les zones de Laval couvertes: Chomedey, Vimont, Sainte-Rose, Auteuil",
       highlights: ["Service clé en main", "Délai garanti 15 jours", "Équipe locale"],
-      icon: "🏘️"
+      icon: "🏘️",
+      link: "/armoires-laval"
     },
     {
       name: "Rive-Nord",
-      description: "Terrebonne, Repentigny, Saint-Jérôme, Mirabel, Mascouche, Blainville",
+      description: "Terrebonne, Repentigny, Saint-Jérôme, Mascouche, Blainville",
       highlights: ["Livraison incluse", "Support après-vente", "Consultation gratuite"],
-      icon: "🏞️"
+      icon: "🏞️",
+      link: "/armoires-rive-nord"
     },
     {
       name: "Rive-Sud",
       description: "Longueuil, Brossard, Saint-Jean-sur-Richelieu, Chambly, Saint-Hubert",
       highlights: ["Installation pro", "Prix d'entrepôt", "Consultation gratuite"],
-      icon: "🌳"
+      icon: "🌳",
+      link: "/armoires-rive-sud"
     },
     {
-      name: "Laurentides",
-      description: "Mont-Tremblant, Sainte-Agathe, Val-David, Saint-Sauveur, Sainte-Adèle",
-      highlights: ["Consultation gratuite", "Transport inclus", "Équipe expérimentée"],
-      icon: "⛰️"
+      name: "Mirabel",
+      description: "Saint-Janvier, Saint-Augustin, Domaine-Vert, nouveaux quartiers en pleine croissance",
+      highlights: ["Spécialistes maisons neuves", "Livraison 2 semaines", "Consultation gratuite"],
+      icon: "🏗️",
+      link: "/armoires-mirabel"
+    },
+    {
+      name: "Saint-Agathe-des-Monts",
+      description: "Sainte-Adèle, Val-David, Mont-Tremblant, Saint-Sauveur et toutes les Laurentides",
+      highlights: ["Experts style chalet", "Transport inclus", "Consultation à domicile"],
+      icon: "⛰️",
+      link: "/armoires-saint-agathe-des-monts"
+    },
+    {
+      name: "Québec",
+      description: "Ville de Québec et ses environs",
+      highlights: ["Livraison rapide", "Service local", "Prix transparent"],
+      icon: "⚜️",
+      link: "/armoires-quebec"
     },
     {
       name: "Montérégie",
       description: "Granby, Beloeil, Sorel-Tracy, Varennes, Sainte-Julie, Mont-Saint-Hilaire",
       highlights: ["Livraison rapide", "Service local", "Prix transparent"],
-      icon: "🌾"
+      icon: "🌾",
+      link: "/zones-desservies"
     }
   ];
 
@@ -110,24 +130,26 @@ const ZonesDesservies = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
               {regions.map((region, index) => (
-                <Card key={index} className="border-2 border-border shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] hover:scale-[1.02] transition-all duration-300 hover:border-secondary/50 group">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-3xl font-bold">{region.name}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      {region.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {region.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center gap-3 text-muted-foreground">
-                          <div className="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(var(--secondary),0.3)]" />
-                          <span className="text-sm font-medium">{highlight}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <a key={index} href={region.link} className="block group">
+                  <Card className="border-2 border-border shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] hover:scale-[1.02] transition-all duration-300 hover:border-secondary/50 h-full">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-3xl font-bold group-hover:text-secondary transition-colors">{region.name}</CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        {region.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {region.highlights.map((highlight, idx) => (
+                          <div key={idx} className="flex items-center gap-3 text-muted-foreground">
+                            <div className="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(var(--secondary),0.3)]" />
+                            <span className="text-sm font-medium">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
 

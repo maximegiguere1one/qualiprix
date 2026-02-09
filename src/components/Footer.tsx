@@ -112,6 +112,16 @@ const Footer = () => {
                   ⚜️ Québec
                 </a>
               </li>
+              <li>
+                <a href="/armoires-mirabel" className="text-primary-foreground/80 font-body link-underline">
+                  🏗️ Mirabel
+                </a>
+              </li>
+              <li>
+                <a href="/armoires-saint-agathe-des-monts" className="text-primary-foreground/80 font-body link-underline">
+                  ⛰️ Saint-Agathe
+                </a>
+              </li>
               <li className="pt-2 border-t border-primary-foreground/20">
                 <a href="/zones-desservies" className="text-primary-foreground font-body font-semibold link-underline">
                   → Toutes les zones

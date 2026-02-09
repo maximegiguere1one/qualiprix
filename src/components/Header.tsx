@@ -33,6 +33,8 @@ const Header = () => {
       { label: "Rive-Nord", href: "/armoires-rive-nord", icon: "🌲" },
       { label: "Rive-Sud", href: "/armoires-rive-sud", icon: "🌊" },
       { label: "Québec", href: "/armoires-quebec", icon: "⚜️" },
+      { label: "Mirabel", href: "/armoires-mirabel", icon: "🏗️" },
+      { label: "Saint-Agathe", href: "/armoires-saint-agathe-des-monts", icon: "⛰️" },
       { label: "Toutes les zones →", href: "/zones-desservies", featured: true },
     ],
     ressources: [
@@ -129,8 +131,8 @@ const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[320px] p-4 bg-white/100 dark:bg-card border border-border shadow-elegant rounded-xl animate-slide-down">
-                    <ul className="grid grid-cols-2 gap-2.5 mb-3">
-                      {navigationItems.regions.slice(0, 5).map((item, index) => (
+                    <ul className="grid grid-cols-2 gap-2.5 mb-3 max-h-[280px] overflow-y-auto">
+                      {navigationItems.regions.filter(r => !r.featured).map((item, index) => (
                         <li key={item.label} style={{ animationDelay: `${index * 50}ms` }} className="animate-menu-stagger">
                           <NavigationMenuLink asChild>
                             <Link
@@ -242,7 +244,7 @@ const Header = () => {
                     Nos Régions
                   </h3>
                   <nav className="flex flex-col gap-1.5">
-                    {navigationItems.regions.slice(0, 5).map((item) => (
+                    {navigationItems.regions.filter(r => !r.featured).map((item) => (
                       <Link
                         key={item.label}
                         to={item.href}
