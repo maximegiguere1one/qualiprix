@@ -17,6 +17,8 @@ const ArmoiresLaval = lazy(() => import("./pages/ArmoiresLaval"));
 const ArmoiresRiveNord = lazy(() => import("./pages/ArmoiresRiveNord"));
 const ArmoiresRiveSud = lazy(() => import("./pages/ArmoiresRiveSud"));
 const ArmoiresQuebec = lazy(() => import("./pages/ArmoiresQuebec"));
+const ArmoiresSaintAgathe = lazy(() => import("./pages/ArmoiresSaintAgathe"));
+const ArmoiresMirabel = lazy(() => import("./pages/ArmoiresMirabel"));
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => (
             <Route path="/armoires-rive-nord" element={<ArmoiresRiveNord />} />
             <Route path="/armoires-rive-sud" element={<ArmoiresRiveSud />} />
             <Route path="/armoires-quebec" element={<ArmoiresQuebec />} />
+            <Route path="/armoires-saint-agathe-des-monts" element={<ArmoiresSaintAgathe />} />
+            <Route path="/armoires-mirabel" element={<ArmoiresMirabel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

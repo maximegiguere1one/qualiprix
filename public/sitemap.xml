@@ -46,4 +46,14 @@
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://armoirequaliprixmontreal.com/armoires-saint-agathe-des-monts</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://armoirequaliprixmontreal.com/armoires-mirabel</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
